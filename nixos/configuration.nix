@@ -125,9 +125,9 @@
   xdg.portal.wlr.enable = true;
 
   programs = {
-    starship = {
-      enable = true;
-    };
+#    starship = {
+#      enable = true;
+#    };
     sway = {
       enable = true;
       wrapperFeatures = {

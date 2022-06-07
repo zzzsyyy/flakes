@@ -18,5 +18,9 @@
       enable = true;
       extraConfig = builtins.readFile (./kitty.conf);
     };
+    starship = {
+      enable = true;
+      settings = builtins.fromTOML (builtins.readFile ./starship.toml);
+    };
   };
 }
