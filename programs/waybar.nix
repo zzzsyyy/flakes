@@ -2,9 +2,9 @@
   {
     layer = "top";
     position = "top";
-    height = "22pt";
+    height = 22;
     spacing = 6;
-    margin = 0;
+    margin = "0";
     modules-left =  [
       "sway/workspaces"
       "sway/mode"
@@ -89,9 +89,9 @@
   {
     layer = "top";
     position = "bottom";
-    height = "22pt";
+    height = 22;
     spacing = 6;
-    margin = 0;
+    margin = "0";
     modules-left = ["network"];
     modules-center = [];
     modules-right = ["pulseaudio" "backlight" "tray"];
