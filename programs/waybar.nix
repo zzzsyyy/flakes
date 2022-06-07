@@ -20,16 +20,16 @@
       "custom/poweroff"
     ];
 
-    sway/workspaces = {
+    "sway/workspaces" = {
       all-outputs = false;
       disable-scroll = false;
       format = "{name}";
     };
-    sway/mode = {
+    "sway/mode" = {
       format = "<span style=\"italic\"> {}</span>";
       tooltip = false;
     };
-    sway/window = {
+    "sway/window" = {
       format = "{}";
       max-length = 40;
       rewrite = {
@@ -65,7 +65,7 @@
       format-alt = "{icon} {time}";
       format-time = "{H}:{M:02d}";
     };
-    custom/poweroff = {
+    "custom/poweroff" = {
       format = "";
       on-click = "exec sh -c ~/.config/waybar/scripts/poweroff.sh";
       tooltip = false;
