@@ -109,8 +109,9 @@
     };
     pipewire = {
       enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
       pulse.enable = true;
-      jack.enable = true;
       wireplumber.enable = true;
       media-session.enable = false;
       };
@@ -136,7 +137,7 @@
         swaylock
         swayidle
         rofi
-        light
+    #    light
         autotiling
         wofi
       ];
@@ -155,6 +156,7 @@
       enableSSHSupport = true;
     };
     steam.enable = true;
+    light.enable = true;
     zsh = {
       enable = true;
       autosuggestions.enable = true;

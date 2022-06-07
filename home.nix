@@ -21,7 +21,7 @@
   };
   home.pointerCursor = {
     gtk.enable = true;
-    x11.enable = true;
+    x11.enable = false;
     package = pkgs.nur.repos.ambroisie.vimix-cursors;
     name = "Vimix-white-cursors";
     size = 42;
