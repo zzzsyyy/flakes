@@ -54,6 +54,7 @@ in
 			neofetch
 			man
 			htop
+			rclone
 			papirus-icon-theme
 			waybar
 			nodejs
