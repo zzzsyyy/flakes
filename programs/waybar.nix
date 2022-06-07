@@ -77,7 +77,7 @@
     memory = {
       interval = 30;
       format = "{icon} {percentage}%";
-      format-icons = ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"];
+      format-icons = ["▁" "▂" "▃" "▄" "▅" "▆" "▇" "█"];
     };
     clock = {
       interval = 1;
