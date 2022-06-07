@@ -6,6 +6,10 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 #    flake-utils.url = "github:numtide/flake-utils";
     nur.url = github:nix-community/NUR;
+    nixos-cn = {
+      url = "github:nixos-cn/flakes";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 #    flake-compat = {
 #      url = "github:edolstra/flake-compat";
 #      flake = false;
@@ -31,6 +35,7 @@
     self,
     nixpkgs,
     nur,
+    nixos-cn,
     home-manager,
     ...
   } @ inputs: let
@@ -52,6 +57,10 @@
 	    nur.overlay
 	  ];
         }
+	({ ... }:{
+          environment.systemPackages =
+              [ nixos-cn.legacyPackages.${system}.wechat-uos ];
+	})
       ];
       specialArgs = { inherit inputs;};
     };
