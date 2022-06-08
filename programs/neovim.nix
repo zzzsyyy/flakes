@@ -10,5 +10,11 @@
     viAlias = true;
     vimdiffAlias = true;
     withNodeJs = true;
+    extraConfig = ''
+      set viminfo+=n${config.xdg.stateHome}/viminfo
+      lua << EOT
+      ${builtins.readFile ./neovim.lua}
+      EOT
+    '';
   };
 }

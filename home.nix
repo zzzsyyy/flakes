@@ -8,12 +8,12 @@
   gtk = {
     enable = true;
     theme = {
-      package = pkgs.materia-theme;
-      name = "Materia";
+      package = pkgs.orchis-theme;
+      name = "Orchis";
     };
     iconTheme = {
-      package = pkgs.numix-icon-theme-circle;
-      name = "Numix-Circle";
+      package = pkgs.qogir-icon-theme;
+      name = "Qogir";
     };
   };
   qt = {
