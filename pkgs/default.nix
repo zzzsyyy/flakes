@@ -28,7 +28,7 @@ let
 	gui-tools = with pkgs; [
 		tdesktop
 		vlc
-		firefox-wayland
+#		firefox-wayland
 	];
 
 	modern-unix = with pkgs; [

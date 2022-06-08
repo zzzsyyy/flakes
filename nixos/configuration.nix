@@ -93,7 +93,6 @@
 
 
   services = {
-    onedrive.enable = true;
     gvfs.enable = true;
     davfs2.enable = true;
     printing.enable = true;
