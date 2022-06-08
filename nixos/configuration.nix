@@ -123,7 +123,7 @@
     };
   };
   xdg.portal.wlr.enable = true;
-
+  xdg.portal.gtkUsePortal = true;
   programs = {
 #    starship = {
 #      enable = true;
@@ -145,12 +145,12 @@
     xwayland = {
       enable = true;
     };
-    neovim = {
-      enable = true;
-      vimAlias = true;
-      defaultEditor = true;
-      viAlias = true;
-    };
+#    neovim = {
+#      enable = true;
+#      vimAlias = true;
+#      defaultEditor = true;
+#      viAlias = true;
+#    };
     gnupg.agent = {
       enable = true;
       enableSSHSupport = true;
