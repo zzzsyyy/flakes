@@ -3,7 +3,14 @@
   lib,
   pkgs,
   ...
-}: {
+}:
+let bg = pkgs.fetchurl {
+  url = "https://img.zzzsy.top/1.jpg";
+  name = "nixos.jpg";
+  hash = "sha256-du+AGCUSUJzbY/OYvhP0HSXM86JJNZfYJs+CxscU5IA=";
+};
+in
+{
   imports = [
     ./git.nix
     ./neovim.nix
@@ -25,6 +32,13 @@
     };
     sioyek = {
       enable = true;
+    };
+    swaylock.settings = {
+      image = "${bg}";
+      show-failed-attempts = true;
+      indicator-caps-lock = true;
+      ignore-empty-password = true;
+      show-keyboard-layout = true;
     };
   };
 }
