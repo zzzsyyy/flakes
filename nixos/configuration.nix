@@ -89,6 +89,7 @@
     pulseaudio.enable = false;
     opengl.enable = true;
     bluetooth.enable = true;
+    cpu.amd.updateMicrocode = true;
   };
 
 
