@@ -55,6 +55,7 @@ in
 			man
 			htop
 			rclone
+#      davinci-resolve
 			papirus-icon-theme
 			waybar
 			nodejs

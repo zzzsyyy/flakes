@@ -28,7 +28,7 @@
     size = 42;
   };
   programs.home-manager.enable = true;
-
+  services.espanso.enable = true;
   home.packages = with pkgs; [
     calibre
     tree
