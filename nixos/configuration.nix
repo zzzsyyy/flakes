@@ -27,6 +27,8 @@
     ];
   };
 
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+
   # Allow Unfree pkgs
   nixpkgs.config = {
     allowUnfree = true;
@@ -145,12 +147,6 @@
     xwayland = {
       enable = true;
     };
-#    neovim = {
-#      enable = true;
-#      vimAlias = true;
-#      defaultEditor = true;
-#      viAlias = true;
-#    };
     gnupg.agent = {
       enable = true;
       enableSSHSupport = true;

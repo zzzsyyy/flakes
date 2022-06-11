@@ -33,7 +33,6 @@
     calibre
     tree
     qbittorrent
-    firefox-devedition-bin
     obs-studio
     nur.repos.linyinfeng.icalingua-plus-plus
     nur.repos.linyinfeng.wemeet

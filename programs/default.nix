@@ -14,8 +14,30 @@ in
   imports = [
     ./git.nix
     ./neovim.nix
+    ./vsc.nix
   ];
   programs = {
+    firefox = {
+      enable = true;
+      package = pkgs.wrapFirefox pkgs.firefox-beta-bin-unwrapped {
+        forceWayland = true;
+        extraPolicies = {
+          DisablePocket = true;
+          EnableTrackingProtection = {
+            Value = true;
+            Locked = true;
+            Cryptomining = true;
+            Fingerprinting = true;
+          };
+        };
+      };
+      profiles.default.settings = {
+        "browser.bookmarks.showMobileBookmarks" = true;
+        "fission.autostart" = true;
+        "media.ffmpeg.vaapi.enabled" = true;
+        "media.rdd-ffmpeg.enabled" = true;
+      };
+    };
     waybar = {
       enable = true;
       settings = (import ./waybar.nix);

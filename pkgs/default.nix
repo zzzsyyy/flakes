@@ -7,6 +7,8 @@ let
 		gcc gdb
 		ncurses5
 		git
+    clang
+    clang-tools
 		lua
 		rustc
                 rustup
@@ -25,10 +27,13 @@ let
 		manix
 	];
 
+  office = with pkgs; [
+    abiword
+    libreoffice
+  ];
 	gui-tools = with pkgs; [
 		tdesktop
 		vlc
-#		firefox-wayland
 	];
 
 	modern-unix = with pkgs; [
@@ -42,6 +47,7 @@ in
 	environment.systemPackages = 
 		nixpkgs-tools
 		++ gui-tools
+    ++ office
 		++ modern-unix
 		++ build-tools
 		++ (with pkgs; [
