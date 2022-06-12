@@ -19,7 +19,7 @@
 #        theme = pkgs.
       };
     };
-#    kernelPackages = pkgs.linuxPackages_lqx;
+    kernelPackages = pkgs.linuxPackages_zen;
     kernelParams = [
       "quiet"
       "udev.log_level=3"
