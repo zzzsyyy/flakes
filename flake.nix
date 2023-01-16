@@ -3,11 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nur.url = github:nix-community/NUR;
-    nixos-cn = {
-      url = "github:nixos-cn/flakes";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -15,7 +10,7 @@
   };
 
   outputs = {
-    self, nixpkgs, nur, nixos-cn, home-manager, ...
+    self, nixpkgs, home-manager, ...
   } @ inputs: let
     system = "x86_64-linux";
     username = "zzzsy";
@@ -24,17 +19,14 @@
       inherit system;
       modules = [
         ./nixos/configuration.nix
-	home-manager.nixosModules.homemanager
-	{
+        ./modules/gnome.nix
+	      home-manager.nixosModules.home-manager
+	      {
           home-manager.useGlobalPkgs = true;
-	  home-manager.useUserPackages = true;
-	  home-manager.users.zzzsy = import ./home.nix;
-	}
-	{
-          nixos.overlays = [ nur.overlay ];
-	}
+	        home-manager.useUserPackages = true;
+	        home-manager.users.zzzsy = import ./home.nix;
+	      }
       ];
-      specialArgs = { inherit inputs; };
     };
   };
 }
