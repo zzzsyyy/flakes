@@ -86,34 +86,29 @@
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" ];
     packages = with pkgs; [
-      firefox
-      celluloid
       vscode-fhs
     ];
   };
 
   users.defaultUserShell = pkgs.zsh;
+  environment.pathsToLink = [ "/share/zsh" ];
   environment.systemPackages = with pkgs; [
     neovim
     git
     neofetch
-    gnome.gnome-tweaks
-    pkgs.gnomeExtensions.user-themes
+    gnomeExtensions.user-themes
   ];
 
   programs.gnupg.agent = {
      enable = true;
      enableSSHSupport = true;
   };
-  programs.zsh = {
-    enable = true;
-    autosuggestions.enable = true;
-    syntaxHighlighting.enable = true;
-  };
 
   services = {
     openssh.enable = true;
     printing.enable = true;
+    fwupd.enable = true;
+    flatpak.enable = true;
     pipewire = {
       enable = true;
       alsa.enable = true;

@@ -1,7 +1,12 @@
-{pkgs, ... }: 
+{pkgs, ... }:
+
+let my-fonts = pkgs.callPackage (import ./pkgs/my-fonts) {};
+
+in
+
 {
   imports = [
-#    ./programs
+   ./programs
 #    ./services
   ];
 
@@ -20,17 +25,19 @@
     enable = true;
     platformTheme = "gtk";
   };
-  #home.pointerCursor = {
-  #  gtk.enable = true;
-  #  x11.enable = false;
-  #  package = pkgs.nur.repos.ambroisie.vimix-cursors;
-  #  name = "Vimix-white-cursors";
-  #  size = 42;
-  #};
+  home.pointerCursor = {
+    package = pkgs.bibata-cursors;
+    name = "Bibata-Modern-Classic";
+    gtk.enable = true;
+    x11.enable = true;
+    size = 24;
+  };
   programs.home-manager.enable = true;
-  home.packages = with pkgs; [
+  home.packages = (with pkgs; [
     calibre
     julia-bin
-  ];
+
+  ])
+  ++([my-fonts]);
   home.stateVersion = "23.05";
 }

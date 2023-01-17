@@ -17,10 +17,19 @@
       gnome-contacts
       totem # video player
       gnome-maps
+      gnome-weather
     ]);
     programs.dconf.enable = true;
-    environment.systemPackages = with pkgs; [
-      gnome.gnome-tweaks
-    ];
+    environment.systemPackages = (with pkgs; [
+      gnome-firmware
+      celluloid
+      # firefox
+    ]) ++ (with pkgs.gnome; [
+      gnome-tweaks
+      # loupe
+      ghex
+      gnome-sound-recorder
+      gnome-power-manager
+    ]);
   };
 }
