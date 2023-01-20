@@ -4,6 +4,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware.nix
+      ../pkgs
     ];
 
   boot = { 
@@ -17,6 +18,7 @@
       "udev.log_level=3"
       "nowatchdog"
     ];
+    supportedFilesystems = [ "ntfs" ];
   };
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
@@ -50,6 +52,7 @@
       sarasa-gothic
       noto-fonts
       noto-fonts-emoji
+      maple-mono
     ];
   };
 
@@ -85,19 +88,10 @@
   users.users.zzzsy = {
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" ];
-    packages = with pkgs; [
-      vscode-fhs
-    ];
   };
 
   users.defaultUserShell = pkgs.zsh;
   environment.pathsToLink = [ "/share/zsh" ];
-  environment.systemPackages = with pkgs; [
-    neovim
-    git
-    neofetch
-    gnomeExtensions.user-themes
-  ];
 
   programs.gnupg.agent = {
      enable = true;
@@ -125,6 +119,8 @@
     # };
 
   };
+
+  documentation.nixos.enable = false;
 
 
   system.stateVersion = "unstable"; # Did you read the comment?

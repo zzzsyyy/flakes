@@ -19,7 +19,7 @@
       inherit system;
       modules = [
         ./nixos/configuration.nix
-        ./modules/gnome.nix
+        ./gnome/default.nix
 	      home-manager.nixosModules.home-manager
 	      {
           home-manager.useGlobalPkgs = true;

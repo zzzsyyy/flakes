@@ -1,9 +1,5 @@
 {pkgs, ... }:
 
-let my-fonts = pkgs.callPackage (import ./pkgs/my-fonts) {};
-
-in
-
 {
   imports = [
    ./programs
@@ -33,11 +29,5 @@ in
     size = 24;
   };
   programs.home-manager.enable = true;
-  home.packages = (with pkgs; [
-    calibre
-    julia-bin
-
-  ])
-  ++([my-fonts]);
   home.stateVersion = "23.05";
 }
