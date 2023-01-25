@@ -2,7 +2,7 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
       ./hardware.nix
       ../pkgs
     ];
@@ -14,7 +14,7 @@
     };
     kernelPackages = pkgs.linuxPackages_zen;
     kernelParams = [
-      "quite"
+      "quiet"
       "udev.log_level=3"
       "nowatchdog"
     ];
@@ -23,10 +23,8 @@
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
-   networking.hostName = "zzzsy";
-   networking.networkmanager.enable = true;
 
-   time.timeZone = "Asia/Shanghai";
+  time.timeZone = "Asia/Shanghai";
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -76,6 +74,8 @@
     layout = "us";
     libinput.enable = true;
   };
+
+  sops.defaultSopsFile = ../secrets/wireless.yaml;
 
   sound.enable = true;
   hardware = {

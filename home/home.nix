@@ -3,7 +3,8 @@
 {
   imports = [
    ./programs
-#    ./services
+  #  ./services
+    ./gnome/dconf.nix
   ];
 
   gtk = {

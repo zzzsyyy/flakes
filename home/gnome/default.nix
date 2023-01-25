@@ -1,5 +1,9 @@
-{ pkgs, ... }: 
+{ pkgs, lib, ... }: 
+
 {
+  imports = [
+    ./extensions.nix
+  ];
   config = {
     services.xserver.enable = true;
     services.xserver.displayManager.gdm.enable = true;
@@ -34,27 +38,6 @@
       ghex
       gnome-sound-recorder
       gnome-power-manager
-    ]) ++ (with pkgs.gnomeExtensions; [
-      user-themes
-      gsconnect
-      appindicator
-      removable-drive-menu
-      clipboard-indicator
-      date-menu-formatter
-      openweather
-      bluetooth-quick-connect
-      caffeine
-      dash-to-panel
-      # sound-output-device-chooser
-      unite
-      dash-to-dock
-      night-theme-switcher
-      rounded-window-corners
-      rounded-corners
-      customize-ibus
-      space-bar
-      workspace-switcher-manager
-      fuzzy-app-search
     ]);
   };
 }

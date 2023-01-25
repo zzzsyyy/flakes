@@ -1,11 +1,10 @@
 {
   config,
-  lib,
   pkgs,
   ...
 }: {
     imports = [
-        ./git.nix
+        ./config/git.nix
         # ./neovim.nix
         # ./vsc.nix
     ];
@@ -32,12 +31,12 @@
 
     programs.starship = {
       enable = true;
-      settings = builtins.fromTOML (builtins.readFile ./starship.toml);
+      settings = builtins.fromTOML (builtins.readFile ./config/starship.toml);
     };
 
     programs.wezterm = {
         enable = true;
-        extraConfig = builtins.readFile (./wezterm.lua);
+        extraConfig = builtins.readFile (./config/wezterm.lua);
     };
 
     programs.lsd = {

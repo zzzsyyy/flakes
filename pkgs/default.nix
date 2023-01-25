@@ -33,6 +33,7 @@ unix-tools = with pkgs; [
     htop
     aria
     scrcpy
+    bind
 ];
 
 office = with pkgs; [
