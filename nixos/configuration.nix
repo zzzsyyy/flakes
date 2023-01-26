@@ -26,10 +26,6 @@
 
   time.timeZone = "Asia/Shanghai";
 
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
   i18n = {
     defaultLocale = "zh_CN.UTF-8";
     inputMethod = {

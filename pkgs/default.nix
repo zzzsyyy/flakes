@@ -23,6 +23,8 @@ build-tools = with pkgs; [
     rnix-lsp
     lua
     git
+    nodejs
+    nodePackages.pnpm
 ];
 
 unix-tools = with pkgs; [
@@ -34,6 +36,7 @@ unix-tools = with pkgs; [
     aria
     scrcpy
     bind
+    ripgrep
 ];
 
 office = with pkgs; [
