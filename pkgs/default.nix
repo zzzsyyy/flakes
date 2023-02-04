@@ -17,11 +17,12 @@ build-tools = with pkgs; [
     clang
     clang-tools
     cargo
+    opencc
     rustc
     rustup
-    rust-analyzer
     rnix-lsp
     lua
+    python3
     git
     nodejs
     nodePackages.pnpm
@@ -66,6 +67,7 @@ others = with pkgs; [
 ];
 
 my-fonts = pkgs.callPackage (import ./my-fonts) {};
+plangothic = pkgs.callPackage (import ./plangothic) {};
 
 in
 
@@ -74,7 +76,7 @@ environment.systemPackages =
         build-tools
     ++  unix-tools
     ++  nix-tools
-    ++  ([ my-fonts ]);
+    ++  ([ my-fonts plangothic ]);
 
 users.users.zzzsy.packages = 
         office

@@ -11,7 +11,7 @@ stdenvNoCC.mkDerivation rec {
         repo = "Firefox-UI-Fix";
         owner = "black7375";
         rev = version;
-        sha256 = "sha256-xQeLA0N5EYrefX6Fnbz2gWkiXESHSg6F5xdxygHRQj4=";
+        hash = "sha256-xQeLA0N5EYrefX6Fnbz2gWkiXESHSg6F5xdxygHRQj4=";
     };
 
     dontConfigure = true;
