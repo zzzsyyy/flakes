@@ -10,7 +10,7 @@
     ./firefox
     ./zsh
     # ./neovim
-    # ./vscode
+    ./vscode
   ];
 
   programs.lsd = {

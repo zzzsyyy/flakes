@@ -61,7 +61,6 @@ let
     gimp
     # nixos-conf-editor
     # nix-software-center
-    vscode-fhs
     minder
     asciinema
     megasync
