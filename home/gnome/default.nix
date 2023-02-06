@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }: 
+{ pkgs, lib, ... }:
 
 {
   imports = [
@@ -9,7 +9,7 @@
     services.xserver.enable = true;
     services.xserver.displayManager.gdm.enable = true;
     services.xserver.desktopManager.gnome.enable = true;
-    # services.xserver.excludePackages = [ pkgs.xterm ]; # ???
+    services.xserver.excludePackages = [ pkgs.xterm ]; # ???
     environment.gnome.excludePackages = (with pkgs; [
       gnome-photos
       gnome-tour
@@ -31,11 +31,11 @@
       gnome-firmware
       celluloid # video
       amberol # music
-      blackbox-terminal
+      nautilus-open-any-terminal
     ]) ++ (with pkgs.gnome; [
       gnome-tweaks
       dconf-editor
-      # loupe
+      # loupe # https://github.com/NixOS/nixpkgs/pull/202692
       ghex
       gnome-sound-recorder
       gnome-power-manager

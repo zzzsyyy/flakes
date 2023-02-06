@@ -7,7 +7,7 @@
       ../pkgs
     ];
 
-  boot = { 
+  boot = {
     loader = {
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = false;
@@ -62,13 +62,6 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  services.xserver = {
-    layout = "us";
-    libinput.enable = true;
-  };
-
-  sops.defaultSopsFile = ../secrets/wireless.yaml;
-
   sound.enable = true;
   hardware = {
     pulseaudio.enable = false;
@@ -84,10 +77,11 @@
 
   users.defaultUserShell = pkgs.zsh;
   environment.pathsToLink = [ "/share/zsh" ];
+  environment.sessionVariables.TERMINAL = [ "wezterm" ];
 
   programs.gnupg.agent = {
-     enable = true;
-     enableSSHSupport = true;
+    enable = true;
+    enableSSHSupport = true;
   };
 
   services = {
@@ -102,7 +96,7 @@
       pulse.enable = true;
       wireplumber.enable = true;
       media-session.enable = false;
-      };
+    };
     # zerotierone = {
     #   enable = true;
     #   joinNetworks = [ "" ];

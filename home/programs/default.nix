@@ -1,29 +1,28 @@
-{
-  config,
-  pkgs,
-  ...
+{ config
+, pkgs
+, ...
 }: {
-    imports = [
-        ./git
-        ./starship
-        ./wezterm
-        ./dconf
-        ./firefox
-        ./zsh
-        # ./neovim.nix
-        # ./vsc.nix
+  imports = [
+    ./git
+    ./starship
+    ./wezterm
+    ./dconf
+    ./firefox
+    ./zsh
+    # ./neovim
+    # ./vscode
+  ];
+
+  programs.lsd = {
+    enable = true;
+    enableAliases = true;
+  };
+
+  programs.zoxide = {
+    enable = true;
+    enableZshIntegration = true;
+    options = [
+      # "--cmd cd"
     ];
-
-    programs.lsd = {
-        enable = true;
-        enableAliases = true;
-    };
-
-    programs.zoxide = {
-        enable = true;
-        enableZshIntegration = true;
-        options = [
-            # "--cmd cd"
-        ];
-    };
+  };
 }

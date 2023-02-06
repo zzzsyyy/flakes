@@ -1,25 +1,25 @@
-{  stdenvNoCC
-,  fetchFromGitHub
-# ,  lib  ## lib.fakeSha256
-} :
+{ stdenvNoCC
+, fetchFromGitHub
+  # ,  lib  ## lib.fakeSha256
+}:
 
 stdenvNoCC.mkDerivation rec {
-    pname = "firefox-ui-fix";
-    version = "f1a5fd4357a7ec3d0eb6962a2686543b3a448135";
+  pname = "firefox-ui-fix";
+  version = "20230204";
 
-    src = fetchFromGitHub {
-        repo = "Firefox-UI-Fix";
-        owner = "black7375";
-        rev = version;
-        hash = "sha256-xQeLA0N5EYrefX6Fnbz2gWkiXESHSg6F5xdxygHRQj4=";
-    };
+  src = fetchFromGitHub {
+    repo = "Firefox-UI-Fix";
+    owner = "black7375";
+    rev = "482b52254060acbf27b857f602d13fb192c99d18";
+    hash = "sha256-xQeLA0N5EYrefX6Fnbz2gWkiXESHSg6F5xdxygHRQj4=";
+  };
 
-    dontConfigure = true;
-    dontBuild = true;
-    doCheck = false;
+  dontConfigure = true;
+  dontBuild = true;
+  doCheck = false;
 
-    installPhase = ''
-        mkdir -p $out/share/firefox-ui-fix
-        cp -r css icons user.js userChrome.css userContent.css $out/share/firefox-ui-fix
-    '';
+  installPhase = ''
+    mkdir -p $out/share/firefox-ui-fix
+    cp -r css icons user.js userChrome.css userContent.css $out/share/firefox-ui-fix
+  '';
 }

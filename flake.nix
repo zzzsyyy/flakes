@@ -10,49 +10,55 @@
     sops-nix.url = github:Mic92/sops-nix;
   };
 
-  outputs = {
-    self, nixpkgs, home-manager, sops-nix, ...
-  } @ inputs: let
-    system = "x86_64-linux";
-    username = "zzzsy";
-    pkgs = import nixpkgs {
-      inherit system;
-    };
+  outputs =
+    { self
+    , nixpkgs
+    , home-manager
+    , sops-nix
+    , ...
+    } @ inputs:
+    let
+      system = "x86_64-linux";
+      username = "zzzsy";
+      pkgs = import nixpkgs {
+        inherit system;
+      };
 
-  in {
-    nixosModules = {
-      gnome = ./home/gnome/default.nix;
-      declarativeHome = {
-        config.home-manager = {
-          useGlobalPkgs = true;
-	        useUserPackages = true;
-	        users.${username} = import ./home/home.nix;
+    in
+    {
+      nixosModules = {
+        gnome = ./home/gnome/default.nix;
+        declarativeHome = {
+          config.home-manager = {
+            useGlobalPkgs = true;
+            useUserPackages = true;
+            users.${username} = import ./home/home.nix;
+          };
+        };
+        networking = ./home/networking/default.nix;
+      };
+      nixosConfigurations.${username} = nixpkgs.lib.nixosSystem {
+        inherit system;
+        modules = with self.nixosModules; [
+          ./nixos/configuration.nix
+          gnome
+          home-manager.nixosModules.home-manager
+          declarativeHome
+          sops-nix.nixosModules.sops
+        ];
+      };
+      devShells.${system} = {
+        secret = with pkgs; mkShell {
+          nativeBuildInputs = [
+            sops
+            age
+            ssh-to-age
+            ssh-to-pgp
+          ];
+          shellHook = ''
+            export PS1="\e[0;31m(Secret)\w\$ \e[m" 
+          '';
         };
       };
-      networking = ./home/networking/default.nix;
     };
-    nixosConfigurations.${username} = nixpkgs.lib.nixosSystem {
-      inherit system;
-      modules = with self.nixosModules; [
-        ./nixos/configuration.nix
-        gnome
-	      home-manager.nixosModules.home-manager
-        declarativeHome
-        sops-nix.nixosModules.sops
-      ];
-    };
-    devShells.${system} = {
-      secret = with pkgs; mkShell {
-        nativeBuildInputs = [
-          sops
-          age
-          ssh-to-age
-          ssh-to-pgp
-        ];
-        shellHook = ''
-          export PS1="\e[0;31m(Secret)\w\$ \e[m" 
-          '';
-      };
-    };
-  };
 }

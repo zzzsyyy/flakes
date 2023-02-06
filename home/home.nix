@@ -1,9 +1,9 @@
-{pkgs, ... }:
+{ pkgs, ... }:
 
 {
   imports = [
-   ./programs
-  #  ./services
+    ./programs
+    #  ./services
   ];
 
   gtk = {

@@ -1,22 +1,24 @@
-{ config, lib, pkgs, ...}: 
+{ config, lib, pkgs, ... }:
 
 let
-nix-tools = with pkgs; [
+  nix-tools = with pkgs; [
     nixpkgs-fmt
-	nixpkgs-lint
-	nixpkgs-review
-	nix-index
-	nix-du
-	manix
-];
+    nixpkgs-lint
+    nixpkgs-review
+    nix-index
+    nix-du
+    manix
+  ];
 
-build-tools = with pkgs; [
+  build-tools = with pkgs; [
     cmake
-    gcc gdb
+    gcc
+    gdb
     # xmake
     clang
     clang-tools
     cargo
+    sassc
     opencc
     rustc
     rustup
@@ -26,9 +28,9 @@ build-tools = with pkgs; [
     git
     nodejs
     nodePackages.pnpm
-];
+  ];
 
-unix-tools = with pkgs; [
+  unix-tools = with pkgs; [
     bat
     neovim
     neofetch
@@ -38,23 +40,23 @@ unix-tools = with pkgs; [
     scrcpy
     bind
     ripgrep
-];
+  ];
 
-office = with pkgs; [
+  office = with pkgs; [
     # libreoffice-fresh-unwrapped.override{
     #     langs = [ "zh-CN" "en-US" "fr" ];
     # }
     gnumeric
     calibre
     # hunspellq
-];
+  ];
 
-others = with pkgs; [
+  others = with pkgs; [
     rnote # handwritten notes
-    fractal-next # matrix
+    #fractal-next # matrix
     # gtkcord4 # discord (WIP)
     tdesktop
-    transmission-gtk 
+    transmission-gtk
     gaphor
     gimp
     # nixos-conf-editor
@@ -64,21 +66,21 @@ others = with pkgs; [
     asciinema
     megasync
     nautilus-open-any-terminal
-];
+  ];
 
-my-fonts = pkgs.callPackage (import ./my-fonts) {};
-plangothic = pkgs.callPackage (import ./plangothic) {};
+  my-fonts = pkgs.callPackage (import ./my-fonts) { };
+  plangothic = pkgs.callPackage (import ./plangothic) { };
 
 in
 
 {
-environment.systemPackages = 
-        build-tools
-    ++  unix-tools
-    ++  nix-tools
-    ++  ([ my-fonts plangothic ]);
+  environment.systemPackages =
+    build-tools
+    ++ unix-tools
+    ++ nix-tools
+    ++ ([ my-fonts plangothic ]);
 
-users.users.zzzsy.packages = 
-        office
-    ++  others;
+  users.users.zzzsy.packages =
+    office
+    ++ others;
 }
