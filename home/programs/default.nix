@@ -11,6 +11,7 @@
     ./zsh
     # ./neovim
     ./vscode
+    ./mpv
   ];
 
   programs.lsd = {
