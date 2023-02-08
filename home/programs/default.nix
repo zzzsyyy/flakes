@@ -9,7 +9,7 @@
     ./dconf
     ./firefox
     ./zsh
-    # ./neovim
+    ./neovim
     ./vscode
     ./mpv
   ];

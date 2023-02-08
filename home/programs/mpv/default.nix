@@ -8,6 +8,6 @@
         vapoursynthSupport = true;
       })
       { youtubeSupport = true; };
-    # config = builtins.readFile ./mpv.conf;
   };
+  home.file.".config/mpv/mpv.conf".source = ./mpv.conf;
 }
