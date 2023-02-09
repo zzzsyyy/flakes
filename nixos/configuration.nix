@@ -4,7 +4,6 @@
   imports =
     [
       ./hardware.nix
-      ../pkgs
     ];
 
   boot = {
@@ -39,6 +38,8 @@
     fonts = with pkgs; [
       (nerdfonts.override { fonts = [ "FiraCode" ]; })
       fira-code
+      my-fonts
+      plangothic
       sarasa-gothic
       noto-fonts
       noto-fonts-emoji

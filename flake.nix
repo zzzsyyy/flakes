@@ -34,6 +34,15 @@
             useUserPackages = true;
             users.${username} = import ./home/home.nix;
           };
+          config.nixpkgs = {
+            overlays =
+              [ (import ./pkgs) ]
+              # ++ (import ./overlays)
+              # ++ [
+              #   inputs.neovim-nightly-overlay.overlay
+              # ]
+            ;
+          };
         };
         networking = ./home/networking/default.nix;
       };

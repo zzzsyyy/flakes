@@ -3,13 +3,6 @@
 , ...
 }:
 
-let
-
-  librime-lua = pkgs.callPackage (import ../../../pkgs/librime-plugins/librime-lua) { };
-  librime-octagram = pkgs.callPackage (import ../../../pkgs/librime-plugins/librime-octagram) { };
-
-in
-
 {
   i18n.inputMethod = {
     enabled = "ibus";
@@ -18,7 +11,7 @@ in
         librime = (pkgs.librime.overrideAttrs (old: {
           buildInputs = old.buildInputs ++ [ pkgs.lua5_4 ];
         })).override {
-          plugins = [ librime-lua librime-octagram ];
+          plugins = with pkgs; [ librime-lua librime-octagram ];
         };
       })
     ];

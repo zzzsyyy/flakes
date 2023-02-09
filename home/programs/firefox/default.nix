@@ -2,10 +2,9 @@
 
 let
 
-  firefox-ui-fix = pkgs.callPackage (import ../../../pkgs/firefox-ui-fix) { };
-  userChrome = "${firefox-ui-fix}/share/firefox-ui-fix/userChrome.css";
-  userjs = "${firefox-ui-fix}/share/firefox-ui-fix/user.js";
-  userContent = "${firefox-ui-fix}/share/firefox-ui-fix/userContent.css";
+  userChrome = "${pkgs.firefox-ui-fix}/share/firefox-ui-fix/userChrome.css";
+  userjs = "${pkgs.firefox-ui-fix}/share/firefox-ui-fix/user.js";
+  userContent = "${pkgs.firefox-ui-fix}/share/firefox-ui-fix/userContent.css";
 
 in
 
