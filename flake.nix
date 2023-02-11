@@ -45,6 +45,7 @@
           };
         };
         networking = ./home/networking/default.nix;
+        sops = ./sops/default.nix;
       };
       nixosConfigurations.${username} = nixpkgs.lib.nixosSystem {
         inherit system;
@@ -54,6 +55,8 @@
           home-manager.nixosModules.home-manager
           declarativeHome
           sops-nix.nixosModules.sops
+          networking
+          sops
         ];
       };
       devShells.${system} = {

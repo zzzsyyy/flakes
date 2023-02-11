@@ -3,7 +3,6 @@
 {
   imports = [
     ./programs
-    #  ./services
     ./pkgs.nix
   ];
 

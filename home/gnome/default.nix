@@ -4,6 +4,7 @@
   imports = [
     ./extensions.nix
     ./rime
+    # ../services
   ];
   config = {
     services.xserver.enable = true;

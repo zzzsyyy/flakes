@@ -36,6 +36,7 @@ let
     scrcpy
     bind
     ripgrep
+    sops
   ];
 
   office = with pkgs; [

@@ -79,7 +79,6 @@
   users.defaultUserShell = pkgs.zsh;
   environment.pathsToLink = [ "/share/zsh" ];
   environment.sessionVariables.TERMINAL = [ "wezterm" ];
-
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;
