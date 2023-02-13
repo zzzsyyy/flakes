@@ -7,8 +7,10 @@
     ];
 
   boot = {
+    plymouth.enable = true;
     loader = {
       systemd-boot.enable = true;
+      systemd-boot.configurationLimit = 5;
       efi.canTouchEfiVariables = false;
     };
     kernelPackages = pkgs.linuxPackages_zen;
@@ -52,6 +54,8 @@
     settings.experimental-features = [ "nix-command" "flakes" ];
     settings.auto-optimise-store = true;
     settings.substituters = [
+      "https://mirror.sjtu.edu.cn/nix-channels/store"
+      "https://mirrors.ustc.edu.cn/nix-channels/store"
       "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
     ];
     gc = {
@@ -71,19 +75,40 @@
     cpu.amd.updateMicrocode = true;
   };
 
-  users.users.zzzsy = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" ];
+  users = {
+    mutableUsers = false;
+    users.zzzsy = {
+      hashedPassword = "$6$3mI6lDngcB2nrJx5$IG1j2hHtg0xhvrcFSO99zW1b8Lil4rgWLjgppTe3ALA1ftfLmDnHdAeuhtI/Zc0AwvsNThQIWxtAu/gHN1gfD1";
+      isNormalUser = true;
+      extraGroups = [ "wheel" "networkmanager" "video" ];
+    };
   };
 
   users.defaultUserShell = pkgs.zsh;
   environment.pathsToLink = [ "/share/zsh" ];
   environment.sessionVariables.TERMINAL = [ "wezterm" ];
+
+  environment.persistence."/persist" = {
+    hideMounts = true;
+    directories = [
+      "/var"
+      "/root"
+    ];
+    files = [
+      "/etc/machine-id"
+ #     "/etc/NetworkManager/system-connections"
+      "/etc/ssh/ssh_host_ed25519_key.pub"
+      "/etc/ssh/ssh_host_ed25519_key"
+    ];
+  };
+
+
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;
   };
 
+  programs.fuse.userAllowOther = true;
   services = {
     openssh.enable = true;
     printing.enable = true;
@@ -103,6 +128,15 @@
     #   port = 9993; #default
     # };
 
+  };
+
+  systemd.services.nix-daemon = {
+    environment = {
+      TMPDIR = "/var/cache/nix";
+    };
+    serviceConfig = {
+      CacheDirectory = "nix";
+    };
   };
 
   documentation.nixos.enable = false;

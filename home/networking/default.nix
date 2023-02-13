@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, lib, ... }:
 
 let
   cfg = config.networking.clash;
@@ -12,6 +12,8 @@ in
 
   networking = {
     hostName = "zzzsy";
+    useDHCP = false;
+    firewall.enable = false;
     networkmanager.enable = true;
 
     clash = {

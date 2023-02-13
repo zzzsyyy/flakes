@@ -4,6 +4,11 @@ return {
     event = "VeryLazy",
     opts = {
       plugins = { spelling = true },
-    }
+    },
   },
+
+  -- file explorer
+  -- {
+  --   ""
+  -- },
 }

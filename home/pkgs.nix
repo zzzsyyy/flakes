@@ -30,6 +30,7 @@ let
   unix-tools = with pkgs; [
     bat
     neofetch
+    viu
     man
     htop
     aria

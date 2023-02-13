@@ -8,6 +8,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     sops-nix.url = github:Mic92/sops-nix;
+    impermanence.url = "github:nix-community/impermanence";
   };
 
   outputs =
@@ -15,6 +16,7 @@
     , nixpkgs
     , home-manager
     , sops-nix
+    , impermanence
     , ...
     } @ inputs:
     let
@@ -23,6 +25,7 @@
       pkgs = import nixpkgs {
         inherit system;
       };
+      # hm-impermanence = impermanence.nixosModules.home-manager.impermanence;
 
     in
     {
@@ -57,6 +60,7 @@
           sops-nix.nixosModules.sops
           networking
           sops
+          impermanence.nixosModules.impermanence
         ];
       };
       devShells.${system} = {
