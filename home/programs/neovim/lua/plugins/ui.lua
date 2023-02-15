@@ -1,8 +1,4 @@
 return {
-  -- icons
-  { "nvim-tree/nvim-web-devicons", lazy = true },
-  { "MunifTanjim/nui.nvim", lazy = true },
-
   {
     "lukas-reineke/indent-blankline.nvim",
     event = { "BufReadPost", "BufNewFile" },
@@ -18,7 +14,6 @@ return {
   {
     "nvim-lualine/lualine.nvim",
     event = "VeryLazy",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
     opts = function()
       local icons = require("other.icons")
 
@@ -128,7 +123,7 @@ return {
           lualine_z = {},
         },
         tabline = {},
-        extensions = {},
+        extensions = { "neo-tree" },
       }
     end,
   },

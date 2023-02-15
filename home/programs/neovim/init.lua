@@ -22,6 +22,21 @@ local opts = {
   ui = {
     size = { width = 1.0, height = 1.0 },
   },
+  performance = {
+    rtp = {
+      -- disable some rtp plugins
+      disabled_plugins = {
+        "gzip",
+        "matchit",
+        "matchparen",
+        "netrwPlugin",
+        "tarPlugin",
+        "tohtml",
+        "tutor",
+        "zipPlugin",
+      },
+    },
+  },
 }
 
 require("lazy").setup("plugins", opts)

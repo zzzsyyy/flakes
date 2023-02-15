@@ -28,6 +28,7 @@
     x11.enable = true;
     size = 24;
   };
+  xdg.userDirs.enable = true;
   programs.home-manager.enable = true;
   home.stateVersion = "23.05";
 }

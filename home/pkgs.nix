@@ -25,6 +25,8 @@ let
     git
     nodejs
     nodePackages.pnpm
+    hugo
+    go
   ];
 
   unix-tools = with pkgs; [

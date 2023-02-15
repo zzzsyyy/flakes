@@ -3,10 +3,9 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-22.11";
+    home-manager.url = "github:nix-community/home-manager";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
     sops-nix.url = github:Mic92/sops-nix;
     impermanence.url = "github:nix-community/impermanence";
   };
@@ -14,6 +13,7 @@
   outputs =
     { self
     , nixpkgs
+    , nixpkgs-stable
     , home-manager
     , sops-nix
     , impermanence
@@ -24,6 +24,10 @@
       username = "zzzsy";
       pkgs = import nixpkgs {
         inherit system;
+      };
+      pkgs-stable = import inputs.nixpkgs-stable {
+        inherit system;
+        config.allowUnfree = true;
       };
       # hm-impermanence = impermanence.nixosModules.home-manager.impermanence;
 
@@ -39,7 +43,13 @@
           };
           config.nixpkgs = {
             overlays =
-              [ (import ./pkgs) ]
+              [ (import ./pkgs).overlay ]
+              ++ [(final: prev: {
+                stable = import nixpkgs-stable {
+                  inherit system;
+                  config.allowUnfree = true;
+                };
+              })]
               # ++ (import ./overlays)
               # ++ [
               #   inputs.neovim-nightly-overlay.overlay

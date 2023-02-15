@@ -54,8 +54,8 @@
     settings.experimental-features = [ "nix-command" "flakes" ];
     settings.auto-optimise-store = true;
     settings.substituters = [
-      "https://mirror.sjtu.edu.cn/nix-channels/store"
       "https://mirrors.ustc.edu.cn/nix-channels/store"
+      "https://mirror.sjtu.edu.cn/nix-channels/store"
       "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
     ];
     gc = {
@@ -93,10 +93,10 @@
     directories = [
       "/var"
       "/root"
+     "/etc/NetworkManager/system-connections"
     ];
     files = [
       "/etc/machine-id"
- #     "/etc/NetworkManager/system-connections"
       "/etc/ssh/ssh_host_ed25519_key.pub"
       "/etc/ssh/ssh_host_ed25519_key"
     ];

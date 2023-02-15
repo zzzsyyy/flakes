@@ -38,3 +38,5 @@ endfunction
 ]])
 
 vim.g.mkdp_browserfunc = "OpenMarkdownPreview"
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
