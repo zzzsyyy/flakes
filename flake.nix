@@ -25,10 +25,6 @@
       pkgs = import nixpkgs {
         inherit system;
       };
-      pkgs-stable = import inputs.nixpkgs-stable {
-        inherit system;
-        config.allowUnfree = true;
-      };
       # hm-impermanence = impermanence.nixosModules.home-manager.impermanence;
 
     in
