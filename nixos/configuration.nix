@@ -11,7 +11,7 @@
     loader = {
       systemd-boot.enable = true;
       systemd-boot.configurationLimit = 5;
-      efi.canTouchEfiVariables = false;
+      efi.canTouchEfiVariables = false; #@TODO
     };
     kernelPackages = pkgs.linuxPackages_zen;
     kernelParams = [
@@ -32,6 +32,7 @@
     supportedLocales = [ "zh_CN.UTF-8/UTF-8" "en_US.UTF-8/UTF-8" ];
   };
 
+  # @TODO
   fonts = {
     enableDefaultFonts = true;
     fontconfig.enable = true;
@@ -142,6 +143,6 @@
   documentation.nixos.enable = false;
 
 
-  system.stateVersion = "unstable"; # Did you read the comment?
+  system.stateVersion = "unstable";
 }
 

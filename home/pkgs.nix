@@ -43,17 +43,17 @@ let
   ];
 
   office = with pkgs; [
-    # libreoffice-fresh-unwrapped.override{
-    #     langs = [ "zh-CN" "en-US" "fr" ];
-    # }
+    libreoffice-fresh-unwrapped
     gnumeric
     calibre
+    #logseq
+    octave
     # hunspellq
   ];
 
   others = with pkgs; [
     # rnote # handwritten notes
-    #fractal-next # matrix
+    # fractal-next # matrix
     # gtkcord4 # discord (WIP)
     tdesktop
     transmission-gtk
@@ -64,7 +64,7 @@ let
     minder
     asciinema
     megasync
-    nautilus-open-any-terminal
+    # nautilus-open-any-terminal
   ];
 
 in

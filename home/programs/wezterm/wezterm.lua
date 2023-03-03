@@ -2,7 +2,7 @@ local wezterm = require 'wezterm'
 
 local function get_theme()
 	local _time = os.date("*t").hour
-	if _time >= 5 and _time < 16 then
+	if _time >= 5 and _time < 20 then
 		return "dawnfox"
   else
     return "nordfox"

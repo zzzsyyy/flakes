@@ -10,7 +10,7 @@ let
     extraConfig
   ];
 
-  btrfsSubvolMain = btrfsSubvol "/dev/disk/by-uuid/d488f98f-81fb-47b4-b9a9-599b97591dd2";
+  btrfsSubvolMain = btrfsSubvol "/dev/disk/by-uuid/0da50d1b-70be-4074-8a87-f9b95e35f701";
 
 in
 
@@ -37,7 +37,7 @@ in
   ## sudo chmod -R a+rwX,o-rw /home/$USER
   fileSystems."/home" = btrfsSubvolMain "@home" { };
   fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/288A-65F5";
+    device = "/dev/disk/by-uuid/4066-EE27";
     fsType = "vfat";
   };
   

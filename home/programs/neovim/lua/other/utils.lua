@@ -11,7 +11,7 @@ end
 function M.get_colorscheme()
   local _t = os.date("*t").hour
   local _s = ""
-  if _t >= 5 and _t < 16 then
+  if _t >= 5 and _t < 20 then
     _s = "dawnfox"
   else
     _s = "nordfox"

@@ -2,9 +2,9 @@
 
 let
 
-  userChrome = "${pkgs.firefox-ui-fix}/share/firefox-ui-fix/userChrome.css";
-  userjs = "${pkgs.firefox-ui-fix}/share/firefox-ui-fix/user.js";
-  userContent = "${pkgs.firefox-ui-fix}/share/firefox-ui-fix/userContent.css";
+  userChrome = "${pkgs.firefox-gnome-theme}/share/firefox-gnome-theme/userChrome.css";
+  userjs = "${pkgs.firefox-gnome-theme}/share/firefox-gnome-theme/configuration/user.js";
+  userContent = "${pkgs.firefox-gnome-theme}/share/firefox-gnome-theme/userContent.css";
 
 in
 
