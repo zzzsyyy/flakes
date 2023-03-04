@@ -28,8 +28,7 @@ local config = {
     },
 
     -- Fonts
-    font = wezterm.font_with_fallback {'Iosevka ZT', 'FiraCode Nerd Font Mono', 'Firacode', 'Font Awesome 6 Pro',
-                                       'Sarasa Gothic SC'},
+    font = wezterm.font_with_fallback {'Iosevka ZT', 'Symbols Nerd Font Mono', 'Font Awesome 6 Pro', monospace},
     font_size = 13,
 
     -- Tab bar

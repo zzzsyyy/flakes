@@ -4,7 +4,7 @@
     "workbench.preferredDarkColorTheme": "Vitesse Dark Soft",
     "workbench.preferredLightColorTheme": "Vitesse Light Soft",
     "workbench.iconTheme": "file-icons",
-    "editor.fontFamily": "'Iosevka ZT', 'FiraCode Nerd Font'",
+    "editor.fontFamily": "'Iosevka ZT', sans-serif, monospace",
     "editor.fontLigatures": true,
 
     "editor.cursorSmoothCaretAnimation": true,

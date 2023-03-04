@@ -4,6 +4,8 @@
   imports = [
     ./extensions.nix
     ./rime
+    ./fonts
+    ./networking
     # ../services
   ];
   config = {

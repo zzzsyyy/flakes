@@ -32,24 +32,6 @@
     supportedLocales = [ "zh_CN.UTF-8/UTF-8" "en_US.UTF-8/UTF-8" ];
   };
 
-  # @TODO
-  fonts = {
-    enableDefaultFonts = true;
-    fontconfig.enable = true;
-    fontDir.enable = true;
-    enableGhostscriptFonts = true;
-    fonts = with pkgs; [
-      (nerdfonts.override { fonts = [ "FiraCode" ]; })
-      fira-code
-      my-fonts
-      plangothic
-      sarasa-gothic
-      noto-fonts
-      noto-fonts-emoji
-      maple-mono
-    ];
-  };
-
   nix = {
     package = pkgs.nixUnstable;
     settings.experimental-features = [ "nix-command" "flakes" ];
