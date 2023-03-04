@@ -46,8 +46,9 @@ let
     libreoffice-fresh-unwrapped
     gnumeric
     calibre
-    #logseq
+    logseq
     octave
+    texlive.combined.scheme-full
     # hunspellq
   ];
 
@@ -64,7 +65,7 @@ let
     minder
     asciinema
     megasync
-    # nautilus-open-any-terminal
+    nautilus-open-any-terminal
   ];
 
 in
