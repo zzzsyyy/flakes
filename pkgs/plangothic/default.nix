@@ -13,11 +13,11 @@ stdenvNoCC.mkDerivation rec {
   srcs = [
     (fetchurl {
       url = "${preurl}/V.${version}/PlangothicP1-Regular.fallback.ttf";
-      sha256 = "sha256-XH4E3kSH6w84CdqNOL0nDfW9IfGaaiFj/fswaYiOs+w=";
+      hash = "sha256-XH4E3kSH6w84CdqNOL0nDfW9IfGaaiFj/fswaYiOs+w=";
     })
     (fetchurl {
       url = "${preurl}/V.${version}/PlangothicP2-Regular.ttf";
-      sha256 = "sha256-R3ze/+VU+ove8999+IBIr4Rj7kSRhDuuOhhjK44W/tI=";
+      hash = "sha256-R3ze/+VU+ove8999+IBIr4Rj7kSRhDuuOhhjK44W/tI=";
     })
   ];
 
