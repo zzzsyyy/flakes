@@ -11,61 +11,14 @@
   };
 
   outputs =
-    { self
-    , nixpkgs
-    , nixpkgs-stable
-    , home-manager
-    , sops-nix
-    , impermanence
-    , ...
-    } @ inputs:
+    { self, nixpkgs, ... } @ inputs:
     let
       system = "x86_64-linux";
-      username = "zzzsy";
-      pkgs = import nixpkgs {
-        inherit system;
-      };
-      # hm-impermanence = impermanence.nixosModules.home-manager.impermanence;
-
+      pkgs = inputs.nixpkgs.legacyPackages.x86_64-linux;
     in
     {
-      nixosModules = {
-        gnome = ./home/gnome/default.nix;
-        declarativeHome = {
-          config.home-manager = {
-            useGlobalPkgs = true;
-            useUserPackages = true;
-            users.${username} = import ./home/home.nix;
-          };
-          config.nixpkgs = {
-            overlays =
-              [ (import ./pkgs).overlay ]
-              ++ [(final: prev: {
-                stable = import nixpkgs-stable {
-                  inherit system;
-                  config.allowUnfree = true;
-                };
-              })]
-              # ++ (import ./overlays)
-              # ++ [
-              #   inputs.neovim-nightly-overlay.overlay
-              # ]
-            ;
-          };
-        };
-        sops = ./sops/default.nix;
-      };
-      nixosConfigurations.${username} = nixpkgs.lib.nixosSystem {
-        inherit system;
-        modules = with self.nixosModules; [
-          ./nixos/configuration.nix
-          gnome
-          home-manager.nixosModules.home-manager
-          declarativeHome
-          sops-nix.nixosModules.sops
-          sops
-          impermanence.nixosModules.impermanence
-        ];
+      nixosConfigurations = import ./hosts {
+        inherit system self nixpkgs;
       };
       devShells.${system} = {
         secret = with pkgs; mkShell {

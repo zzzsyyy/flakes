@@ -1,4 +1,5 @@
 = zzzsy/flakes
+
 :description: My NixOS configuration
 :url-repo: https://codeberg.org/zzzsy/flakes
 
@@ -9,3 +10,4 @@ image:https://img.zzzsy.top/codeberg.svg[Get it on Codeberg,200,align="center"]
 * [ ] 重构
 * [ ] Rime 配置
 * [ ] Julia 环境
+* [ ] Latex 模板

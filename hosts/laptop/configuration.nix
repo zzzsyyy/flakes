@@ -15,14 +15,16 @@
     };
     kernelPackages = pkgs.linuxPackages_zen;
     kernelParams = [
+      "pti=on"
       "quiet"
-      "udev.log_level=3"
+      "log_level=3"
       "nowatchdog"
     ];
     supportedFilesystems = [ "ntfs" ];
   };
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
+  environment.sessionVariables.TERMINAL = [ "wezterm" ];
 
 
   time.timeZone = "Asia/Shanghai";
@@ -69,7 +71,6 @@
 
   users.defaultUserShell = pkgs.zsh;
   environment.pathsToLink = [ "/share/zsh" ];
-  environment.sessionVariables.TERMINAL = [ "wezterm" ];
 
   environment.persistence."/persist" = {
     hideMounts = true;
@@ -124,7 +125,6 @@
   };
 
   documentation.nixos.enable = false;
-
 
   system.stateVersion = "unstable";
 }
