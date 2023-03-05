@@ -93,6 +93,7 @@
 
   programs.fuse.userAllowOther = true;
   services = {
+    fstrim.enable = true;
     openssh.enable = true;
     printing.enable = true;
     fwupd.enable = true;

@@ -5,11 +5,11 @@ let
     {
       inherit device;
       fsType = "btrfs";
-      options = [ "subvol=${subvol}" "compress=zstd" ];
+      options = [ "subvol=${subvol}" "compress=zstd" "noatime" ];
     }
     extraConfig
   ];
-
+  #@TODO using by-label
   btrfsSubvolMain = btrfsSubvol "/dev/disk/by-uuid/0da50d1b-70be-4074-8a87-f9b95e35f701";
 
 in

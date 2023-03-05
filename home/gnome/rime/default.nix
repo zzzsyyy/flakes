@@ -4,6 +4,7 @@
 }:
 
 {
+  # @TODO https://github.com/NixOS/nixpkgs/pull/219315
   i18n.inputMethod = {
     enabled = "ibus";
     ibus.engines = [
