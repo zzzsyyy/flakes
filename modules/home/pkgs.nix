@@ -27,6 +27,7 @@ let
     nodePackages.pnpm
     hugo
     go
+    julia
   ];
 
   unix-tools = with pkgs; [

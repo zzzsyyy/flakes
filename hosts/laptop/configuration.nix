@@ -14,6 +14,7 @@
       efi.canTouchEfiVariables = false; #@TODO
     };
     kernelPackages = pkgs.linuxPackages_zen;
+    #@TODO
     kernelParams = [
       "pti=on"
       "quiet"
