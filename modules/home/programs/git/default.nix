@@ -16,5 +16,6 @@
       init.defaultBranch = "main";
       fetch.prune = true;
     };
+    delta.enable = true;
   };
 }

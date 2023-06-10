@@ -33,9 +33,7 @@ let
   unix-tools = with pkgs; [
     bat
     neofetch
-    viu
-    man
-    htop
+    bottom
     aria
     scrcpy
     bind
@@ -46,7 +44,7 @@ let
   office = with pkgs; [
     libreoffice-fresh-unwrapped
     gnumeric
-    calibre
+    #calibre
     logseq
     octave
     texlive.combined.scheme-full
@@ -59,14 +57,13 @@ let
     # gtkcord4 # discord (WIP)
     tdesktop
     transmission-gtk
-    gaphor
-    gimp
+    #gaphor
+    #gimp
     # nixos-conf-editor
     # nix-software-center
-    minder
+    #minder
     asciinema
     megasync
-    nautilus-open-any-terminal
   ];
 
 in

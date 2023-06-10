@@ -35,6 +35,7 @@ in
         "gnomeTheme.normalWidthTabs" = true;
         "gnomeTheme.newTabFullIcon" = true;
         "gnomeTheme.searchBar" = true;
+        "gnomeTheme.extensions.tabCenterReborn" = true;
       };
       extraConfig = builtins.readFile "${userjs}";
       userChrome = ''

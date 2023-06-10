@@ -4,11 +4,10 @@
 }: {
   imports = [
     ./git
-    ./starship
-    ./wezterm
+    ./fish
+    ./kitty
     ./dconf
     ./firefox
-    ./zsh
     ./neovim
     ./vscode
     ./mpv
@@ -21,9 +20,13 @@
 
   programs.zoxide = {
     enable = true;
-    enableZshIntegration = true;
+    enableFishIntegration = true;
     options = [
-      # "--cmd cd"
+      #"--cmd cd"
     ];
+  };
+
+  programs.tealdeer = {
+    enable = true;
   };
 }

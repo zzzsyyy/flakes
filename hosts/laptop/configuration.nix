@@ -25,7 +25,7 @@
   };
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
-  environment.sessionVariables.TERMINAL = [ "wezterm" ];
+  environment.sessionVariables.TERMINAL = [ "kitty" ];
 
 
   time.timeZone = "Asia/Shanghai";
@@ -93,6 +93,7 @@
     enableSSHSupport = true;
   };
   programs.fish.enable = true;
+  programs.adb.enable = true;
   programs.fuse.userAllowOther = true;
   services = {
     fstrim.enable = true;
