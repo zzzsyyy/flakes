@@ -16,14 +16,10 @@ with lib.hm.gvariant;
         "clipboard-indicator@tudmotu.com"
         "date-menu-formatter@marcinjakubowski.github.com"
         "gsconnect@andyholmes.github.io"
-        "openweather-extension@jenslody.de"
-        "bluetooth-quick-connect@bjarosze.gmail.com"
         "nightthemeswitcher@romainvigier.fr"
         "Rounded_Corners@lennart-k"
         "rounded-window-corners@yilozt"
         "customize-ibus@hollowman.ml"
-        "dash-to-dock@micxgx.gmail.com"
-        "space-bar@luchrioh"
       ];
     };
     "org.gnome.desktop.peripherals.touchpad" = {

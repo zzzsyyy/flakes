@@ -70,8 +70,8 @@
     };
   };
 
-  users.defaultUserShell = pkgs.zsh;
-  environment.pathsToLink = [ "/share/zsh" ];
+  users.defaultUserShell = pkgs.fish;
+  environment.pathsToLink = [ "/share/fish" ];
 
   environment.persistence."/persist" = {
     hideMounts = true;
@@ -92,7 +92,7 @@
     enable = true;
     enableSSHSupport = true;
   };
-
+  programs.fish.enable = true;
   programs.fuse.userAllowOther = true;
   services = {
     fstrim.enable = true;
@@ -106,7 +106,6 @@
       alsa.support32Bit = true;
       pulse.enable = true;
       wireplumber.enable = true;
-      media-session.enable = false;
     };
     # zerotierone = {
     #   enable = true;

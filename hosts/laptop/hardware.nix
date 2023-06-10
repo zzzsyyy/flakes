@@ -10,7 +10,7 @@ let
     extraConfig
   ];
   #@TODO using by-label
-  btrfsSubvolMain = btrfsSubvol "/dev/disk/by-uuid/0da50d1b-70be-4074-8a87-f9b95e35f701";
+  btrfsSubvolMain = btrfsSubvol "/dev/disk/by-uuid/7143cc39-c607-486f-866d-a703efd5d956";
 
 in
 
@@ -37,7 +37,7 @@ in
   ## sudo chmod -R a+rwX,o-rw /home/$USER
   fileSystems."/home" = btrfsSubvolMain "@home" { };
   fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/4066-EE27";
+    device = "/dev/disk/by-uuid/10CC-BC59";
     fsType = "vfat";
   };
   
@@ -47,5 +47,4 @@ in
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
   # high-resolution display
-  hardware.video.hidpi.enable = lib.mkDefault true;
 }

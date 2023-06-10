@@ -3,7 +3,8 @@ local wezterm = require 'wezterm'
 local function get_theme()
 	local _time = os.date("*t").hour
 	if _time >= 5 and _time < 20 then
-		return "dawnfox"
+		--return "dawnfox"
+        return "nordfox"
   else
     return "nordfox"
 	end
@@ -28,7 +29,7 @@ local config = {
     },
 
     -- Fonts
-    font = wezterm.font_with_fallback {'Iosevka ZT', 'Symbols Nerd Font Mono', 'Font Awesome 6 Pro', monospace},
+    font = wezterm.font_with_fallback {'Iosevka ZT', 'Noto Sans CJK SC', monospace},
     font_size = 13,
 
     -- Tab bar

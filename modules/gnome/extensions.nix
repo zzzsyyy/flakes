@@ -9,17 +9,17 @@
     clipboard-indicator
     date-menu-formatter
     openweather
-    bluetooth-quick-connect
+    #bluetooth-quick-connect
     caffeine
     dash-to-panel
     unite
-    dash-to-dock
+    #dash-to-dock
     night-theme-switcher
     rounded-window-corners
     rounded-corners
     customize-ibus
-    space-bar
-    workspace-switcher-manager
+    #space-bar
+    #workspace-switcher-manager
     fuzzy-app-search
   ];
 }

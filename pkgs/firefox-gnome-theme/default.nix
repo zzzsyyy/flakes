@@ -4,13 +4,13 @@
 
 stdenvNoCC.mkDerivation rec {
   pname = "firefox-gnome-theme";
-  version = "20230218";
+  version = "20230610";
 
   src = fetchFromGitHub {
     repo = "firefox-gnome-theme";
     owner = "rafaelmardojai";
-    rev = "0d1349acdfe006dfd94cfa3bae58151450ebe844";
-    hash = "sha256-mqRF41HJkUn2zdnDuG2K2repBRt3SeleVVkHxsUu6no=";
+    rev = "25a9ab399e0c3c21d28d25d428871d7ed8a3719a";
+    hash = "sha256-Cqwqwu2KqHJOwh3sldU59+kz+gQM2f2Z9ZbX6TjzUOg=";
   };
 
   dontConfigure = true;
