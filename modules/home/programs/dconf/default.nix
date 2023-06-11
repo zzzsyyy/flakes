@@ -22,6 +22,15 @@ with lib.hm.gvariant;
         "customize-ibus@hollowman.ml"
       ];
     };
+    "org/gnome/shell" = {
+      favorite-apps = [
+        "org.gnome.Nautilus.desktop"
+        "firefox.desktop"
+        "code.desktop"
+        "org.telegram.desktop.desktop"
+        "kitty.desktop"
+      ];
+    };
     "org/gnome/desktop/peripherals/touchpad" = {
       tap-and-drag-lock = true;
       tap-to-click = true;
@@ -37,6 +46,15 @@ with lib.hm.gvariant;
       remove-old-temp-files = true;
       remove-old-trash-files = true;
       old-files-age = 14;
+    };
+    "org/gnome/shell/extensions/nightthemeswitcher/shell-variants" = {
+      enabled = true;
+      day = "Default-light";
+    };
+    "org/gnome/shell/extensions/nightthemeswitcher/gtk-variants" = {
+      enabled = true;
+      day = "adw-gtk3";
+      night = "adw-gtk3-dark";
     };
   };
 }

@@ -64,6 +64,8 @@ let
     #minder
     asciinema
     megasync
+    adw-gtk3
+    default-light
   ];
 
 in

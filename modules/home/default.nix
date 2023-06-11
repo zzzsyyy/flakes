@@ -8,10 +8,10 @@
 
   gtk = {
     enable = true;
-    theme = {
-      package = pkgs.adw-gtk3;
-      name = "Adw-gtk3";
-    };
+    #theme = {
+    #  package = pkgs.adw-gtk3;
+    #  name = "Adw-gtk3";
+    #};
     iconTheme = {
       package = pkgs.papirus-icon-theme;
       name = "Papirus";

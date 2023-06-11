@@ -31,13 +31,11 @@
       gnome-firmware
       celluloid # video
       amberol # music
-      nautilus-open-any-terminal
     ]) ++ (with pkgs.gnome; [
       gnome-tweaks
       dconf-editor
       # loupe # https://github.com/NixOS/nixpkgs/pull/202692
-      ghex
-      gnome-sound-recorder
+      # gnome-sound-recorder
       gnome-power-manager
     ]);
   };
