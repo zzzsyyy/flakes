@@ -30,7 +30,7 @@ in
         };
         nixpkgs = {
           overlays =
-            # (import ../overlays) ++
+            (import ../overlays) ++
             [ (import ../pkgs).overlay ]
               ++ [
               (final: prev: {

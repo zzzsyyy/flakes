@@ -56,7 +56,6 @@ let
     # fractal-next # matrix
     # gtkcord4 # discord (WIP)
     tdesktop
-    transmission-gtk
     #gaphor
     #gimp
     # nixos-conf-editor
