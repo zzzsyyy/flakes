@@ -5,13 +5,11 @@
 }:
 
 {
-  imports = [
-    # ./wireguard.nix
-  ];
-  environment.systemPackages = with pkgs;[
-    clash-verge
-    # clash-meta
-  ];
+  programs.clash-verge = {
+    enable = true;
+    tunMode = true;
+    autoStart = true;
+  };
 
   networking = {
     hostName = "zzzsy";
