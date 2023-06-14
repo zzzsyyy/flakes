@@ -28,6 +28,7 @@ let
     hugo
     go
     julia
+    just
   ];
 
   unix-tools = with pkgs; [

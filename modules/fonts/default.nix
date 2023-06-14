@@ -10,7 +10,7 @@
       noto-fonts-emoji
       (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
       (iosevka-bin.override { variant = "sgr-iosevka-term-ss05"; })
-      # maple-mono
+      maple-mono
       wqy_zenhei
       ((iosevka.override {
         privateBuildPlan = {

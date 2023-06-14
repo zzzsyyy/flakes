@@ -7,8 +7,6 @@
     appindicator
     removable-drive-menu
     clipboard-indicator
-    date-menu-formatter
-    openweather
     caffeine
     dash-to-panel
     unite
@@ -16,6 +14,6 @@
     rounded-window-corners
     rounded-corners
     customize-ibus
-    fuzzy-app-search
+    paperwm
   ];
 }

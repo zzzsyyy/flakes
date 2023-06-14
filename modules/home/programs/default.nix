@@ -13,16 +13,22 @@
     ./mpv
   ];
 
-  programs.lsd = {
+  programs.exa = {
     enable = true;
     enableAliases = true;
+    extraOptions = [
+      "--group-directories-first"
+      "--header"
+    ];
+    icons = true;
+    git = true;
   };
 
   programs.zoxide = {
     enable = true;
     enableFishIntegration = true;
     options = [
-      #"--cmd cd"
+      "--cmd cd"
     ];
   };
 
