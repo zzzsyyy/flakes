@@ -7,6 +7,7 @@ let
     nixpkgs-review
     nix-index
     nix-du
+    nix-tree
   ];
 
   build-tools = with pkgs; [
@@ -43,7 +44,8 @@ let
   ];
 
   office = with pkgs; [
-    libreoffice-fresh-unwrapped
+    #libreoffice-fresh-unwrapped
+    wpsoffice
     gnumeric
     #calibre
     logseq
@@ -59,8 +61,6 @@ let
     tdesktop
     #gaphor
     #gimp
-    # nixos-conf-editor
-    # nix-software-center
     #minder
     asciinema
     megasync

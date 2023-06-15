@@ -31,6 +31,11 @@
             };
           };
           ligations.inherits = "dlig";
+          widths.normal = {
+            shape = 600;
+            menu = 5;
+            css = "normal";
+          };
         };
         set = "zt";
       }).overrideAttrs ( old: {

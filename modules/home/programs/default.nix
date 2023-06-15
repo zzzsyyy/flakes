@@ -35,4 +35,8 @@
   programs.tealdeer = {
     enable = true;
   };
+
+  programs.obs-studio = {
+    enable = true;
+  };
 }

@@ -13,7 +13,6 @@
     "editor.lineNumbers": "relative",
     "workbench.colorTheme": "Vitesse Light Soft",
     
-    // Editor
     "editor.accessibilitySupport": "off",
     "editor.find.addExtraSpaceOnTop": false,
     "editor.multiCursorModifier": "ctrlCmd",
@@ -66,7 +65,6 @@
       "**/yarn.lock": true
     },
   
-    // Extension configs
     "emmet.showSuggestionsAsSnippets": true,
     "emmet.triggerExpansionOnTab": false,
 
