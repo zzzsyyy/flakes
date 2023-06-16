@@ -8,16 +8,16 @@ in
 
 stdenvNoCC.mkDerivation rec {
   pname = "plangothic";
-  version = "0.8.5735";
+  version = "0.8.5741";
 
   srcs = [
     (fetchurl {
       url = "${preurl}/V${version}/PlangothicP1-Regular.fallback.ttf";
-      hash = "sha256-0HYLWHUvBO08Dh3ljB6Zwmx1xFA+7qCGQb822tadIEM=";
+      hash = "sha256-C5ggx/vNhnXMmvcul5u2RbraRfp9MH9/nnXSZuYuUV4=";
     })
     (fetchurl {
       url = "${preurl}/V${version}/PlangothicP2-Regular.ttf";
-      hash = "sha256-2bXAd44FAf9laftKhSNehgUXJ8Kw7nr20Qpl/xTKBkA=";
+      hash = "sha256-obLY0DuKMzq/tl6Pi9aHtD5Uy2CrUlyC4FUU7ljDnpc=";
     })
   ];
 

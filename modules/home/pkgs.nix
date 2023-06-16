@@ -30,6 +30,7 @@ let
     go
     julia
     just
+    libjxl
   ];
 
   unix-tools = with pkgs; [

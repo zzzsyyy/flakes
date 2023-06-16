@@ -6,13 +6,13 @@
 
 stdenv.mkDerivation rec {
   pname = "librime-lua";
-  version = "20221007";
+  version = "20230115";
 
   src = fetchFromGitHub {
     owner = "hchunhui";
     repo = pname;
-    rev = "0d8917b89dbab2c127f1887d2794e12b6383c3a";
-    hash = "sha256-sCbE9kYS0pyWdLsOJ9L3fBu3+nDmSw/ere9K7s9g9g4=";
+    rev = "03a2bd9e172549cb16c0718b2c9b68e8c5678085";
+    hash = "sha256-3h1NfgdruFQJQGyvjfSH4mmOpcKFbJV5oDZEUK07ouE=";
   };
 
   buildInputs = [ lua5_4 ];
@@ -20,7 +20,5 @@ stdenv.mkDerivation rec {
   installPhase = ''
     mkdir -p $out
     cp -r $src/* $out
-    chmod +w $out/src/types_ext.cc
-    sed '127c return {}; auto t = (an<T>) c->Create(Ticket());' $src/src/types_ext.cc > $out/src/types_ext.cc
   '';
 }
