@@ -9,7 +9,7 @@ stdenvNoCC.mkDerivation rec {
   src = fetchurl {
     url = "https://codeberg.org/attachments/35f2b497-8af1-4712-8694-ce051374d36e";
     name = "my-fonts${version}.tar.xz";
-    #hash = "sha256-ro/xC9z3Ssvq3JyYVKwkjEBCFESV2Vq1HnpesOShooo=";
+    hash = "sha256-SGfzAE4ZTRQ7xW0nhXTFtNlvnLRCfUkFhUpn79awUVI=";
   };
   sourceRoot = ".";
 

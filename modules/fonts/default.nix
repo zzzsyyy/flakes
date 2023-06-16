@@ -6,12 +6,12 @@
       noto-fonts
       noto-fonts-cjk
       plangothic
-      #my-fonts
+      my-fonts
       noto-fonts-emoji
       (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
-      (iosevka-bin.override { variant = "sgr-iosevka-term-ss05"; })
       maple-mono
       wqy_zenhei
+      lxgw-wenkai-screen
       ((iosevka.override {
         privateBuildPlan = {
           family = "Iosevka ZT";
