@@ -3,7 +3,7 @@
 {
   programs.kitty = {
     enable = true;
-    font.name = "Iosevka ZT";
+    font.name = "Iosevka ZT Extended";
     font.size = 12;
     shellIntegration.enableFishIntegration = true;
     settings = {
