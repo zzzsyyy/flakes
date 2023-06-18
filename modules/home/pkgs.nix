@@ -31,6 +31,7 @@ let
     julia
     just
     libjxl
+    flaca
   ];
 
   unix-tools = with pkgs; [
