@@ -1,6 +1,6 @@
-{ lib, fetchFromGitHub, pkgs }:
+{ lib, fetchFromGitHub, rustPlatform }:
 
-pkgs.small.rustPlatform.buildRustPackage rec {
+rustPlatform.buildRustPackage rec {
   pname = "flaca";
   version = "2.2.1";
 

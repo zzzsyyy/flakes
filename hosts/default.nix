@@ -7,7 +7,6 @@
 let
   inputs = self.inputs;
   nixpkgs-stable = inputs.nixpkgs-stable;
-  nixpkgs-small = inputs.nixpkgs-small;
 
   user = "zzzsy";
 
@@ -36,14 +35,6 @@ in
               ++ [
               (final: prev: {
                 stable = import nixpkgs-stable {
-                  inherit system;
-                  config.allowUnfree = true;
-                };
-              })
-            ]
-            ++ [
-              (final: prev: {
-                small = import nixpkgs-small {
                   inherit system;
                   config.allowUnfree = true;
                 };

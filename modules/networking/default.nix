@@ -5,12 +5,8 @@
 }:
 
 {
-  programs.clash-verge = {
-    enable = true;
-    tunMode = true;
-    autoStart = true;
-  };
-
+  #@TODO
+  # hysteria
   networking = {
     hostName = "zzzsy";
     useDHCP = false;

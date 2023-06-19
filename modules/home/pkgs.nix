@@ -32,6 +32,7 @@ let
     just
     libjxl
     flaca
+    hysteria
   ];
 
   unix-tools = with pkgs; [
@@ -46,8 +47,8 @@ let
   ];
 
   office = with pkgs; [
-    #libreoffice-fresh-unwrapped
-    wpsoffice
+    libreoffice-fresh-unwrapped
+    #wpsoffice
     gnumeric
     #calibre
     logseq

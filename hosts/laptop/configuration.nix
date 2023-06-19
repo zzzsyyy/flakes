@@ -39,6 +39,10 @@
     package = pkgs.nixUnstable;
     settings.experimental-features = [ "nix-command" "flakes" ];
     settings.auto-optimise-store = true;
+    #settings = {
+    #  max-jobs = 1;
+    #  cores = 2;
+    #};
     settings.substituters = [
       "https://mirrors.ustc.edu.cn/nix-channels/store"
       "https://mirror.sjtu.edu.cn/nix-channels/store"
