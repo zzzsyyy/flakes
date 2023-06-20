@@ -54,6 +54,7 @@ let
     logseq
     octave
     texlive.combined.scheme-full
+    asciidoc-full
     # hunspellq
   ];
 
