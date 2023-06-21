@@ -16,6 +16,7 @@ in
     package = pkgs.wrapFirefox pkgs.firefox-bin-unwrapped {
       extraPolicies = {
         DisablePocket = true;
+        DisableTelemetry = true;
         EnableTrackingProtection = {
           Value = true;
           Locked = true;
