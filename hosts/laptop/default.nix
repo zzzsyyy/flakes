@@ -8,6 +8,7 @@
     ../../modules/networking
     ../../modules/gnome
     ../../modules/sops
+    #../../modules/flatpak
     # ../../modules/home
   ];
 }

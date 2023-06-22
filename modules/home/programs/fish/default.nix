@@ -11,7 +11,7 @@
         body = "__fish_default_command_not_found_handler $argv[1]";
         onEvent = "fish_command_not_found";
       };
-     gitignore = "curl -sL https://www.gitignore.io/api/$argv";
+      gitignore = "curl -sL https://www.gitignore.io/api/$argv";
     };
     shellAliases = {
       pb = "curl -F 'c=@-' 'https://fars.ee/'";
@@ -25,7 +25,7 @@
       icat = "kitty +kitten icat";
     };
     shellAbbrs = {
-        gc1 = "git clone --depth=1 ";
+      gc1 = "git clone --depth=1 ";
     };
     plugins = [
       {

@@ -1,5 +1,5 @@
 [
-    (final: prev: {
+  (final: prev: {
     # Until nixpkgs#215316 is resolved
     transmission = prev.transmission.overrideAttrs (old: {
       patches = [ ];

@@ -33,6 +33,7 @@ let
     libjxl
     flaca
     hysteria
+    nvfetcher
   ];
 
   unix-tools = with pkgs; [

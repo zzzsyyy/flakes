@@ -31,7 +31,7 @@ in
         nixpkgs = {
           overlays =
             (import ../overlays) ++
-            [ (import ../pkgs).overlay ]
+              [ (import ../pkgs).overlay ]
               ++ [
               (final: prev: {
                 stable = import nixpkgs-stable {

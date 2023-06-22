@@ -14,10 +14,11 @@
       core-utilities.enable = false;
       gnome-online-accounts.enable = false;
       sushi.enable = true;
+      gnome-browser-connector.enable = true;
     };
     environment.gnome.excludePackages = (with pkgs; [
       gnome-tour
-    #]) ++ (with pkgs.gnome; [
+      #]) ++ (with pkgs.gnome; [
     ]);
     programs.dconf.enable = true;
     environment.systemPackages = (with pkgs; [

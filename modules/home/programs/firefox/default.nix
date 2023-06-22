@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 let
 
@@ -27,6 +27,9 @@ in
     };
     profiles.default = {
       settings = {
+        "browser.aboutwelcome.enabled" = false;
+        "browser.discovery.enabled" = false;
+        "browser.bookmarks.addedImportButton" = false;
         "browser.bookmarks.showMobileBookmarks" = true;
         "fission.autostart" = true;
         "media.peerconnection.enabled" = false;
@@ -38,7 +41,60 @@ in
         "gnomeTheme.searchBar" = true;
         "gnomeTheme.extensions.tabCenterReborn" = true;
       };
-      extraConfig = builtins.readFile "${userjs}";
+      search = {
+        force = true;
+        default = "Google UK";
+        engines = {
+          "Google".metaData.hidden = true;
+          "Baidu".metaData.hidden = true;
+          "Bing".metaData.hidden = true;
+          "Amazon".metaData.hidden = true;
+          "Wikipedia (en)".metaData.alias = "@w";
+          "Google UK" = {
+            urls = [{
+              template = "https://www.google.co.uk/search";
+              params = [
+                { name = "q"; value = "{searchTerms}"; }
+              ];
+            }];
+            definedAliases = [ "@g" ];
+          };
+          "GitHub" = {
+            urls = [{
+              template = "https://github.com/search";
+              params = [
+                { name = "q"; value = "{searchTerms}"; }
+              ];
+            }];
+            definedAliases = [ "@gh" ];
+          };
+          "Nix" = {
+            urls = [{
+              template = "https://search.nixos.org/packages";
+              params = [
+                { name = "channel"; value = "unstable"; }
+                { name = "query"; value = "{searchTerms}"; }
+              ];
+            }];
+            icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+            definedAliases = [ "@np" ];
+          };
+          "Nixpkgs Issues" = {
+            urls = [{
+              template = "https://github.com/NixOS/nixpkgs/issues";
+              params = [
+                { name = "q"; value = "{searchTerms}"; }
+              ];
+            }];
+            definedAliases = [ "@ni" ];
+          };
+        };
+      };
+      extraConfig = lib.strings.concatStrings [
+        (builtins.readFile "${userjs}")
+        ''
+        ''
+      ];
       userChrome = ''
         @import "${userChrome}";
         ${myChrome}

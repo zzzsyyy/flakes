@@ -82,7 +82,7 @@
     directories = [
       "/var"
       "/root"
-     "/etc/NetworkManager/system-connections"
+      "/etc/NetworkManager/system-connections"
     ];
     files = [
       "/etc/machine-id"
