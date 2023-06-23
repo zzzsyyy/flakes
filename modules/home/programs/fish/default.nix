@@ -37,6 +37,15 @@
           hash = "sha256-zmEa/GJ9jtjzeyJUWVNSz/wYrU2FtqhcHdgxzi6ANHg=";
         };
       }
+      {
+        name = "auto-venv";
+        src = pkgs.fetchFromGitHub {
+          owner = "nakulj";
+          repo = "auto-venv";
+          rev = "ec9ff89d9887e87fbf4ce22812163770b102295a";
+          hash = "sha256-x9HzTBhpmoH/UeAOMj0f8LYTrQuhNElWa2gBEjol/h8=";
+        };
+      }
     ];
   };
 }

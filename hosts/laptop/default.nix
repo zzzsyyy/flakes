@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports = [
@@ -9,6 +9,7 @@
     ../../modules/gnome
     ../../modules/sops
     #../../modules/flatpak
+    ../../modules/virt
     # ../../modules/home
   ];
 }
