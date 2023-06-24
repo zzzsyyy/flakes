@@ -11,7 +11,7 @@
         librime = (pkgs.librime.overrideAttrs (old: {
           buildInputs = old.buildInputs ++ [ pkgs.lua5_4 ];
         })).override {
-          plugins = with pkgs; [ librime-lua librime-octagram ];
+          plugins = with pkgs.my; [ librime-lua librime-octagram ];
         };
       })
     ];

@@ -30,10 +30,10 @@ in
         };
         nixpkgs = {
           overlays =
-            (import ../overlays) ++
-              [ (import ../pkgs).overlay ]
+            (import ../overlays)
               ++ [
               (final: prev: {
+                my = self.packages."${system}";
                 stable = import nixpkgs-stable {
                   inherit system;
                   config.allowUnfree = true;

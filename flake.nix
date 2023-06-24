@@ -14,12 +14,18 @@
     { self, nixpkgs, ... } @ inputs:
     let
       system = "x86_64-linux";
-      pkgs = inputs.nixpkgs.legacyPackages.x86_64-linux;
+      pkgs = inputs.nixpkgs.legacyPackages.${system};
+      names = with builtins; attrNames (readDir ./pkgs);
+      genPkg = name: {
+        inherit name;
+        value = pkgs.callPackage (./pkgs + "/${name}") { };
+      };
     in
     {
       nixosConfigurations = import ./hosts {
         inherit system self nixpkgs;
       };
+      packages.${system} = builtins.listToAttrs (map genPkg names);
       devShells.${system} = {
         secret = with pkgs; mkShell {
           nativeBuildInputs = [

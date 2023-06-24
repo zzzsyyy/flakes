@@ -31,7 +31,7 @@ let
     julia
     just
     libjxl
-    flaca
+    my.flaca
     hysteria
     nvfetcher
   ];
@@ -70,7 +70,7 @@ let
     asciinema
     megasync
     adw-gtk3
-    default-light
+    my.default-light
   ];
 
 in

@@ -5,14 +5,14 @@
     fonts = with pkgs; [
       noto-fonts
       noto-fonts-cjk
-      plangothic
-      my-fonts
       noto-fonts-emoji
       (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
       maple-mono
       wqy_zenhei
-      lxgw-wenkai-screen
-      iosevka-zt
+      my.lxgw-wenkai-screen
+      my.plangothic
+      my.my-fonts
+      my.iosevka-zt
     ];
     fontconfig = {
       localConf = builtins.readFile (./fontconfig.conf);

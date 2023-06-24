@@ -2,9 +2,9 @@
 
 let
 
-  userChrome = "${pkgs.firefox-gnome-theme}/share/firefox-gnome-theme/userChrome.css";
-  userjs = "${pkgs.firefox-gnome-theme}/share/firefox-gnome-theme/configuration/user.js";
-  userContent = "${pkgs.firefox-gnome-theme}/share/firefox-gnome-theme/userContent.css";
+  userChrome = "${pkgs.my.firefox-gnome-theme}/share/firefox-gnome-theme/userChrome.css";
+  userjs = "${pkgs.my.firefox-gnome-theme}/share/firefox-gnome-theme/configuration/user.js";
+  userContent = "${pkgs.my.firefox-gnome-theme}/share/firefox-gnome-theme/userContent.css";
   myChrome = builtins.readFile ./myChrome.css;
   myContent = builtins.readFile ./myContent.css;
 
