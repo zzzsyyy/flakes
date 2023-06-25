@@ -14,7 +14,6 @@ let
     cmake
     # gcc
     # gdb
-    # xmake
     clang
     clang-tools
     sassc
@@ -31,7 +30,7 @@ let
     julia
     just
     libjxl
-    my.flaca
+    flaca
     hysteria
     nvfetcher
   ];
@@ -49,7 +48,6 @@ let
 
   office = with pkgs; [
     libreoffice-fresh-unwrapped
-    #wpsoffice
     gnumeric
     #calibre
     logseq
