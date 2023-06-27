@@ -10,6 +10,7 @@
     services.xserver.desktopManager.gnome.enable = true;
     services.xserver.excludePackages = [ pkgs.xterm ];
     services.xserver.desktopManager.xterm.enable = false;
+    services.xserver.gdk-pixbuf.modulePackages = with pkgs; [ libjxl-with-plugin ];
     services.gnome = {
       core-utilities.enable = false;
       gnome-online-accounts.enable = false;
@@ -18,13 +19,15 @@
     };
     environment.gnome.excludePackages = (with pkgs; [
       gnome-tour
+      orca
       #]) ++ (with pkgs.gnome; [
     ]);
     programs.dconf.enable = true;
     environment.systemPackages = (with pkgs; [
-      celluloid # video
+      # celluloid # using mpv with osc
       amberol # music
       feh # image
+      gnome-text-editor
     ]) ++ (with pkgs.gnome; [
       nautilus # file
       file-roller # archive

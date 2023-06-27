@@ -13,4 +13,11 @@
       };
     });
   })
+  (final: prev: {
+    libjxl-with-plugin = prev.libjxl.overrideAttrs (old: {
+      cmakeFlags = old.cmakeFlags ++ [ "-DJPEGXL_ENABLE_PLUGINS=ON" ];
+      doCheck = false;
+      buildInputs = old.buildInputs ++ [ prev.gdk-pixbuf ];
+    });
+  })
 ]
