@@ -44,6 +44,7 @@ let
     bind
     ripgrep
     sops
+    ffmpeg_6
   ];
 
   office = with pkgs; [
