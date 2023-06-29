@@ -39,7 +39,6 @@ let
     bat
     neofetch
     bottom
-    aria
     scrcpy
     bind
     ripgrep
@@ -70,6 +69,10 @@ let
     megasync
     adw-gtk3
     my.default-light
+    (ventoy.override {
+      defaultGuiType = "gtk3";
+      withGtk3 = true;
+    })
   ];
 
 in

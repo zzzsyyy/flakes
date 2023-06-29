@@ -35,6 +35,7 @@
       gnome-tweaks
       gnome-calendar
       dconf-editor
+      gnome-disk-utility
       # loupe # https://github.com/NixOS/nixpkgs/pull/202692
       # gnome-sound-recorder
       # gnome-power-manager
