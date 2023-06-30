@@ -4,11 +4,11 @@
 
 stdenvNoCC.mkDerivation rec {
   pname = "iosevka-zt";
-  version = "24.1.3-new";
+  version = "24.1.4";
 
   src = fetchzip {
     url = "https://github.com/zzzsyyy/Iosevka/releases/download/${version}/iosevka.zip";
-    hash = "sha256-WAj8821u01pVM7cYFemTTCgjRLtCOHxed6wwb6+fxKk=";
+    hash = "sha256-E11X8OXAZYY2Eog33vjeVbE/v1TYkFOhehSlmt+EFYc=";
   };
 
   installPhase = ''

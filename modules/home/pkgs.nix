@@ -8,6 +8,7 @@ let
     nix-index
     nix-du
     nix-tree
+    nix-output-monitor
   ];
 
   build-tools = with pkgs; [
@@ -44,6 +45,7 @@ let
     ripgrep
     sops
     ffmpeg_6
+    glow
   ];
 
   office = with pkgs; [
