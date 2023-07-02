@@ -8,8 +8,18 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     sops-nix.url = "github:Mic92/sops-nix";
     impermanence.url = "github:nix-community/impermanence";
+    # flake-parts.url = "github:hercules-ci/flake-parts";
   };
 
+  /*outputs = inputs@{ flake-parts, ... }:
+    flake-parts.lib.mkFlake { inherit inputs; } {
+      flake = {
+        # Put your original flake attributes here.
+      };
+      systems = [
+        "x86_64-linux"
+      ];
+    };*/
   outputs =
     { self, nixpkgs, ... } @ inputs:
     let

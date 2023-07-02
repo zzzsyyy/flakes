@@ -1,0 +1,10 @@
+== TODO
+
+* [ ] using link:https://flake.parts[flake parts]
+* [ ] secrets by ?
+* [ ] pkgs using link:https://github.com/berberman/nvfetcher[nvfetcher]
+* [ ] moduliser les conf
+* [x] shortcut using link:just.systems[justfile]
+* [ ] Rime (using patch & link:https://github.com/iDvel/rime-ice[Rime-Ice])
+
+...

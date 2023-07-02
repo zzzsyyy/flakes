@@ -1,5 +1,3 @@
-{ ... }:
-
 {
   programs.kitty = {
     enable = true;
@@ -12,6 +10,7 @@
       background_opacity = "0.95";
       hide_window_decorations = true;
     };
+    # https://github.com/kovidgoyal/kitty-themes/blob/master/themes.json
     theme = "Nord";
   };
 }
