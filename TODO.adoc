@@ -6,5 +6,8 @@
 * [ ] moduliser les conf
 * [x] shortcut using link:just.systems[justfile]
 * [ ] Rime (using patch & link:https://github.com/iDvel/rime-ice[Rime-Ice])
-
+* [ ] using link:https://github.com/cachix/pre-commit-hooks.nix[pre-commit]
+* [ ] Secure boot using link:https://github.com/nix-community/lanzaboote[lanzaboote]
+* [ ] Some dev environnment: slidev hugo python rust etc.
+* [ ] Overlays
 ...

@@ -1,17 +1,27 @@
-{ config
+{ lib
+, config
+, nixosConfig
 , pkgs
 , ...
 }: {
   imports = [
-    ./git
-    ./fish
-    ./kitty
-    ./dconf
-    ./firefox
+    ./desktop
+    ./dev.nix
+    ./fish.nix
+    ./kitty.nix
     ./neovim
-    ./vscode
+    ./pkgs.nix
     ./mpv
+    ./firefox
   ];
+
+  programs.obs-studio = {
+    enable = true;
+    plugins = with pkgs.obs-studio-plugins; [
+      obs-gstreamer
+      obs-vaapi
+    ];
+  };
 
   programs.exa = {
     enable = true;
@@ -30,10 +40,6 @@
   };
 
   programs.tealdeer = {
-    enable = true;
-  };
-
-  programs.obs-studio = {
     enable = true;
   };
 }

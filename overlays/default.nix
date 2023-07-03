@@ -1,6 +1,6 @@
 [
   (final: prev: {
-    # Until nixpkgs#215316 is resolved
+    #@TODO https://github.com/NixOS/nixpkgs/pull/241146
     transmission = prev.transmission.overrideAttrs (old: {
       patches = [ ];
       nativeBuildInputs = old.nativeBuildInputs ++ [ prev.python3 ];
@@ -13,11 +13,11 @@
       };
     });
   })
-  (final: prev: {
-    libjxl-with-plugin = prev.libjxl.overrideAttrs (old: {
-      cmakeFlags = old.cmakeFlags ++ [ "-DJPEGXL_ENABLE_PLUGINS=ON" ];
-      doCheck = false;
-      buildInputs = old.buildInputs ++ [ prev.gdk-pixbuf ];
-    });
-  })
+  # (final: prev: {
+  #   libjxl-with-plugin = prev.libjxl.overrideAttrs (old: {
+  #     cmakeFlags = old.cmakeFlags ++ [ "-DJPEGXL_ENABLE_PLUGINS=ON" ];
+  #     doCheck = false;
+  #     buildInputs = old.buildInputs ++ [ prev.gdk-pixbuf ];
+  #   });
+  # })
 ]

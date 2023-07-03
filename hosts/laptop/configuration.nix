@@ -4,6 +4,7 @@
   imports =
     [
       ./hardware.nix
+      ./services.nix
     ];
 
   boot = {
@@ -35,26 +36,6 @@
     supportedLocales = [ "zh_CN.UTF-8/UTF-8" "en_US.UTF-8/UTF-8" ];
   };
 
-  nix = {
-    package = pkgs.nixUnstable;
-    settings = {
-      experimental-features = [ "nix-command" "flakes" ];
-      auto-optimise-store = true;
-      # max-jobs = 1;
-      # cores = 2;
-      substituters = [
-        "https://mirrors.ustc.edu.cn/nix-channels/store"
-        "https://mirror.sjtu.edu.cn/nix-channels/store"
-        "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
-      ];
-    };
-    gc = {
-      automatic = true;
-      options = "--delete-older-than 5d";
-      dates = "Sun 14:00";
-    };
-  };
-
   nixpkgs.config.allowUnfree = true;
 
   sound.enable = true;
@@ -64,17 +45,6 @@
     bluetooth.enable = true;
     cpu.amd.updateMicrocode = true;
   };
-
-  users = {
-    mutableUsers = false;
-    users.zzzsy = {
-      hashedPassword = "$6$3mI6lDngcB2nrJx5$IG1j2hHtg0xhvrcFSO99zW1b8Lil4rgWLjgppTe3ALA1ftfLmDnHdAeuhtI/Zc0AwvsNThQIWxtAu/gHN1gfD1";
-      isNormalUser = true;
-      extraGroups = [ "wheel" "networkmanager" "video" "libvirtd" ];
-    };
-  };
-
-  users.defaultUserShell = pkgs.fish;
   environment.pathsToLink = [ "/share/fish" ];
 
   environment.persistence."/persist" = {
@@ -99,38 +69,6 @@
   programs.fish.enable = true;
   programs.adb.enable = true;
   programs.fuse.userAllowOther = true;
-  services = {
-    fstrim.enable = true;
-    openssh.enable = true;
-    printing.enable = true;
-    fwupd.enable = true;
-    flatpak.enable = true;
-    pipewire = {
-      enable = true;
-      alsa.enable = true;
-      alsa.support32Bit = true;
-      pulse.enable = true;
-      wireplumber.enable = true;
-    };
-    transmission = {
-      enable = true;
-      user = "zzzsy";
-      group = "users";
-      downloadDirPermissions = "755";
-      home = "/home/zzzsy";
-      settings = {
-        download-dir = "${config.services.transmission.home}/Downloads/Transmission";
-        incomplete-dir-enabled = false;
-      };
-    };
-    # zerotierone = {
-    #   enable = true;
-    #   joinNetworks = [ "" ];
-    #   port = 9993; #default
-    # };
-
-  };
-
   systemd.services.nix-daemon = {
     environment = {
       TMPDIR = "/var/cache/nix";
