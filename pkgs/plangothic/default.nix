@@ -8,7 +8,7 @@ in
 
 stdenvNoCC.mkDerivation rec {
   pname = "plangothic";
-  version = "0.8.5741";
+  version = "0.8.5741"; #2023-06-13
 
   srcs = [
     (fetchurl {
