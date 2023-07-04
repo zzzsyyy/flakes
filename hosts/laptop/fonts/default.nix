@@ -9,10 +9,10 @@
       (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
       maple-mono
       wqy_zenhei
-      my.lxgw-wenkai-screen
-      my.plangothic
-      my.my-fonts
-      my.iosevka-zt
+      # my.lxgw-wenkai-screen
+      # my.plangothic
+      # my.my-fonts
+      # my.iosevka-zt
     ];
     fontconfig = {
       localConf = builtins.readFile (./fontconfig.conf);

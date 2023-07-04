@@ -1,4 +1,4 @@
-{ self, ... }:
+{ self, system, nixpkgs-stable,... }:
 {
   flake.overlay.default = (import ../overlays)
     ++ [

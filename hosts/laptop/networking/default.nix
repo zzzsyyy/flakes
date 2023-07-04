@@ -12,7 +12,6 @@
   #@TODO
   # hysteria
   networking = {
-    hostName = "zzzsy";
     useDHCP = false;
     firewall.enable = false;
     networkmanager.enable = true;

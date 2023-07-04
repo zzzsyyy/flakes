@@ -28,7 +28,6 @@
     platformTheme = "gtk";
   };
 
-
   home.packages = with pkgs; [
     xdg-user-dirs
     xdg-utils

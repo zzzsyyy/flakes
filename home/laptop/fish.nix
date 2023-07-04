@@ -1,4 +1,4 @@
-{
+{ pkgs, ... }: {
   programs.fish = {
     enable = true;
     interactiveShellInit = ''
@@ -11,6 +11,7 @@
       };
       gitignore = "curl -sL https://www.gitignore.io/api/$argv";
     };
+    #@TODO using global alias
     shellAliases = {
       pb = "curl -F 'c=@-' 'https://fars.ee/'";
       gst = "git status";

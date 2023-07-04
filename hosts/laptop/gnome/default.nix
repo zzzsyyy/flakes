@@ -11,7 +11,6 @@
       desktopManager.gnome.enable = true;
       excludePackages = [ pkgs.xterm ];
       desktopManager.xterm.enable = false;
-      gdk-pixbuf.modulePackages = with pkgs; [ libjxl-with-plugin ];
     };
     services.gnome = {
       core-utilities.enable = false;

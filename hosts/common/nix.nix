@@ -1,4 +1,6 @@
-{
+{ pkgs
+, ...
+}: {
   nix = {
     package = pkgs.nixUnstable;
     settings = {

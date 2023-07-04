@@ -17,6 +17,9 @@ fmt:
 switch:
   sudo nixos-rebuild switch --flake .#laptop -L
 
+test:
+  sudo nixos-rebuild test --flake .#laptop -L
+
 gc:
   sudo nix-collect-garbage --delete-older-than 5d
   sudo nix store gc --debug

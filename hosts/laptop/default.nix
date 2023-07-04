@@ -3,13 +3,18 @@
 {
   imports = [
     ./configuration.nix
-    ../../modules/fonts
-    ../../modules/rime
-    ../../modules/networking
-    ../../modules/gnome
-    ../../modules/sops
+    ./fonts
+    ./gnome
+    ./rime
+    ./networking
+    ./services.nix
+    # ../../modules/fonts
+    # ../../modules/rime
+    # ../../modules/networking
+    # ../../modules/gnome
+    # ../../modules/sops
     #../../modules/flatpak
-    ../../modules/virt
+    # ../../modules/virt
     # ../../modules/home
   ];
 }

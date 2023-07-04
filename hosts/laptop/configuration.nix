@@ -80,6 +80,6 @@
 
   documentation.nixos.enable = false;
 
-  system.stateVersion = "unstable";
+  system.stateVersion = "23.11";
 }
 

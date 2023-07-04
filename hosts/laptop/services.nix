@@ -12,6 +12,7 @@
       pulse.enable = true;
       wireplumber.enable = true;
     };
+    #@TODO
     transmission = {
       enable = true;
       user = "zzzsy";

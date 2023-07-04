@@ -20,9 +20,9 @@
       imports = [
         inputs.pre-commit-hooks.flakeModule
       ] ++ import ./parts;
-      flake = {
-        # Put your original flake attributes here.
-      };
+      # flake = {
+      #   # Put your original flake attributes here.
+      # };
       systems = [
         "x86_64-linux"
       ];

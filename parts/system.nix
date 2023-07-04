@@ -5,7 +5,7 @@
 }: let
   username = "zzzsy";
 
-  inherit (inputs) home-manager nixpkgs;
+  inherit (inputs) home-manager nixpkgs impermanence;
 
   inherit (nixpkgs.lib) attrValues;
 
@@ -13,7 +13,8 @@
     hostName,
     system,
     modules,
-    overlays ? [self.overlays.default],
+    overlays ? [],
+    # ? [self.overlays.default],
   }: {
     ${hostName} = nixpkgs.lib.nixosSystem {
       inherit system;
@@ -32,8 +33,8 @@
           }
 
           home-manager.nixosModules.home-manager
-          ../host/common
-          ../host/${hostName}
+          ../hosts/common
+          ../hosts/${hostName}
           (import ../home username)
         ]
         ++ (attrValues self.nixosModules)
@@ -46,10 +47,11 @@ in {
     (mkHost {
       system = "x86_64-linux";
       hostName = "laptop";
-      # modules = with inputs; [
-      #   nixos-hardware.nixosModules.common-cpu-amd-pstate
-      #   nixos-hardware.nixosModules.common-gpu-amd
-      #   nixos-hardware.nixosModules.common-pc-ssd
-      # ];
+      modules = with inputs; [
+        impermanence.nixosModules.impermanence
+        # nixos-hardware.nixosModules.common-cpu-amd-pstate
+        # nixos-hardware.nixosModules.common-gpu-amd
+        # nixos-hardware.nixosModules.common-pc-ssd
+      ];
     });
 }
