@@ -30,7 +30,8 @@ let
     go
     julia
     just
-    libjxl
+    # libjxl
+    my.libjxl-with-plugin
     flaca
     hysteria
     nvfetcher

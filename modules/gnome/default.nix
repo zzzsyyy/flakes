@@ -10,7 +10,7 @@
     services.xserver.desktopManager.gnome.enable = true;
     services.xserver.excludePackages = [ pkgs.xterm ];
     services.xserver.desktopManager.xterm.enable = false;
-    services.xserver.gdk-pixbuf.modulePackages = with pkgs; [ libjxl-with-plugin ];
+    # services.xserver.gdk-pixbuf.modulePackages = with pkgs; [ libjxl-with-plugin ];
     services.gnome = {
       core-utilities.enable = false;
       gnome-online-accounts.enable = false;
