@@ -49,11 +49,11 @@
             # Pull in WebP support for gnome-backgrounds.
             # In postInstall to run before gappsWrapperArgsHook.
             export GDK_PIXBUF_MODULE_FILE="${prev'._gdkPixbufCacheBuilder_DO_NOT_USE {
-            extraLoaders = with prev; [
-              librsvg
-              webp-pixbuf-loader
-              libjxl-with-plugin
-            ];
+              extraLoaders = with prev; [
+                librsvg
+                webp-pixbuf-loader
+                libjxl-with-plugin
+              ];
             }}"
           '';
         });
@@ -65,11 +65,11 @@
         # Pull in WebP support for gnome-backgrounds.
         # In postInstall to run before gappsWrapperArgsHook.
         export GDK_PIXBUF_MODULE_FILE="${prev.gnome._gdkPixbufCacheBuilder_DO_NOT_USE {
-        extraLoaders = with prev;[
-        librsvg
-        webp-pixbuf-loader
-        libjxl-with-plugin
-        ];
+          extraLoaders = with prev;[
+            librsvg
+            webp-pixbuf-loader
+            libjxl-with-plugin
+          ];
         }}"
       '';
     });

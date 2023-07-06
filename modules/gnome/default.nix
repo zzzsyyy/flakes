@@ -14,7 +14,6 @@
     services.gnome = {
       core-utilities.enable = false;
       gnome-online-accounts.enable = false;
-      sushi.enable = true;
       gnome-browser-connector.enable = true;
     };
     environment.gnome.excludePackages = (with pkgs; [
@@ -25,6 +24,7 @@
     programs.dconf.enable = true;
     environment.systemPackages = (with pkgs; [
       # celluloid # using mpv with osc
+      ffmpegthumbnailer
       amberol # music
       feh # image
       gnome-text-editor

@@ -46,7 +46,9 @@ let
     ripgrep
     sops
     ffmpeg_6
-    glow
+    # glow
+    file
+    dae
   ];
 
   office = with pkgs; [

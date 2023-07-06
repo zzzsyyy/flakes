@@ -15,6 +15,7 @@
 , gdk-pixbuf
 , openexr
 , pkg-config
+, imagemagick
 , zlib
 , buildDocs ? true
 , asciidoc
@@ -37,15 +38,6 @@ stdenv.mkDerivation rec {
     # There are various submodules in `third_party/`.
     fetchSubmodules = true;
   };
-
-  # patches = [
-  #   # Add missing <atomic> content to fix gcc compilation for RISCV architecture
-  #   # https://github.com/libjxl/libjxl/pull/2211
-  #   (fetchpatch {
-  #     url = "https://github.com/libjxl/libjxl/commit/22d12d74e7bc56b09cfb1973aa89ec8d714fa3fc.patch";
-  #     hash = "sha256-X4fbYTMS+kHfZRbeGzSdBW5jQKw8UN44FEyFRUtw0qo=";
-  #   })
-  # ];
 
   nativeBuildInputs = [
     cmake
@@ -85,6 +77,7 @@ stdenv.mkDerivation rec {
     libwebp
     lcms2
     gdk-pixbuf
+    imagemagick
     openexr
     zlib
   ];
@@ -96,9 +89,11 @@ stdenv.mkDerivation rec {
 
   preConfigure = ''
     GDK_PIXBUF=$out/lib/gdk-pixbuf-2.0/2.10.0
-    sed -e "s#/usr/bin\(/gdk-pixbuf-thumbnailer\)#${gdk-pixbuf}/bin\1#g" -i plugins/gdk-pixbuf/jxl.thumbnailer
+    sed -e "2cTryExec=${imagemagick}/bin/convert" -i plugins/gdk-pixbuf/jxl.thumbnailer
+    sed -e "3cExec=${imagemagick}/bin/convert %i[0] -resize %sx%s %o" -i plugins/gdk-pixbuf/jxl.thumbnailer
     cat plugins/gdk-pixbuf/jxl.thumbnailer
   '';
+  # sed -e "s#/usr/bin\(/gdk-pixbuf-thumbnailer\)#${imagemagick}/bin/convert#g" -i plugins/gdk-pixbuf/jxl.thumbnailer
 
   cmakeFlags = [
     # For C dependencies like brotli, which are dynamically linked,
