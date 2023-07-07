@@ -24,6 +24,9 @@
     x11.enable = true;
     size = 24;
   };
+  services.megasync = {
+    enable = true;
+  };
   xdg.userDirs.enable = true;
   programs.home-manager.enable = true;
   home.stateVersion = "23.05";

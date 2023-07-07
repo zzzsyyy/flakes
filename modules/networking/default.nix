@@ -5,9 +5,9 @@
 }:
 
 {
+  imports = [./dae.nix];
   programs.clash-verge = {
     enable = true;
-    tunMode = true;
   };
   #@TODO
   # hysteria
@@ -20,7 +20,10 @@
     #   allProxy = "http://127.0.0.1:7890";
     #   noProxy = "127.0.0.1,localhost,.localdomain";
     # };
-
+  };
+  services.dae = {
+    enable = true;
+    config = ./yc.dae;
   };
 }
 

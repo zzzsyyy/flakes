@@ -71,7 +71,7 @@ let
     #gimp
     #minder
     asciinema
-    megasync
+    # megasync
     adw-gtk3
     my.default-light
     (ventoy.override {
