@@ -5,7 +5,7 @@
 }:
 
 {
-  imports = [./dae.nix];
+  imports = [ ./dae.nix ];
   programs.clash-verge = {
     enable = true;
   };
