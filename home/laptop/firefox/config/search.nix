@@ -4,9 +4,9 @@
   engines = {
     #@TODO
     "Google".metaData.hidden = true;
-    "Baidu".metaData.hidden = true;
-    "Bing".metaData.hidden = true;
-    "Amazon".metaData.hidden = true;
+    # "Baidu".metaData.hidden = true;
+    # "Bing".metaData.hidden = true;
+    # "Amazon".metaData.hidden = true;
     "Wikipedia (en)".metaData.alias = "@w";
     "Google UK" = {
       urls = [{
@@ -34,7 +34,7 @@
           { name = "query"; value = "{searchTerms}"; }
         ];
       }];
-      icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+      # icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
       definedAliases = [ "@np" ];
     };
     "Nixpkgs Issues" = {

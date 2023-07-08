@@ -30,9 +30,9 @@ let
     go
     julia
     just
-    libjxl
+    my.libjxl-with-plugin
     flaca
-    hysteria
+    # hysteria
     nvfetcher
   ];
 
@@ -45,7 +45,9 @@ let
     ripgrep
     sops
     ffmpeg_6
-    glow
+    # glow
+    dae
+    file
   ];
 
   office = with pkgs; [

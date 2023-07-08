@@ -1,5 +1,4 @@
-{ config
-, lib
+{ lib
 , pkgs
 , ...
 }:
@@ -7,10 +6,7 @@
 {
   programs.clash-verge = {
     enable = true;
-    tunMode = true;
   };
-  #@TODO
-  # hysteria
   networking = {
     useDHCP = false;
     firewall.enable = false;
@@ -19,7 +15,10 @@
     #   allProxy = "http://127.0.0.1:7890";
     #   noProxy = "127.0.0.1,localhost,.localdomain";
     # };
-
+  };
+  services.dae = {
+    enable = true;
+    config = ./yc.dae;
   };
 }
 

@@ -13,8 +13,6 @@
       package = pkgs.papirus-icon-theme;
       name = "Papirus";
     };
-    gtk3.extraCss = builtins.readFile ./adwaita.css;
-    gtk4.extraCss = builtins.readFile ./adwaita.css;
   };
   home.pointerCursor = {
     package = pkgs.bibata-cursors;

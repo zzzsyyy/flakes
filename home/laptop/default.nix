@@ -13,6 +13,11 @@
     ./fish.nix
     ./kitty.nix
     ./pkgs.nix
+    ./aria2.nix
+    ./dconf.nix
+    ./git.nix
+    # ./obs.nix
+    ./vscode.nix
   ];
 
   programs.exa = {

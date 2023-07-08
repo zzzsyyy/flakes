@@ -1,48 +1,58 @@
-{
-  self,
-  inputs,
-  ...
-}: let
+{ self
+, inputs
+, ...
+}:
+let
   username = "zzzsy";
 
   inherit (inputs) home-manager nixpkgs impermanence;
 
   inherit (nixpkgs.lib) attrValues;
+  mkHost =
+    { hostName
+    , system
+    , modules
+    , overlays ? [ ]
+    }:
+    {
+      ${hostName} = nixpkgs.lib.nixosSystem {
+        inherit system;
 
-  mkHost = {
-    hostName,
-    system,
-    modules,
-    overlays ? [],
-    # ? [self.overlays.default],
-  }: {
-    ${hostName} = nixpkgs.lib.nixosSystem {
-      inherit system;
+        modules =
+          [
+            {
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                sharedModules = attrValues self.hmModules;
+              };
+              nixpkgs = {
+                overlays = (import ../overlays)
+                ++ [
+                  (final: prev: {
+                    my = self.packages."${system}";
+                    stable = import inputs.nixpkgs-stable {
+                      inherit system;
+                      config.allowUnfree = true;
+                    };
+                  })
+                ];
+              };
+              networking.hostName = hostName;
+            }
 
-      modules =
-        [
-          {
-            nixpkgs = {inherit overlays;};
-
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              sharedModules = attrValues self.hmModules;
-            };
-            networking.hostName = hostName;
-          }
-
-          home-manager.nixosModules.home-manager
-          ../hosts/common
-          ../hosts/${hostName}
-          (import ../home username)
-        ]
-        ++ (attrValues self.nixosModules)
-        ++ modules;
-      specialArgs = {inherit inputs;};
+            home-manager.nixosModules.home-manager
+            ../hosts/common
+            ../hosts/${hostName}
+            (import ../home username)
+          ]
+          ++ (attrValues self.nixosModules)
+          ++ modules;
+        specialArgs = { inherit inputs; };
+      };
     };
-  };
-in {
+in
+{
   flake.nixosConfigurations =
     (mkHost {
       system = "x86_64-linux";

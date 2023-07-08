@@ -1,10 +1,11 @@
-{config, ...}: {
+{ config
+, ...
+}: {
   services = {
     fstrim.enable = true;
     openssh.enable = true;
     printing.enable = true;
     fwupd.enable = true;
-    flatpak.enable = true;
     pipewire = {
       enable = true;
       alsa.enable = true;
@@ -12,7 +13,6 @@
       pulse.enable = true;
       wireplumber.enable = true;
     };
-    #@TODO
     transmission = {
       enable = true;
       user = "zzzsy";
@@ -24,5 +24,10 @@
         incomplete-dir-enabled = false;
       };
     };
+    # zerotierone = {
+    #   enable = true;
+    #   joinNetworks = [ "" ];
+    #   port = 9993; #default
+    # };
   };
 }
