@@ -52,7 +52,7 @@ let
   ];
 
   office = with pkgs; [
-    libreoffice-fresh-unwrapped
+    libreoffice-fresh
     gnumeric
     #calibre
     logseq

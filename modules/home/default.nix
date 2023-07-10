@@ -4,6 +4,7 @@
   imports = [
     ./programs
     ./pkgs.nix
+    ../rime/home.nix
   ];
 
   gtk = {

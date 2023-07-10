@@ -68,4 +68,14 @@
   #     '';
   #   });
   # })
+  # (final: prev: {
+  #   gnomeExtensions.paperwm = prev.gnomeExtensions.paperwm.overrideAttrs (old: {
+  #     src = final.fetchFromGitHub {
+  #       owner = "paperwm";
+  #       repo = "PaperWM";
+  #       rev = "v44.3.1";
+  #       hash = "sha256-oGBnQGtx2ku4cfgZkZ3OdHlVuiYR8hy1eYDWDZP3fn4=";
+  #     };
+  #   });
+  # })
 ]
