@@ -99,6 +99,9 @@
   programs.fish.enable = true;
   programs.adb.enable = true;
   programs.fuse.userAllowOther = true;
+  services.udev.extraRules = ''
+    SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", MODE="0666", GROUP="plugdev"
+  '';
   services = {
     fstrim.enable = true;
     openssh.enable = true;
