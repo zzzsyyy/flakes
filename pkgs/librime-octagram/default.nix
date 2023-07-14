@@ -19,4 +19,10 @@ stdenv.mkDerivation rec {
     mkdir -p $out
     cp -r $src/* $out
   '';
+
+    meta = with lib; {
+    description = "RIME octagram plugin";
+    homepage = "https://github.com/lotem/librime-octagram";
+    license = licenses.gpl3Only;
+  };
 }

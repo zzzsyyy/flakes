@@ -6,13 +6,13 @@
 
 stdenvNoCC.mkDerivation rec {
   pname = "rime-ice";
-  version = "unstable-2023-07-08";
+  version = "unstable-2023-07-14";
 
   src = fetchFromGitHub {
     owner = "iDvel";
     repo = pname;
-    rev = "98e2368456e9e4cda3adf9812891e5dd4b2edc55";
-    hash = "sha256-3J6i2y05r5B616eI+myyoxhX6h55MKlVdNdnTHneHCE=";
+    rev = "61d1bb41de307503ba12b7e446f47a572d40e6e0";
+    hash = "sha256-GGsZn5zhyy72CQfXNBXyI1TtMFsI/LNeq1+sRyiMAo4=";
   };
 
   installPhase = ''
@@ -35,7 +35,7 @@ stdenvNoCC.mkDerivation rec {
 
   meta = with lib; {
     description = "Rime pinyin dict from iDvel";
-    license = licenses.gpl3Plus;
     homepage = "https://github.com/iDvel/rime-ice";
+    license = licenses.gpl3Plus;
   };
 }

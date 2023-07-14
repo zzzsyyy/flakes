@@ -1,6 +1,3 @@
-# Rime default settings
-# encoding: utf-8
-
 patch:
   schema_list:
     - schema: double_pinyin_flypy
@@ -11,15 +8,8 @@ patch:
     caption: 「选项」
     hotkeys:
       - Control+grave
-      # - Control+Shift+grave
-    save_options:
-      - traditionalization
-      # - emoji
-    fold_options: true
-    abbreviate_options: true
     option_list_separator: " | "
   ascii_composer:
-    good_old_caps_lock: true # true | false
     switch_key:
       Caps_Lock: clear
       Shift_L: commit_code
@@ -29,15 +19,13 @@ patch:
       Eisu_toggle: clear
   
   key_binder:
-    # 以词定字（上屏当前词句的第一个或最后一个字）
-    # select_first_character: 
-    # select_last_character: "grave"
+    select_first_character: "bracketleft"
+    select_last_character: "bracketright"
   
     bindings:
       - { when: has_menu, accept: minus, send: Page_Up }
       - { when: has_menu, accept: equal, send: Page_Down }
       - { when: paging, accept: comma, send: Page_Up }
       - { when: has_menu, accept: period, send: Page_Down }
-  
       - { when: always, accept: Control+Shift+1, select: .next }
   

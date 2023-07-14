@@ -13,6 +13,6 @@ stdenvNoCC.mkDerivation rec {
 
   installPhase = ''
     mkdir -p $out/share/fonts/truetype
-    mv iosevka-zt $out/share/fonts/truetype
+    mv iosevka-zt $_
   '';
 }
