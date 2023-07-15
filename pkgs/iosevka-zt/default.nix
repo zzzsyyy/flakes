@@ -1,18 +1,20 @@
 { stdenvNoCC
-, fetchzip
+, fetchurl
 }:
 
 stdenvNoCC.mkDerivation rec {
   pname = "iosevka-zt";
-  version = "24.1.4";
+  version = "25.0.1";
 
-  src = fetchzip {
-    url = "https://github.com/zzzsyyy/Iosevka/releases/download/${version}/iosevka.zip";
-    hash = "sha256-E11X8OXAZYY2Eog33vjeVbE/v1TYkFOhehSlmt+EFYc=";
+  src = fetchurl {
+    url = "https://github.com/zzzsyyy/Iosevka/releases/download/v${version}/Iosevka-${version}.tar.xz";
+    hash = "sha256-rKxnWFHq7OKu/pzzwN7v2hHogMhOfMVXnJ9JR7mwSh4=";
   };
+
+  sourceRoot = ".";
 
   installPhase = ''
     mkdir -p $out/share/fonts/truetype
-    mv iosevka-zt $_
+    mv *.ttf $_
   '';
 }
