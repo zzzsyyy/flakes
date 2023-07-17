@@ -25,15 +25,19 @@ in
     profiles.default = {
       settings = import ./config/settings.nix;
       search = import ./config/search.nix;
-      userChrome = ''
-        @import "${userChrome}";
-        @import usi(./custom/fix_gnome_bookmark.css);
-        @import uri(./custom/sidebery_dyn.css);
-      '';
-      userContent = ''
-        @import "${userContent}";
-        @import uri(./custom/userContent.css);
-      '';
+      userChrome = lib.strings.concatStrings [
+        ''
+          @import "${userChrome}";
+        ''
+        (builtins.readFile ./config/custom/fix_gnome_bookmark.css)
+        (builtins.readFile ./config/custom/sidebery_dyn.css)
+      ];
+      userContent = lib.strings.concatStrings [
+        ''
+          @import "${userContent}";
+        ''
+        (builtins.readFile ./config/custom/userContent.css)
+      ];
       extraConfig = lib.strings.concatStrings [
         (builtins.readFile "${userJs}")
         ''
