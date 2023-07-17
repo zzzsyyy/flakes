@@ -22,7 +22,9 @@ in
 
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "usb_storage" "sd_mod" ];
   boot.initrd.kernelModules = [ "amdgpu" ];
-  boot.kernelModules = [ "kvm-amd" "v4l2loopback" ];
+  boot.kernelModules = [ "kvm-amd" "v4l2loopback"];
+
+  # for obs virtual camera
   boot.extraModulePackages = with config.boot.kernelPackages; [ v4l2loopback ];
   boot.extraModprobeConfig = ''
     options v4l2loopback exclusive_caps=1 video_nr=9 card_label="obs"

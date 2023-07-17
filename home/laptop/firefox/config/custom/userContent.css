@@ -1,0 +1,26 @@
+@supports -moz-bool-pref("gnomeTheme.newTabFullIcon") {
+  .top-site-outer .tile {
+    overflow: hidden;
+  }
+
+  .top-site-outer .tile .icon-wrapper {
+    width: 100% !important;
+    height: 100% !important;
+  }
+}
+
+@supports -moz-bool-pref("gnomeTheme.searchBar") {
+  #searchSuggestionTable {
+    display: none !important;
+  }
+}
+
+@supports -moz-bool-pref("gnomeTheme.hiddenLogo") {
+  .logo-and-wordmark {
+    display: none !important;
+  }
+
+  .outer-wrapper:not(.fixed-search) .search-wrapper {
+    padding-top: 0 !important;
+  }
+}
