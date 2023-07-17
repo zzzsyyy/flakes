@@ -2,7 +2,6 @@
 , pkgs
 , ...
 }:
-#@TODO 
 {
   i18n.inputMethod = {
     enabled = "ibus";
@@ -13,6 +12,11 @@
         })).override {
           plugins = with pkgs.my; [ librime-lua librime-octagram ];
         };
+        rimeDataPkgs = [
+          (pkgs.my.rime-ice.override {
+            enableUnihan = true;
+          })
+        ];
       })
     ];
     # ibus.engines = with pkgs.ibus-engines; [ rime ];

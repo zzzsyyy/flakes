@@ -11,18 +11,7 @@
       };
       gitignore = "curl -sL https://www.gitignore.io/api/$argv";
     };
-    #@TODO using global alias
-    shellAliases = {
-      pb = "curl -F 'c=@-' 'https://fars.ee/'";
-      gst = "git status";
-      n = "neofetch";
-      setproxy = "export ALL_PROXY=socks://127.0.0.1:7890";
-      unsetproxy = "unset ALL_PROXY";
-      clc = "clear";
-      ":q" = "exit";
-      snvim = "EDITOR=nvim sudoedit";
-      icat = "kitty +kitten icat";
-    };
+
     shellAbbrs = {
       gc1 = "git clone --depth=1 ";
     };

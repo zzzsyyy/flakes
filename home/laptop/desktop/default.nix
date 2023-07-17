@@ -1,4 +1,10 @@
-{pkgs, ...}: {
+{ pkgs
+, ...
+}: {
+  imports = [
+    ./dconf.nix
+  ];
+
   xdg = {
     enable = true;
     userDirs = {
@@ -14,6 +20,7 @@
       name = "Papirus";
     };
   };
+
   home.pointerCursor = {
     package = pkgs.bibata-cursors;
     name = "Bibata-Modern-Classic";
@@ -21,6 +28,7 @@
     x11.enable = true;
     size = 24;
   };
+
   qt = {
     enable = true;
     platformTheme = "gtk";

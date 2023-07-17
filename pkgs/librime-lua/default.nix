@@ -6,13 +6,13 @@
 
 stdenv.mkDerivation rec {
   pname = "librime-lua";
-  version = "20230115";
+  version = "20230625";
 
   src = fetchFromGitHub {
     owner = "hchunhui";
     repo = pname;
-    rev = "03a2bd9e172549cb16c0718b2c9b68e8c5678085";
-    hash = "sha256-3h1NfgdruFQJQGyvjfSH4mmOpcKFbJV5oDZEUK07ouE=";
+    rev = "c985eb399d63c491c6e03fa1651ddb59e485c04a";
+    hash = "sha256-tpyX0NxAlNZ4Qeml2BeM0NbPN5xDW/uH/f0eqjBQKIM=";
   };
 
   buildInputs = [ lua5_4 ];
@@ -21,4 +21,10 @@ stdenv.mkDerivation rec {
     mkdir -p $out
     cp -r $src/* $out
   '';
+
+  meta = with lib; {
+    description = "Extending RIME with Lua scripts";
+    homepage = "https://github.com/hchunhui/librime-lua";
+    license = licenses.bsd3;
+  };
 }

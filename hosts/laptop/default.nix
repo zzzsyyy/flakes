@@ -4,13 +4,12 @@
   imports =
     [
       ./gnome
+      ./fonts
+      ./rime
       ./hardware.nix
       ./services.nix
       ./virt.nix
       ./networking.nix
-      ./obs.nix
-      ./fonts
-      ./rime
     ];
 
   boot = {

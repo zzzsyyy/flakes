@@ -1,4 +1,6 @@
 { config
+, username
+, pkgs
 , ...
 }: {
   services = {
@@ -15,6 +17,7 @@
     };
     transmission = {
       enable = true;
+      package = pkgs.transmission_4;
       user = "zzzsy";
       group = "users";
       downloadDirPermissions = "755";
@@ -24,10 +27,5 @@
         incomplete-dir-enabled = false;
       };
     };
-    # zerotierone = {
-    #   enable = true;
-    #   joinNetworks = [ "" ];
-    #   port = 9993; #default
-    # };
   };
 }

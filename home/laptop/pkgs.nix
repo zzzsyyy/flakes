@@ -31,8 +31,6 @@ let
     julia
     just
     my.libjxl-with-plugin
-    flaca
-    # hysteria
     nvfetcher
   ];
 
@@ -45,16 +43,13 @@ let
     ripgrep
     sops
     ffmpeg_6
-    # glow
     dae
     file
   ];
 
   office = with pkgs; [
-    libreoffice-fresh-unwrapped
-    gnumeric
+    libreoffice-fresh
     #calibre
-    logseq
     octave
     texlive.combined.scheme-full
     asciidoc-full
@@ -66,11 +61,11 @@ let
     # fractal-next # matrix
     # gtkcord4 # discord (WIP)
     tdesktop
+    tor-browser-bundle-bin
     #gaphor
     #gimp
     #minder
     asciinema
-    megasync
     adw-gtk3
     my.default-light
     (ventoy.override {
