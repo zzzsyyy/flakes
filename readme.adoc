@@ -7,10 +7,17 @@ image:https://img.zzzsy.top/codeberg.svg[Get it on Codeberg,200,align="center"]
 
 == Something to do
 
-* [ ] Refactor (doing)
-* [ ] Rime (using patch & link:https://github.com/iDvel/rime-ice[Rime-Ice])
-* [ ] DevShell (using link:https://github.com/nix-community/nix-direnv[nix-direnv])
-* [ ] Latex template
+* [x] using link:https://flake.parts[flake parts]
+* [ ] secrets by ?
+* [ ] pkgs using link:https://github.com/berberman/nvfetcher[nvfetcher]
+* [x] moduliser les conf
+* [x] shortcut using link:just.systems[justfile]
+* [x] Rime (using patch & link:https://github.com/iDvel/rime-ice[Rime-Ice])
+* [x] using link:https://github.com/cachix/pre-commit-hooks.nix[pre-commit]
+* [ ] Secure boot using link:https://github.com/nix-community/lanzaboote[lanzaboote]
+* [ ] Some dev environnment: slidev hugo python rust etc.
+* [x] Overlays
+* [ ] using link:https://github.com/zzzsyyy/nurpkgs[nurpkgs]
 
 
 
