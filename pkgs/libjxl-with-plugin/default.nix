@@ -1,7 +1,6 @@
 { stdenv
 , lib
 , fetchFromGitHub
-, fetchpatch
 , brotli
 , cmake
 , giflib
@@ -24,7 +23,7 @@
 , python3
 }:
 
-stdenv.mkDerivation rec {
+stdenv.mkDerivation {
   pname = "libjxl";
   version = "main";
 

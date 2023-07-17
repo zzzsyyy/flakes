@@ -57,7 +57,7 @@ in
     (mkHost {
       system = "x86_64-linux";
       hostName = "laptop";
-      modules = with inputs; [
+      modules = [
         impermanence.nixosModules.impermanence
         # nixos-hardware.nixosModules.common-cpu-amd-pstate
         # nixos-hardware.nixosModules.common-gpu-amd

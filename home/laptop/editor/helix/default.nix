@@ -1,6 +1,4 @@
-{ pkgs
-, ...
-}: {
+{
   imports = [
     #./langs.nix
   ];

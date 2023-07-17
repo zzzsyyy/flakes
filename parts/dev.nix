@@ -14,11 +14,10 @@
           self'.formatter
         ];
       };
-      formatter = pkgs.alejandra;
+      formatter = pkgs.nixpkgs-fmt;
       pre-commit.settings.hooks = {
-        alejandra.enable = true;
+        nixpkgs-fmt.enable = true;
         nil.enable = true;
-        prettier.enable = true;
       };
       devShells.secret = with pkgs; mkShell {
         nativeBuildInputs = [
