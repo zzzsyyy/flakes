@@ -25,7 +25,6 @@ in
   config =
     let
       configFile = "/etc/daeconf.dae";
-      assets = "${pkgs.my.geos}/share/v2ray";
       dae = lib.getExe cfg.package;
     in
     mkIf cfg.enable {
@@ -56,7 +55,6 @@ in
           User = "root";
           LimitNPROC = 512;
           LimitNOFILE = 1048576;
-          Environment = "DAE_LOCATION_ASSET=${assets}";
           ExecStartPre = [ "${dae} validate -c ${configFile}" ];
           ExecStart = "${dae} run --disable-timestamp -c ${configFile}";
           ExecReload = "${dae} reload $MAINPID";
