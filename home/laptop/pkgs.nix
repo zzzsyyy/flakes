@@ -20,7 +20,7 @@ let
     sassc
     opencc
     rustup
-    rnix-lsp
+    # rnix-lsp
     lua
     python3
     git
@@ -28,7 +28,7 @@ let
     nodePackages.pnpm
     hugo
     go
-    julia
+    # julia
     just
     my.libjxl-with-plugin
     nvfetcher
