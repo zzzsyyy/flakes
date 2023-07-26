@@ -25,7 +25,7 @@
 
 stdenv.mkDerivation {
   pname = "libjxl";
-  version = "main";
+  version = "unstable-2023-07-05";
 
   outputs = [ "out" "dev" ];
 

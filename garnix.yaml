@@ -1,0 +1,6 @@
+builds:
+ exclude: []
+ include:
+ - checks.*
+ - packages.x86_64-linux.libjxl-with-plugin
+ - nixosConfigurations.laptop

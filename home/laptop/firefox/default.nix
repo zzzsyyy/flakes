@@ -29,7 +29,6 @@ in
         ''
           @import "${userChrome}";
         ''
-        (builtins.readFile ./config/custom/fix_gnome_bookmark.css)
         (builtins.readFile ./config/custom/sidebery_dyn.css)
       ];
       userContent = lib.strings.concatStrings [

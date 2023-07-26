@@ -34,27 +34,42 @@
 /* CSS in sidebery */
 
 /*
+.HistoryPanel .item .url-line {
+  display: none;
+}
+
 @media (max-width: 50px) {
-  #root:not(:hover) .Tab {
+  #root:not(:hover) {
     --tabs-indent: 0px;
+    --bookmarks-indent: 0px;
   }
+
+  .SubListTitle .expand {
+    display: none;
+  }
+
   .Tab[data-lvl]>div.lvl-wrapper {
     right: -2px;
   }
+
   .Tab .fav {
     z-index: 1;
   }
+
   .Tab .audio {
     z-index: 1;
     margin-left: -12px;
     height: 26px;
   }
+
   .Tab .title {
     display: none;
   }
+
   .NavigationBar .settings-btn {
     display: none;
   }
+
   .right-vertical-box {
     display: none !important;
   }
