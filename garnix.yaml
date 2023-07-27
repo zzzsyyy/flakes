@@ -1,6 +1,6 @@
 builds:
  exclude: []
  include:
- - checks.*
+ - checks.x86_64-linux.pre-commit
  - packages.x86_64-linux.libjxl-with-plugin
  - nixosConfigurations.laptop

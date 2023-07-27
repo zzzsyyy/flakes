@@ -13,8 +13,7 @@ let
     }
     extraConfig
   ];
-  #@TODO using by-label
-  btrfsSubvolMain = btrfsSubvol "/dev/disk/by-uuid/7143cc39-c607-486f-866d-a703efd5d956";
+  btrfsSubvolMain = btrfsSubvol "/dev/disk/by-partlabel/NixOS";
 
 in
 
@@ -46,7 +45,7 @@ in
   ## sudo chmod -R a+rwX,o-rw /home/$USER
   fileSystems."/home" = btrfsSubvolMain "@home" { };
   fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/10CC-BC59";
+    device = "/dev/disk/by-partlabel/BOOT";
     fsType = "vfat";
   };
 
@@ -54,5 +53,10 @@ in
   swapDevices = [ ];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+  hardware = {
+    pulseaudio.enable = false;
+    opengl.enable = true;
+    bluetooth.enable = true;
+    cpu.amd.updateMicrocode = true;
+  };
 }

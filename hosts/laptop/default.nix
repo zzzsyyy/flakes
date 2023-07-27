@@ -21,9 +21,10 @@
       systemd-boot.configurationLimit = 5;
       efi.canTouchEfiVariables = false; #@TODO
     };
-    kernelPackages = pkgs.linuxPackages_zen;
+    kernelPackages = pkgs.linuxPackages_xanmod_latest;
     #@TODO
     kernelParams = [
+      "amd_pstate=active"
       "pti=on"
       "quiet"
       "log_level=3"
@@ -46,12 +47,6 @@
   nixpkgs.config.allowUnfree = true;
 
   sound.enable = true;
-  hardware = {
-    pulseaudio.enable = false;
-    opengl.enable = true;
-    bluetooth.enable = true;
-    cpu.amd.updateMicrocode = true;
-  };
 
   environment.pathsToLink = [ "/share/fish" ];
 

@@ -28,17 +28,17 @@
             }}"
           '';
         });
-          gnome-shell = prev'.gnome-shell.overrideAttrs (old: {
-            postInstall = ''
-              export GDK_PIXBUF_MODULE_FILE="${prev'._gdkPixbufCacheBuilder_DO_NOT_USE {
-                extraLoaders = with prev; [
-                  librsvg
-                  webp-pixbuf-loader
-                  libjxl-with-plugin
-                ];
-              }}"
-            '';
-          });
+        gnome-shell = prev'.gnome-shell.overrideAttrs (old: {
+          postInstall = ''
+            export GDK_PIXBUF_MODULE_FILE="${prev'._gdkPixbufCacheBuilder_DO_NOT_USE {
+              extraLoaders = with prev; [
+                librsvg
+                webp-pixbuf-loader
+                libjxl-with-plugin
+              ];
+            }}"
+          '';
+        });
       });
   })
   (final: prev: {
