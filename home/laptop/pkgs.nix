@@ -1,4 +1,6 @@
-{ pkgs, ... }:
+{ pkgs
+, ...
+}:
 
 let
   nix-tools = with pkgs; [
@@ -18,7 +20,6 @@ let
     clang
     clang-tools
     sassc
-    opencc
     rustup
     # rnix-lsp
     lua
@@ -66,6 +67,7 @@ let
     #gimp
     #minder
     asciinema
+    blackbox-terminal
     adw-gtk3
     my.default-light
     (ventoy.override {
