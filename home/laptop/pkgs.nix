@@ -43,9 +43,10 @@ let
     bind
     ripgrep
     sops
-    ffmpeg_6
+    ffmpeg_6-full
     dae
     file
+    asciinema
   ];
 
   office = with pkgs; [
@@ -63,11 +64,10 @@ let
     # gtkcord4 # discord (WIP)
     tdesktop
     tor-browser-bundle-bin
+    handbrake
     #gaphor
     #gimp
     #minder
-    asciinema
-    blackbox-terminal
     adw-gtk3
     my.default-light
     (ventoy.override {

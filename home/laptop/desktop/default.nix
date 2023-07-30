@@ -3,6 +3,7 @@
 }: {
   imports = [
     ./dconf.nix
+    ./hyprland
   ];
 
   xdg = {
