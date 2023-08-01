@@ -1,8 +1,3 @@
-{ pkgs
-, lib
-, ...
-}:
-
 let
   keybinds = builtins.readFile ./config/keybinds.conf;
   window-rules = builtins.readFile ./config/window-rules.conf;
@@ -11,7 +6,7 @@ in
 {
   imports = [
     ./pkgs.nix
-    ./waybar.nix
+    ../waybar
   ];
   home.file.".config/hypr/hyprpaper.conf".source = ./config/hyprpaper.conf;
   wayland.windowManager.hyprland = {

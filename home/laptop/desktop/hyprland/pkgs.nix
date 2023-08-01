@@ -17,5 +17,9 @@
     evince
     hyprpaper
     wlogout
+    gvfs
+    udiskie
+    libnotify
+    networkmanagerapplet
   ];
 }
