@@ -103,12 +103,12 @@
       "hyprland/window"
     ],
     "modules-right": [
+      "network",
       "bluetooth",
       "pulseaudio",
       "backlight",
       "cpu",
       "memory",
-      "network",
       "hyprland/language",
       "battery",
       "tray"
@@ -118,7 +118,7 @@
       "format": "<sub><small>{usage}%</small></sub>"
     },
     "memory": {
-      "format": "<sup><small>{percentage}</small></sup>"
+      "format": "<sup><small>{percentage}%</small></sup>"
     },
     "bluetooth": {
       "format": "",
@@ -136,8 +136,7 @@
       "format-alt": "<span size='xx-small'>{essid}\n{ipaddr}</span>",
       "format-wifi": "<small>{bandwidthUpOctets} {bandwidthDownOctets}</small>",
       "tooltip-format": "<small>{cidr}{gwaddr}{frequency}{bandwidthTotalOctets}</small>",
-      "format-disconnected": "<small> 󰅛 </small>",
-      "min-length": 18
+      "format-disconnected": "<small> 󰅛 </small>"
     },
     "position": "top",
     "pulseaudio": {

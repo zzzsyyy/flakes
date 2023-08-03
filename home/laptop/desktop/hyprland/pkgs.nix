@@ -21,5 +21,7 @@
     udiskie
     libnotify
     networkmanagerapplet
+    swayosd
+    swaylock
   ];
 }
