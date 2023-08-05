@@ -6,7 +6,7 @@
 
 stdenv.mkDerivation rec {
   pname = "librime-lua";
-  version = "20230625";
+  version = "ustable-2023-06-25";
 
   src = fetchFromGitHub {
     owner = "hchunhui";

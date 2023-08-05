@@ -6,13 +6,13 @@
 
 stdenvNoCC.mkDerivation rec {
   pname = "rime-ice";
-  version = "unstable-2023-07-27";
+  version = "unstable-2023-07-31";
 
   src = fetchFromGitHub {
     owner = "iDvel";
     repo = pname;
-    rev = "a5f72c8aecadb937cd9d93b812c32e4ba5c45d6d";
-    hash = "sha256-3q6+W3sulQjVqwIuyVDnadCyp5r8tOqOrwX7vm+AtwA=";
+    rev = "1c1c005f1dbf9b25898885e666b49b9d32a8d90d";
+    hash = "sha256-CNcom2rbnGCAZXuM/d3fj1HijEf4N7QFZsMkkMpGaGw=";
   };
 
   installPhase = ''
@@ -23,7 +23,6 @@ stdenvNoCC.mkDerivation rec {
     mv double_pinyin_flypy.schema.yaml rime_ice.schema.yaml \
       liangfen.dict.yaml liangfen.schema.yaml \
       melt_eng.dict.yaml melt_eng.schema.yaml \
-      zh-hans-t-essay-bgw.gram \
       rime_ice.dict.yaml \
       symbols_caps_v.yaml symbols_v.yaml \
       cn_dicts/ en_dicts/ \
