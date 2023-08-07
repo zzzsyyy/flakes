@@ -65,6 +65,8 @@ let
     tdesktop
     tor-browser-bundle-bin
     handbrake
+    go-musicfox
+    blueman
     #gaphor
     #gimp
     #minder

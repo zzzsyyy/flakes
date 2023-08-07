@@ -4,6 +4,7 @@
   imports = [
     ./dconf.nix
     ./hyprland
+    ./swaylock.nix
   ];
 
   xdg = {

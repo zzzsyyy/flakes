@@ -1,18 +1,28 @@
 [
   {
+    "layer": "top",
+    "position": "top",
+    "height": 24,
+    "spacing": 4,
+    "modules-left": [ "hyprland/window" ],
+    "modules-center": [
+      "clock",
+      "hyprland/workspaces"
+    ],
+    "modules-right": [
+      "network",
+      "bluetooth",
+      "pulseaudio",
+      "backlight",
+      "cpu",
+      "memory",
+      "hyprland/language",
+      "battery",
+      "tray"
+    ],
     "backlight": {
       "format": "{icon}",
-      "format-icons": [
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        ""
-      ],
+      "format-icons": [ "", "", "", "", "", "", "", "", "" ],
       "format-alt": "<small>{percent}%</small>",
       "tooltip-format": "{percent}%",
       "reverse-scrolling": true
@@ -23,32 +33,8 @@
       "format-alt": "{capacity}",
       "full-at": 96,
       "format-icons": {
-        "default": [
-          "󱃍",
-          "󰁺",
-          "󰁻",
-          "󰁼",
-          "󰁼",
-          "󰁾",
-          "󰁿",
-          "󰂀",
-          "󰂁",
-          "󰂂",
-          "󰁹"
-        ],
-        "charging": [
-          "󰢟",
-          "󰢜",
-          "󰂆",
-          "󰂇",
-          "󰂈",
-          "󰢝",
-          "󰂉",
-          "󰢞",
-          "󰂊",
-          "󰂋",
-          "󰂅"
-        ]
+        "default": [ "󱃍", "󰁺", "󰁻", "󰁼", "󰁼", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹" ],
+        "charging": [ "󰢟", "󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅" ]
       },
       "interval": 60,
       "tooltip-format": "{capacity}% {power}W\n{time}"
@@ -93,27 +79,6 @@
       "format-en": "A",
       "format-fr": "Æ"
     },
-    "layer": "top",
-    "height": 24,
-    "modules-center": [
-      "clock",
-      "hyprland/workspaces"
-    ],
-    "modules-left": [
-      "hyprland/window"
-    ],
-    "modules-right": [
-      "network",
-      "bluetooth",
-      "pulseaudio",
-      "backlight",
-      "cpu",
-      "memory",
-      "hyprland/language",
-      "battery",
-      "tray"
-    ],
-
     "cpu": {
       "format": "<sub><small>{usage}%</small></sub>"
     },
@@ -138,7 +103,6 @@
       "tooltip-format": "<small>{cidr}{gwaddr}{frequency}{bandwidthTotalOctets}</small>",
       "format-disconnected": "<small> 󰅛 </small>"
     },
-    "position": "top",
     "pulseaudio": {
       "reverse-scrolling": 1,
       "format": "{icon} <small>{volume}%</small>",
@@ -153,7 +117,6 @@
       "format-muted": "󰝟",
       "scroll-step": 1
     },
-    "spacing": 4,
     "tray": {
       "show-passive-items": true,
       "icon-size": 20,

@@ -62,6 +62,11 @@
     defaultLocale = "zh_CN.UTF-8";
     supportedLocales = [ "zh_CN.UTF-8/UTF-8" "en_US.UTF-8/UTF-8" "fr_FR.UTF-8/UTF-8" ];
   };
+  security.pam.services.swaylock = {
+    text = ''
+      auth include login
+    '';
+  };
 
   nixpkgs.config.allowUnfree = true;
 

@@ -8,7 +8,6 @@
     slurp
     wl-clipboard
     # wl-recorder
-    swaylock
     rofi-wayland
     waybar
     gnome.nautilus
@@ -22,6 +21,7 @@
     libnotify
     networkmanagerapplet
     swayosd
-    swaylock
+    # swaylock
   ];
+  services.blueman-applet.enable = true;
 }

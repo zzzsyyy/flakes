@@ -36,6 +36,7 @@
         incomplete-dir-enabled = false;
       };
     };
+    blueman.enable = true;
     navidrome = {
       enable = false;
       settings = {

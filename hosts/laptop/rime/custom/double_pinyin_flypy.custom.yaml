@@ -3,6 +3,7 @@ patch:
   translator/preedit_format: {}
   schema/name: ㄓ-双拼
   engine/filters:
+    - lua_filter@corrector                # 错音错字提示
     - simplifier@emoji                    # Emoji
     - simplifier@traditionalize           # 简繁切换
     - uniquifier                          # 去重
