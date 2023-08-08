@@ -2,7 +2,7 @@
 , ...
 }: {
   imports = [
-    ./dconf.nix
+    # ./dconf.nix
     ./hyprland
     ./swaylock.nix
   ];

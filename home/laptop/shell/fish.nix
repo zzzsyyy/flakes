@@ -10,6 +10,11 @@
         onEvent = "fish_command_not_found";
       };
       gitignore = "curl -sL https://www.gitignore.io/api/$argv";
+      fish_title = ''
+        echo $argv[1] ' '
+        echo (prompt_pwd)
+        echo " fish"
+      '';
     };
 
     shellAbbrs = {

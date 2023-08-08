@@ -68,22 +68,28 @@
       }
     },
     "hyprland/window": {
-      "format": "{title}",
+      "format": {},
       "rewrite": {
+        "": "<big></big> Desktop",
+        "(.+)": "$1",
         "(.*) — Mozilla Firefox": "<big>󰈹</big> $1",
+        "(.*)Mozilla Firefox": "<big>󰈹</big> Firefox",
         "(.*) - VS Code": "<big>󰨞</big> $1",
-        "nvim (.*)": "<big></big> $1"
-      }
+        "(.*) fish": "<big></big> $1"
+      },
+      "max-length": 50
     },
     "hyprland/language": {
       "format-en": "A",
       "format-fr": "Æ"
     },
     "cpu": {
-      "format": "<sub><small>{usage}%</small></sub>"
+      "interval": 2,
+      "format": "<span font='6' rise='-12000'>{usage}</span>"
     },
     "memory": {
-      "format": "<sup><small>{percentage}%</small></sup>"
+      "interval": 2,
+      "format": "<span font='6' rise='+12000'>{percentage}</span>"
     },
     "bluetooth": {
       "format": "",
