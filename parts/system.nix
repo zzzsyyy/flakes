@@ -5,7 +5,7 @@
 let
   username = "zzzsy";
 
-  inherit (inputs) home-manager nixpkgs impermanence;
+  inherit (inputs) home-manager nixpkgs impermanence firefox-nightly;
 
   inherit (nixpkgs.lib) attrValues;
   mkHost =
@@ -30,6 +30,7 @@ let
                 overlays = (import ../overlays)
                 ++ [
                   (final: prev: {
+                    firefox-nightly-bin = firefox-nightly.packages.${prev.system}.firefox-nightly-bin;
                     my = self.packages."${system}";
                     stable = import inputs.nixpkgs-stable {
                       inherit system;

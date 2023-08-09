@@ -32,6 +32,9 @@
       "format": "{icon}",
       "format-alt": "{capacity}",
       "full-at": 96,
+      "states": {
+        "critical": 10
+      },
       "format-icons": {
         "default": [ "󱃍", "󰁺", "󰁻", "󰁼", "󰁼", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹" ],
         "charging": [ "󰢟", "󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅" ]
@@ -73,6 +76,8 @@
         "": "<big></big> Desktop",
         "(.+)": "$1",
         "(.*) — Mozilla Firefox": "<big>󰈹</big> $1",
+        "(.*) — Firefox Nightly": "<big>󰈹</big> $1",
+        "(.*)Firefox Nightly": "<big>󰈹</big> Firefox",
         "(.*)Mozilla Firefox": "<big>󰈹</big> Firefox",
         "(.*) - VS Code": "<big>󰨞</big> $1",
         "(.*) fish": "<big></big> $1"

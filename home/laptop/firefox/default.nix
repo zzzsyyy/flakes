@@ -1,4 +1,7 @@
-{ pkgs, lib, ... }:
+{ pkgs
+, lib
+, ...
+}:
 
 let
   userJs = "${pkgs.my.firefox-gnome-theme}/share/firefox-gnome-theme/configuration/user.js";
@@ -9,7 +12,7 @@ in
 {
   programs.firefox = {
     enable = true;
-    package = pkgs.wrapFirefox pkgs.firefox-bin-unwrapped {
+    package = pkgs.firefox-nightly-bin.override {
       extraPolicies = {
         DisablePocket = true;
         DisableTelemetry = true;
