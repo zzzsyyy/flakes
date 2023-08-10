@@ -7,9 +7,9 @@
     firewall.enable = false;
     networkmanager.enable = true;
   };
-  services.dae = {
-    enable = true;
-    config = ./yc.dae;
+  services.daet = {
+    enable = true; # @TODO
+    settingsFile = ./yc.dae;
   };
 }
 
