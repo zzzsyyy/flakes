@@ -2,9 +2,9 @@
 , ...
 }: {
   imports = [
-    # ./dconf.nix
-    ./hyprland
-    ./swaylock.nix
+    ./dconf.nix
+    # ./hyprland
+    # ./swaylock.nix
   ];
 
   xdg = {

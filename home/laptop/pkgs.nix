@@ -31,8 +31,9 @@ let
     go
     # julia
     just
-    my.libjxl-with-plugin
-    nvfetcher
+    # my.libjxl-with-plugin
+    libjxl
+    # nvfetcher
   ];
 
   unix-tools = with pkgs; [
@@ -47,6 +48,8 @@ let
     dae
     file
     asciinema
+    iw
+    appimage-run
   ];
 
   office = with pkgs; [
@@ -66,7 +69,8 @@ let
     tor-browser-bundle-bin
     handbrake
     go-musicfox
-    blueman
+    # blueman
+    #wireshark
     #gaphor
     #gimp
     #minder

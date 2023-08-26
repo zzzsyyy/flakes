@@ -1,6 +1,6 @@
 let
-  # dir = ".config/ibus/rime";
-  dir = ".local/share/fcitx5/rime";
+  dir = ".config/ibus/rime";
+  # dir = ".local/share/fcitx5/rime";
 in
 {
   home.file."${dir}/default.custom.yaml".source = ./custom/default.custom.yaml;

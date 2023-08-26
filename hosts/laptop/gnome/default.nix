@@ -17,6 +17,8 @@
       core-utilities.enable = false;
       gnome-online-accounts.enable = false;
       gnome-browser-connector.enable = true;
+      tracker-miners.enable = false;
+      tracker.enable = false;
     };
     environment.gnome.excludePackages = (with pkgs; [
       gnome-tour
@@ -42,6 +44,7 @@
       gnome-tweaks
       gnome-calendar
       dconf-editor
+      seahorse
       gnome-disk-utility
       # loupe # https://github.com/NixOS/nixpkgs/pull/202692
       # gnome-sound-recorder

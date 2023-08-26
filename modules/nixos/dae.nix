@@ -9,10 +9,13 @@ in
     services.daet = {
       enable = lib.options.mkEnableOption (lib.mdDoc "the dae service");
       package = lib.mkPackageOptionMD pkgs "dae" { };
-      settingsFile = lib.mkOption {
+      configFile = lib.mkOption {
         type = lib.types.path;
         default = "/etc/dae/config.dae";
         example = "/path/to/your/config.dae";
+        description = lib.mdDoc ''
+          The path of dae config file, end with `.dae`.
+        '';
       };
     };
   };
@@ -22,7 +25,7 @@ in
     networking.firewall.allowedUDPPorts = [ 12345 ];
     environment.etc."dae/config.dae" = {
       mode = "0600";
-      source = cfg.settingsFile;
+      source = cfg.configFile;
     };
 
 

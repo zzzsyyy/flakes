@@ -9,7 +9,7 @@
   };
   services.daet = {
     enable = true; # @TODO
-    settingsFile = ./yc.dae;
+    configFile = ./yc.dae;
   };
 }
 

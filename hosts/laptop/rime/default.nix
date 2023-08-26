@@ -3,9 +3,9 @@
 }:
 {
   i18n.inputMethod = {
-    enabled = "fcitx5";
-    fcitx5.addons = [
-      (pkgs.fcitx5-rime.override {
+    enabled = "ibus";
+    ibus.engines = [
+      (pkgs.ibus-engines.rime.override {
         librime = (pkgs.librime.overrideAttrs (old: {
           buildInputs = old.buildInputs ++ [ pkgs.lua5_4 ];
         })).override {
