@@ -1,35 +1,41 @@
-{ config, pkgs, lib, ... }:
+{ config
+, pkgs
+, lib
+, ...
+}:
 let
-  cfg = config.services.daet;
+  cfg = config.services.dae;
 in
 {
-  meta.maintainers = with lib.maintainers; [ pokon548 ];
-
+  disabledModules = [ "services/networking/dae.nix" ];
   options = {
-    services.daet = {
-      enable = lib.options.mkEnableOption (lib.mdDoc "the dae service");
-      package = lib.mkPackageOptionMD pkgs "dae" { };
-      configFile = lib.mkOption {
-        type = lib.types.path;
+    services.dae = with lib;{
+      enable = mkEnableOption (mkDoc "A Linux high-performance transparent proxy solution based on eBPF");
+      package = mkPackageOption pkgs "dae" { };
+      configFile = mkOption {
+        type = types.path;
         default = "/etc/dae/config.dae";
         example = "/path/to/your/config.dae";
-        description = lib.mdDoc ''
+        description = mdDoc ''
           The path of dae config file, end with `.dae`.
+
+          See <https://github.com/daeuniverse/dae/blob/main/example.dae>
         '';
       };
+      disableTxChecksumIpGeneric = mkEnableOption (mkDoc "See https://github.com/daeuniverse/dae/issues/43");
     };
   };
 
-  config = lib.mkIf config.services.daet.enable {
+  config = lib.mkIf cfg.enable {
     networking.firewall.allowedTCPPorts = [ 12345 ];
     networking.firewall.allowedUDPPorts = [ 12345 ];
     environment.etc."dae/config.dae" = {
-      mode = "0600";
+      mode = "0400";
       source = cfg.configFile;
     };
 
 
-    systemd.services.daet = {
+    systemd.services.dae = {
       unitConfig = {
         Description = "dae Service";
         Documentation = "https://github.com/daeuniverse/dae";

@@ -50,6 +50,7 @@ let
     asciinema
     iw
     appimage-run
+    my.odin
   ];
 
   office = with pkgs; [

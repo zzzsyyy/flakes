@@ -1,5 +1,6 @@
 { pkgs
 , lib
+, config
 , ...
 }:
 
@@ -25,13 +26,9 @@
       orca
       #]) ++ (with pkgs.gnome; [
     ]);
-    environment.sessionVariables.GST_PLUGIN_SYSTEM_PATH_1_0 = lib.makeSearchPathOutput "lib" "lib/gstreamer-1.0" (with pkgs.gst_all_1; [
-      gst-plugins-good
-      gst-plugins-bad
-      gst-plugins-ugly
-      gst-libav
-    ]);
     programs.dconf.enable = true;
+    # fix nautilus extensions deu to `core-utilities.enable = false`
+    workarounds.gnome-fix.enable = true;
     environment.systemPackages = (with pkgs; [
       ffmpegthumbnailer
       amberol # music

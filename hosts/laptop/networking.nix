@@ -7,9 +7,12 @@
     firewall.enable = false;
     networkmanager.enable = true;
   };
-  services.daet = {
+  services.dae = {
     enable = true; # @TODO
-    configFile = ./yc.dae;
+    configFile = ./min.dae;
+  };
+  services.sing-box = {
+    enable = false;
   };
 }
 
