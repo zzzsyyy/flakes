@@ -22,6 +22,7 @@ in
   config = mkIf cfg.enable {
     environment.systemPackages = with pkgs; [ gnome.nautilus-python ] ++ [
       nautilus-open-any-terminal
+      megasync
     ];
     services.xserver.desktopManager.gnome.extraGSettingsOverridePackages = with pkgs; [
       nautilus-open-any-terminal
