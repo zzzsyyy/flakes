@@ -2,9 +2,8 @@
 , ...
 }: {
   imports = [
-    ./dconf.nix
+    ./gnome/dconf.nix
     # ./hyprland
-    # ./swaylock.nix
   ];
 
   xdg = {

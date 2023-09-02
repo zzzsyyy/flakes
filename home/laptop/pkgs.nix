@@ -50,6 +50,7 @@ let
     asciinema
     iw
     appimage-run
+    tokei
     my.odin
   ];
 
@@ -77,6 +78,7 @@ let
     #minder
     adw-gtk3
     my.default-light
+    my.ascii-draw
     (ventoy.override {
       defaultGuiType = "gtk3";
       withGtk3 = true;

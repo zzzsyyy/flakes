@@ -4,9 +4,9 @@
 }:
 
 let
-  userJs = "${pkgs.my.firefox-gnome-theme}/share/firefox-gnome-theme/configuration/user.js";
-  userChrome = "${pkgs.my.firefox-gnome-theme}/share/firefox-gnome-theme/userChrome.css";
-  userContent = "${pkgs.my.firefox-gnome-theme}/share/firefox-gnome-theme/userContent.css";
+  userJs = "${pkgs.my.firefox-gnome-theme}/share/firefox-theme/configuration/user.js";
+  userChrome = "${pkgs.my.firefox-gnome-theme}/share/firefox-theme/userChrome.css";
+  userContent = "${pkgs.my.firefox-gnome-theme}/share/firefox-theme/userContent.css";
 in
 
 {

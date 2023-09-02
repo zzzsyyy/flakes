@@ -19,7 +19,7 @@ stdenvNoCC.mkDerivation rec {
   doCheck = false;
 
   installPhase = ''
-    mkdir -p $out/share/firefox-gnome-theme
+    mkdir -p $out/share/firefox-theme
     cp -r theme configuration userChrome.css userContent.css $_
   '';
 

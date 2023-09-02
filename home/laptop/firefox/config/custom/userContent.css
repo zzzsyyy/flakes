@@ -1,4 +1,4 @@
-@supports -moz-bool-pref("gnomeTheme.newTabFullIcon") {
+@supports -moz-bool-pref("userContent.newTab.fullIcon") {
   .top-site-outer .tile {
     overflow: hidden;
   }
@@ -9,13 +9,16 @@
   }
 }
 
-@supports -moz-bool-pref("gnomeTheme.searchBar") {
-  #searchSuggestionTable {
+@supports -moz-bool-pref("userContent.newTab.hiddenSearchbar") {
+  .search-inner-wrapper {
     display: none !important;
+  }
+  .logo-and-wordmark {
+    margin-bottom: 0 !important;
   }
 }
 
-@supports -moz-bool-pref("gnomeTheme.hiddenLogo") {
+@supports -moz-bool-pref("userContent.newTab.hiddenLogo") {
   .logo-and-wordmark {
     display: none !important;
   }

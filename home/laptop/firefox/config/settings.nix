@@ -7,9 +7,7 @@
   "media.peerconnection.enabled" = false;
   "network.IDN_show_punycode" = true;
 
-  "gnomeTheme.bookmarksToolbarUnderTabs" = true;
-  "gnomeTheme.normalWidthTabs" = true;
-  "gnomeTheme.newTabFullIcon" = true;
-  "gnomeTheme.searchBar" = true;
-  "gnomeTheme.extensions.tabCenterReborn" = true;
+  "userContent.newTab.fullIcon" = true;
+  "userContent.newTab.hiddenLogo" = true;
+  "userContent.newTab.hiddenSearchbar" = true;
 }
