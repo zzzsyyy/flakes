@@ -17,7 +17,7 @@ local theme = require("other.utils").get_colorscheme()
 
 local opts = {
   install = {
-    colorscheme = { theme },
+    colorscheme = { everforest },
   },
   ui = {
     size = { width = 1.0, height = 1.0 },

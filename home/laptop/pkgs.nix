@@ -47,10 +47,12 @@ let
     ffmpeg_6-full
     dae
     file
+    megacmd
     asciinema
     iw
     appimage-run
     tokei
+    hyperfine
     my.odin
   ];
 
@@ -78,7 +80,7 @@ let
     #minder
     adw-gtk3
     my.default-light
-    my.ascii-draw
+    # my.ascii-draw
     (ventoy.override {
       defaultGuiType = "gtk3";
       withGtk3 = true;

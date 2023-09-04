@@ -1,6 +1,6 @@
 {
   imports = [
-    #./langs.nix
+    ./langs.nix
   ];
 
   programs.helix = {

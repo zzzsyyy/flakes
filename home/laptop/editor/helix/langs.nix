@@ -12,6 +12,11 @@
           args = [ "-i" "2" "-" ];
         };
       }
+      {
+        name = "nix";
+        auto-format = true;
+        formatter.command = "${pkgs.nixpkgs-fmt}/bin/nixpkgs-fmt";
+      }
     ];
     language-server = {
       clangd = {
@@ -20,7 +25,6 @@
       };
       nil = {
         command = lib.getExe pkgs.nil;
-        config.nil.formatting.command = [ "${lib.getExe pkgs.alejandra}" "-q" ];
       };
     };
   };

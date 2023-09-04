@@ -1,12 +1,16 @@
-local theme = require("other.utils").get_colorscheme()
+-- local theme = require("other.utils").get_colorscheme()
 
 return {
   {
-    "EdenEast/nightfox.nvim",
+    "neanias/everforest-nvim",
+    version = false,
     lazy = false,
     priority = 1000,
     config = function()
-      vim.cmd("colorscheme " .. theme)
+      require("everforest").setup({
+        background = "soft",
+      })
+      vim.cmd("colorscheme everforest")
     end,
-  },
+  }
 }
