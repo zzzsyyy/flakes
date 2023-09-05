@@ -43,6 +43,7 @@ in
         Wants = [ "network.target" ];
       };
 
+      reloadTriggers = [ config.environment.etc."dae/config.dae".source ];
       serviceConfig = {
         User = "root";
         ExecStartPre = "${lib.getExe cfg.package} validate -c /etc/dae/config.dae";
