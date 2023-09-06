@@ -24,6 +24,7 @@
     enable = true;
   };
 
+  home.file.".config/neofetch/config.conf".text = import ./neofetch.nix;
   home.shellAliases = {
     pb = "curl -F 'c=@-' 'https://fars.ee/'";
     gst = "git status";

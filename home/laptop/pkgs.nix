@@ -60,6 +60,7 @@ let
     libreoffice-fresh
     #calibre
     octave
+    typst
     texlive.combined.scheme-full
     asciidoc-full
     # hunspellq

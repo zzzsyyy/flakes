@@ -6,7 +6,8 @@
   };
   services.dae = {
     enable = true;
-    configFile = ./min.dae;
+    disableTxChecksumIpGeneric = false;
+    config = builtins.readFile (./min.dae);
   };
 }
 
