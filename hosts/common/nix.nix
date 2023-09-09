@@ -2,7 +2,7 @@
 , ...
 }: {
   nix = {
-    channel.enable = false;
+    #channel.enable = false;
     package = pkgs.nixUnstable;
     settings = {
       experimental-features = [ "nix-command" "flakes" ];

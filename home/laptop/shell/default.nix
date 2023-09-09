@@ -4,7 +4,7 @@
     ./git.nix
     ./kitty.nix
   ];
-  programs.exa = {
+  programs.eza = {
     enable = true;
     enableAliases = true;
     extraOptions = [

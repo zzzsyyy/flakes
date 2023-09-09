@@ -32,6 +32,7 @@
       amberol # music
       feh # image
       gnome-text-editor
+      epiphany
     ]) ++ (with pkgs.gnome; [
       nautilus # file
       file-roller # archive

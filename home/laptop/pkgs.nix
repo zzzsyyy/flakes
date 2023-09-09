@@ -34,6 +34,8 @@ let
     # my.libjxl-with-plugin
     libjxl
     # nvfetcher
+    ghc
+    haskellPackages.cabal-install
   ];
 
   unix-tools = with pkgs; [
