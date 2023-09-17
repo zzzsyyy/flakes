@@ -40,7 +40,11 @@ let
 
   unix-tools = with pkgs; [
     bat
-    neofetch
+    linuxKernel.packages.linux_xanmod_stable.cpupower
+    #@TODO update BIOS
+    #dmidecode
+    #neofetch
+    hyfetch
     bottom
     scrcpy
     bind
@@ -52,10 +56,13 @@ let
     megacmd
     asciinema
     iw
-    appimage-run
+    #appimage-run
     tokei
     hyperfine
     my.odin
+    my.naive
+    innoextract
+    ouch
   ];
 
   office = with pkgs; [
@@ -74,7 +81,7 @@ let
     # gtkcord4 # discord (WIP)
     tdesktop
     tor-browser-bundle-bin
-    handbrake
+    #handbrake
     go-musicfox
     # blueman
     #wireshark
