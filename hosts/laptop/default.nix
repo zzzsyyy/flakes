@@ -43,9 +43,9 @@
     kernelPackages = pkgs.linuxPackages_xanmod_latest;
     #@TODO
     kernelParams = [
-      "amd_pstate=active"
+      # Lenovo shit do not support on 4xxx
+      # "amd_pstate=active"
       "pti=on"
-      "quiet"
       "log_level=3"
       "nowatchdog"
     ];
@@ -60,7 +60,7 @@
 
   i18n = {
     defaultLocale = "zh_CN.UTF-8";
-    supportedLocales = [ "zh_CN.UTF-8/UTF-8" "en_US.UTF-8/UTF-8" "fr_FR.UTF-8/UTF-8" ];
+    supportedLocales = [ "zh_CN.UTF-8/UTF-8" "en_US.UTF-8/UTF-8" ];
   };
   # security.pam.services.swaylock = {
   #   text = ''
