@@ -3,7 +3,9 @@
 {
   programs.vscode = {
     enable = true;
-    package = pkgs.vscode.fhsWithPackages (
+    # use 1.78 until work on wayland
+    # https://github.com/microsoft/vscode/issues/192590
+    package = pkgs.stable.vscode.fhsWithPackages (
       ps: with ps; [
         rustup
         zlib
