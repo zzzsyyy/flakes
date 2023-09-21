@@ -63,6 +63,7 @@ let
     my.naive
     innoextract
     ouch
+    lf
   ];
 
   office = with pkgs; [
@@ -80,6 +81,9 @@ let
     # fractal-next # matrix
     # gtkcord4 # discord (WIP)
     tdesktop
+    # elec
+    #ngspice
+    #qucs-s
     tor-browser-bundle-bin
     #handbrake
     go-musicfox

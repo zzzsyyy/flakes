@@ -45,6 +45,7 @@
     kernelParams = [
       # Lenovo shit do not support on 4xxx
       # "amd_pstate=active"
+      "ideapad_laptop.allow_v4_dytc=1"
       "pti=on"
       "log_level=3"
       "nowatchdog"
