@@ -12,6 +12,7 @@
       ./services.nix
       ./virt.nix
       ./networking.nix
+      ./sops.nix
     ];
   # xdg.portal = {
   #   enable = true;
@@ -43,9 +44,10 @@
     kernelPackages = pkgs.linuxPackages_xanmod_latest;
     #@TODO
     kernelParams = [
-      "amd_pstate=active"
+      # Lenovo shit do not support on 4xxx
+      # "amd_pstate=active"
+      "ideapad_laptop.allow_v4_dytc=1"
       "pti=on"
-      "quiet"
       "log_level=3"
       "nowatchdog"
     ];
@@ -60,7 +62,7 @@
 
   i18n = {
     defaultLocale = "zh_CN.UTF-8";
-    supportedLocales = [ "zh_CN.UTF-8/UTF-8" "en_US.UTF-8/UTF-8" "fr_FR.UTF-8/UTF-8" ];
+    supportedLocales = [ "zh_CN.UTF-8/UTF-8" "en_US.UTF-8/UTF-8" ];
   };
   # security.pam.services.swaylock = {
   #   text = ''
@@ -94,6 +96,7 @@
     enableSSHSupport = true;
   };
   programs.fish.enable = true;
+  programs.thefuck.enable = true;
   programs.adb.enable = true;
   programs.fuse.userAllowOther = true;
   services.flatpak.enable = true;

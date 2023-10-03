@@ -6,13 +6,13 @@
 
 stdenv.mkDerivation rec {
   pname = "librime-lua";
-  version = "ustable-2023-06-25";
+  version = "ustable-2023-09-14";
 
   src = fetchFromGitHub {
     owner = "hchunhui";
     repo = pname;
-    rev = "c985eb399d63c491c6e03fa1651ddb59e485c04a";
-    hash = "sha256-tpyX0NxAlNZ4Qeml2BeM0NbPN5xDW/uH/f0eqjBQKIM=";
+    rev = "7eca28fff386ad04b20a540bc8f99f90b2913869";
+    hash = "sha256-xWByqSAnVJdrcRR9PR79ffXOhz8rOIvU2u5r0S29TKI=";
   };
 
   buildInputs = [ lua5_4 ];

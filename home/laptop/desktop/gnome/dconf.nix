@@ -39,7 +39,7 @@ in
       tap-and-drag-lock = true;
       tap-to-click = true;
       accel-profile = "adaptive";
-      speed = 0.1;
+      speed = 0.2;
     };
     "org/gnome/desktop/peripherals/mouse".accel-profile = "adaptive";
     "org/gnome/desktop/interface" = {

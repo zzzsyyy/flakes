@@ -5,7 +5,7 @@
 let
   username = "zzzsy";
 
-  inherit (inputs) home-manager nixpkgs impermanence firefox-nightly;
+  inherit (inputs) home-manager nixpkgs impermanence firefox-nightly sops-nix;
 
   inherit (nixpkgs.lib) attrValues;
   mkHost =
@@ -36,6 +36,10 @@ let
                       inherit system;
                       config.allowUnfree = true;
                     };
+                    unstable = import inputs.nixpkgs-unstable {
+                      inherit system;
+                      config.allowUnfree = true;
+                    };
                   })
                 ];
               };
@@ -60,6 +64,7 @@ in
       hostName = "laptop";
       modules = [
         impermanence.nixosModules.impermanence
+        sops-nix.nixosModules.sops
         # nixos-hardware.nixosModules.common-cpu-amd-pstate
         # nixos-hardware.nixosModules.common-gpu-amd
         # nixos-hardware.nixosModules.common-pc-ssd

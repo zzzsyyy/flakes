@@ -21,7 +21,6 @@ let
     clang-tools
     sassc
     rustup
-    # rnix-lsp
     lua
     python3
     git
@@ -31,7 +30,6 @@ let
     go
     # julia
     just
-    # my.libjxl-with-plugin
     libjxl
     # nvfetcher
     ghc
@@ -40,22 +38,29 @@ let
 
   unix-tools = with pkgs; [
     bat
-    neofetch
+    #linuxKernel.packages.linux_xanmod_stable.cpupower
+    #@TODO update BIOS
+    #dmidecode
+    #neofetch
+    hyfetch
     bottom
     scrcpy
     bind
     ripgrep
-    sops
     ffmpeg_6-full
-    dae
     file
     megacmd
     asciinema
     iw
-    appimage-run
+    #appimage-run
     tokei
     hyperfine
     my.odin
+    my.naive
+    innoextract
+    ouch
+    lf
+    pdftk
   ];
 
   office = with pkgs; [
@@ -73,8 +78,11 @@ let
     # fractal-next # matrix
     # gtkcord4 # discord (WIP)
     tdesktop
+    # elec
+    #ngspice
+    #qucs-s
     tor-browser-bundle-bin
-    handbrake
+    #handbrake
     go-musicfox
     # blueman
     #wireshark

@@ -28,7 +28,7 @@
   home.shellAliases = {
     pb = "curl -F 'c=@-' 'https://fars.ee/'";
     gst = "git status";
-    n = "neofetch";
+    n = "hyfetch";
     setproxy = "export ALL_PROXY=socks://127.0.0.1:7890";
     unsetproxy = "unset ALL_PROXY";
     clc = "clear";
