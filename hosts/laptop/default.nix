@@ -12,6 +12,7 @@
       ./services.nix
       ./virt.nix
       ./networking.nix
+      ./sops.nix
     ];
   # xdg.portal = {
   #   enable = true;
@@ -95,6 +96,7 @@
     enableSSHSupport = true;
   };
   programs.fish.enable = true;
+  programs.thefuck.enable = true;
   programs.adb.enable = true;
   programs.fuse.userAllowOther = true;
   services.flatpak.enable = true;

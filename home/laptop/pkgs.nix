@@ -21,7 +21,6 @@ let
     clang-tools
     sassc
     rustup
-    # rnix-lsp
     lua
     python3
     git
@@ -31,7 +30,6 @@ let
     go
     # julia
     just
-    # my.libjxl-with-plugin
     libjxl
     # nvfetcher
     ghc
@@ -40,7 +38,7 @@ let
 
   unix-tools = with pkgs; [
     bat
-    linuxKernel.packages.linux_xanmod_stable.cpupower
+    #linuxKernel.packages.linux_xanmod_stable.cpupower
     #@TODO update BIOS
     #dmidecode
     #neofetch
@@ -49,9 +47,7 @@ let
     scrcpy
     bind
     ripgrep
-    sops
     ffmpeg_6-full
-    dae
     file
     megacmd
     asciinema
@@ -64,6 +60,7 @@ let
     innoextract
     ouch
     lf
+    pdftk
   ];
 
   office = with pkgs; [
