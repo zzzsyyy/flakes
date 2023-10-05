@@ -6,13 +6,13 @@
 
 stdenvNoCC.mkDerivation rec {
   pname = "rime-ice";
-  version = "unstable-2023-09-08";
+  version = "unstable-2023-09-29";
 
   src = fetchFromGitHub {
     owner = "iDvel";
     repo = pname;
-    rev = "7ebf8ff1fa85df2a920673ac350fb90cf164fcd6";
-    hash = "sha256-tsLTRre/8b1NFIsWsQsu7nx2F4FaIihU2DV6KgJwPJE=";
+    rev = "fab529d43bdf21572b260d77da8a02dba523f494";
+    hash = "sha256-hsS4Jso9gFk2jaiNkSCl40Nyf7XneOKv+QSC2qK/UX4=";
   };
 
   installPhase = ''

@@ -5,7 +5,7 @@
 let
   username = "zzzsy";
 
-  inherit (inputs) home-manager nixpkgs impermanence firefox-nightly sops-nix;
+  inherit (inputs) home-manager nixpkgs impermanence firefox-nightly sops-nix chaotic;
 
   inherit (nixpkgs.lib) attrValues;
   mkHost =
@@ -32,6 +32,7 @@ let
                   (final: prev: {
                     firefox-nightly-bin = firefox-nightly.packages.${prev.system}.firefox-nightly-bin;
                     my = self.packages."${system}";
+                    chaotic = chaotic.packages.${system};
                     stable = import inputs.nixpkgs-stable {
                       inherit system;
                       config.allowUnfree = true;
@@ -65,6 +66,7 @@ in
       modules = [
         impermanence.nixosModules.impermanence
         sops-nix.nixosModules.sops
+        chaotic.nixosModules.default
         # nixos-hardware.nixosModules.common-cpu-amd-pstate
         # nixos-hardware.nixosModules.common-gpu-amd
         # nixos-hardware.nixosModules.common-pc-ssd

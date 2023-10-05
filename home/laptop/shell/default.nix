@@ -3,6 +3,7 @@
     ./fish.nix
     ./git.nix
     ./kitty.nix
+    ./starship.nix
   ];
   programs.eza = {
     enable = true;

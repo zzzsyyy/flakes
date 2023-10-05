@@ -56,8 +56,7 @@ let
     tokei
     hyperfine
     my.odin
-    my.naive
-    innoextract
+    #innoextract
     ouch
     lf
     pdftk

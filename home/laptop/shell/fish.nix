@@ -3,6 +3,8 @@
     enable = true;
     interactiveShellInit = ''
       set fish_greeting
+      set pure_enable_single_line_prompt true
+      ${pkgs.thefuck}/bin/thefuck --alias | source
     '';
     functions = {
       __fish_command_not_found_handler = {
@@ -21,15 +23,15 @@
       gc1 = "git clone --depth=1 ";
     };
     plugins = [
-      {
-        name = "hypro";
-        src = pkgs.fetchFromGitHub {
-          owner = "jorgebucaran";
-          repo = "hydro";
-          rev = "41b46a05c84a15fe391b9d43ecb71c7a243b5703";
-          hash = "sha256-zmEa/GJ9jtjzeyJUWVNSz/wYrU2FtqhcHdgxzi6ANHg=";
-        };
-      }
+      # {
+      #   name = "pure";
+      #   src = pkgs.fetchFromGitHub {
+      #     owner = "pure-fish";
+      #     repo = "pure";
+      #     rev = "f1b2c7049de3f5cb45e29c57a6efef005e3d03ff";
+      #     hash = "sha256-MnlqKRmMNVp6g9tet8sr5Vd8LmJAbZqLIGoDE5rlu8E=";
+      #   };
+      # }
       {
         name = "auto-venv";
         src = pkgs.fetchFromGitHub {
