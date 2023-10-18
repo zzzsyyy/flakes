@@ -71,8 +71,11 @@
     firewall.enable = false;
     networkmanager.enable = true;
   };
+  programs.clash-verge = {
+    enable = true; # enable until migrate to dae (rules)
+  };
   services.dae = {
-    enable = true;
+    enable = false;
     disableTxChecksumIpGeneric = false;
     configFile = config.sops.templates."config.dae".path;
   };

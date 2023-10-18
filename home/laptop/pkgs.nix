@@ -34,6 +34,8 @@ let
     # nvfetcher
     ghc
     haskellPackages.cabal-install
+    #docker_24
+    #git-repo
   ];
 
   unix-tools = with pkgs; [
@@ -49,7 +51,7 @@ let
     ripgrep
     ffmpeg_6-full
     file
-    megacmd
+    #megacmd
     asciinema
     iw
     #appimage-run
@@ -60,6 +62,9 @@ let
     ouch
     lf
     pdftk
+    ncdu
+    #graphviz-nox
+    duf
   ];
 
   office = with pkgs; [
@@ -69,6 +74,7 @@ let
     typst
     texlive.combined.scheme-full
     asciidoc-full
+    feishu
     # hunspellq
   ];
 
@@ -80,6 +86,7 @@ let
     # elec
     #ngspice
     #qucs-s
+    microsoft-edge-dev
     tor-browser-bundle-bin
     #handbrake
     go-musicfox

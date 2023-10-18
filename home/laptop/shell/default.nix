@@ -25,6 +25,18 @@
     enable = true;
   };
 
+  programs.atuin = {
+    enable = true;
+    flags = [
+      "--disable-up-arrow"
+      "--disable-ctrl-r"
+    ];
+    settings = {
+      sync_frequency = "15m";
+      dialect = "us";
+    };
+  };
+
   home.file.".config/neofetch/config.conf".text = import ./neofetch.nix;
   home.shellAliases = {
     pb = "curl -F 'c=@-' 'https://fars.ee/'";

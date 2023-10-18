@@ -4,11 +4,11 @@
 
 stdenvNoCC.mkDerivation rec {
   pname = "iosevka-zt";
-  version = "26.3.0";
+  version = "27.1.0";
 
   src = fetchurl {
     url = "https://github.com/zzzsyyy/Iosevka/releases/download/v${version}/Iosevka-${version}.tar.xz";
-    hash = "sha256-BCiyTD9ZNkESxmvReKrPVzdHGrldr0gR/rWc+bXuVPc=";
+    hash = "sha256-jhF5qFlWHWSJLxSGFvK7/FJOccELPQ/x4vypR7JfdZE=";
   };
 
   sourceRoot = ".";
