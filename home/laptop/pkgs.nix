@@ -65,6 +65,7 @@ let
     ncdu
     #graphviz-nox
     duf
+    nvfetcher
   ];
 
   office = with pkgs; [

@@ -9,9 +9,9 @@ image:https://img.zzzsy.top/codeberg.svg[Get it on Codeberg,200,align="center"]
 
 * [x] using link:https://flake.parts[flake parts]
 * [x] secrets by link:https://github.com/Mic92/sops-nix[sops-nix]
-* [ ] pkgs using link:https://github.com/berberman/nvfetcher[nvfetcher]
+* [x] pkgs using link:https://github.com/berberman/nvfetcher[nvfetcher]
 * [x] moduliser les conf
-* [x] shortcut using link:just.systems[justfile]
+* [x] shortcut using link:https://just.systems/[justfile]
 * [x] Rime (using patch & link:https://github.com/iDvel/rime-ice[Rime-Ice])
 * [x] using link:https://github.com/cachix/pre-commit-hooks.nix[pre-commit]
 * [ ] Secure boot using link:https://github.com/nix-community/lanzaboote[lanzaboote]

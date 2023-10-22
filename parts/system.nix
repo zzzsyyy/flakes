@@ -5,14 +5,14 @@
 let
   username = "zzzsy";
 
-  inherit (inputs) home-manager nixpkgs impermanence firefox-nightly sops-nix chaotic;
+  inherit (inputs) home-manager nixpkgs impermanence sops-nix chaotic nvfetcher;
 
   inherit (nixpkgs.lib) attrValues;
   mkHost =
     { hostName
     , system
     , modules
-    , overlays ? [ ]
+    , overlays ? [ nvfetcher.overlays.default ]
     }:
     {
       ${hostName} = nixpkgs.lib.nixosSystem {
@@ -30,7 +30,6 @@ let
                 overlays = (import ../overlays)
                 ++ [
                   (final: prev: {
-                    firefox-nightly-bin = firefox-nightly.packages.${prev.system}.firefox-nightly-bin;
                     my = self.packages."${system}";
                     chaotic = chaotic.packages.${system};
                     stable = import inputs.nixpkgs-stable {
@@ -42,7 +41,8 @@ let
                       config.allowUnfree = true;
                     };
                   })
-                ];
+                ]
+                ++ overlays;
               };
               networking.hostName = hostName;
             }
