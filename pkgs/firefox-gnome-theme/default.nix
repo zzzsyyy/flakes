@@ -1,18 +1,10 @@
-{ lib
+{ source
+, lib
 , stdenvNoCC
-, fetchFromGitHub
 }:
 
 stdenvNoCC.mkDerivation rec {
-  pname = "firefox-gnome-theme";
-  version = "118";
-
-  src = fetchFromGitHub {
-    repo = pname;
-    owner = "rafaelmardojai";
-    rev = "v${version}";
-    hash = "sha256-jmYHoZYx2/dSvDH/khg7vi2qaKKuXK1g8pnvcRyLw/4=";
-  };
+  inherit (source) pname version src;
 
   dontConfigure = true;
   dontBuild = true;

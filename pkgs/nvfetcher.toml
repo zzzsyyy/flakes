@@ -11,4 +11,14 @@ src.github = "zzzsyyy/Iosevka"
 fetch.url = "https://github.com/zzzsyyy/Iosevka/releases/download/v$ver/Iosevka-$ver.tar.xz"
 src.prefix = "v"
 
+[plangothic]
+src.github = "Fitzgerald-Porthmouth-Koenigsegg/Plangothic"
+fetch.github = "Fitzgerald-Porthmouth-Koenigsegg/Plangothic"
 
+[firefox-gnome-theme]
+src.github = "rafaelmardojai/firefox-gnome-theme"
+fetch.github = "rafaelmardojai/firefox-gnome-theme"
+
+[lxgw-wenkai-screen]
+src.github = "lxgw/LxgwWenKai-Screen"
+fetch.url = "https://github.com/lxgw/LxgwWenKai-Screen/releases/download/$ver/LXGWWenKaiScreen.ttf"

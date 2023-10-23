@@ -1,21 +1,11 @@
-{ lib
+{ source
+, lib
 , stdenvNoCC
-, fetchurl
 , useGB ? false
 }:
 
-let
-  preurl = "https://github.com/lxgw/LxgwWenKai-Screen/releases/download";
-in
-
 stdenvNoCC.mkDerivation rec {
-  pname = "lxgw-wenkai-screen";
-  version = "1.300";
-
-  src = fetchurl {
-    url = "${preurl}/v${version}/LXGWWenKai${lib.optionalString useGB "GB"}Screen.ttf";
-    hash = "sha256-+zq4DRtjgUXSBA7Fjr6a2zUTHAv27xtzIrfnY0RI58Q=";
-  };
+  inherit (source) pname version src;
 
   sourceRoot = ".";
 
@@ -26,7 +16,7 @@ stdenvNoCC.mkDerivation rec {
 
   installPhase = ''
     mkdir -p $out/share/fonts/truetype
-    mv *.ttf $_
+    mv LXGWWenKaiScreen${lib.optionalString useGB "GB"}.ttf $_
   '';
 
   meta = with lib; {
