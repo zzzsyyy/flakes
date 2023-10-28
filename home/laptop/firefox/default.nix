@@ -12,7 +12,7 @@ in
 {
   programs.firefox = {
     enable = true;
-    package = pkgs.wrapFirefox pkgs.chaotic.firefox-unwrapped_nightly {
+    package = pkgs.wrapFirefox pkgs.firefox-beta-unwrapped {
       extraPolicies = {
         DisablePocket = true;
         DisableTelemetry = true;
