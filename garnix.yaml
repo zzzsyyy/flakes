@@ -2,4 +2,4 @@ builds:
  exclude: []
  include:
  - checks.x86_64-linux.pre-commit
- - nixosConfigurations.laptop
+ - nixosConfigurations.laptop.pkgs.megasync
