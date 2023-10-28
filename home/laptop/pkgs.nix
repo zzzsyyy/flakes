@@ -15,6 +15,7 @@ let
 
   build-tools = with pkgs; [
     cmake
+    gnumake
     # gcc
     # gdb
     clang
@@ -36,6 +37,7 @@ let
     haskellPackages.cabal-install
     #docker_24
     #git-repo
+    jdk21
   ];
 
   unix-tools = with pkgs; [
@@ -62,7 +64,7 @@ let
     ouch
     lf
     pdftk
-    ncdu
+    #ncdu
     #graphviz-nox
     duf
     nvfetcher
@@ -90,6 +92,8 @@ let
     microsoft-edge-dev
     tor-browser-bundle-bin
     #handbrake
+    megasync
+    # ocrmypdf
     go-musicfox
     # blueman
     #wireshark
