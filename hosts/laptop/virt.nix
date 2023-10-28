@@ -4,6 +4,6 @@
   programs.dconf.enable = true;
   environment.systemPackages = with pkgs; [
     virt-manager
-    # guestfs-tools #@TODO where is bin?
+    guestfs-tools
   ];
 }
