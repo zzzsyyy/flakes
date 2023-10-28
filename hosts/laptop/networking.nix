@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 {
   sops.secrets = {
     sub1 = { };
@@ -7,11 +7,15 @@
 
   sops.templates."config.dae".content = ''
     global {
-      lan_interface: vnet0
+      lan_interface: vnet1
       wan_interface: auto
       log_level: warning
       allow_insecure: false
       auto_config_kernel_parameter: true
+    }
+
+    node {
+      # 'socks5://127.0.0.1:7890'
     }
 
     subscription {
@@ -73,11 +77,14 @@
   };
   programs.clash-verge = {
     enable = true; # enable until migrate to dae (rules)
+    tunMode = true;
   };
   services.dae = {
     enable = false;
     disableTxChecksumIpGeneric = false;
+    assets = with pkgs.unstable; [ v2ray-geoip v2ray-domain-list-community ];
     configFile = config.sops.templates."config.dae".path;
   };
+
 }
 
