@@ -3,13 +3,13 @@
 {
   firefox-gnome-theme = {
     pname = "firefox-gnome-theme";
-    version = "v118";
+    version = "v119";
     src = fetchFromGitHub {
       owner = "rafaelmardojai";
       repo = "firefox-gnome-theme";
-      rev = "v118";
+      rev = "v119";
       fetchSubmodules = false;
-      sha256 = "sha256-jmYHoZYx2/dSvDH/khg7vi2qaKKuXK1g8pnvcRyLw/4=";
+      sha256 = "sha256-OU6LyGeePS31pG7o10su7twDzDL5Z3a1sHtV68SzEwI=";
     };
   };
   iosevka-zt = {
@@ -22,15 +22,15 @@
   };
   librime-lua = {
     pname = "librime-lua";
-    version = "757a01445905f89bf58af0d7da8e283c5fbfd973";
+    version = "1e3ab105947299b36b4e6879522299677f99ea8a";
     src = fetchFromGitHub {
       owner = "hchunhui";
       repo = "librime-lua";
-      rev = "757a01445905f89bf58af0d7da8e283c5fbfd973";
+      rev = "1e3ab105947299b36b4e6879522299677f99ea8a";
       fetchSubmodules = false;
-      sha256 = "sha256-XCNtwcAq8pmzGaPa4CvaE8Cj6tyI6cjsJUGutSinfpA=";
+      sha256 = "sha256-AP18uO34wMhv06mlFOTIRYNa1HzcakElBSpJa8LgHIc=";
     };
-    date = "2023-10-07";
+    date = "2023-10-23";
   };
   lxgw-wenkai-screen = {
     pname = "lxgw-wenkai-screen";
@@ -39,7 +39,6 @@
       url = "https://github.com/lxgw/LxgwWenKai-Screen/releases/download/v1.311/LXGWWenKaiScreen.ttf";
       sha256 = "sha256-BLVICsBkAD+Lrz1WwwNP3G3qALHjx0NVMkpArcpY9uE=";
     };
-    var = "$var";
   };
   plangothic = {
     pname = "plangothic";

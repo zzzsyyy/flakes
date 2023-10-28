@@ -26,6 +26,8 @@
         };
     in
     {
-      packages = builtins.listToAttrs (map genPkg names);
+      packages = builtins.listToAttrs (map genPkg names) // {
+        megasync = pkgs.megasync;
+      };
     };
 }
