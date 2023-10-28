@@ -1,7 +1,10 @@
+{ inputs, ... }:
+
 {
   perSystem =
     { config
     , pkgs
+    , system
     , ...
     }:
     let
@@ -26,6 +29,12 @@
         };
     in
     {
+      _module.args.pkgs = import inputs.nixpkgs {
+        inherit system;
+        config = {
+          allowUnfree = true;
+        };
+      };
       packages = builtins.listToAttrs (map genPkg names) // {
         megasync = pkgs.megasync;
       };
