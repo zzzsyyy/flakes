@@ -82,7 +82,6 @@
   services.dae = {
     enable = false;
     disableTxChecksumIpGeneric = false;
-    assets = with pkgs.unstable; [ v2ray-geoip v2ray-domain-list-community ];
     configFile = config.sops.templates."config.dae".path;
   };
 
