@@ -17,6 +17,14 @@
         auto-format = true;
         formatter.command = "${pkgs.nixpkgs-fmt}/bin/nixpkgs-fmt";
       }
+      {
+        name = "c";
+        auto-format = true;
+        formatter = {
+          command = "${pkgs.clang-tools}/bin/clang-format style=file";
+          args = [ "-i" ];
+        };
+      }
     ];
     language-server = {
       clangd = {
