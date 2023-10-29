@@ -1,6 +1,14 @@
-{ inputs, ... }:
+{ inputs, self, lib, ... }:
 
 {
+  flake.overlays = builtins.listToAttrs (map
+    (name: {
+      name = lib.strings.removeSuffix ".nix" name;
+      value = import (../overlays/${name});
+    })
+    (builtins.attrNames (builtins.readDir ../overlays))
+  );
+
   perSystem =
     { config
     , pkgs
@@ -34,6 +42,7 @@
         config = {
           allowUnfree = true;
         };
+        overlays = map (f: self.overlays.${f}) (builtins.attrNames self.overlays);
       };
       packages = builtins.listToAttrs (map genPkg names) // {
         megasync = pkgs.megasync;

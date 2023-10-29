@@ -92,7 +92,7 @@ let
     microsoft-edge-dev
     tor-browser-bundle-bin
     #handbrake
-    megasync
+    my.megasync
     # ocrmypdf
     go-musicfox
     # blueman

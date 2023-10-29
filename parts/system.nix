@@ -27,8 +27,8 @@ let
                 sharedModules = attrValues self.hmModules;
               };
               nixpkgs = {
-                overlays = (import ../overlays)
-                ++ [
+                # overlays = (import ../overlays)
+                overlays = [
                   (final: prev: {
                     my = self.packages."${system}";
                     chaotic = chaotic.packages.${system};
@@ -36,7 +36,7 @@ let
                       inherit system;
                       config.allowUnfree = true;
                     };
-                    unstable = import inputs.nixpkgs-unstable {
+                    uns = import inputs.nixpkgs-uns {
                       inherit system;
                       config.allowUnfree = true;
                     };
