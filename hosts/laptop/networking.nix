@@ -7,7 +7,7 @@
 
   sops.templates."config.dae".content = ''
     global {
-      lan_interface: vnet1
+      lan_interface: vnet0
       wan_interface: auto
       log_level: warning
       allow_insecure: false
@@ -76,11 +76,11 @@
     networkmanager.enable = true;
   };
   programs.clash-verge = {
-    enable = true; # enable until migrate to dae (rules)
+    enable = false; # enable until migrate to dae (rules)
     tunMode = true;
   };
   services.dae = {
-    enable = false;
+    enable = true;
     disableTxChecksumIpGeneric = false;
     configFile = config.sops.templates."config.dae".path;
   };

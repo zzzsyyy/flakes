@@ -46,8 +46,8 @@
       systemd-boot.configurationLimit = 5;
       efi.canTouchEfiVariables = false; #@TODO
     };
-    kernelPackages = pkgs.linuxPackages_xanmod_latest;
-    #kernelPackages = pkgs.chaotic.linuxPackages_cachyos;
+    # kernelPackages = pkgs.linuxPackages_xanmod_latest;
+    kernelPackages = pkgs.chaotic.linuxPackages_cachyos;
     #@TODO
     kernelParams = [
       # Lenovo shit do not support on 4xxx

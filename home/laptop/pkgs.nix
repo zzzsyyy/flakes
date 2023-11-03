@@ -48,6 +48,11 @@ let
     #neofetch
     hyfetch
     bottom
+
+    wasmtime
+    twiggy
+    binaryen
+
     scrcpy
     bind
     ripgrep
