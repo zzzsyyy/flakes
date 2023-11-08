@@ -24,7 +24,7 @@ in
     ];
 
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "usb_storage" "sd_mod" ];
-  boot.initrd.kernelModules = [ "amdgpu" ];
+  boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" "v4l2loopback" "acpi_call" ];
 
   # for obs virtual camera
@@ -41,6 +41,7 @@ in
   fileSystems."/var/log" = btrfsSubvolMain "@log" { };
   fileSystems."/persist" = btrfsSubvolMain "@persist" { neededForBoot = true; };
   fileSystems."/nix" = btrfsSubvolMain "@nix" { neededForBoot = true; };
+  fileSystems."/swap" = btrfsSubvolMain "@swap" { };
   ##! permission
   ## sudo chmod -R a+rwX,o-rw /home/$USER
   fileSystems."/home" = btrfsSubvolMain "@home" { };
@@ -50,7 +51,14 @@ in
   };
 
 
-  swapDevices = [ ];
+  swapDevices = [{
+    device = "/swap/swapfile";
+    size = 24 * 1024;
+  }];
+
+  #boot.resumeDevice = "/dev/disk/by-partlabel/NixOS";
+  #boot.kernelParams = [ "mem_sleep_default=deep" "resume_offset=24927051" ];
+
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware = {

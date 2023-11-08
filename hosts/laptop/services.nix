@@ -39,6 +39,9 @@
         incomplete-dir-enabled = false;
       };
     };
+    earlyoom = {
+      enable = true;
+    };
     # blueman.enable = true;
     navidrome = {
       enable = false;
