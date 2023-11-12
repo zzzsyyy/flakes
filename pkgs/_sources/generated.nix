@@ -42,13 +42,13 @@
   };
   plangothic = {
     pname = "plangothic";
-    version = "V1.8.5746";
+    version = "V1.8.5752";
     src = fetchFromGitHub {
       owner = "Fitzgerald-Porthmouth-Koenigsegg";
       repo = "Plangothic";
-      rev = "V1.8.5746";
+      rev = "V1.8.5752";
       fetchSubmodules = false;
-      sha256 = "sha256-PW0P6Ndekmsw6Y1ChCKHSVRxLPtqwYmi4CnrptpfUfE=";
+      sha256 = "sha256-6Aq8q3jG9Pvn9UZnXdFheReYDtEgIRy7m62nQT2yjuM=";
     };
   };
   rime-ice = {

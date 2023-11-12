@@ -52,6 +52,7 @@ let
     wasmtime
     twiggy
     binaryen
+    wabt
 
     scrcpy
     bind
@@ -100,6 +101,7 @@ let
     my.megasync
     # ocrmypdf
     go-musicfox
+    jellyfin-media-player
     # blueman
     #wireshark
     #gaphor
