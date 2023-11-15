@@ -14,10 +14,10 @@
   };
   iosevka-zt = {
     pname = "iosevka-zt";
-    version = "27.1.0";
+    version = "27.3.5";
     src = fetchurl {
-      url = "https://github.com/zzzsyyy/Iosevka/releases/download/v27.1.0/Iosevka-27.1.0.tar.xz";
-      sha256 = "sha256-jhF5qFlWHWSJLxSGFvK7/FJOccELPQ/x4vypR7JfdZE=";
+      url = "https://github.com/zzzsyyy/Iosevka/releases/download/v27.3.5/Iosevka-27.3.5.tar.xz";
+      sha256 = "sha256-7Uocq6zHX5It2Ivernu1GggCP4ZDZTLRabvFuszMiPQ=";
     };
   };
   librime-lua = {
@@ -53,14 +53,14 @@
   };
   rime-ice = {
     pname = "rime-ice";
-    version = "77d4d8c4270889ca39b4423f9bf9fc8a35f79fa2";
+    version = "db2375b0d9dba21247da4e5dd58c3d36c56c2b5a";
     src = fetchFromGitHub {
       owner = "iDvel";
       repo = "rime-ice";
-      rev = "77d4d8c4270889ca39b4423f9bf9fc8a35f79fa2";
+      rev = "db2375b0d9dba21247da4e5dd58c3d36c56c2b5a";
       fetchSubmodules = false;
-      sha256 = "sha256-wh6heVtMSMkzuL4D5Szghm3IyopeNEYzPM/q1Ulsch4=";
+      sha256 = "sha256-AXUFFa+aJDJm0FsSfsnheJNj2tGMjwNc54BAI0Oojzw=";
     };
-    date = "2023-11-06";
+    date = "2023-11-14";
   };
 }

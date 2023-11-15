@@ -4,8 +4,9 @@
 , useGB ? false
 }:
 
-stdenvNoCC.mkDerivation rec {
-  inherit (source) pname version src;
+stdenvNoCC.mkDerivation {
+  inherit (source) pname src;
+  version = lib.strings.removePrefix "v" source.version;
 
   sourceRoot = ".";
 
