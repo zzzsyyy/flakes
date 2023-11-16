@@ -1,4 +1,4 @@
-@supports -moz-bool-pref("userContent.newTab.fullIcon") {
+@media (-moz-bool-pref: "userContent.newTab.fullIcon") {
   .top-site-outer .tile {
     overflow: hidden;
   }
@@ -9,7 +9,7 @@
   }
 }
 
-@supports -moz-bool-pref("userContent.newTab.hiddenSearchbar") {
+@media ( -moz-bool-pref: "userContent.newTab.hiddenSearchbar") {
   .search-inner-wrapper {
     display: none !important;
   }
@@ -18,7 +18,7 @@
   }
 }
 
-@supports -moz-bool-pref("userContent.newTab.hiddenLogo") {
+@media (-moz-bool-pref: "userContent.newTab.hiddenLogo") {
   .logo-and-wordmark {
     display: none !important;
   }
