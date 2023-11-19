@@ -3,14 +3,15 @@
 {
   firefox-gnome-theme = {
     pname = "firefox-gnome-theme";
-    version = "v119";
+    version = "cd408d8e4de8bd514387366dda4fe0def6e43c16";
     src = fetchFromGitHub {
       owner = "rafaelmardojai";
       repo = "firefox-gnome-theme";
-      rev = "v119";
+      rev = "cd408d8e4de8bd514387366dda4fe0def6e43c16";
       fetchSubmodules = false;
-      sha256 = "sha256-OU6LyGeePS31pG7o10su7twDzDL5Z3a1sHtV68SzEwI=";
+      sha256 = "sha256-1NjteDq4fhEWFtlKd3DPYWHdU53qEQEqZB2DCxKpayE=";
     };
+    date = "2023-10-26";
   };
   iosevka-zt = {
     pname = "iosevka-zt";

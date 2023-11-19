@@ -3,10 +3,9 @@
 , stdenvNoCC
 }:
 
-stdenvNoCC.mkDerivation {
-  inherit (source) pname src;
-
-  version = lib.strings.removePrefix "v" source.version;
+stdenvNoCC.mkDerivation rec{
+  inherit (source) pname src date;
+  version = "unstable-${date}";
 
   dontConfigure = true;
   dontBuild = true;

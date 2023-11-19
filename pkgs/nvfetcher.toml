@@ -16,7 +16,8 @@ src.github = "Fitzgerald-Porthmouth-Koenigsegg/Plangothic"
 fetch.github = "Fitzgerald-Porthmouth-Koenigsegg/Plangothic"
 
 [firefox-gnome-theme]
-src.github = "rafaelmardojai/firefox-gnome-theme"
+src.git = "https://github.com/rafaelmardojai/firefox-gnome-theme"
+src.branch = "beta"
 fetch.github = "rafaelmardojai/firefox-gnome-theme"
 
 [lxgw-wenkai-screen]
