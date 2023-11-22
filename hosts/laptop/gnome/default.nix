@@ -26,6 +26,7 @@
     # fix nautilus extensions deu to `core-utilities.enable = false`
     workarounds.gnome-fix.enable = true;
     environment.systemPackages = (with pkgs; [
+      remmina
       ffmpegthumbnailer
       amberol # music
       feh # image

@@ -38,6 +38,7 @@ let
     #docker_24
     #git-repo
     jdk21
+    poetry
   ];
 
   unix-tools = with pkgs; [
