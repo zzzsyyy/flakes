@@ -39,6 +39,9 @@ let
     #git-repo
     jdk21
     poetry
+
+    #arch-install-scripts
+    #pacman
   ];
 
   unix-tools = with pkgs; [
@@ -85,6 +88,7 @@ let
     texlive.combined.scheme-full
     asciidoc-full
     feishu
+    #virtualbox
     # hunspellq
   ];
 

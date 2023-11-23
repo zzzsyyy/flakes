@@ -36,7 +36,7 @@ let
                       inherit system;
                       config.allowUnfree = true;
                     };
-                    uns = import inputs.nixpkgs-uns {
+                    un = import inputs.nixpkgs-un {
                       inherit system;
                       config.allowUnfree = true;
                     };
