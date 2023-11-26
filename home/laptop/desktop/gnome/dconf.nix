@@ -51,10 +51,10 @@ in
       remove-old-trash-files = true;
       old-files-age = 14;
     };
-    "org/gnome/shell/extensions/nightthemeswitcher/shell-variants" = {
-      enabled = true;
-      day = "Default-light";
-    };
+    # "org/gnome/shell/extensions/nightthemeswitcher/shell-variants" = {
+    #   enabled = true;
+    #   day = "Default-light";
+    # };
     "org/gnome/shell/extensions/nightthemeswitcher/gtk-variants" = {
       enabled = true;
       day = "adw-gtk3";

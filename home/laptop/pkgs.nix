@@ -107,14 +107,11 @@ let
     # ocrmypdf
     go-musicfox
     # jellyfin-media-player
-    # blueman
     #wireshark
     #gaphor
     #gimp
     #minder
     adw-gtk3
-    my.default-light
-    # my.ascii-draw
     (ventoy.override {
       defaultGuiType = "gtk3";
       withGtk3 = true;

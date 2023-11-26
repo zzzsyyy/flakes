@@ -29,7 +29,7 @@
       remmina
       ffmpegthumbnailer
       amberol # music
-      feh # image
+      loupe # image
       gnome-text-editor
       epiphany
     ]) ++ (with pkgs.gnome; [
