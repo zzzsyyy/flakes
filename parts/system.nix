@@ -27,7 +27,6 @@ let
                 sharedModules = attrValues self.hmModules;
               };
               nixpkgs = {
-                # overlays = (import ../overlays)
                 overlays = [
                   (final: prev: {
                     my = self.packages."${system}";
@@ -74,6 +73,7 @@ in
         # nixos-hardware.nixosModules.common-pc-ssd
       ];
       overlays = [
+        self.overlays.libjxl
         self.overlays.mutter
       ];
     });
