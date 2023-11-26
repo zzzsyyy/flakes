@@ -106,7 +106,7 @@ let
     my.megasync
     # ocrmypdf
     go-musicfox
-    jellyfin-media-player
+    # jellyfin-media-player
     # blueman
     #wireshark
     #gaphor

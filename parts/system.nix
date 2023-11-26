@@ -5,7 +5,7 @@
 let
   username = "zzzsy";
 
-  inherit (inputs) home-manager nixpkgs impermanence sops-nix chaotic nvfetcher daeuniverse;
+  inherit (inputs) home-manager nixpkgs impermanence sops-nix chaotic nvfetcher daeuniverse lanzaboote;
 
   inherit (nixpkgs.lib) attrValues;
   mkHost =
@@ -68,6 +68,7 @@ in
         sops-nix.nixosModules.sops
         chaotic.nixosModules.default
         daeuniverse.nixosModules.daed
+        lanzaboote.nixosModules.lanzaboote
         # nixos-hardware.nixosModules.common-cpu-amd-pstate
         # nixos-hardware.nixosModules.common-gpu-amd
         # nixos-hardware.nixosModules.common-pc-ssd

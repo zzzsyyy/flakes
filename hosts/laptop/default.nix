@@ -13,6 +13,7 @@
       ./virt.nix
       ./networking.nix
       ./sops.nix
+      ./lanzaboote.nix
     ];
   # xdg.portal = {
   #   enable = true;
@@ -88,6 +89,7 @@
       "/var"
       "/root"
       "/etc/NetworkManager/system-connections"
+      "/etc/secureboot"
     ];
     files = [
       "/etc/machine-id"
