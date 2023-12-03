@@ -73,5 +73,8 @@ in
         # nixos-hardware.nixosModules.common-gpu-amd
         # nixos-hardware.nixosModules.common-pc-ssd
       ];
+      overlays = [
+        self.overlays.mutter
+      ];
     });
 }

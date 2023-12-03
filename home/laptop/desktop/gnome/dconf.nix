@@ -25,14 +25,17 @@ in
     "org/gnome/shell" = {
       disable-user-extensions = false;
       enabled-extensions = map (p: p.extensionUuid or p.uuid) extensions;
-    };
-    "org/gnome/shell" = {
       favorite-apps = [
         "org.gnome.Nautilus.desktop"
         "firefox.desktop"
         "code.desktop"
         "org.telegram.desktop.desktop"
         "kitty.desktop"
+      ];
+    };
+    "org/gnome/mutter" = {
+      experimental-features = [
+        "scale-monitor-framebuffer"
       ];
     };
     "org/gnome/desktop/peripherals/touchpad" = {
@@ -51,10 +54,6 @@ in
       remove-old-trash-files = true;
       old-files-age = 14;
     };
-    # "org/gnome/shell/extensions/nightthemeswitcher/shell-variants" = {
-    #   enabled = true;
-    #   day = "Default-light";
-    # };
     "org/gnome/shell/extensions/nightthemeswitcher/gtk-variants" = {
       enabled = true;
       day = "adw-gtk3";
@@ -87,3 +86,4 @@ in
     };
   };
 }
+
