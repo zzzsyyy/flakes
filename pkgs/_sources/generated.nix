@@ -35,10 +35,10 @@
   };
   lxgw-wenkai-screen = {
     pname = "lxgw-wenkai-screen";
-    version = "v1.311";
+    version = "v1.312";
     src = fetchurl {
-      url = "https://github.com/lxgw/LxgwWenKai-Screen/releases/download/v1.311/LXGWWenKaiScreen.ttf";
-      sha256 = "sha256-BLVICsBkAD+Lrz1WwwNP3G3qALHjx0NVMkpArcpY9uE=";
+      url = "https://github.com/lxgw/LxgwWenKai-Screen/releases/download/v1.312/LXGWWenKaiScreen.ttf";
+      sha256 = "sha256-aoJh+ujR3u4AzMaFLUxTCUudwjcLJUswQAXbaM8F8bg=";
     };
   };
   plangothic = {
@@ -54,14 +54,14 @@
   };
   rime-ice = {
     pname = "rime-ice";
-    version = "8f98f0d1c9176ce005ad76043db7f55096583675";
+    version = "1f69d5f4195a069bd0408b52887974e046f2814a";
     src = fetchFromGitHub {
       owner = "iDvel";
       repo = "rime-ice";
-      rev = "8f98f0d1c9176ce005ad76043db7f55096583675";
+      rev = "1f69d5f4195a069bd0408b52887974e046f2814a";
       fetchSubmodules = false;
-      sha256 = "sha256-ye4neNSmar42XYMKqZ9vqOR8hZjXYR/eSUkwQ7eScR4=";
+      sha256 = "sha256-XTkfbemBejX8lxqJSBQuBot32kVHN4mB4x2Z3ZNWCMc=";
     };
-    date = "2023-12-03";
+    date = "2023-12-10";
   };
 }

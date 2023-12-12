@@ -70,6 +70,7 @@ let
     tokei
     hyperfine
     my.odin
+    my.cpdf
     #innoextract
     ouch
     lf
