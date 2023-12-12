@@ -4,28 +4,41 @@ default:
 alias u:=update
 alias s:=switch
 alias m:=metadata
+alias gd:=gitdiff
+alias gdc:=gitdiffcached
+alias chk:=check
+
 
 metadata:
-  nix flake metadata
+  @nix flake metadata
 
 update:
-  nix flake update
+  @nix flake update
 
 fmt:
   nixpkgs-fmt ./
 
-switch:
-  sudo nixos-rebuild switch --flake .#laptop -L
+switch host="laptop":
+  sudo nixos-rebuild switch --flake .#{{host}} -L
 
-test:
-  sudo nixos-rebuild test --flake .#laptop -L
+test host="laptop":
+  sudo nixos-rebuild test --flake .#{{host}} -L
 
 gc:
   sudo nix-collect-garbage --delete-older-than 5d
   sudo nix store gc --debug
 
 diff:
-  nix profile diff-closures --profile /nix/var/nix/profiles/system
+  @nix profile diff-closures --profile /nix/var/nix/profiles/system
 
 show:
-  nix flake show
+  @nix flake show
+
+gitdiff:
+  @git diff -- ':^flake.lock' ':^pkgs/_sources/*'; \
+
+gitdiffcached:
+  @git diff --cached -- ':^flake.lock' ':^pkgs/_sources/*'
+
+check:
+  @nix flake check

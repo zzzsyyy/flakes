@@ -2,4 +2,4 @@ builds:
  exclude: []
  include:
  - checks.x86_64-linux.pre-commit
- - packages.x86_64-linux.megasync
+ - 'packages.x86_64-linux.*'
