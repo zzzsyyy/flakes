@@ -17,7 +17,9 @@
   gtk = {
     enable = true;
     iconTheme = {
-      package = pkgs.papirus-icon-theme;
+      package = pkgs.papirus-icon-theme.override{
+        color = "adwaita";
+      };
       name = "Papirus";
     };
   };

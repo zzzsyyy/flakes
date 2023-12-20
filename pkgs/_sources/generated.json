@@ -1,7 +1,7 @@
 {
     "firefox-gnome-theme": {
         "cargoLocks": null,
-        "date": "2023-11-26",
+        "date": "2023-12-19",
         "extract": null,
         "name": "firefox-gnome-theme",
         "passthru": null,
@@ -13,11 +13,11 @@
             "name": null,
             "owner": "rafaelmardojai",
             "repo": "firefox-gnome-theme",
-            "rev": "4c039a5c7a7b657d4e5146a6ca6d81942ae1bd0b",
-            "sha256": "sha256-HMMM4aKfDPx8m5IoTc4dCh01ZaBf0upEXPEjIcFsa4s=",
+            "rev": "bad853333d9021e7012adb9b8fbfe7a7003f26bc",
+            "sha256": "sha256-M+Cw6vh7xCDmIhyVuEPNmaNVUwpmdFQq8zlsXZTKees=",
             "type": "github"
         },
-        "version": "4c039a5c7a7b657d4e5146a6ca6d81942ae1bd0b"
+        "version": "bad853333d9021e7012adb9b8fbfe7a7003f26bc"
     },
     "iosevka-zt": {
         "cargoLocks": null,
@@ -63,11 +63,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-aoJh+ujR3u4AzMaFLUxTCUudwjcLJUswQAXbaM8F8bg=",
+            "sha256": "sha256-4K797LHyUPzC9hFBicryPxru0ndYsw0YqA1wMGXmSW0=",
             "type": "url",
-            "url": "https://github.com/lxgw/LxgwWenKai-Screen/releases/download/v1.312/LXGWWenKaiScreen.ttf"
+            "url": "https://github.com/lxgw/LxgwWenKai-Screen/releases/download/v1.315/LXGWWenKaiScreen.ttf"
         },
-        "version": "v1.312"
+        "version": "v1.315"
     },
     "plangothic": {
         "cargoLocks": null,
@@ -91,7 +91,7 @@
     },
     "rime-ice": {
         "cargoLocks": null,
-        "date": "2023-12-10",
+        "date": "2023-12-13",
         "extract": null,
         "name": "rime-ice",
         "passthru": null,
@@ -103,10 +103,10 @@
             "name": null,
             "owner": "iDvel",
             "repo": "rime-ice",
-            "rev": "1f69d5f4195a069bd0408b52887974e046f2814a",
-            "sha256": "sha256-XTkfbemBejX8lxqJSBQuBot32kVHN4mB4x2Z3ZNWCMc=",
+            "rev": "c9555ed3c09b3224eb7162047b92ffe744c902b8",
+            "sha256": "sha256-y2md5i9TJX1BmtQJCB5/HAyLKiViRjJ9mS2onrhEXI8=",
             "type": "github"
         },
-        "version": "1f69d5f4195a069bd0408b52887974e046f2814a"
+        "version": "c9555ed3c09b3224eb7162047b92ffe744c902b8"
     }
 }

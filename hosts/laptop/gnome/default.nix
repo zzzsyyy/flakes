@@ -5,11 +5,13 @@
 {
   imports = [ ];
   config = {
-    services.xserver.enable = true;
-    services.xserver.displayManager.gdm.enable = true;
-    services.xserver.desktopManager.gnome.enable = true;
-    services.xserver.excludePackages = [ pkgs.xterm ];
-    services.xserver.desktopManager.xterm.enable = false;
+    services.xserver = {
+      enable = true;
+      displayManager.gdm.enable = true;
+      desktopManager.gnome.enable = true;
+      excludePackages = [ pkgs.xterm ];
+      desktopManager.xterm.enable = false;
+    };
     services.gnome = {
       core-utilities.enable = false;
       gnome-online-accounts.enable = false;
@@ -40,7 +42,6 @@
       dconf-editor
       seahorse
       gnome-disk-utility
-      # loupe # https://github.com/NixOS/nixpkgs/pull/202692
       # gnome-sound-recorder
       # gnome-power-manager
     ]);

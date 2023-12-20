@@ -13,9 +13,9 @@
       substituters = [
         "https://nyx.chaotic.cx"
         "https://cache.garnix.io"
+        "https://mirror.sjtu.edu.cn/nix-channels/store"
         "https://mirrors.bfsu.edu.cn/nix-channels/store"
         "https://mirrors.ustc.edu.cn/nix-channels/store"
-        "https://mirror.sjtu.edu.cn/nix-channels/store"
       ];
       trusted-public-keys = [
         "nyx.chaotic.cx-1:HfnXSw4pj95iI/n17rIDy40agHj12WfF+Gqk6SonIT8="

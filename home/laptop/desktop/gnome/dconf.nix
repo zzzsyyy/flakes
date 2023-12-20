@@ -9,14 +9,15 @@ let
     clipboard-indicator
     caffeine
     dash-to-panel
-    unite
+    # unite
     night-theme-switcher
     rounded-window-corners
     rounded-corners
     customize-ibus
     pip-on-top
-    quake-mode
+    # quake-mode
     fuzzy-app-search
+    status-area-horizontal-spacing
   ];
 in
 {

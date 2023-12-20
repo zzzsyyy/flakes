@@ -79,6 +79,7 @@ let
     #graphviz-nox
     duf
     nvfetcher
+    steamguard-cli
   ];
 
   office = with pkgs; [
@@ -98,9 +99,6 @@ let
     # fractal-next # matrix
     # gtkcord4 # discord (WIP)
     tdesktop
-    # elec
-    #ngspice
-    #qucs-s
     microsoft-edge-dev
     tor-browser-bundle-bin
     #handbrake
