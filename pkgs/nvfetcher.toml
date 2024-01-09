@@ -23,3 +23,7 @@ fetch.github = "rafaelmardojai/firefox-gnome-theme"
 [lxgw-wenkai-screen]
 src.github = "lxgw/LxgwWenKai-Screen"
 fetch.url = "https://github.com/lxgw/LxgwWenKai-Screen/releases/download/$ver/LXGWWenKaiScreen.ttf"
+
+[gnome-shell-extension-quake-mode]
+src.git = "https://github.com/repsac-by/gnome-shell-extension-quake-mode"
+fetch.github = "repsac-by/gnome-shell-extension-quake-mode"

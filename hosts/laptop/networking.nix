@@ -75,10 +75,6 @@
     firewall.enable = false;
     networkmanager.enable = true;
   };
-  programs.clash-verge = {
-    enable = false; # enable until migrate to dae (rules)
-    tunMode = true;
-  };
   services.dae = {
     enable = true;
     disableTxChecksumIpGeneric = false;

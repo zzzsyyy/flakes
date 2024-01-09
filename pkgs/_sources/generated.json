@@ -1,7 +1,7 @@
 {
     "firefox-gnome-theme": {
         "cargoLocks": null,
-        "date": "2023-12-19",
+        "date": "2024-01-07",
         "extract": null,
         "name": "firefox-gnome-theme",
         "passthru": null,
@@ -13,11 +13,31 @@
             "name": null,
             "owner": "rafaelmardojai",
             "repo": "firefox-gnome-theme",
-            "rev": "bad853333d9021e7012adb9b8fbfe7a7003f26bc",
-            "sha256": "sha256-M+Cw6vh7xCDmIhyVuEPNmaNVUwpmdFQq8zlsXZTKees=",
+            "rev": "7a1a81baa7c31d75764dcea908285e487302d32a",
+            "sha256": "sha256-SYp0DRkO73i8XVyOdAlcP2ZItqx9DqraIEJy6mY/2Ng=",
             "type": "github"
         },
-        "version": "bad853333d9021e7012adb9b8fbfe7a7003f26bc"
+        "version": "7a1a81baa7c31d75764dcea908285e487302d32a"
+    },
+    "gnome-shell-extension-quake-mode": {
+        "cargoLocks": null,
+        "date": "2023-12-26",
+        "extract": null,
+        "name": "gnome-shell-extension-quake-mode",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "repsac-by",
+            "repo": "gnome-shell-extension-quake-mode",
+            "rev": "50d4505d109ac474ed7b82397447559ddcebd7f8",
+            "sha256": "sha256-er71pDa13orFVerWLKVGb2jR+74AUbRWhZZAgW+xm7g=",
+            "type": "github"
+        },
+        "version": "50d4505d109ac474ed7b82397447559ddcebd7f8"
     },
     "iosevka-zt": {
         "cargoLocks": null,
@@ -91,7 +111,7 @@
     },
     "rime-ice": {
         "cargoLocks": null,
-        "date": "2023-12-13",
+        "date": "2024-01-05",
         "extract": null,
         "name": "rime-ice",
         "passthru": null,
@@ -103,10 +123,10 @@
             "name": null,
             "owner": "iDvel",
             "repo": "rime-ice",
-            "rev": "c9555ed3c09b3224eb7162047b92ffe744c902b8",
-            "sha256": "sha256-y2md5i9TJX1BmtQJCB5/HAyLKiViRjJ9mS2onrhEXI8=",
+            "rev": "76996e8e25488d2caf8c39d5185c63760dbd7560",
+            "sha256": "sha256-+tYcMtUl3MnVhuIJY0lkCPwA7ZIlAf0oU+BOnqn76LM=",
             "type": "github"
         },
-        "version": "c9555ed3c09b3224eb7162047b92ffe744c902b8"
+        "version": "76996e8e25488d2caf8c39d5185c63760dbd7560"
     }
 }

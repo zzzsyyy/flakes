@@ -6,7 +6,7 @@ let
   nix-tools = with pkgs; [
     nixpkgs-fmt
     nixpkgs-lint
-    nixpkgs-review
+    # nixpkgs-review
     nix-index
     nix-du
     nix-tree
@@ -31,14 +31,14 @@ let
     go
     # julia
     just
-    libjxl
+    # libjxl
     # nvfetcher
     ghc
     haskellPackages.cabal-install
     #docker_24
     #git-repo
-    jdk21
-    poetry
+    # jdk21
+    # poetry
 
     #arch-install-scripts
     #pacman
@@ -49,7 +49,6 @@ let
     #linuxKernel.packages.linux_xanmod_stable.cpupower
     #@TODO update BIOS
     #dmidecode
-    #neofetch
     hyfetch
     bottom
 
@@ -63,7 +62,6 @@ let
     ripgrep
     ffmpeg_6-full
     file
-    #megacmd
     asciinema
     iw
     #appimage-run
@@ -85,7 +83,7 @@ let
   office = with pkgs; [
     libreoffice-fresh
     #calibre
-    octave
+    # octave
     typst
     texlive.combined.scheme-full
     asciidoc-full
@@ -99,17 +97,17 @@ let
     # fractal-next # matrix
     # gtkcord4 # discord (WIP)
     tdesktop
-    microsoft-edge-dev
+    # microsoft-edge-dev
     tor-browser-bundle-bin
-    #handbrake
+    # handbrake
     my.megasync
     # ocrmypdf
     go-musicfox
     # jellyfin-media-player
-    #wireshark
-    #gaphor
-    #gimp
-    #minder
+    # wireshark
+    # gaphor
+    # gimp
+    # minder
     adw-gtk3
     (ventoy.override {
       defaultGuiType = "gtk3";

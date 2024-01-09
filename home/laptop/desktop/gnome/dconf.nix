@@ -21,7 +21,7 @@ let
   ];
 in
 {
-  home.packages = extensions;
+  home.packages = extensions ++ [ pkgs.my.gnome-shell-extension-quake-mode ];
   dconf.settings = {
     "org/gnome/shell" = {
       disable-user-extensions = false;
@@ -34,11 +34,12 @@ in
         "kitty.desktop"
       ];
     };
-    "org/gnome/mutter" = {
-      experimental-features = [
-        "scale-monitor-framebuffer"
-      ];
-    };
+    # @TODO Cause ibus offset
+    # "org/gnome/mutter" = {
+    #   experimental-features = [
+    #     "scale-monitor-framebuffer"
+    #   ];
+    # };
     "org/gnome/desktop/peripherals/touchpad" = {
       tap-and-drag-lock = true;
       tap-to-click = true;

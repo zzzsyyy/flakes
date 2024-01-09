@@ -3,15 +3,27 @@
 {
   firefox-gnome-theme = {
     pname = "firefox-gnome-theme";
-    version = "bad853333d9021e7012adb9b8fbfe7a7003f26bc";
+    version = "7a1a81baa7c31d75764dcea908285e487302d32a";
     src = fetchFromGitHub {
       owner = "rafaelmardojai";
       repo = "firefox-gnome-theme";
-      rev = "bad853333d9021e7012adb9b8fbfe7a7003f26bc";
+      rev = "7a1a81baa7c31d75764dcea908285e487302d32a";
       fetchSubmodules = false;
-      sha256 = "sha256-M+Cw6vh7xCDmIhyVuEPNmaNVUwpmdFQq8zlsXZTKees=";
+      sha256 = "sha256-SYp0DRkO73i8XVyOdAlcP2ZItqx9DqraIEJy6mY/2Ng=";
     };
-    date = "2023-12-19";
+    date = "2024-01-07";
+  };
+  gnome-shell-extension-quake-mode = {
+    pname = "gnome-shell-extension-quake-mode";
+    version = "50d4505d109ac474ed7b82397447559ddcebd7f8";
+    src = fetchFromGitHub {
+      owner = "repsac-by";
+      repo = "gnome-shell-extension-quake-mode";
+      rev = "50d4505d109ac474ed7b82397447559ddcebd7f8";
+      fetchSubmodules = false;
+      sha256 = "sha256-er71pDa13orFVerWLKVGb2jR+74AUbRWhZZAgW+xm7g=";
+    };
+    date = "2023-12-26";
   };
   iosevka-zt = {
     pname = "iosevka-zt";
@@ -54,14 +66,14 @@
   };
   rime-ice = {
     pname = "rime-ice";
-    version = "c9555ed3c09b3224eb7162047b92ffe744c902b8";
+    version = "76996e8e25488d2caf8c39d5185c63760dbd7560";
     src = fetchFromGitHub {
       owner = "iDvel";
       repo = "rime-ice";
-      rev = "c9555ed3c09b3224eb7162047b92ffe744c902b8";
+      rev = "76996e8e25488d2caf8c39d5185c63760dbd7560";
       fetchSubmodules = false;
-      sha256 = "sha256-y2md5i9TJX1BmtQJCB5/HAyLKiViRjJ9mS2onrhEXI8=";
+      sha256 = "sha256-+tYcMtUl3MnVhuIJY0lkCPwA7ZIlAf0oU+BOnqn76LM=";
     };
-    date = "2023-12-13";
+    date = "2024-01-05";
   };
 }

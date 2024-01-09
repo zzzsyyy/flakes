@@ -35,10 +35,10 @@
   #   };
   # };
 
-  chaotic = {
-    nyx.cache.enable = false;
-    nyx.overlay.enable = false;
-  };
+  # chaotic = {
+  #   nyx.cache.enable = false;
+  #   nyx.overlay.enable = false;
+  # };
 
   boot = {
     plymouth.enable = true;
