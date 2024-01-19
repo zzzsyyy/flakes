@@ -80,5 +80,4 @@
     disableTxChecksumIpGeneric = false;
     configFile = config.sops.templates."config.dae".path;
   };
-
 }
