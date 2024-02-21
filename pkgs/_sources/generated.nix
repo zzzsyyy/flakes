@@ -35,45 +35,56 @@
   };
   librime-lua = {
     pname = "librime-lua";
-    version = "7c297e4d2e08fcdd3e9b2dcae2a42317b9a217ff";
+    version = "7f3eca2ce659fc2401b8acb52bd2182b433e12b1";
     src = fetchFromGitHub {
       owner = "hchunhui";
       repo = "librime-lua";
-      rev = "7c297e4d2e08fcdd3e9b2dcae2a42317b9a217ff";
+      rev = "7f3eca2ce659fc2401b8acb52bd2182b433e12b1";
       fetchSubmodules = false;
-      sha256 = "sha256-GVfr2fzaQYyfNnjN20YcNfBVB144gZKVEunbX10Mgeg=";
+      sha256 = "sha256-n+KCu8JmFBGPyfBgeLiFqND3wmQs/4eOZjqTXuaW+hk=";
     };
-    date = "2023-10-29";
+    date = "2024-02-06";
   };
   lxgw-wenkai-screen = {
     pname = "lxgw-wenkai-screen";
-    version = "v1.315";
+    version = "v1.321";
     src = fetchurl {
-      url = "https://github.com/lxgw/LxgwWenKai-Screen/releases/download/v1.315/LXGWWenKaiScreen.ttf";
-      sha256 = "sha256-4K797LHyUPzC9hFBicryPxru0ndYsw0YqA1wMGXmSW0=";
+      url = "https://github.com/lxgw/LxgwWenKai-Screen/releases/download/v1.321/LXGWWenKaiScreen.ttf";
+      sha256 = "sha256-KdefRqGJWl8+ZB6UOTZPwibKgjbaHe78QRcdMFGo1SM=";
     };
   };
   plangothic = {
     pname = "plangothic";
-    version = "V1.8.5752";
+    version = "V1.8.5757";
     src = fetchFromGitHub {
       owner = "Fitzgerald-Porthmouth-Koenigsegg";
       repo = "Plangothic";
-      rev = "V1.8.5752";
+      rev = "V1.8.5757";
       fetchSubmodules = false;
-      sha256 = "sha256-6Aq8q3jG9Pvn9UZnXdFheReYDtEgIRy7m62nQT2yjuM=";
+      sha256 = "sha256-d2CK+OSkMxmAt8qogCyG/J841JI9qG+3xM8TVoWe96Q=";
+    };
+  };
+  q = {
+    pname = "q";
+    version = "v0.19.2";
+    src = fetchFromGitHub {
+      owner = "natesales";
+      repo = "q";
+      rev = "v0.19.2";
+      fetchSubmodules = false;
+      sha256 = "sha256-kfuf0iwRYNxd9TfIIHvAqLxXjesQh7jC0evT9DQrrzQ=";
     };
   };
   rime-ice = {
     pname = "rime-ice";
-    version = "2a2f956cc66eaf49c3068ecbd8102fdab3087e9e";
+    version = "362288fed5814b3fe10fe9819672767c38d836c9";
     src = fetchFromGitHub {
       owner = "iDvel";
       repo = "rime-ice";
-      rev = "2a2f956cc66eaf49c3068ecbd8102fdab3087e9e";
+      rev = "362288fed5814b3fe10fe9819672767c38d836c9";
       fetchSubmodules = false;
-      sha256 = "sha256-wy5Y0v5FLNvJmxE3z0wIaSmNvlLG+71W/5N4Cd4noF4=";
+      sha256 = "sha256-8ZC9qt2xbV9/J6te/ngxJayvcLTDMT44/QsgmYHEc0U=";
     };
-    date = "2024-01-18";
+    date = "2024-02-21";
   };
 }
