@@ -15,6 +15,18 @@
       pull.rebase = true;
       init.defaultBranch = "main";
       fetch.prune = true;
+      diff = {
+        tool = "kitty";
+        guitool = "kitty.gui";
+      };
+
+      difftool = {
+        prompt = false;
+        trustExitCode = true;
+      };
+
+      difftool."kitty".cmd = "kitty +kitten diff $LOCAL $REMOTE";
+      difftool."kitty.gui".cmd = "kitty +kitten diff $LOCAL $REMOTE";
     };
     delta.enable = true;
   };
