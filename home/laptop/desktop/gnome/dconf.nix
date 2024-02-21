@@ -24,7 +24,7 @@ in
   home.packages = extensions ++ [ pkgs.my.gnome-shell-extension-quake-mode ];
   dconf.settings = {
     "org/gnome/shell" = {
-      disable-user-extensions = false;
+      disable-user-extensions = true;
       enabled-extensions = map (p: p.extensionUuid or p.uuid) extensions;
       favorite-apps = [
         "org.gnome.Nautilus.desktop"
