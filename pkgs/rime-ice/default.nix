@@ -10,19 +10,19 @@ stdenvNoCC.mkDerivation rec {
 
   installPhase = ''
     mkdir -p $out/share/rime-data
+
+    install -Dm644 *.{schema,dict}.yaml $out/share/rime-data
+    install -Dm644 *.lua                 $out/share/rime-data
+    install -Dm644 symbols*.yaml         $out/share/rime-data
+    install -Dm644 default.yaml          $out/share/rime-data
+    
     ${lib.optionalString enableUnihan ''
       sed -e '9s/^ *# /  /' -i rime_ice.dict.yaml
     ''}
-    mv double_pinyin_flypy.schema.yaml rime_ice.schema.yaml \
-      liangfen.dict.yaml liangfen.schema.yaml \
-      melt_eng.dict.yaml melt_eng.schema.yaml \
-      rime_ice.dict.yaml \
-      symbols_caps_v.yaml symbols_v.yaml \
-      cn_dicts/ en_dicts/ \
-      opencc lua rime.lua \
-      custom_phrase.txt \
-      default.yaml \
-      $out/share/rime-data
+    sed -e '41s/^/# /' -e '43s/^ *# /    /' -i radical_pinyin.schema.yaml
+    
+    mv cn_dicts en_dicts $out/share/rime-data
+    mv opencc lua        $out/share/rime-data
   '';
 
   meta = with lib; {
