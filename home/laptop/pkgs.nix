@@ -100,6 +100,7 @@ let
     tdesktop
     # microsoft-edge-dev
     tor-browser-bundle-bin
+    google-chrome
     # handbrake
     my.megasync
     # ocrmypdf
