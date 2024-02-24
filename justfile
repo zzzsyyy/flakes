@@ -7,6 +7,7 @@ alias m:=metadata
 alias gd:=gitdiff
 alias gdc:=gitdiffcached
 alias chk:=check
+alias nv:=nvfetcher
 
 
 metadata:
@@ -42,3 +43,6 @@ gitdiffcached:
 
 check:
   @nix flake check
+
+nvfetcher:
+  @nvfetcher -c pkgs/nvfetcher.toml -o pkgs/_sources/

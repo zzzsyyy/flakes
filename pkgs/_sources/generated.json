@@ -1,4 +1,19 @@
 {
+    "clash-verge-rev": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "clash-verge-rev",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-ViGGSr2coMti1qj7DXUFVQC8l/YOJwEIr1hhtya/IUo=",
+            "type": "url",
+            "url": "https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v1.5.3/clash-verge_1.5.3_amd64.deb"
+        },
+        "version": "1.5.3"
+    },
     "firefox-gnome-theme": {
         "cargoLocks": null,
         "date": "2024-01-07",
@@ -131,7 +146,7 @@
     },
     "rime-ice": {
         "cargoLocks": null,
-        "date": "2024-02-21",
+        "date": "2024-02-23",
         "extract": null,
         "name": "rime-ice",
         "passthru": null,
@@ -143,10 +158,10 @@
             "name": null,
             "owner": "iDvel",
             "repo": "rime-ice",
-            "rev": "362288fed5814b3fe10fe9819672767c38d836c9",
-            "sha256": "sha256-8ZC9qt2xbV9/J6te/ngxJayvcLTDMT44/QsgmYHEc0U=",
+            "rev": "10dbeb4a4d5f7b9e6ea511ced442f34bdc529142",
+            "sha256": "sha256-Yy8cWDfy1aa5nmBsOVFqJ3dJXy47RgocQ18XVrBWxqM=",
             "type": "github"
         },
-        "version": "362288fed5814b3fe10fe9819672767c38d836c9"
+        "version": "10dbeb4a4d5f7b9e6ea511ced442f34bdc529142"
     }
 }
