@@ -3,10 +3,10 @@
 {
   clash-verge-rev = {
     pname = "clash-verge-rev";
-    version = "1.5.3";
+    version = "1.5.4";
     src = fetchurl {
-      url = "https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v1.5.3/clash-verge_1.5.3_amd64.deb";
-      sha256 = "sha256-ViGGSr2coMti1qj7DXUFVQC8l/YOJwEIr1hhtya/IUo=";
+      url = "https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v1.5.4/clash-verge_1.5.4_amd64.deb";
+      sha256 = "sha256-UJYLfefgUASBmh0gyNmjsWdAadluKhwaXZL1wlVlbjU=";
     };
   };
   firefox-gnome-theme = {
@@ -85,14 +85,14 @@
   };
   rime-ice = {
     pname = "rime-ice";
-    version = "10dbeb4a4d5f7b9e6ea511ced442f34bdc529142";
+    version = "8fc6a6e87521465941aee4660eca4e4228119a67";
     src = fetchFromGitHub {
       owner = "iDvel";
       repo = "rime-ice";
-      rev = "10dbeb4a4d5f7b9e6ea511ced442f34bdc529142";
+      rev = "8fc6a6e87521465941aee4660eca4e4228119a67";
       fetchSubmodules = false;
-      sha256 = "sha256-Yy8cWDfy1aa5nmBsOVFqJ3dJXy47RgocQ18XVrBWxqM=";
+      sha256 = "sha256-jV+4ZHq/o285mU3Fl0KvTCY7ghcZ9g8Cewy8IVJSgyw=";
     };
-    date = "2024-02-23";
+    date = "2024-02-24";
   };
 }
