@@ -1,6 +1,6 @@
-{ lib
+{ source
+, lib
 , stdenv
-, fetchurl
 , dpkg
 , wrapGAppsHook
 , autoPatchelfHook
@@ -11,14 +11,8 @@
 , tree
 }:
 
-stdenv.mkDerivation rec {
-  pname = "clash-verge-rev";
-  version = "1.5.2";
-
-  src = fetchurl {
-    url = "https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v${version}/clash-verge_${version}_amd64.deb";
-    hash = "sha256-MUj+9xo20yn6tzOguJkq5KPKxHZVax2ryHERIr+6dtA=";
-  };
+stdenv.mkDerivation {
+  inherit (source) pname src version;
 
   nativeBuildInputs = [
     dpkg
@@ -46,10 +40,6 @@ stdenv.mkDerivation rec {
 
     runHook postInstall
   '';
-
-  # postFixup = ''
-  # ln -s ${lib.getExe clash-meta} $out/bin/clash-meta
-  # '';
 
   meta = with lib; {
     description = "Continuation of Clash Verge - A Clash Meta GUI based on Tauri (Windows, MacOS, Linux)";
