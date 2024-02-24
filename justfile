@@ -45,4 +45,7 @@ check:
   @nix flake check
 
 nvfetcher:
-  @nvfetcher -c pkgs/nvfetcher.toml -o pkgs/_sources/
+  @nvfetcher -c pkgs/nvfetcher.toml -o pkgs/_sources/ --verbose
+
+rm:
+  find . -type l -name 'result' -exec rm {} +
