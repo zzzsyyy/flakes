@@ -102,7 +102,7 @@ let
     tor-browser-bundle-bin
     google-chrome
     # handbrake
-    my.megasync
+    # my.megasync
     # ocrmypdf
     go-musicfox
     # jellyfin-media-player

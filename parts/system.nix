@@ -66,7 +66,7 @@ in
         impermanence.nixosModules.impermanence
         sops-nix.nixosModules.sops
         chaotic.nixosModules.default
-        daeuniverse.nixosModules.daed
+        daeuniverse.nixosModules.dae
         lanzaboote.nixosModules.lanzaboote
         # nixos-hardware.nixosModules.common-cpu-amd-pstate
         # nixos-hardware.nixosModules.common-gpu-amd
