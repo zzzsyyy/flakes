@@ -12,7 +12,7 @@ in
 {
   programs.firefox = {
     enable = true;
-    package = pkgs.wrapFirefox pkgs.firefox-beta-unwrapped {
+    package = pkgs.wrapFirefox pkgs.firefox-beta-bin-unwrapped {
       extraPolicies = {
         DisablePocket = true;
         DisableTelemetry = true;

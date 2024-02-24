@@ -13,7 +13,7 @@
     impermanence.url = "github:nix-community/impermanence";
     flake-parts.url = "github:hercules-ci/flake-parts";
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
-    daeuniverse.url = "github:daeuniverse/flake.nix";
+    daeuniverse.url = "github:daeuniverse/flake.nix/exp";
 
     lanzaboote.url = "github:nix-community/lanzaboote";
     lanzaboote.inputs.nixpkgs.follows = "nixpkgs";
