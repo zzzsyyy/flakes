@@ -10,7 +10,6 @@ stdenvNoCC.mkDerivation rec {
 
   installPhase = ''
     mkdir -p $out/share/rime-data
-
     ${lib.optionalString enableUnihan ''
       sed -e '9s/^ *# /  /' -i rime_ice.dict.yaml
     ''}
