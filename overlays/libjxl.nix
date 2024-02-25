@@ -8,7 +8,7 @@ in
   # libjxl-with-plugins = final.callPackage ../pkgs/libjxl-with-plugins { };
   # })
   # (final: prev: {
-  gnome = prev.gnome.overrideScope'
+  gnome = prev.gnome.overrideScope
     (final': prev': {
       nautilus = prev'.nautilus.overrideAttrs (old: {
         preFixup = with prev; ''
