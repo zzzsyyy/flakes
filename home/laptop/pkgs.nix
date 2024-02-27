@@ -79,6 +79,7 @@ let
     duf
     nvfetcher
     steamguard-cli
+    rclone
   ];
 
   office = with pkgs; [

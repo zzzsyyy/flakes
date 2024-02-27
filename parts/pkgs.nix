@@ -45,7 +45,6 @@
         overlays = map (f: self.overlays.${f}) (builtins.attrNames self.overlays);
       };
       packages = builtins.listToAttrs (map genPkg names) // {
-        megasync = pkgs.megasync;
         mutter = pkgs.gnome.mutter;
       };
     };

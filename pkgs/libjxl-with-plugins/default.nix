@@ -1,7 +1,6 @@
 { stdenv
 , lib
 , fetchFromGitHub
-, fetchpatch
 , brotli
 , cmake
 , giflib
@@ -12,15 +11,15 @@
 , libpng
 , libwebp
 , gdk-pixbuf
-, openexr
+, openexr_3
 , pkg-config
 , makeWrapper
 , zlib
-, buildDocs ? false
 , asciidoc
 , graphviz
 , doxygen
 , python3
+, lcms2
 }:
 
 let
@@ -30,41 +29,32 @@ in
 
 stdenv.mkDerivation rec {
   pname = "libjxl";
-  version = "0.8.2";
+  version = "0.10.0";
 
-  outputs = [ "out" "dev" ];
+  outputs = [ "out" "bin" "dev" ];
 
   src = fetchFromGitHub {
     owner = "libjxl";
     repo = "libjxl";
     rev = "v${version}";
-    hash = "sha256-I3PGgh0XqRkCFz7lUZ3Q4eU0+0GwaQcVb6t4Pru1kKo=";
+    hash = "sha256-z383i6MM5WHFVv7ozrTJA1/OJ4yI2vFtA7wnRIOSKDs=";
     # There are various submodules in `third_party/`.
     fetchSubmodules = true;
   };
 
-  patches = [
-    # Add missing <atomic> content to fix gcc compilation for RISCV architecture
-    # https://github.com/libjxl/libjxl/pull/2211
-    (fetchpatch {
-      url = "https://github.com/libjxl/libjxl/commit/22d12d74e7bc56b09cfb1973aa89ec8d714fa3fc.patch";
-      hash = "sha256-X4fbYTMS+kHfZRbeGzSdBW5jQKw8UN44FEyFRUtw0qo=";
-    })
-  ];
+  strictDeps = true;
 
   nativeBuildInputs = [
     cmake
-    gtest
     pkg-config
     gdk-pixbuf
     makeWrapper
-  ] ++ lib.optionals buildDocs [
     asciidoc
     doxygen
     python3
   ];
 
-  depsBuildBuild = lib.optionals buildDocs [
+  depsBuildBuild = [
     graphviz
   ];
 
@@ -85,13 +75,15 @@ stdenv.mkDerivation rec {
   # conclusively in its README or otherwise; they can best be determined
   # by checking the CMake output for "Could NOT find".
   buildInputs = [
+    lcms2
     giflib
     gperftools # provides `libtcmalloc`
+    gtest
     libjpeg
     libpng
     libwebp
     gdk-pixbuf
-    openexr
+    openexr_3
     zlib
   ];
 
@@ -143,11 +135,8 @@ stdenv.mkDerivation rec {
       --set GDK_PIXBUF_MODULE_FILE "$out/${loadersPath}" \
   '';
 
-  LDFLAGS = lib.optionalString stdenv.hostPlatform.isRiscV "-latomic";
   CXXFLAGS = lib.optionalString stdenv.hostPlatform.isAarch32 "-mfp16-format=ieee";
 
-  # FIXME x86_64-darwin:
-  # https://github.com/NixOS/nixpkgs/pull/204030#issuecomment-1352768690
   doCheck = false;
 
   meta = with lib; {
