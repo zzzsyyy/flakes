@@ -48,5 +48,6 @@
     ":q" = "exit";
     snvim = "EDITOR=nvim sudoedit";
     icat = "kitty +kitten icat";
+    s = "kitten ssh";
   };
 }
