@@ -5,9 +5,22 @@
 
   programs.helix = {
     enable = true;
-    # package = 
+    # package =
     settings = {
       theme = "everforest_dark";
+      keys.normal = {
+        "X" = "extend_line_above";
+        space.space = "file_picker";
+        space.w = ":w";
+        space.q = ":bc";
+        "C-q" = ":xa";
+        space.c = "ms space ms* space ms/";
+        space.u = {
+          f = ":format";
+          w = ":set whitespace.render all";
+          W = ":set whitespace.render none";
+        };
+      };
       editor = {
         line-number = "relative";
         true-color = true;

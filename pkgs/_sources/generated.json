@@ -1,19 +1,4 @@
 {
-    "clash-verge-rev": {
-        "cargoLocks": null,
-        "date": null,
-        "extract": null,
-        "name": "clash-verge-rev",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "name": null,
-            "sha256": "sha256-UJYLfefgUASBmh0gyNmjsWdAadluKhwaXZL1wlVlbjU=",
-            "type": "url",
-            "url": "https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v1.5.4/clash-verge_1.5.4_amd64.deb"
-        },
-        "version": "1.5.4"
-    },
     "firefox-gnome-theme": {
         "cargoLocks": null,
         "date": "2024-01-07",
@@ -34,26 +19,6 @@
         },
         "version": "7a1a81baa7c31d75764dcea908285e487302d32a"
     },
-    "gnome-shell-extension-quake-mode": {
-        "cargoLocks": null,
-        "date": "2023-12-26",
-        "extract": null,
-        "name": "gnome-shell-extension-quake-mode",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "repsac-by",
-            "repo": "gnome-shell-extension-quake-mode",
-            "rev": "50d4505d109ac474ed7b82397447559ddcebd7f8",
-            "sha256": "sha256-er71pDa13orFVerWLKVGb2jR+74AUbRWhZZAgW+xm7g=",
-            "type": "github"
-        },
-        "version": "50d4505d109ac474ed7b82397447559ddcebd7f8"
-    },
     "iosevka-zt": {
         "cargoLocks": null,
         "date": null,
@@ -71,7 +36,7 @@
     },
     "librime-lua": {
         "cargoLocks": null,
-        "date": "2024-02-25",
+        "date": "2024-03-08",
         "extract": null,
         "name": "librime-lua",
         "passthru": null,
@@ -83,11 +48,11 @@
             "name": null,
             "owner": "hchunhui",
             "repo": "librime-lua",
-            "rev": "b2ad34cc8c639b7bb1bc6abcde08621b57e3e055",
-            "sha256": "sha256-v9kzTaCBx+P0L2ITQ5L6grOmUvprqCU6YsNNr7yPHTc=",
+            "rev": "20ddea907e0b0c9c60d1dcb6b102bee38697cb5c",
+            "sha256": "sha256-kU3pceqQoIM4pypPg2nLLnnyrgQSUEWZW9VLmmPJltU=",
             "type": "github"
         },
-        "version": "b2ad34cc8c639b7bb1bc6abcde08621b57e3e055"
+        "version": "20ddea907e0b0c9c60d1dcb6b102bee38697cb5c"
     },
     "lxgw-wenkai-screen": {
         "cargoLocks": null,
@@ -146,7 +111,7 @@
     },
     "rime-ice": {
         "cargoLocks": null,
-        "date": "2024-02-25",
+        "date": "2024-03-12",
         "extract": null,
         "name": "rime-ice",
         "passthru": null,
@@ -158,10 +123,10 @@
             "name": null,
             "owner": "iDvel",
             "repo": "rime-ice",
-            "rev": "ec9c14000c4e54d2a39311452f822ab07a99b336",
-            "sha256": "sha256-eH7+tQnNt0UTM2lbsqujgn4uoilw3Mr+B/2Yl0irAdY=",
+            "rev": "a33bd8d204c3f8a47507fa8f71ccfc93fa44d1e0",
+            "sha256": "sha256-Io0+4xlzAa1Albp6rSAMlCvRfkRl2pfKVrplzWUC4lM=",
             "type": "github"
         },
-        "version": "ec9c14000c4e54d2a39311452f822ab07a99b336"
+        "version": "a33bd8d204c3f8a47507fa8f71ccfc93fa44d1e0"
     }
 }

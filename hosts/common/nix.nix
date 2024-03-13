@@ -5,7 +5,7 @@
     #channel.enable = false;
     package = pkgs.nixUnstable;
     settings = {
-      experimental-features = [ "nix-command" "flakes" ];
+      experimental-features = [ "nix-command" "flakes" "auto-allocate-uids" ];
       auto-optimise-store = true;
       use-xdg-base-directories = true;
       # max-jobs = 1;
@@ -14,7 +14,6 @@
         "https://nyx.chaotic.cx"
         "https://cache.garnix.io"
         "https://mirror.sjtu.edu.cn/nix-channels/store"
-        "https://mirrors.bfsu.edu.cn/nix-channels/store"
         "https://mirrors.ustc.edu.cn/nix-channels/store"
       ];
       trusted-public-keys = [

@@ -43,15 +43,5 @@
       enable = true;
     };
     # blueman.enable = true;
-    navidrome = {
-      enable = false;
-      settings = {
-        Address = "192.168.49.43";
-        MusicFolder = "/srv/music";
-        Port = 4533;
-        ScanSchedule = "0";
-        EnableStarRating = false;
-      };
-    };
   };
 }

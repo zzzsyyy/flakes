@@ -24,15 +24,6 @@ fetch.github = "rafaelmardojai/firefox-gnome-theme"
 src.github = "lxgw/LxgwWenKai-Screen"
 fetch.url = "https://github.com/lxgw/LxgwWenKai-Screen/releases/download/$ver/LXGWWenKaiScreen.ttf"
 
-[gnome-shell-extension-quake-mode]
-src.git = "https://github.com/repsac-by/gnome-shell-extension-quake-mode"
-fetch.github = "repsac-by/gnome-shell-extension-quake-mode"
-
 [q]
 src.github = "natesales/q"
 fetch.github = "natesales/q"
-
-[clash-verge-rev]
-src.github = "clash-verge-rev/clash-verge-rev"
-fetch.url = "https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v$ver/clash-verge_$ver_amd64.deb"
-src.prefix = "v"

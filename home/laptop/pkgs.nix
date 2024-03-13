@@ -24,6 +24,8 @@ let
     rustup
     lua
     python3
+    nim
+    zig
     git
     nodejs
     nodePackages.pnpm
@@ -50,7 +52,6 @@ let
     #@TODO update BIOS
     #dmidecode
     hyfetch
-    bottom
 
     wasmtime
     twiggy

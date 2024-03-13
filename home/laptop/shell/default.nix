@@ -21,6 +21,13 @@
     enableFishIntegration = true;
   };
 
+  programs.btop = {
+    enable = true;
+    settings = {
+      color_theme = "everforest-dark-medium";
+    };
+  };
+
   programs.tealdeer = {
     enable = true;
   };
