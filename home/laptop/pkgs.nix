@@ -70,7 +70,7 @@ let
     hyperfine
     my.odin
     my.cpdf
-    my.q
+    q
     #innoextract
     ouch
     lf

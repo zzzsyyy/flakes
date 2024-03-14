@@ -23,7 +23,3 @@ fetch.github = "rafaelmardojai/firefox-gnome-theme"
 [lxgw-wenkai-screen]
 src.github = "lxgw/LxgwWenKai-Screen"
 fetch.url = "https://github.com/lxgw/LxgwWenKai-Screen/releases/download/$ver/LXGWWenKaiScreen.ttf"
-
-[q]
-src.github = "natesales/q"
-fetch.github = "natesales/q"
