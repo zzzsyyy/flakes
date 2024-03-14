@@ -100,6 +100,7 @@ let
     # fractal-next # matrix
     # gtkcord4 # discord (WIP)
     tdesktop
+    my.wechat-uos
     # microsoft-edge-dev
     tor-browser-bundle-bin
     google-chrome

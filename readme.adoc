@@ -19,4 +19,5 @@ image:https://img.shields.io/badge/License-MIT-blue.svg[link=https://en.wikipedi
 * [x] Secure boot using link:https://github.com/nix-community/lanzaboote[lanzaboote]
 * [ ] Some dev environnment: slidev hugo python rust etc.
 * [x] Overlays
+* [ ] sub-pkgs
 

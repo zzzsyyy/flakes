@@ -6,7 +6,7 @@
       name = lib.strings.removeSuffix ".nix" name;
       value = import (../overlays/${name});
     })
-    (builtins.attrNames (builtins.readDir ../overlays))
+    (lib.filter (item: lib.strings.hasSuffix ".nix" item) (builtins.attrNames (builtins.readDir ../overlays)))
   );
 
   perSystem =
@@ -41,6 +41,9 @@
         inherit system;
         config = {
           allowUnfree = true;
+          permittedInsecurePackages = [
+            "openssl-1.1.1w"
+          ];
         };
         overlays = map (f: self.overlays.${f}) (builtins.attrNames self.overlays);
       };
