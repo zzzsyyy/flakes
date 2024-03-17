@@ -52,17 +52,6 @@
       sha256 = "sha256-d2CK+OSkMxmAt8qogCyG/J841JI9qG+3xM8TVoWe96Q=";
     };
   };
-  q = {
-    pname = "q";
-    version = "v0.19.2";
-    src = fetchFromGitHub {
-      owner = "natesales";
-      repo = "q";
-      rev = "v0.19.2";
-      fetchSubmodules = false;
-      sha256 = "sha256-kfuf0iwRYNxd9TfIIHvAqLxXjesQh7jC0evT9DQrrzQ=";
-    };
-  };
   rime-ice = {
     pname = "rime-ice";
     version = "a33bd8d204c3f8a47507fa8f71ccfc93fa44d1e0";

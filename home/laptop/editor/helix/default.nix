@@ -14,7 +14,6 @@
         space.w = ":w";
         space.q = ":bc";
         "C-q" = ":xa";
-        space.c = "ms space ms* space ms/";
         space.u = {
           f = ":format";
           w = ":set whitespace.render all";

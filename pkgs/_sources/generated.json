@@ -89,26 +89,6 @@
         },
         "version": "V1.8.5757"
     },
-    "q": {
-        "cargoLocks": null,
-        "date": null,
-        "extract": null,
-        "name": "q",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "natesales",
-            "repo": "q",
-            "rev": "v0.19.2",
-            "sha256": "sha256-kfuf0iwRYNxd9TfIIHvAqLxXjesQh7jC0evT9DQrrzQ=",
-            "type": "github"
-        },
-        "version": "v0.19.2"
-    },
     "rime-ice": {
         "cargoLocks": null,
         "date": "2024-03-12",

@@ -25,13 +25,13 @@ in
 
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "usb_storage" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ "kvm-amd" "v4l2loopback" "acpi_call" ];
+  boot.kernelModules = [ "kvm-amd" "acpi_call" ];
 
   # for obs virtual camera
-  boot.extraModulePackages = with config.boot.kernelPackages; [ v4l2loopback acpi_call ];
-  boot.extraModprobeConfig = ''
-    options v4l2loopback exclusive_caps=1 video_nr=9 card_label="obs"
-  '';
+  # boot.extraModulePackages = with config.boot.kernelPackages; [ v4l2loopback acpi_call ];
+  # boot.extraModprobeConfig = ''
+  # options v4l2loopback exclusive_caps=1 video_nr=9 card_label="obs"
+  # '';
 
   fileSystems."/" = {
     device = "tmpfs";

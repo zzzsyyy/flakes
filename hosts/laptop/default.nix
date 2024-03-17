@@ -35,10 +35,10 @@
   #   };
   # };
 
-  # chaotic = {
-  #   nyx.cache.enable = false;
-  #   nyx.overlay.enable = false;
-  # };
+  chaotic = {
+    scx.enable = true;
+    scx.scheduler = "scx_rustland";
+  };
 
   boot = {
     plymouth.enable = true;
@@ -47,8 +47,8 @@
       systemd-boot.configurationLimit = 5;
       efi.canTouchEfiVariables = false; #@TODO
     };
-    # kernelPackages = pkgs.linuxPackages_xanmod_latest;
-    kernelPackages = pkgs.chaotic.linuxPackages_cachyos;
+    # kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.chaotic.linuxPackages_cachyos-lto;
     #@TODO
     kernelParams = [
       # Lenovo shit do not support on 4xxx

@@ -7,7 +7,6 @@
   ];
   programs.eza = {
     enable = true;
-    enableAliases = true;
     extraOptions = [
       "--group-directories-first"
       "--header"
@@ -19,6 +18,14 @@
   programs.zoxide = {
     enable = true;
     enableFishIntegration = true;
+  };
+
+  programs.zellij = {
+    enable = true;
+    settings = {
+      theme = "everforest-dark";
+      simplified-ui = true;
+    };
   };
 
   programs.btop = {
