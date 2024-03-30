@@ -37,7 +37,7 @@
 
   chaotic = {
     scx.enable = true;
-    scx.scheduler = "scx_rustland";
+    scx.scheduler = "scx_lavd";
   };
 
   boot = {
@@ -48,7 +48,7 @@
       efi.canTouchEfiVariables = false; #@TODO
     };
     # kernelPackages = pkgs.linuxPackages_latest;
-    kernelPackages = pkgs.chaotic.linuxPackages_cachyos-lto;
+    kernelPackages = pkgs.chaotic.linuxPackages_cachyos;
     #@TODO
     kernelParams = [
       # Lenovo shit do not support on 4xxx
