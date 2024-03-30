@@ -23,7 +23,6 @@
 }:
 
 let
-  inherit (gdk-pixbuf) moduleDir;
   loadersPath = "${gdk-pixbuf.binaryDir}/jxl-loaders.cache";
 in
 
@@ -127,12 +126,12 @@ stdenv.mkDerivation rec {
   '';
 
   postInstall = ''
-    GDK_PIXBUF_MODULEDIR="$out/${moduleDir}" \
+    GDK_PIXBUF_MODULEDIR="$out/${gdk-pixbuf.moduleDir}" \
     GDK_PIXBUF_MODULE_FILE="$out/${loadersPath}" \
-    gdk-pixbuf-query-loaders --update-cache
+      gdk-pixbuf-query-loaders --update-cache
     mkdir -p "$out/bin"
     makeWrapper ${gdk-pixbuf}/bin/gdk-pixbuf-thumbnailer "$out/libexec/gdk-pixbuf-thumbnailer-jxl" \
-      --set GDK_PIXBUF_MODULE_FILE "$out/${loadersPath}" \
+      --set GDK_PIXBUF_MODULE_FILE "$out/${loadersPath}"
   '';
 
   CXXFLAGS = lib.optionalString stdenv.hostPlatform.isAarch32 "-mfp16-format=ieee";
