@@ -1,13 +1,18 @@
 { config
 , pkgs
+, lib
 , ...
 }: {
   services = {
+    dbus.implementation = "broker"; # waiting https://github.com/NixOS/nixpkgs/pull/299812
     udev.extraRules = ''
       SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", MODE="0666", GROUP="plugdev"
     '';
     fstrim.enable = true;
-    openssh.enable = true;
+    openssh = {
+      enable = true;
+      settings.PermitRootLogin = lib.mkDefault "no";
+    };
     printing.enable = true;
     fwupd.enable = true;
     power-profiles-daemon.enable = false;
