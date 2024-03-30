@@ -9,8 +9,9 @@
     enable = true;
     configFile = "/home/zzzsy/.config/dae/config.dae";
   };
+  systemd.services.dae.serviceConfig.StandardOutput = "append:/var/log/dae.log";
   services.zerotierone = {
     enable = true;
-    joinNetworks = [ "ccc5da5295c853d4" ];
+    joinNetworks = [ "0cccb752f79f6de5" ];
   };
 }
