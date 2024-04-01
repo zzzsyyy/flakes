@@ -36,7 +36,7 @@ stdenv.mkDerivation rec {
     owner = "libjxl";
     repo = "libjxl";
     rev = "v${version}";
-    hash = "sha256-Ip/5fbzt6OfIrHJajnxEe14ppvX1hJ1FSJUBEE/h5YQ=";
+    hash = "sha256-n5KNbbw6NQRROEM7Cojla/igRCFNawUq7nfhzJlMlPI=";
     # There are various submodules in `third_party/`.
     fetchSubmodules = true;
   };
@@ -109,7 +109,6 @@ stdenv.mkDerivation rec {
     # Viewer tools for evaluation.
     # "-DJPEGXL_ENABLE_VIEWERS=ON"
 
-    # TODO: Update this package to enable this (overridably via an option):
     # Enable plugins, such as:
     # * the `gdk-pixbuf` one, which allows applications like `eog` to load jpeg-xl files
     # * the `gimp` one, which allows GIMP to load jpeg-xl files

@@ -28,11 +28,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-7Uocq6zHX5It2Ivernu1GggCP4ZDZTLRabvFuszMiPQ=",
+            "sha256": "sha256-ZKGR22oab0h9XKALoUUCSaY761dHqVB3ZP/0ZYaV6bk=",
             "type": "url",
-            "url": "https://github.com/zzzsyyy/Iosevka/releases/download/v27.3.5/Iosevka-27.3.5.tar.xz"
+            "url": "https://github.com/zzzsyyy/Iosevka/releases/download/v29.0.4/Iosevka-29.0.4.txz"
         },
-        "version": "27.3.5"
+        "version": "29.0.4"
     },
     "librime-lua": {
         "cargoLocks": null,
@@ -83,15 +83,15 @@
             "name": null,
             "owner": "Fitzgerald-Porthmouth-Koenigsegg",
             "repo": "Plangothic",
-            "rev": "V1.8.5757",
-            "sha256": "sha256-d2CK+OSkMxmAt8qogCyG/J841JI9qG+3xM8TVoWe96Q=",
+            "rev": "V1.8.5760",
+            "sha256": "sha256-BBPWeLR6CA+2uJZDxqISjbZdWe9AvHE9sW8P1BmrhPY=",
             "type": "github"
         },
-        "version": "V1.8.5757"
+        "version": "V1.8.5760"
     },
     "rime-ice": {
         "cargoLocks": null,
-        "date": "2024-03-12",
+        "date": "2024-03-24",
         "extract": null,
         "name": "rime-ice",
         "passthru": null,
@@ -103,10 +103,10 @@
             "name": null,
             "owner": "iDvel",
             "repo": "rime-ice",
-            "rev": "a33bd8d204c3f8a47507fa8f71ccfc93fa44d1e0",
-            "sha256": "sha256-Io0+4xlzAa1Albp6rSAMlCvRfkRl2pfKVrplzWUC4lM=",
+            "rev": "ab648212584a5e54bf72583ba729e9d82c7f4888",
+            "sha256": "sha256-n/89Os25hAJRjIwqfgmUCHigIWDOQ4V6DPIlv6xYBzk=",
             "type": "github"
         },
-        "version": "a33bd8d204c3f8a47507fa8f71ccfc93fa44d1e0"
+        "version": "ab648212584a5e54bf72583ba729e9d82c7f4888"
     }
 }

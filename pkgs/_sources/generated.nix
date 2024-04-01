@@ -15,10 +15,10 @@
   };
   iosevka-zt = {
     pname = "iosevka-zt";
-    version = "27.3.5";
+    version = "29.0.4";
     src = fetchurl {
-      url = "https://github.com/zzzsyyy/Iosevka/releases/download/v27.3.5/Iosevka-27.3.5.tar.xz";
-      sha256 = "sha256-7Uocq6zHX5It2Ivernu1GggCP4ZDZTLRabvFuszMiPQ=";
+      url = "https://github.com/zzzsyyy/Iosevka/releases/download/v29.0.4/Iosevka-29.0.4.txz";
+      sha256 = "sha256-ZKGR22oab0h9XKALoUUCSaY761dHqVB3ZP/0ZYaV6bk=";
     };
   };
   librime-lua = {
@@ -43,25 +43,25 @@
   };
   plangothic = {
     pname = "plangothic";
-    version = "V1.8.5757";
+    version = "V1.8.5760";
     src = fetchFromGitHub {
       owner = "Fitzgerald-Porthmouth-Koenigsegg";
       repo = "Plangothic";
-      rev = "V1.8.5757";
+      rev = "V1.8.5760";
       fetchSubmodules = false;
-      sha256 = "sha256-d2CK+OSkMxmAt8qogCyG/J841JI9qG+3xM8TVoWe96Q=";
+      sha256 = "sha256-BBPWeLR6CA+2uJZDxqISjbZdWe9AvHE9sW8P1BmrhPY=";
     };
   };
   rime-ice = {
     pname = "rime-ice";
-    version = "a33bd8d204c3f8a47507fa8f71ccfc93fa44d1e0";
+    version = "ab648212584a5e54bf72583ba729e9d82c7f4888";
     src = fetchFromGitHub {
       owner = "iDvel";
       repo = "rime-ice";
-      rev = "a33bd8d204c3f8a47507fa8f71ccfc93fa44d1e0";
+      rev = "ab648212584a5e54bf72583ba729e9d82c7f4888";
       fetchSubmodules = false;
-      sha256 = "sha256-Io0+4xlzAa1Albp6rSAMlCvRfkRl2pfKVrplzWUC4lM=";
+      sha256 = "sha256-n/89Os25hAJRjIwqfgmUCHigIWDOQ4V6DPIlv6xYBzk=";
     };
-    date = "2024-03-12";
+    date = "2024-03-24";
   };
 }

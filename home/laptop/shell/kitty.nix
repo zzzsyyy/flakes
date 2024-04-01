@@ -5,6 +5,9 @@
     font.size = 12;
     shellIntegration.enableFishIntegration = true;
     settings = {
+      bold_font = "Iosevka ZT Semibold Extended";
+      italic_font = "Iosevka ZT Semibold Italic";
+      bold_italic_font = "ZT Semibold Extended Italic";
       enable_audio_bell = false;
       remember_window_size = false;
       # initial_window_width = 800;

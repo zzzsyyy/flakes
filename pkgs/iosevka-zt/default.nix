@@ -9,6 +9,6 @@ stdenvNoCC.mkDerivation {
 
   installPhase = ''
     mkdir -p $out/share/fonts/truetype
-    mv *.ttf $_
+    mv TTF/*.ttf $_
   '';
 }
