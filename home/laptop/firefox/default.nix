@@ -26,6 +26,8 @@ in
     };
     #@TODO muilti profile
     profiles.default = {
+      # profiles.dev-edition-default = {
+      isDefault = true;
       settings = import ./config/settings.nix;
       search = import ./config/search.nix;
       userChrome = lib.strings.concatStrings [

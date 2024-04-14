@@ -67,6 +67,7 @@ in
         sops-nix.nixosModules.sops
         chaotic.nixosModules.default
         daeuniverse.nixosModules.dae
+        daeuniverse.nixosModules.daed
         lanzaboote.nixosModules.lanzaboote
         # nixos-hardware.nixosModules.common-cpu-amd-pstate
         # nixos-hardware.nixosModules.common-gpu-amd

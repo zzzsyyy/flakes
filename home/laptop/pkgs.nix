@@ -91,6 +91,7 @@ let
     texlive.combined.scheme-full
     asciidoc-full
     feishu
+    # mathematica
     #virtualbox
     # hunspellq
   ];
