@@ -46,7 +46,7 @@
     version = "V1.8.5760";
     src = fetchFromGitHub {
       owner = "Fitzgerald-Porthmouth-Koenigsegg";
-      repo = "Plangothic";
+      repo = "Plangothic-Project";
       rev = "V1.8.5760";
       fetchSubmodules = false;
       sha256 = "sha256-BBPWeLR6CA+2uJZDxqISjbZdWe9AvHE9sW8P1BmrhPY=";
@@ -54,14 +54,14 @@
   };
   rime-ice = {
     pname = "rime-ice";
-    version = "94b510d76c34cb70f5b8b4ade5b8e968ec74ea60";
+    version = "dc4f52d4d0896fbaa7c9535903dc9d141de655ac";
     src = fetchFromGitHub {
       owner = "iDvel";
       repo = "rime-ice";
-      rev = "94b510d76c34cb70f5b8b4ade5b8e968ec74ea60";
+      rev = "dc4f52d4d0896fbaa7c9535903dc9d141de655ac";
       fetchSubmodules = false;
-      sha256 = "sha256-xkZsEsJxA14mONolLH7V0y0LDKGRmQ5PAnkqD4L0jhg=";
+      sha256 = "sha256-mE0AgBcdCPc7inN/EywZjEYrV3mW8GHMQHttIjpphi8=";
     };
-    date = "2024-04-12";
+    date = "2024-04-17";
   };
 }

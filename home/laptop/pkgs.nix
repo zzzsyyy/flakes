@@ -11,6 +11,7 @@ let
     nix-du
     nix-tree
     nix-output-monitor
+    nh
   ];
 
   build-tools = with pkgs; [

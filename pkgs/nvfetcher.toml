@@ -12,8 +12,8 @@ fetch.url = "https://github.com/zzzsyyy/Iosevka/releases/download/v$ver/Iosevka-
 src.prefix = "v"
 
 [plangothic]
-src.github = "Fitzgerald-Porthmouth-Koenigsegg/Plangothic"
-fetch.github = "Fitzgerald-Porthmouth-Koenigsegg/Plangothic"
+src.github = "Fitzgerald-Porthmouth-Koenigsegg/Plangothic-Project"
+fetch.github = "Fitzgerald-Porthmouth-Koenigsegg/Plangothic-Project"
 
 [firefox-gnome-theme]
 src.git = "https://github.com/rafaelmardojai/firefox-gnome-theme"

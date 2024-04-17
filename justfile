@@ -20,10 +20,12 @@ fmt:
   nixpkgs-fmt ./
 
 switch host="laptop":
-  sudo nixos-rebuild switch --flake .#{{host}} -L
+  nh os switch . --ask
+  # sudo nixos-rebuild switch --flake .#{{host}} -L
 
 test host="laptop":
-  sudo nixos-rebuild test --flake .#{{host}} -L
+  nh os test . --ask
+  # sudo nixos-rebuild test --flake .#{{host}} -L
 
 gc:
   sudo nix-collect-garbage --delete-older-than 5d
