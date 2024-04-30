@@ -1,5 +1,4 @@
 { pkgs
-, lib
 , ...
 }: {
   programs.helix.languages = {
@@ -14,8 +13,9 @@
       }
       {
         name = "nix";
-        auto-format = true;
+        auto-format = false;
         formatter.command = "${pkgs.nixpkgs-fmt}/bin/nixpkgs-fmt";
+        language-servers = [ "nixd" ];
       }
       {
         name = "c";
@@ -31,8 +31,8 @@
         command = "${pkgs.clang-tools}/bin/clangd";
         clangd.fallbackFlags = [ "-std=c++2b" ];
       };
-      nil = {
-        command = lib.getExe pkgs.nil;
+      nixd = {
+        command = "${pkgs.nixd-nightly}/bin/nixd";
       };
     };
   };

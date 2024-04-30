@@ -20,4 +20,5 @@ image:https://img.shields.io/badge/License-MIT-blue.svg[link=https://en.wikipedi
 * [ ] Some dev environnment: slidev hugo python rust etc.
 * [x] Overlays
 * [ ] sub-pkgs
+* [ ] nixify neovim using link:https://github.com/nix-community/nixvim[nixvim]
 

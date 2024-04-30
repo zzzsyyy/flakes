@@ -21,6 +21,15 @@
     nvfetcher.url = "github:berberman/nvfetcher";
     nvfetcher.inputs.nixpkgs.follows = "nixpkgs";
 
+    nixd.url = "github:nix-community/nixd";
+    nixd.inputs.nipkgs.follows = "nixpkgs";
+
+    nix-matlab = {
+      inputs.nixpkgs.follows = "nixpkgs";
+      url = "gitlab:doronbehar/nix-matlab";
+    };
+
+
     pre-commit-hooks = {
       url = "github:cachix/pre-commit-hooks.nix";
       inputs.nixpkgs.follows = "nixpkgs";

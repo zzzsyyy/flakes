@@ -5,7 +5,7 @@
 let
   username = "zzzsy";
 
-  inherit (inputs) home-manager nixpkgs impermanence sops-nix chaotic nvfetcher daeuniverse lanzaboote;
+  inherit (inputs) home-manager nixpkgs impermanence sops-nix chaotic nvfetcher daeuniverse lanzaboote nix-matlab nixd;
 
   inherit (nixpkgs.lib) attrValues;
   mkHost =
@@ -29,6 +29,7 @@ let
               nixpkgs = {
                 overlays = [
                   (final: prev: {
+                    nixd-nightly = nixd.packages."${system}".nixd;
                     my = self.packages."${system}";
                     chaotic = chaotic.packages.${system};
                     stable = import inputs.nixpkgs-stable {
@@ -76,6 +77,7 @@ in
       overlays = [
         self.overlays.libjxl
         self.overlays.mutter
+        nix-matlab.overlay
       ];
     });
 }

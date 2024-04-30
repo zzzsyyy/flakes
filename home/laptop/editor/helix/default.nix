@@ -5,7 +5,6 @@
 
   programs.helix = {
     enable = true;
-    # package =
     settings = {
       theme = "everforest_dark";
       keys.normal = {
@@ -28,6 +27,9 @@
         bufferline = "multiple";
         completion-replace = true;
         gutters = [ "diff" "diagnostics" "line-numbers" "spacer" ];
+        soft-wrap = {
+          enable = true;
+        };
         statusline = {
           left = [ "mode" "spinner" ];
           center = [ "file-name" ];
