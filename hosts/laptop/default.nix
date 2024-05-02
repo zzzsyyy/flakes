@@ -37,8 +37,7 @@
 
   chaotic = {
     scx.enable = true;
-    #@TODO
-    # scx.scheduler = "scx_lavd";
+    scx.scheduler = "scx_lavd";
   };
 
   boot = {

@@ -3,7 +3,7 @@
 }: {
   nix = {
     #channel.enable = false;
-    package = pkgs.nixUnstable;
+    package = pkgs.nixVersions.latest;
     settings = {
       experimental-features = [ "nix-command" "flakes" "auto-allocate-uids" ];
       auto-optimise-store = true;

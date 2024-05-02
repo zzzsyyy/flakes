@@ -22,7 +22,7 @@
     nvfetcher.inputs.nixpkgs.follows = "nixpkgs";
 
     nixd.url = "github:nix-community/nixd";
-    nixd.inputs.nipkgs.follows = "nixpkgs";
+    nixd.inputs.nixpkgs.follows = "nixpkgs";
 
     nix-matlab = {
       inputs.nixpkgs.follows = "nixpkgs";
