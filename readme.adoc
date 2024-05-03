@@ -4,6 +4,7 @@
 :url-repo: https://codeberg.org/zzzsy/flakes
 
 image:https://img.shields.io/static/v1?label=Built%20with&message=nix&color=blue&style=flat&logo=nixos&link=https://nixos.org&labelColor=111212[link=https://nixos.org]
+image:https://github.com/zzzsyyy/flakes/actions/workflows/lint.yaml/badge.svg?branch=main[link=https://github.com/zzzsyyy/flakes/actions/workflows/lint.yaml]
 image:https://img.shields.io/badge/License-MIT-blue.svg[link=https://en.wikipedia.org/wiki/MIT_License]
 
 == Features
