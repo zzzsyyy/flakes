@@ -3,22 +3,24 @@
 :description: My NixOS configuration
 :url-repo: https://codeberg.org/zzzsy/flakes
 
-image:https://img.shields.io/static/v1?label=Built%20with&message=nix&color=blue&style=flat&logo=nixos&link=https://nixos.org&labelColor=111212[link=https://nix.org]
-image:https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fgarnix.io%2Fapi%2Fbadges%2Fzzzsyyy%2Fflakes%3Fbranch%3Dmain[alt=built with garnix,link=https://garnix.io]
+image:https://img.shields.io/static/v1?label=Built%20with&message=nix&color=blue&style=flat&logo=nixos&link=https://nixos.org&labelColor=111212[link=https://nixos.org]
 image:https://img.shields.io/badge/License-MIT-blue.svg[link=https://en.wikipedia.org/wiki/MIT_License]
 
 == Features
 
-* [x] using link:https://flake.parts[flake parts]
-* [x] secrets by link:https://github.com/Mic92/sops-nix[sops-nix]
-* [x] pkgs using link:https://github.com/berberman/nvfetcher[nvfetcher]
-* [x] moduliser les conf
-* [x] shortcut using link:https://just.systems/[justfile]
-* [x] Rime (using patch & link:https://github.com/iDvel/rime-ice[Rime-Ice])
-* [x] using link:https://github.com/cachix/pre-commit-hooks.nix[pre-commit]
-* [x] Secure boot using link:https://github.com/nix-community/lanzaboote[lanzaboote]
-* [ ] Some dev environnment: slidev hugo python rust etc.
-* [x] Overlays
+* [x] layout link:https://flake.parts[flake parts]
+* [x] secrets link:https://github.com/Mic92/sops-nix[sops-nix]
+* [x] pkgs link:https://github.com/berberman/nvfetcher[nvfetcher]
+* [x] tmpfs as root: link:https:https://github.com/nix-community/impermanence[impermanence]
+* [x] shortcut link:https://just.systems/[justfile]
+* [x] Rime (yaml patch & link:https://github.com/iDvel/rime-ice[Rime-Ice])
+* [x] lint link:https://github.com/cachix/pre-commit-hooks.nix[pre-commit]
+* [x] Chaotic link:https://www.nyx.chaotic.cx[Nyx]
+* [x] secure boot link:https://github.com/nix-community/lanzaboote[lanzaboote]
+* [ ] dev environnments: slidev hugo python rust etc.
+* [x] overlays
 * [ ] sub-pkgs
+* [ ] POP
+* [ ] CI
 * [ ] nixify neovim using link:https://github.com/nix-community/nixvim[nixvim]
 

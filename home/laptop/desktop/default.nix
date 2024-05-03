@@ -34,7 +34,8 @@
 
   qt = {
     enable = true;
-    platformTheme = "gtk";
+    platformTheme = "gnome";
+    style.name = "adwaita";
   };
 
   home.packages = with pkgs; [

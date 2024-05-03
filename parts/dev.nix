@@ -18,6 +18,7 @@
       pre-commit.settings.hooks = {
         nixpkgs-fmt.enable = true;
         nil.enable = true;
+        actionlint.enable = true;
       };
       devShells.secret = with pkgs; mkShell {
         nativeBuildInputs = [
