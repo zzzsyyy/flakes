@@ -75,7 +75,6 @@ in
         # nixos-hardware.nixosModules.common-pc-ssd
       ];
       overlays = [
-        self.overlays.libjxl
         self.overlays.mutter
         nix-matlab.overlay
       ];

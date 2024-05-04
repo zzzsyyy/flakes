@@ -34,11 +34,11 @@ in
       ];
     };
     # @FIXME Cause ibus offset
-    "org/gnome/mutter" = {
-      experimental-features = [
-        "scale-monitor-framebuffer"
-      ];
-    };
+    #"org/gnome/mutter" = {
+    #  experimental-features = [
+    #    "scale-monitor-framebuffer"
+    #  ];
+    #};
     "org/gnome/desktop/peripherals/touchpad" = {
       tap-and-drag-lock = true;
       tap-to-click = true;
