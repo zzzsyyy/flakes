@@ -1,7 +1,5 @@
 {
-  imports = [
-    ./langs.nix
-  ];
+  imports = [ ./langs.nix ];
 
   programs.helix = {
     enable = true;
@@ -26,14 +24,29 @@
         cursorline = true;
         bufferline = "multiple";
         completion-replace = true;
-        gutters = [ "diff" "diagnostics" "line-numbers" "spacer" ];
+        gutters = [
+          "diff"
+          "diagnostics"
+          "line-numbers"
+          "spacer"
+        ];
         soft-wrap = {
           enable = true;
         };
         statusline = {
-          left = [ "mode" "spinner" ];
+          left = [
+            "mode"
+            "spinner"
+          ];
           center = [ "file-name" ];
-          right = [ "diagnostics" "selections" "position" "file-line-ending" "file-type" "version-control" ];
+          right = [
+            "diagnostics"
+            "selections"
+            "position"
+            "file-line-ending"
+            "file-type"
+            "version-control"
+          ];
           separator = "|";
           mode = {
             normal = "NORMAL";

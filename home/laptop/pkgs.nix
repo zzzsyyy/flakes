@@ -1,14 +1,9 @@
-{ pkgs
-, ...
-}:
+{ pkgs, ... }:
 
 let
   nix-tools = with pkgs; [
-    nixpkgs-fmt
-    nixpkgs-lint
-    # nixpkgs-review
+    nixfmt-rfc-style
     nix-index
-    nix-du
     nix-tree
     nix-output-monitor
     nh
@@ -16,119 +11,108 @@ let
 
   build-tools = with pkgs; [
     cmake
+    meson
     gnumake
-    # gcc
-    # gdb
+
     clang
     clang-tools
-    sassc
+    llvm
+    lldb
+
     rustup
     lua
     python3
     nim
     zig
-    git
+    go
+    #julia
     nodejs
     nodePackages.pnpm
-    hugo
-    go
-    # julia
-    just
-    # libjxl
-    # nvfetcher
-    ghc
-    haskellPackages.cabal-install
-    #docker_24
-    #git-repo
-    # jdk21
-    # poetry
 
-    #arch-install-scripts
-    #pacman
+    git
+    hugo
+    just
+
+    #ghc
+    #haskellPackages.cabal-install
+    #jdk21
   ];
 
   unix-tools = with pkgs; [
     bat
-    #linuxKernel.packages.linux_xanmod_stable.cpupower
-    #@TODO update BIOS
-    #dmidecode
     hyfetch
+    yazi
 
-    wasmtime
-    twiggy
-    binaryen
-    wabt
+    # wasm
+    #wasmtime
+    #twiggy
+    #binaryen
+    #wabt
 
     scrcpy
     bind
     ripgrep
-    ffmpeg_6-full
+    ffmpeg_7-full
     file
     asciinema
     iw
-    #appimage-run
+    b3sum
     tokei
     hyperfine
+    rsgain
     my.odin
-    my.cpdf
     q
-    #innoextract
     ouch
     lf
     pdftk
-    #ncdu
-    #graphviz-nox
     duf
     nvfetcher
-    steamguard-cli
+    #steamguard-cli
     rclone
+
+    #zsh
+    jq
   ];
 
   office = with pkgs; [
     libreoffice-fresh
     #calibre
-    # octave
+    #octave
     typst
+    foliate
     texlive.combined.scheme-full
     asciidoc-full
-    # feishu
-    # mathematica
+    ghex
+    #feishu
+    #mathematica
     #virtualbox
-    # hunspellq
   ];
 
   others = with pkgs; [
-    # rnote # handwritten notes
     # fractal-next # matrix
-    # gtkcord4 # discord (WIP)
     tdesktop
     # microsoft-edge-dev
     tor-browser-bundle-bin
     google-chrome
+    localsend
     # handbrake
-    # my.megasync
-    # ocrmypdf
     go-musicfox
     # jellyfin-media-player
     # wireshark
     # gaphor
     # gimp
     # minder
-    matlab
+
+    # matlab
+    vmware-workstation
     adw-gtk3
     (ventoy.override {
       defaultGuiType = "gtk3";
       withGtk3 = true;
     })
   ];
-
 in
 
 {
-  home.packages =
-    office
-    ++ others
-    ++ build-tools
-    ++ unix-tools
-    ++ nix-tools;
+  home.packages = office ++ others ++ build-tools ++ unix-tools ++ nix-tools;
 }

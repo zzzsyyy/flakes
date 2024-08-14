@@ -1,6 +1,7 @@
-{ stdenv
-, fetchurl
-, autoPatchelfHook
+{
+  stdenv,
+  fetchurl,
+  autoPatchelfHook,
 }:
 
 stdenv.mkDerivation rec {
@@ -12,9 +13,7 @@ stdenv.mkDerivation rec {
     hash = "sha256-xTIrn5uXIniS9XO2C/QJUyxAlCvZxwolyTkhRHofWSg=";
   };
 
-  nativeBuildInputs = [
-    autoPatchelfHook
-  ];
+  nativeBuildInputs = [ autoPatchelfHook ];
 
   sourceRoot = ".";
 
@@ -22,4 +21,3 @@ stdenv.mkDerivation rec {
     install -m755 -D odin4 $out/bin/odin
   '';
 }
-

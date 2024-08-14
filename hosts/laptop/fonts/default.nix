@@ -1,6 +1,5 @@
-{ pkgs
-, ...
-}: {
+{ pkgs, ... }:
+{
   fonts = {
     fontDir.enable = true;
     enableGhostscriptFonts = true;

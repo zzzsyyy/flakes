@@ -1,6 +1,4 @@
-{ pkgs
-, ...
-}:
+{ pkgs, ... }:
 
 {
   imports = [ ];
@@ -19,31 +17,35 @@
       tracker-miners.enable = false;
       tracker.enable = false;
     };
-    environment.gnome.excludePackages = (with pkgs; [
-      gnome-tour
-      orca
-      #]) ++ (with pkgs.gnome; [
-    ]);
+    environment.gnome.excludePackages = (
+      with pkgs;
+      [
+        gnome-tour
+        orca
+      ]
+    );
     programs.dconf.enable = true;
     # fix nautilus extensions deu to `core-utilities.enable = false`
     workarounds.gnome-fix.enable = true;
-    environment.systemPackages = (with pkgs; [
-      ffmpegthumbnailer
-      amberol # music
-      loupe # image
-      gnome-text-editor
-      epiphany
-    ]) ++ (with pkgs.gnome; [
-      nautilus # file
-      file-roller # archive
-      evince # pdf
-      gnome-tweaks
-      gnome-calendar
-      dconf-editor
-      seahorse
-      gnome-disk-utility
-      # gnome-sound-recorder
-      # gnome-power-manager
-    ]);
+    environment.systemPackages = (
+      with pkgs;
+      [
+        ffmpegthumbnailer
+        amberol # music
+        loupe # image
+        gnome-text-editor
+        epiphany
+        #papers
+        evince
+        nautilus # file
+        file-roller # archive
+        gnome-tweaks
+        gnome-disk-utility
+        seahorse
+        gnome-calendar
+        dconf-editor
+      ]
+    );
+    #++ (with pkgs.gnome; [ ]);
   };
 }

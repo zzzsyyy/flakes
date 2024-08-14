@@ -6,6 +6,9 @@
   "fission.autostart" = true;
   "media.peerconnection.enabled" = false;
   "network.IDN_show_punycode" = true;
+  "image.jxl.enabled" = true;
+  "webgl.disabled" = false;
+  "xpinstall.signatures.required" = false;
 
   "userContent.newTab.fullIcon" = true;
   "userContent.newTab.hiddenLogo" = true;

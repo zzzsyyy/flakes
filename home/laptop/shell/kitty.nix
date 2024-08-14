@@ -9,9 +9,10 @@
       italic_font = "Iosevka ZT Semibold Italic";
       bold_italic_font = "ZT Semibold Extended Italic";
       enable_audio_bell = false;
-      remember_window_size = false;
-      # initial_window_width = 800;
-      # initial_window_height = 600;
+      remember_window_size = true;
+      scrollback_lines = 8000;
+      initial_window_width = 640;
+      initial_window_height = 400;
       update_check_interval = 0;
       background_opacity = "0.95";
       hide_window_decorations = true;

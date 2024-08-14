@@ -33,7 +33,7 @@ vim.bo.autoread = true
 
 vim.cmd([[
 function OpenMarkdownPreview (url)
-  execute "silent ! firefox --new-window --app=" . a:url
+  execute "silent ! firefox-beta --new-window --app=" . a:url
 endfunction
 ]])
 

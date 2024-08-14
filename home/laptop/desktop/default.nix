@@ -1,9 +1,9 @@
-{ pkgs
-, ...
-}: {
+{ pkgs, ... }:
+{
   imports = [
     ./gnome/dconf.nix
     # ./hyprland
+    # ./cosmic.nix
   ];
 
   xdg = {
@@ -17,9 +17,7 @@
   gtk = {
     enable = true;
     iconTheme = {
-      package = pkgs.papirus-icon-theme.override {
-        color = "adwaita";
-      };
+      package = pkgs.papirus-icon-theme.override { color = "adwaita"; };
       name = "Papirus";
     };
   };
@@ -34,7 +32,7 @@
 
   qt = {
     enable = true;
-    platformTheme = "gnome";
+    platformTheme.name = "adwaita";
     style.name = "adwaita";
   };
 

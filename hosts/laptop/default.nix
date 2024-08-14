@@ -1,20 +1,18 @@
-{ pkgs
-, ...
-}:
+{ pkgs, ... }:
 
 {
-  imports =
-    [
-      ./gnome
-      ./fonts
-      ./rime
-      ./hardware.nix
-      ./services.nix
-      ./virt.nix
-      ./networking.nix
-      ./sops.nix
-      ./lanzaboote.nix
-    ];
+  imports = [
+    ./gnome
+    ./fonts
+    ./rime
+    ./hardware.nix
+    ./services.nix
+    ./virt.nix
+    ./networking.nix
+    ./sops.nix
+    ./lanzaboote.nix
+    ./btrbk.nix
+  ];
   # xdg.portal = {
   #   enable = true;
   #   extraPortals = with pkgs; [ xdg-desktop-portal-hyprland ];
@@ -45,7 +43,7 @@
     loader = {
       systemd-boot.enable = true;
       systemd-boot.configurationLimit = 5;
-      efi.canTouchEfiVariables = false; #@TODO
+      efi.canTouchEfiVariables = false; # @TODO
     };
     # kernelPackages = pkgs.linuxPackages_latest;
     kernelPackages = pkgs.chaotic.linuxPackages_cachyos;
@@ -64,12 +62,14 @@
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
   environment.sessionVariables.TERMINAL = [ "kitty" ];
 
-
   time.timeZone = "Asia/Shanghai";
 
   i18n = {
     defaultLocale = "zh_CN.UTF-8";
-    supportedLocales = [ "zh_CN.UTF-8/UTF-8" "en_US.UTF-8/UTF-8" ];
+    supportedLocales = [
+      "zh_CN.UTF-8/UTF-8"
+      "en_US.UTF-8/UTF-8"
+    ];
   };
   # security.pam.services.swaylock = {
   #   text = ''
@@ -78,8 +78,6 @@
   # };
 
   nixpkgs.config.allowUnfree = true;
-
-  sound.enable = true;
 
   environment.pathsToLink = [ "/share/fish" ];
 
@@ -98,13 +96,12 @@
     ];
   };
 
-
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;
   };
   programs.fish.enable = true;
-  programs.thefuck.enable = true;
+  #programs.thefuck.enable = true;
   programs.adb.enable = true;
   programs.fuse.userAllowOther = true;
   services.flatpak.enable = true;
@@ -122,4 +119,3 @@
 
   system.stateVersion = "23.11";
 }
-

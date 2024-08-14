@@ -1,7 +1,5 @@
-{ pkgs
-, lib
-, ...
-}: {
+{ pkgs, lib, ... }:
+{
   environment.systemPackages = [
     pkgs.sbctl
     pkgs.mokutil

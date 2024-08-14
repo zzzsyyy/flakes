@@ -1,16 +1,16 @@
 (final: prev: {
-  gnome = prev.gnome.overrideScope (final': prev': {
+  gnome = prev.gnome.overrideScope (
+    final': prev': {
 
-    mutter = prev'.mutter.overrideAttrs (oldAttrs: {
-      patches = (oldAttrs.patches or [ ]) ++ [
-
-        #dynamic triple/double buffer
-        (prev.fetchpatch {
-          url = "https://raw.githubusercontent.com/archlinuxcn/repo/9416cb712590279a2b3b9e887e941bf85ee0c8f9/archlinuxcn/mutter-performance/mr1441.patch";
-          hash = "sha256-WBY9hsOE7S2sXgqj5gJuhCkG/XIXh68a+TTUIuPbZmk=";
-        })
-      ];
-    });
-  });
+      mutter = prev'.mutter.overrideAttrs (oldAttrs: {
+        patches = (oldAttrs.patches or [ ]) ++ [
+          ./mutter-triple-buffering.patch
+          ./mutter-text-input-v1.patch
+        ];
+      });
+      gnome-shell = prev'.gnome-shell.overrideAttrs (oldAttrs: {
+        patches = (oldAttrs.patches or [ ]) ++ [ ./gnome-shell-preedit-fix.patch ];
+      });
+    }
+  );
 })
-

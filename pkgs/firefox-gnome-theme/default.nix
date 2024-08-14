@@ -1,9 +1,10 @@
-{ source
-, lib
-, stdenvNoCC
+{
+  source,
+  lib,
+  stdenvNoCC,
 }:
 
-stdenvNoCC.mkDerivation rec{
+stdenvNoCC.mkDerivation rec {
   inherit (source) pname src date;
   version = "unstable-${date}";
 

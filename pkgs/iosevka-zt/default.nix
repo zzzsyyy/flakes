@@ -1,6 +1,4 @@
-{ source
-, stdenvNoCC
-}:
+{ source, stdenvNoCC }:
 
 stdenvNoCC.mkDerivation {
   inherit (source) pname version src;

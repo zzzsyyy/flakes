@@ -1,7 +1,4 @@
-{ pkgs
-, lib
-, ...
-}:
+{ pkgs, lib, ... }:
 
 let
   userJs = "${pkgs.my.firefox-gnome-theme}/share/firefox-theme/configuration/user.js";
@@ -12,8 +9,10 @@ in
 {
   programs.firefox = {
     enable = true;
+    # profiles.dev-edition-default = {
     package = pkgs.wrapFirefox pkgs.firefox-beta-bin-unwrapped {
       extraPolicies = {
+        ExtensionSettings = import ./config/extensions.nix;
         DisablePocket = true;
         DisableTelemetry = true;
         EnableTrackingProtection = {
@@ -26,7 +25,6 @@ in
     };
     #@TODO muilti profile
     profiles.default = {
-      # profiles.dev-edition-default = {
       isDefault = true;
       settings = import ./config/settings.nix;
       search = import ./config/search.nix;
@@ -44,8 +42,7 @@ in
       ];
       extraConfig = lib.strings.concatStrings [
         (builtins.readFile "${userJs}")
-        ''
-        ''
+        ''''
       ];
     };
   };

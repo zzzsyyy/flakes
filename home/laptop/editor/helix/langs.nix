@@ -1,6 +1,5 @@
-{ pkgs
-, ...
-}: {
+{ pkgs, ... }:
+{
   programs.helix.languages = {
     language = [
       {
@@ -8,7 +7,11 @@
         auto-format = true;
         formatter = {
           command = "${pkgs.shfmt}/bin/shfmt";
-          args = [ "-i" "2" "-" ];
+          args = [
+            "-i"
+            "2"
+            "-"
+          ];
         };
       }
       {
@@ -32,7 +35,7 @@
         clangd.fallbackFlags = [ "-std=c++2b" ];
       };
       nixd = {
-        command = "${pkgs.nixd-nightly}/bin/nixd";
+        command = "${pkgs.nixd}/bin/nixd";
       };
     };
   };

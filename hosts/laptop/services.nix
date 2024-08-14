@@ -1,9 +1,13 @@
-{ config
-, pkgs
-, lib
-, ...
-}: {
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
+{
   services = {
+    #desktopManager.cosmic.enable = true;
+    #displayManager.cosmic-greeter.enable = true;
     dbus.implementation = "broker"; # waiting https://github.com/NixOS/nixpkgs/pull/299812
     udev.extraRules = ''
       SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", MODE="0666", GROUP="plugdev"

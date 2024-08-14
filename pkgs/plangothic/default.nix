@@ -1,9 +1,9 @@
-{ source
-, lib
-, stdenvNoCC
-, fallback ? true
+{
+  source,
+  lib,
+  stdenvNoCC,
+  fallback ? true,
 }:
-
 
 stdenvNoCC.mkDerivation {
   inherit (source) pname src;
@@ -11,7 +11,9 @@ stdenvNoCC.mkDerivation {
 
   installPhase = ''
     mkdir -p $out/share/fonts/truetype
-    mv "PlangothicP2-Regular.ttf" "PlangothicP1-Regular (${if fallback then "fallback" else "allideo"}).ttf" $_
+    mv "PlangothicP2-Regular.ttf" "PlangothicP1-Regular (${
+      if fallback then "fallback" else "allideo"
+    }).ttf" $_
   '';
 
   meta = with lib; {
@@ -20,4 +22,3 @@ stdenvNoCC.mkDerivation {
     license = licenses.ofl;
   };
 }
-

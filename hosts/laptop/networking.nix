@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 {
   networking = {
     useDHCP = false;
@@ -7,6 +7,7 @@
   };
   services.dae = {
     enable = true;
+    package = pkgs.my.dae;
     configFile = "/home/zzzsy/.config/dae/config.dae";
   };
   systemd.services.dae.serviceConfig.StandardOutput = "append:/var/log/dae.log";

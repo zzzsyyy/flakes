@@ -1,10 +1,10 @@
-{ lib
-, buildGoModule
-, fetchFromGitea
-, ghostscript
-, makeWrapper
+{
+  lib,
+  buildGoModule,
+  fetchFromGitea,
+  ghostscript,
+  makeWrapper,
 }:
-
 
 buildGoModule rec {
   pname = "cpdf";
@@ -27,9 +27,7 @@ buildGoModule rec {
     "-X=main.BuildSource=nix"
   ];
 
-  nativeBuildInputs = [
-    makeWrapper
-  ];
+  nativeBuildInputs = [ makeWrapper ];
 
   postInstall = ''
     wrapProgram $out/bin/cpdf \

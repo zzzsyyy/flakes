@@ -1,7 +1,8 @@
-{ source
-, stdenv
-, lib
-, lua5_4
+{
+  source,
+  stdenv,
+  lib,
+  lua5_4,
 }:
 
 stdenv.mkDerivation rec {

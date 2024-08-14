@@ -1,3 +1,4 @@
+{ config, ... }:
 {
   imports = [
     ./fish.nix
@@ -13,6 +14,16 @@
     ];
     icons = true;
     git = true;
+  };
+
+  programs.jujutsu = {
+    enable = true;
+    settings = {
+      user = {
+        name = config.programs.git.userName;
+        email = config.programs.git.userEmail;
+      };
+    };
   };
 
   programs.direnv = {
@@ -61,8 +72,6 @@
     pb = "curl -F 'c=@-' 'https://fars.ee/'";
     gst = "git status";
     n = "hyfetch";
-    setproxy = "export ALL_PROXY=socks://127.0.0.1:7890";
-    unsetproxy = "unset ALL_PROXY";
     clc = "clear";
     ":q" = "exit";
     snvim = "EDITOR=nvim sudoedit";

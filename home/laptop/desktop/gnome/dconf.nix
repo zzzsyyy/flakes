@@ -3,24 +3,23 @@
 let
   extensions = with pkgs.gnomeExtensions; [
     user-themes
+    screenshot-window-sizer
     gsconnect
     appindicator
     removable-drive-menu
-    # clipboard-indicator 
-    #!FIXME freeze my shell
     caffeine
     dash-to-panel
-    # unite
-    night-theme-switcher
     # rounded-window-corners
     customize-ibus
-    # quake-mode
+    light-style
     fuzzy-app-search
-    pano
+    # pano
+    kimpanel
+    gtk4-desktop-icons-ng-ding
   ];
 in
 {
-  home.packages = extensions ++ [ ];
+  home.packages = extensions ++ [ pkgs.my.gnome-shell-extension-pano ];
   dconf.settings = {
     "org/gnome/shell" = {
       disable-user-extensions = false;
@@ -33,12 +32,9 @@ in
         "kitty.desktop"
       ];
     };
-    # @FIXME Cause ibus offset
-    #"org/gnome/mutter" = {
-    #  experimental-features = [
-    #    "scale-monitor-framebuffer"
-    #  ];
-    #};
+    "org/gnome/mutter" = {
+      experimental-features = [ "scale-monitor-framebuffer" ];
+    };
     "org/gnome/desktop/peripherals/touchpad" = {
       tap-and-drag-lock = true;
       tap-to-click = true;
@@ -53,12 +49,7 @@ in
     "org/gnome/desktop/privacy" = {
       remove-old-temp-files = true;
       remove-old-trash-files = true;
-      old-files-age = 14;
-    };
-    "org/gnome/shell/extensions/nightthemeswitcher/gtk-variants" = {
-      enabled = true;
-      day = "adw-gtk3";
-      night = "adw-gtk3-dark";
+      old-files-age = 21;
     };
     "org/gnome/desktop/wm/keybindings" = {
       close = [ "<Super>q" ];
@@ -66,25 +57,5 @@ in
       toggle-fullscreen = [ "<Super>f" ];
       show-desktop = [ "<Super>d" ];
     };
-    # "com/github/repsac-by/quake-mode" = {
-    #   quake-mode-always-on-top = true;
-    #   quake-mode-animation-time = 0.10;
-    #   quake-mode-focusout = true;
-    #   quake-mode-halign = "center";
-    #   quake-mode-height = 70;
-    #   quake-mode-hide-from-overview = true;
-    #   quake-mode-tray = false;
-    #   quake-mode-valign = "top";
-    #   quake-mode-width = 60;
-    # };
-
-    # "com/github/repsac-by/quake-mode/accelerators" = {
-    #   quake-mode-accelerator-1 = [ "<Super>k" ];
-    # };
-
-    # "com/github/repsac-by/quake-mode/apps" = {
-    #   app-1 = "kitty.desktop";
-    # };
   };
 }
-

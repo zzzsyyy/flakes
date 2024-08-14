@@ -17,9 +17,13 @@ fetch.github = "Fitzgerald-Porthmouth-Koenigsegg/Plangothic-Project"
 
 [firefox-gnome-theme]
 src.git = "https://github.com/rafaelmardojai/firefox-gnome-theme"
-src.branch = "beta"
 fetch.github = "rafaelmardojai/firefox-gnome-theme"
 
 [lxgw-wenkai-screen]
 src.github = "lxgw/LxgwWenKai-Screen"
 fetch.url = "https://github.com/lxgw/LxgwWenKai-Screen/releases/download/$ver/LXGWWenKaiScreen.ttf"
+
+[dae]
+src.git = "https://github.com/daeuniverse/dae"
+fetch.github = "daeuniverse/dae"
+git.fetchSubmodules = true

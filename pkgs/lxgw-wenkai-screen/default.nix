@@ -1,7 +1,8 @@
-{ source
-, lib
-, stdenvNoCC
-, useGB ? false
+{
+  source,
+  lib,
+  stdenvNoCC,
+  useGB ? false,
 }:
 
 stdenvNoCC.mkDerivation {

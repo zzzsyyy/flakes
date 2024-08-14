@@ -1,7 +1,8 @@
-{ source
-, lib
-, stdenvNoCC
-, enableUnihan ? false
+{
+  source,
+  lib,
+  stdenvNoCC,
+  enableUnihan ? false,
 }:
 
 stdenvNoCC.mkDerivation rec {
