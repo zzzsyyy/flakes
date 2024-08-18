@@ -17,7 +17,6 @@
       {
         name = "nix";
         auto-format = false;
-        formatter.command = "${pkgs.nixpkgs-fmt}/bin/nixpkgs-fmt";
         language-servers = [ "nixd" ];
       }
       {
@@ -28,6 +27,10 @@
           args = [ "-i" ];
         };
       }
+      {
+        name = "zig";
+        language-servers = ["zls"];
+      }
     ];
     language-server = {
       clangd = {
@@ -36,6 +39,9 @@
       };
       nixd = {
         command = "${pkgs.nixd}/bin/nixd";
+      };
+      zls = {
+        command = "${pkgs.zls}/bin/zls";
       };
     };
   };

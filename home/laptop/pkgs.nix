@@ -42,6 +42,7 @@ let
     bat
     hyfetch
     yazi
+    onefetch
 
     # wasm
     #wasmtime
@@ -57,6 +58,7 @@ let
     asciinema
     iw
     b3sum
+    lrzip
     tokei
     hyperfine
     rsgain
@@ -102,6 +104,7 @@ let
     # gaphor
     # gimp
     # minder
+    my.tsukimi
 
     # matlab
     vmware-workstation
