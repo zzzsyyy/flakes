@@ -26,7 +26,10 @@ rustPlatform.buildRustPackage rec {
 
   cargoHash = "sha256-fRWp1VM9qXDl0zCV7v3bP4NJBLURDYUIthPwED25PDY=";
 
-  nativeBuildInputs = [ pkg-config wrapGAppsHook4 ];
+  nativeBuildInputs = [
+    pkg-config
+    wrapGAppsHook4
+  ];
   buildInputs = [
     clapper
     gdk-pixbuf
@@ -58,4 +61,3 @@ rustPlatform.buildRustPackage rec {
     mainProgram = "tsukimi";
   };
 }
-

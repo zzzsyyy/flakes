@@ -29,7 +29,7 @@
       }
       {
         name = "zig";
-        language-servers = ["zls"];
+        language-servers = [ "zls" ];
       }
     ];
     language-server = {

@@ -26,6 +26,8 @@
       url = "gitlab:doronbehar/nix-matlab";
     };
 
+    nur.url = "github:nix-community/NUR";
+
     nixos-cosmic = {
       url = "github:lilyinstarlight/nixos-cosmic";
       inputs.nixpkgs.follows = "nixpkgs";

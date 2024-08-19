@@ -13,6 +13,7 @@ let
     daeuniverse
     lanzaboote
     nix-matlab
+    nur
     ;
 
   inherit (nixpkgs.lib) attrValues;
@@ -77,6 +78,7 @@ in
         daeuniverse.nixosModules.dae
         daeuniverse.nixosModules.daed
         lanzaboote.nixosModules.lanzaboote
+        nur.nixosModules.nur
         # nixos-hardware.nixosModules.common-cpu-amd-pstate
         # nixos-hardware.nixosModules.common-gpu-amd
         # nixos-hardware.nixosModules.common-pc-ssd
@@ -84,6 +86,7 @@ in
       overlays = [
         self.overlays.mutter
         nix-matlab.overlay
+        nur.overlay
       ];
     }
   );
