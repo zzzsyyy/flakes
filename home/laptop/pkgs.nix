@@ -23,7 +23,7 @@ let
     lua
     python3
     nim
-    zig
+    zigpkgs.master
     go
     #julia
     nodejs
