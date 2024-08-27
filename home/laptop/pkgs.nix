@@ -94,7 +94,7 @@ let
 
   others = with pkgs; [
     # fractal-next # matrix
-    tdesktop
+    # tdesktop
     # microsoft-edge-dev
     tor-browser-bundle-bin
     google-chrome
