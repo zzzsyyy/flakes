@@ -72,6 +72,7 @@
   programs.adb.enable = true;
   programs.fuse.userAllowOther = true;
   services.flatpak.enable = true;
+  security.rtkit.enable = true;
 
   systemd.services.nix-daemon = {
     environment = {

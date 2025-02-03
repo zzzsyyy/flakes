@@ -16,16 +16,6 @@
     git = true;
   };
 
-  programs.foot = {
-    enable = true;
-    settings = {
-      main = {
-        font = "Iosevka ZT:size=12";
-        dpi-aware = "yes";
-      };
-    };
-  };
-
   programs.jujutsu = {
     enable = true;
     settings = {
