@@ -2,13 +2,14 @@
 let
   pkgExclude = [ ];
   sources = pkgs.callPackage ../pkgs/_sources/generated.nix { };
-  names = builtins.filter (v: v != null) (
-    builtins.attrValues (
-      builtins.mapAttrs (
-        k: v: if v == "directory" && k != "_sources" && !(builtins.elem k pkgExclude) then k else null
-      ) (builtins.readDir ../pkgs)
+  names =
+    ../pkgs
+    |> builtins.readDir
+    |> builtins.mapAttrs (
+      k: v: if v == "directory" && k != "_sources" && !(builtins.elem k pkgExclude) then k else null
     )
-  );
+    |> builtins.attrValues
+    |> builtins.filter (v: v != null);
   genPkg =
     name:
     let

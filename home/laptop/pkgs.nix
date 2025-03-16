@@ -83,7 +83,7 @@ let
     #octave
     typst
     foliate
-    texlive.combined.scheme-full
+    #texlive.combined.scheme-full
     asciidoc-full
     ghex
     #handbrake

@@ -9,6 +9,7 @@
         "flakes"
         "auto-allocate-uids"
         "cgroups"
+        "pipe-operator"
       ];
       auto-optimise-store = true;
       use-xdg-base-directories = true;

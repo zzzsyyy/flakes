@@ -33,7 +33,7 @@
       package = pkgs.xwayland-satellite;
     };
     programs.niri.package = pkgs.niri-unstable;
-    programs.niri.enable = true;
+    programs.niri.enable = false;
 
     programs.dconf.enable = true;
     # fix nautilus extensions deu to `core-utilities.enable = false`

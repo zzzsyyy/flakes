@@ -6,18 +6,16 @@
 }:
 
 {
-  flake.overlays = builtins.listToAttrs (
-    map
-      (name: {
-        name = lib.strings.removeSuffix ".nix" name;
-        value = import ../overlays/${name};
-      })
-      (
-        lib.filter (item: lib.strings.hasSuffix ".nix" item) (
-          builtins.attrNames (builtins.readDir ../overlays)
-        )
-      )
-  );
+  flake.overlays =
+    ../overlays
+    |> builtins.readDir
+    |> builtins.attrNames
+    |> lib.filter (item: lib.strings.hasSuffix ".nix" item)
+    |> map (name: {
+      name = lib.strings.removeSuffix ".nix" name;
+      value = import ../overlays/${name};
+    })
+    |> builtins.listToAttrs;
 
   perSystem =
     { pkgs, system, ... }:
@@ -30,13 +28,14 @@
         inherit system overlays;
         config.allowUnfree = true;
       };
-      packages = builtins.removeAttrs nur [
-         "overlays"
-         "modules"
+      packages =
+        builtins.removeAttrs nur [
+          "overlays"
+          "modules"
         ]
         // {
-         mutter = pkgs.mutter;
-         gnome-shell = pkgs.gnome-shell;
+          mutter = pkgs.mutter;
+          gnome-shell = pkgs.gnome-shell;
         };
     };
 }
