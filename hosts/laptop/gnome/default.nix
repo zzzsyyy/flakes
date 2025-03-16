@@ -17,6 +17,10 @@
       localsearch.enable = false;
       tinysparql.enable = false;
     };
+    programs.kdeconnect = {
+      enable = true;
+      package = pkgs.valent;
+    };
     environment.gnome.excludePackages = (
       with pkgs;
       [
@@ -47,6 +51,7 @@
         nautilus # file
         file-roller # archive
         gnome-tweaks
+        refine
         gnome-disk-utility
         seahorse
         gnome-calendar

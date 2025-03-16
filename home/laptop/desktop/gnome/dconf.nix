@@ -4,7 +4,8 @@ let
   extensions = with pkgs.gnomeExtensions; [
     user-themes
     screenshot-window-sizer
-    gsconnect
+    #gsconnect
+    valent
     appindicator
     removable-drive-menu
     caffeine

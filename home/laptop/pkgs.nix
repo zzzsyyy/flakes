@@ -72,6 +72,7 @@ let
     #steamguard-cli
     rclone
 
+    graphviz
     #zsh
     jq
   ];

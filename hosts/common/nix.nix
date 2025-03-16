@@ -20,7 +20,7 @@
         "https://nyx.chaotic.cx"
         "https://cosmic.cachix.org/"
         "https://cache.garnix.io"
-        "https://mirror.sjtu.edu.cn/nix-channels/store"
+        # "https://mirror.sjtu.edu.cn/nix-channels/store"
         "https://mirrors.ustc.edu.cn/nix-channels/store"
       ];
       trusted-public-keys = [

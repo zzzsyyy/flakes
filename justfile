@@ -54,4 +54,3 @@ rm:
 
 upkgs:
   just nvfetcher
-  bash ./pkgs/zen-browser/update.sh

@@ -28,18 +28,15 @@
     {
       _module.args.pkgs = import inputs.nixpkgs {
         inherit system overlays;
-        config = {
-          allowUnfree = true;
-        };
+        config.allowUnfree = true;
       };
-      packages =
-        builtins.removeAttrs nur [
-          "overlays"
-          "modules"
+      packages = builtins.removeAttrs nur [
+         "overlays"
+         "modules"
         ]
         // {
-          mutter = pkgs.mutter;
-          gnome-shell = pkgs.gnome-shell;
+         mutter = pkgs.mutter;
+         gnome-shell = pkgs.gnome-shell;
         };
     };
 }

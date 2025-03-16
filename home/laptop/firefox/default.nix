@@ -8,7 +8,7 @@ in
 
 {
   programs.librewolf = {
-    enable = true;
+    enable = false;
     package = pkgs.wrapFirefox pkgs.librewolf-unwrapped {
       wmClass = "LibreWolf";
       libName = "librewolf";
