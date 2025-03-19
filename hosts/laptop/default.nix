@@ -3,8 +3,8 @@
 {
   imports = [
     ./gnome
-    ./fonts
     ./rime
+    ./fonts.nix
     ./hardware.nix
     ./services.nix
     ./virt.nix

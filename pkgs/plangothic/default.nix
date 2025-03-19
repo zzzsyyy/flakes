@@ -2,7 +2,6 @@
   source,
   lib,
   stdenvNoCC,
-  fallback ? true,
 }:
 
 stdenvNoCC.mkDerivation {
@@ -11,9 +10,7 @@ stdenvNoCC.mkDerivation {
 
   installPhase = ''
     mkdir -p $out/share/fonts/truetype
-    mv "PlangothicP2-Regular.ttf" "PlangothicP1-Regular (${
-      if fallback then "fallback" else "allideo"
-    }).ttf" $_
+    install -Dm444 Plangothic.ttc $_
   '';
 
   meta = with lib; {

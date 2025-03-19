@@ -32,6 +32,7 @@
     nur.url = "github:nix-community/NUR";
     #stylix.url = "github:danth/stylix";
     zig.url = "github:mitchellh/zig-overlay";
+    nil.url = "github:oxalica/nil";
 
     pre-commit-hooks = {
       url = "github:cachix/pre-commit-hooks.nix";

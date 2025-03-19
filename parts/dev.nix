@@ -16,7 +16,10 @@
       };
       formatter = pkgs.nixfmt-rfc-style;
       pre-commit.settings.hooks = {
-        nil.enable = true;
+        nil = {
+          enable = true;
+          package = inputs'.nil.packages.default;
+        };
         actionlint.enable = true;
       };
       devShells.secret =
