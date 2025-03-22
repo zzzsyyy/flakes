@@ -27,7 +27,7 @@
     niri.url = "github:sodiboo/niri-flake";
     niri.inputs.nixpkgs.follows = "nixpkgs";
 
-    zen-browser.url = "github:muratoffalex/zen-browser-flake";
+    zen-browser.url = "github:0xc000022070/zen-browser-flake";
 
     nur.url = "github:nix-community/NUR";
     #stylix.url = "github:danth/stylix";

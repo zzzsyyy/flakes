@@ -35,6 +35,13 @@
     programs.niri.package = pkgs.niri-unstable;
     programs.niri.enable = false;
 
+    xdg.terminal-exec = {
+      enable = true;
+      settings = {
+        default = [ "kitty.desktop" ];
+      };
+    };
+
     programs.dconf.enable = true;
     # fix nautilus extensions deu to `core-utilities.enable = false`
     mods.gnome-fix.enable = true;

@@ -21,6 +21,7 @@
           package = inputs'.nil.packages.default;
         };
         actionlint.enable = true;
+        nixfmt-rfc-style.enable = true;
       };
       devShells.secret =
         with pkgs;

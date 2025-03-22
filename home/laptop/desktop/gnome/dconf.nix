@@ -10,7 +10,7 @@ let
     removable-drive-menu
     caffeine
     dash-to-panel
-    # rounded-window-corners
+    rounded-corners
     customize-ibus
     light-style
     fuzzy-app-search

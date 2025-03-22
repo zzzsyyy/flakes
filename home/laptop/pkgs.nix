@@ -33,6 +33,7 @@ let
     # hugo
     just
 
+    coq
     #ghc
     #haskellPackages.cabal-install
     #jdk21
