@@ -15,11 +15,13 @@
     flake-parts.url = "github:hercules-ci/flake-parts";
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     daeuniverse.url = "github:daeuniverse/flake.nix";
+    infuse.url = "git+https://codeberg.org/amjoseph/infuse.nix.git";
+    infuse.flake = false;
 
     lanzaboote.url = "github:nix-community/lanzaboote";
     lanzaboote.inputs.nixpkgs.follows = "nixpkgs";
 
-    nvfetcher.url = "github:berberman/nvfetcher";
+    nvfetcher.url = "github:zzzsyyy/nvfetcher";
     nvfetcher.inputs.nixpkgs.follows = "nixpkgs";
 
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
@@ -42,9 +44,24 @@
   };
 
   outputs =
-    inputs@{ flake-parts, ... }:
-    flake-parts.lib.mkFlake { inherit inputs; } {
-      imports = [ inputs.pre-commit-hooks.flakeModule ] ++ import ./parts;
-      systems = [ "x86_64-linux" ];
-    };
+    inputs@{ self, flake-parts, ... }:
+    let
+      lib = inputs.nixpkgs.lib.extend (
+        self: super: {
+          my = import ./lib {
+            inherit inputs;
+            lib = self;
+          };
+        }
+      );
+    in
+    flake-parts.lib.mkFlake
+      {
+        inherit inputs;
+        specialArgs.lib = lib;
+      }
+      {
+        imports = [ inputs.pre-commit-hooks.flakeModule ] ++ import ./parts;
+        systems = [ "x86_64-linux" ];
+      };
 }

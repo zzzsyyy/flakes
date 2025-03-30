@@ -10,7 +10,7 @@
       noto-fonts-cjk-serif
       noto-fonts-emoji
       nerd-fonts.symbols-only
-      maple-mono
+      maple-mono.truetype-autohint
       wqy_zenhei
       my.lxgw-wenkai-screen
       my.plangothic

@@ -18,7 +18,7 @@ in
   };
 
   config = mkIf cfg.enable {
-    boot.extraModulePackages = [ ideapad-laptop-tb ];
+    #boot.extraModulePackages = [ ideapad-laptop-tb ];
     boot.blacklistedKernelModules = [ "ideapad-laptop" ];
   };
 }

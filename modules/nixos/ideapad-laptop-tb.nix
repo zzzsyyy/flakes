@@ -5,17 +5,17 @@
 }:
 
 stdenv.mkDerivation {
-  name = "ideapad-laptop-tb-${kernel.version}";
+  name = "ideapad-laptop-tb2024-${kernel.version}";
 
-  passthru.moduleName = "ideapad-laptop-tb";
+  passthru.moduleName = "ideapad-laptop-tb2024";
 
   hardeningDisable = [ "pic" ];
 
   src = fetchFromGitHub {
-    owner = "ferstar";
-    repo = "ideapad-laptop-tb";
-    rev = "45b1dc104290dbfef7ed1661055408998ef85a97";
-    hash = "sha256-aDMjxlHeXPT0Yvya/92OOhGPWB32aTTrehr9yizMLkw=";
+    owner = "zzzsyyy";
+    repo = "ideapad-laptop-tb2024";
+    rev = "4bccd3e460668481d7e2954fcd41c396bb3e5794";
+    hash = "sha256-IKYtBdOCvPC1wPY7AV/3ml2YIsgxVRpR0zH2E9V2phU=";
   };
 
   nativeBuildInputs = kernel.moduleBuildDependencies;
@@ -25,6 +25,6 @@ stdenv.mkDerivation {
   ];
 
   installPhase = ''
-    install -D ideapad-laptop-tb.ko $out/lib/modules/${kernel.modDirVersion}/misc/ideapad-laptop-tb.ko
+    install -D ideapad-laptop-tb2024.ko $out/lib/modules/${kernel.modDirVersion}/misc/ideapad-laptop-tb2024.ko
   '';
 }

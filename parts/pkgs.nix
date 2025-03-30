@@ -13,7 +13,7 @@
     |> lib.filter (item: lib.strings.hasSuffix ".nix" item)
     |> map (name: {
       name = lib.strings.removeSuffix ".nix" name;
-      value = import ../overlays/${name};
+      value = import ../overlays/${name} { inherit (lib.my) infuse; };
     })
     |> builtins.listToAttrs;
 

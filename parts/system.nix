@@ -46,6 +46,7 @@ let
                   (final: prev: {
                     dae-unstable = daeuniverse.packages.${system}.dae-unstable;
                     zen-browser = zen-browser.packages."${system}".twilight;
+                    nvfetcher-test = nvfetcher.packages.${system}.default;
                     my = self.packages."${system}";
                   })
                 ] ++ overlays;

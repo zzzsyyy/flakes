@@ -69,7 +69,7 @@ let
     lf
     pdftk
     duf
-    nvfetcher
+    nvfetcher-test
     #steamguard-cli
     rclone
 
