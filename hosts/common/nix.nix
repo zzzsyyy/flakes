@@ -10,7 +10,9 @@
         "auto-allocate-uids"
         "cgroups"
         "pipe-operator"
+        "dynamic-derivations"
         "ca-derivations"
+        "recursive-nix"
       ];
       auto-optimise-store = true;
       use-xdg-base-directories = true;

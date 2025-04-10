@@ -11,6 +11,8 @@
       hwdec-codecs = "vaapi";
       blend-subtitles = "video";
       sub-auto = "fuzzy";
+      cscale-param2 = "spline36";
+      interpolation = "yes";
     };
   };
 }

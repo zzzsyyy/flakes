@@ -33,7 +33,7 @@ let
     # hugo
     just
 
-    coq
+    #coq
     #ghc
     #haskellPackages.cabal-install
     #jdk21
@@ -43,7 +43,6 @@ let
     bat
     hyfetch
     yazi
-    onefetch
 
     # wasm
     #wasmtime
@@ -87,6 +86,8 @@ let
     #texlive.combined.scheme-full
     asciidoc-full
     ghex
+    ida-free
+    megasync
     #handbrake
     #scilab-bin
     #feishu
@@ -117,7 +118,7 @@ let
 
     deluge-gtk
 
-    ciscoPacketTracer8
+    #ciscoPacketTracer8
 
     # vmware-workstation
     adw-gtk3

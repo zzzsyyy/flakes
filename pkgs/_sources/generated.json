@@ -1,7 +1,7 @@
 {
     "firefox-gnome-theme": {
         "cargoLocks": null,
-        "date": "2025-03-25",
+        "date": "2025-04-06",
         "extract": null,
         "name": "firefox-gnome-theme",
         "passthru": null,
@@ -13,12 +13,12 @@
             "name": null,
             "owner": "rafaelmardojai",
             "repo": "firefox-gnome-theme",
-            "rev": "6cb02d0cb8df67502f2f1daea0b9b1c20df58960",
-            "sha256": "sha256-zOXxXXJ3Fss28gFc8BWijKd25MesO3ViuRq3CRkI6Wg=",
+            "rev": "a0befe17320910fe9ee6990ee79890cc61bd39ce",
+            "sha256": "sha256-fz4hdWLVSKZG4SROvrUdoJwamGgDoNTS9CqszvRNcpc=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "6cb02d0cb8df67502f2f1daea0b9b1c20df58960"
+        "version": "a0befe17320910fe9ee6990ee79890cc61bd39ce"
     },
     "iosevka-zt": {
         "cargoLocks": null,
@@ -29,11 +29,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-Rb7Ako8oKhFeY7WQ/uqytsnON+vC4VyQK/EDGBHqSUw=",
+            "sha256": "sha256-Mbaiz4Fz3zZibrjD0N1ce1mQENnj1ifFJUjbVXtlxk4=",
             "type": "url",
-            "url": "https://github.com/zzzsyyy/Iosevka/releases/download/v32.3.0/Iosevka-32.3.0.txz"
+            "url": "https://github.com/zzzsyyy/Iosevka/releases/download/v33.2.0/Iosevka-33.2.0.txz"
         },
-        "version": "32.3.0"
+        "version": "33.2.0"
     },
     "librime-lua": {
         "cargoLocks": null,
@@ -94,7 +94,7 @@
     },
     "rime-ice": {
         "cargoLocks": null,
-        "date": "2025-03-30",
+        "date": "2025-04-06",
         "extract": null,
         "name": "rime-ice",
         "passthru": null,
@@ -106,11 +106,11 @@
             "name": null,
             "owner": "iDvel",
             "repo": "rime-ice",
-            "rev": "af3ea15b5c843d2c2d9ce904356073f962e8aa3d",
-            "sha256": "sha256-52Iu5qikFJzYc5jL604C/zklLozV6p+C0/zr/DUvlGk=",
+            "rev": "51777daedbe4783c3b79f0246d775e4b6d978cbc",
+            "sha256": "sha256-cFaFgChhpgEiJw+dHl3Hr3T2UQF+Vy6u36JWY+cYBNo=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "af3ea15b5c843d2c2d9ce904356073f962e8aa3d"
+        "version": "51777daedbe4783c3b79f0246d775e4b6d978cbc"
     }
 }

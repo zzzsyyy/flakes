@@ -8,22 +8,22 @@
 {
   firefox-gnome-theme = {
     pname = "firefox-gnome-theme";
-    version = "6cb02d0cb8df67502f2f1daea0b9b1c20df58960";
+    version = "a0befe17320910fe9ee6990ee79890cc61bd39ce";
     src = fetchFromGitHub {
       owner = "rafaelmardojai";
       repo = "firefox-gnome-theme";
-      rev = "6cb02d0cb8df67502f2f1daea0b9b1c20df58960";
+      rev = "a0befe17320910fe9ee6990ee79890cc61bd39ce";
       fetchSubmodules = false;
-      sha256 = "sha256-zOXxXXJ3Fss28gFc8BWijKd25MesO3ViuRq3CRkI6Wg=";
+      sha256 = "sha256-fz4hdWLVSKZG4SROvrUdoJwamGgDoNTS9CqszvRNcpc=";
     };
-    date = "2025-03-25";
+    date = "2025-04-06";
   };
   iosevka-zt = {
     pname = "iosevka-zt";
-    version = "32.3.0";
+    version = "33.2.0";
     src = fetchurl {
-      url = "https://github.com/zzzsyyy/Iosevka/releases/download/v32.3.0/Iosevka-32.3.0.txz";
-      sha256 = "sha256-Rb7Ako8oKhFeY7WQ/uqytsnON+vC4VyQK/EDGBHqSUw=";
+      url = "https://github.com/zzzsyyy/Iosevka/releases/download/v33.2.0/Iosevka-33.2.0.txz";
+      sha256 = "sha256-Mbaiz4Fz3zZibrjD0N1ce1mQENnj1ifFJUjbVXtlxk4=";
     };
   };
   librime-lua = {
@@ -59,14 +59,14 @@
   };
   rime-ice = {
     pname = "rime-ice";
-    version = "af3ea15b5c843d2c2d9ce904356073f962e8aa3d";
+    version = "51777daedbe4783c3b79f0246d775e4b6d978cbc";
     src = fetchFromGitHub {
       owner = "iDvel";
       repo = "rime-ice";
-      rev = "af3ea15b5c843d2c2d9ce904356073f962e8aa3d";
+      rev = "51777daedbe4783c3b79f0246d775e4b6d978cbc";
       fetchSubmodules = false;
-      sha256 = "sha256-52Iu5qikFJzYc5jL604C/zklLozV6p+C0/zr/DUvlGk=";
+      sha256 = "sha256-cFaFgChhpgEiJw+dHl3Hr3T2UQF+Vy6u36JWY+cYBNo=";
     };
-    date = "2025-03-30";
+    date = "2025-04-06";
   };
 }
