@@ -10,7 +10,7 @@ stdenvNoCC.mkDerivation {
 
   installPhase = ''
     mkdir -p $out/share/fonts/truetype
-    install -Dm444 Plangothic.ttc $_
+    install -Dm444 fonts/static/Plangothic.ttc $_
   '';
 
   meta = with lib; {

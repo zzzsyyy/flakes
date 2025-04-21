@@ -28,12 +28,6 @@
         orca
       ]
     );
-    programs.xwayland = {
-      enable = true;
-      package = pkgs.xwayland-satellite;
-    };
-    programs.niri.package = pkgs.niri-unstable;
-    programs.niri.enable = false;
 
     xdg.terminal-exec = {
       enable = true;
@@ -63,10 +57,7 @@
         seahorse
         gnome-calendar
         dconf-editor
-
-        # ghostty
       ]
     );
-    #++ (with pkgs.gnome; [ ]);
   };
 }

@@ -6,8 +6,11 @@
 }:
 {
   services = {
-    #desktopManager.cosmic.enable = true;
-    #displayManager.cosmic-greeter.enable = true;
+    # scx scheduler
+    scx.enable = true;
+    scx.package = pkgs.scx_git.full;
+    scx.scheduler = "scx_lavd";
+
     dbus.implementation = "broker"; # lock dbus impl to dbus-broker
     udev.extraRules = ''
       KERNEL=="hidraw*", SUBSYSTEM=="hidraw", MODE="0666", TAG+="uaccess", TAG+="udev-acl"

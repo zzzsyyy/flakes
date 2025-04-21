@@ -1,8 +1,9 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
   imports = [
-    ./gnome
+    ./gnome.nix
+    ./niri.nix
     ./rime
     ./fonts.nix
     ./hardware.nix
@@ -17,12 +18,6 @@
 
   # stylix.enable = true;
 
-  services = {
-    scx.enable = true;
-    scx.package = pkgs.scx_git.full;
-    scx.scheduler = "scx_lavd";
-  };
-
   mods.thinkbook14p-fix.enable = true;
 
   boot = {
@@ -34,13 +29,15 @@
     };
     # kernelPackages = pkgs.linuxPackages_latest;
     kernelPackages = pkgs.linuxPackages_cachyos;
-    #@TODO
+
     kernelParams = [
+      "quiet"
       "amd_pstate=active"
-      # "amd_iommu=off"
+      "amd_iommu=on"
+      "iommu=pt"
       "pti=on"
-      "log_level=3"
-      "nowatchdog"
+      "loglevel=3"
+      "udev.log_level=3"
     ];
     supportedFilesystems = [ "ntfs" ];
   };
