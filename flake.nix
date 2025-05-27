@@ -61,7 +61,9 @@
         specialArgs.lib = lib;
       }
       {
-        imports = [ inputs.pre-commit-hooks.flakeModule ] ++ import ./parts;
+        imports = [
+          inputs.pre-commit-hooks.flakeModule
+        ] ++ import ./parts;
         systems = [ "x86_64-linux" ];
       };
 }

@@ -11,7 +11,7 @@
       desktopManager.xterm.enable = false;
     };
     services.gnome = {
-      core-utilities.enable = false;
+      core-apps.enable = false;
       gnome-online-accounts.enable = false;
       gnome-browser-connector.enable = true;
       localsearch.enable = false;

@@ -34,7 +34,7 @@ let
     just
 
     #coq
-    #ghc
+    ghc
     #haskellPackages.cabal-install
     #jdk21
   ];
@@ -118,6 +118,7 @@ let
 
     deluge-gtk
 
+    imagej
     #ciscoPacketTracer8
 
     # vmware-workstation

@@ -12,6 +12,7 @@ let
     nvfetcher
     daeuniverse
     #ghostty
+    vaultix
     zen-browser
     niri
     lanzaboote
@@ -62,7 +63,7 @@ let
           ++ (attrValues self.nixosModules)
           ++ modules;
         specialArgs = {
-          inherit inputs;
+          inherit inputs self;
         };
       };
     };

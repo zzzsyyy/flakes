@@ -27,6 +27,7 @@
       _module.args.pkgs = import inputs.nixpkgs {
         inherit system overlays;
         config.allowUnfree = true;
+        config.allowInsecure = true;
       };
       packages =
         builtins.removeAttrs nur [

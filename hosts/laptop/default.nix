@@ -17,6 +17,11 @@
   ];
 
   # stylix.enable = true;
+  system.switch.enable = false;
+  system.switch.enableNg = true;
+  system.rebuild.enableNg = true;
+  # userborn
+  services.userborn.enable = true;
 
   mods.thinkbook14p-fix.enable = true;
 
@@ -57,6 +62,9 @@
   };
 
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.permittedInsecurePackages = [
+                "ventoy-gtk3-1.1.05"
+              ];
 
   environment.pathsToLink = [ "/share/fish" ];
 
@@ -67,7 +75,7 @@
   programs.fish.enable = true;
   programs.wireshark.enable = true;
   environment.systemPackages = [
-    pkgs.wireshark
+    pkgs.nixos-rebuild-ng
   ];
   #programs.thefuck.enable = true;
   programs.adb.enable = true;
