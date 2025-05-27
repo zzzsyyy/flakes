@@ -73,7 +73,7 @@
     enableSSHSupport = true;
   };
   programs.fish.enable = true;
-  programs.wireshark.enable = true;
+  # programs.wireshark.enable = true;
   environment.systemPackages = [
     pkgs.nixos-rebuild-ng
   ];

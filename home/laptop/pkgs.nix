@@ -85,8 +85,8 @@ let
     foliate
     #texlive.combined.scheme-full
     asciidoc-full
-    ghex
-    ida-free
+    # ghex
+    # ida-free
     megasync
     #handbrake
     #scilab-bin
@@ -118,7 +118,7 @@ let
 
     deluge-gtk
 
-    imagej
+    # imagej
     #ciscoPacketTracer8
 
     # vmware-workstation
