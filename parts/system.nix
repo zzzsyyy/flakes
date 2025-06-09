@@ -77,9 +77,7 @@ in
         preservation.nixosModules.default
         sops-nix.nixosModules.sops
         chaotic.nixosModules.default
-        # nixos-cosmic.nixosModules.default
         daeuniverse.nixosModules.dae
-        # daeuniverse.nixosModules.daed
         lanzaboote.nixosModules.lanzaboote
         nur.modules.nixos.default
         # stylix.nixosModules.stylix

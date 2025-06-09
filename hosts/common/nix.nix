@@ -13,6 +13,7 @@
         "dynamic-derivations"
         "ca-derivations"
         "recursive-nix"
+        "repl-flake"
       ];
       auto-optimise-store = true;
       use-xdg-base-directories = true;

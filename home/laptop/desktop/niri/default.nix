@@ -31,15 +31,13 @@
     settings = builtins.fromJSON (builtins.readFile ./waybar/config.jsonc);
   };
 
-  xdg.configFile."niri/config.kdl".text = builtins.readFile (
-    pkgs.substituteAll {
-      src = ./niri.kdl;
-      authAgent = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+  xdg.configFile."niri/config.kdl".source = pkgs.replaceVars ./niri.kdl {
       brightnessctl = "${lib.getExe pkgs.brightnessctl}";
       startXwayland = pkgs.writeText "a.sh" ''
         sleep 3
         xwayland-satellite :0
       '';
-    }
-  );
+      DEFAULT_AUDIO_SINK = null;
+      DEFAULT_AUDIO_SOURCE = null;
+    };
 }

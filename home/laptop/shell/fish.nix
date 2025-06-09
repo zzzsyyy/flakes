@@ -5,7 +5,6 @@
     interactiveShellInit = ''
       set fish_greeting
       set pure_enable_single_line_prompt true
-      ${pkgs.thefuck}/bin/thefuck --alias | source
     '';
     functions = {
       __fish_command_not_found_handler = {

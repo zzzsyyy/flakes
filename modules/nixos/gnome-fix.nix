@@ -24,7 +24,7 @@ in
     environment.systemPackages =
       with pkgs;
       [ nautilus-python ] ++ [ nautilus-open-any-terminal ] ++ [ gjs ];
-    services.xserver.desktopManager.gnome.extraGSettingsOverridePackages = with pkgs; [
+    services.desktopManager.gnome.extraGSettingsOverridePackages = with pkgs; [
       nautilus-open-any-terminal
       nautilus
     ];

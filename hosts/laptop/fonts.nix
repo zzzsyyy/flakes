@@ -17,9 +17,7 @@
       my.my-fonts
       my.iosevka-zt
     ];
-    #fontconfig = {
-    #  localConf = builtins.readFile (./fontconfig.conf);
-    #};
+
     fontconfig = {
       subpixel.rgba = "none";
       antialias = true;

@@ -118,15 +118,9 @@ let
 
     deluge-gtk
 
-    # imagej
-    #ciscoPacketTracer8
-
     # vmware-workstation
     adw-gtk3
-    (ventoy.override {
-      defaultGuiType = "gtk3";
-      withGtk3 = true;
-    })
+    ventoy-full-gtk
   ];
 in
 

@@ -3,7 +3,7 @@
   imports = [
     ./gnome/dconf.nix
     #@TODO
-    #./niri/default.nix
+    ./niri/default.nix
   ];
 
   xdg = {

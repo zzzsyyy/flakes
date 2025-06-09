@@ -23,14 +23,12 @@
   # userborn
   services.userborn.enable = true;
 
-  mods.thinkbook14p-fix.enable = true;
-
   boot = {
     plymouth.enable = true;
     loader = {
       systemd-boot.enable = true;
       systemd-boot.configurationLimit = 5;
-      efi.canTouchEfiVariables = false; # @TODO
+      efi.canTouchEfiVariables = true;
     };
     # kernelPackages = pkgs.linuxPackages_latest;
     kernelPackages = pkgs.linuxPackages_cachyos;
@@ -63,8 +61,8 @@
 
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.permittedInsecurePackages = [
-                "ventoy-gtk3-1.1.05"
-              ];
+    "ventoy-gtk3-1.1.05"
+  ];
 
   environment.pathsToLink = [ "/share/fish" ];
 
@@ -73,11 +71,9 @@
     enableSSHSupport = true;
   };
   programs.fish.enable = true;
-  # programs.wireshark.enable = true;
   environment.systemPackages = [
     pkgs.nixos-rebuild-ng
   ];
-  #programs.thefuck.enable = true;
   programs.adb.enable = true;
   programs.fuse.userAllowOther = true;
   services.flatpak.enable = true;
