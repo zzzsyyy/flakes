@@ -5,11 +5,11 @@
   config = {
     services.xserver = {
       enable = true;
-      displayManager.gdm.enable = true;
-      desktopManager.gnome.enable = true;
       excludePackages = [ pkgs.xterm ];
       desktopManager.xterm.enable = false;
     };
+    services.displayManager.gdm.enable = true;
+    services.desktopManager.gnome.enable = true;
     services.gnome = {
       core-apps.enable = false;
       gnome-online-accounts.enable = false;
@@ -57,6 +57,8 @@
         seahorse
         gnome-calendar
         dconf-editor
+
+        poop
       ]
     );
   };

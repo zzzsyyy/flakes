@@ -17,9 +17,7 @@
   ];
 
   # stylix.enable = true;
-  system.switch.enable = false;
-  system.switch.enableNg = true;
-  system.rebuild.enableNg = true;
+
   # userborn
   services.userborn.enable = true;
 

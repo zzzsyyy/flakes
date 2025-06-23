@@ -44,8 +44,10 @@ input {
     focus-follows-mouse max-scroll-amount="10%"
 }
 
+hotkey-overlay { skip-at-startup; }
+
 layout {
-    gaps 10
+    gaps 8
     center-focused-column "never"
     empty-workspace-above-first
     preset-column-widths {
@@ -104,16 +106,28 @@ animations {
 }
 
 window-rule {
-    match app-id=r#"^org\.wezfurlong\.wezterm$"#
     default-column-width {}
+    clip-to-geometry true
+    geometry-corner-radius 8
+    draw-border-with-background false
+}
+
+
+window-rule {
+    match app-id=r#"firefox$"# title="^(Picture-in-Picture|Library)$"
+    match app-id=r#"^nz\.co\.mega\.$"#
+    match app-id=r#"^org\.gnome\.NautilusPreviewer$"#
+    open-floating true
 }
 
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     Mod+Return repeat=false { spawn "kitty"; }
+    Mod+K hotkey-overlay-title="Quick Access Terminal" { spawn "kitten" "quick-access-terminal"; }
     Mod+E { spawn "nautilus" "-w"; }
     Mod+R repeat=false { spawn "fuzzel"; }
+    Mod+A repeat=false { toggle-overview; }
     Mod+L { spawn "slock"; }
     // Example volume keys mappings for PipeWire & WirePlumber.
     // The allow-when-locked=true property makes them work even when the session is locked.
@@ -127,7 +141,8 @@ binds {
     Alt+F4 { close-window; }
     Mod+Q  { close-window; }
 
-    Mod+Tab { focus-workspace-previous; }
+    Mod+Tab { focus-column-right-or-first; }
+    Mod+Shift+Tab { focus-column-left-or-last; }
 
     Mod+Left  { focus-column-left; }
     Mod+Right { focus-column-right; }
