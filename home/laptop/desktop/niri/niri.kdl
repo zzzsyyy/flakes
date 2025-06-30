@@ -1,7 +1,7 @@
 spawn-at-startup "waybar"
-spawn-at-startup "bash" "@startXwayland@"
 spawn-at-startup "fcitx5" "-d" "--replace"
 spawn-at-startup "hyprpaper"
+spawn-at-startup "swayosd-server"
 
 prefer-no-csd
 
@@ -124,25 +124,35 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     Mod+Return repeat=false { spawn "kitty"; }
-    Mod+K hotkey-overlay-title="Quick Access Terminal" { spawn "kitten" "quick-access-terminal"; }
+    Mod+K repeat=false hotkey-overlay-title="Quick Access Terminal" { spawn "kitten" "quick-access-terminal"; }
     Mod+E { spawn "nautilus" "-w"; }
     Mod+R repeat=false { spawn "fuzzel"; }
     Mod+A repeat=false { toggle-overview; }
-    Mod+L { spawn "slock"; }
     // Example volume keys mappings for PipeWire & WirePlumber.
     // The allow-when-locked=true property makes them work even when the session is locked.
-    XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
-    XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"; }
-    XF86AudioMute        allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
-    XF86AudioMicMute     allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
-    XF86MonBrightnessUp   allow-when-locked=true { spawn "@brightnessctl@" "set" "+5%"; }
-    XF86MonBrightnessDown allow-when-locked=true { spawn "@brightnessctl@" "set" "5%-"; }
+    // XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
+    // XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"; }
+    // XF86AudioMute        allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
+    // XF86AudioMicMute     allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
+    // XF86MonBrightnessUp   allow-when-locked=true { spawn "brightnessctl" "set" "+5%"; }
+    // XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "set" "5%-"; }
+    XF86AudioRaiseVolume { spawn "swayosd-client" "--output-volume" "raise"; }
+    XF86AudioLowerVolume { spawn "swayosd-client" "--output-volume" "lower"; }
+    XF86AudioMute { spawn "swayosd-client" "--output-volume" "mute-toggle"; }
+    XF86MonBrightnessUp { spawn "swayosd-client" "--brightness" "raise"; }
+    XF86MonBrightnessDown { spawn "swayosd-client" "--brightness" "lower"; }
 
     Alt+F4 { close-window; }
     Mod+Q  { close-window; }
 
     Mod+Tab { focus-column-right-or-first; }
+    Alt+Tab { focus-column-right-or-first; }
     Mod+Shift+Tab { focus-column-left-or-last; }
+    Alt+Shift+Tab { focus-column-left-or-last; }
+
+    Mod+F {toggle-window-floating;}
+    Mod+W { toggle-column-tabbed-display; }
+    Mod+L {spawn "swaylock" "--screenshots" "--clock" "--effect-blur" "10x7" "--fade-in" "0.2";}
 
     Mod+Left  { focus-column-left; }
     Mod+Right { focus-column-right; }

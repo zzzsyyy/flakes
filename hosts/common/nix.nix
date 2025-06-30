@@ -2,7 +2,7 @@
 {
   nix = {
     #channel.enable = false;
-    package = pkgs.lix; # nixVersions.latest;
+    package = pkgs.lixPackageSets.latest.lix; # nixVersions.latest;
     settings = {
       experimental-features = [
         "nix-command"
@@ -10,10 +10,6 @@
         "auto-allocate-uids"
         "cgroups"
         "pipe-operator"
-        "dynamic-derivations"
-        "ca-derivations"
-        "recursive-nix"
-        "repl-flake"
       ];
       auto-optimise-store = true;
       use-xdg-base-directories = true;

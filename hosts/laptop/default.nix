@@ -1,4 +1,9 @@
-{ pkgs, lib, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 
 {
   imports = [
@@ -11,7 +16,6 @@
     ./virt.nix
     ./networking.nix
     ./sops.nix
-    ./lanzaboote.nix
     ./btrbk.nix
     ./persist.nix
   ];
@@ -24,8 +28,14 @@
   boot = {
     plymouth.enable = true;
     loader = {
-      systemd-boot.enable = true;
-      systemd-boot.configurationLimit = 5;
+      limine.enable = true;
+      limine.maxGenerations = 5;
+      limine.secureBoot.enable = true;
+      limine.extraEntries = ''
+        /Windows
+        protocol: efi
+        path: uuid(6335ba1a-25e9-45e6-aa31-6d82c83c07f5):/EFI/Microsoft/Boot/bootmgfw.efi
+      '';
       efi.canTouchEfiVariables = true;
     };
     # kernelPackages = pkgs.linuxPackages_latest;
@@ -70,7 +80,8 @@
   };
   programs.fish.enable = true;
   environment.systemPackages = [
-    pkgs.nixos-rebuild-ng
+    pkgs.sbctl
+    config.boot.kernelPackages.perf
   ];
   programs.adb.enable = true;
   programs.fuse.userAllowOther = true;

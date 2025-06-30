@@ -12,10 +12,9 @@ let
     nvfetcher
     daeuniverse
     #ghostty
-    vaultix
+    # vaultix
     zen-browser
     niri
-    lanzaboote
     neovim-nightly-overlay
     nur
     #stylix
@@ -78,7 +77,6 @@ in
         sops-nix.nixosModules.sops
         chaotic.nixosModules.default
         daeuniverse.nixosModules.dae
-        lanzaboote.nixosModules.lanzaboote
         nur.modules.nixos.default
         # stylix.nixosModules.stylix
         nixos-hardware.nixosModules.common-cpu-amd-pstate

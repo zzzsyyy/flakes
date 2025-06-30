@@ -20,10 +20,9 @@ image:https://socialify.git.ci/zzzsyyy/flakes/image?custom_description=Mathias%2
 * [x] Rime (yaml patch & link:https://github.com/iDvel/rime-ice[Rime-Ice])
 * [x] lint link:https://github.com/cachix/pre-commit-hooks.nix[pre-commit]
 * [x] Chaotic link:https://www.nyx.chaotic.cx[Nyx]
-* [x] secure boot link:https://github.com/nix-community/lanzaboote[lanzaboote]
+* [x] secure boot link:https://github.com/limine-bootloader/limine[limine] with `sbctl`
 * [ ] color shema link:https://stylix.danth.me[stylix]
 * [ ] dev environnments: slidev hugo python rust etc.
 * [x] overlays
-* [ ] sub-pkgs
 * [x] CI
 

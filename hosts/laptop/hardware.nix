@@ -37,6 +37,7 @@ in
   boot.initrd.systemd.enable = true; # for perservation
   boot.kernelModules = [
     "kvm-amd"
+    "iwlwifi"
   ];
 
   # for obs virtual camera
@@ -45,6 +46,8 @@ in
   ];
   boot.extraModprobeConfig = ''
     options v4l2loopback exclusive_caps=1 video_nr=9 card_label="obs"
+    options iwlwifi power_save=0
+    options iwlmvm power_scheme=1
   '';
 
   fileSystems."/" = {

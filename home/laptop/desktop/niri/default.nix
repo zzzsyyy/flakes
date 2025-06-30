@@ -4,11 +4,21 @@
   pkgs,
   ...
 }:
+let
+  idlehandler = pkgs.writeShellScriptBin "sway-idlehandler" ''
+    swayidle -w timeout 300 'swaylock --grace 70' before-sleep 'swaylock' timeout 360 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"'
+  '';
+in
 {
   home.packages = with pkgs; [
     fuzzel
     xsel
     hyprpaper
+    wl-clipboard
+    idlehandler
+    swayidle
+    swaylock-effects
+    swayosd
   ];
   xdg.enable = true;
   xdg.portal = with pkgs; {
@@ -31,13 +41,11 @@
     settings = builtins.fromJSON (builtins.readFile ./waybar/config.jsonc);
   };
 
-  xdg.configFile."niri/config.kdl".source = pkgs.replaceVars ./niri.kdl {
-      brightnessctl = "${lib.getExe pkgs.brightnessctl}";
-      startXwayland = pkgs.writeText "a.sh" ''
-        sleep 3
-        xwayland-satellite :0
-      '';
-      DEFAULT_AUDIO_SINK = null;
-      DEFAULT_AUDIO_SOURCE = null;
-    };
+  xdg.configFile."niri/config.kdl".source =
+    config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/Documents/flakes/home/laptop/desktop/niri/niri.kdl";
+  #xdg.configFile."niri/config.kdl".source = pkgs.replaceVars ./niri.kdl {
+  #    brightnessctl = "${lib.getExe pkgs.brightnessctl}";
+  #    DEFAULT_AUDIO_SINK = null;
+  #    DEFAULT_AUDIO_SOURCE = null;
+  #  };
 }

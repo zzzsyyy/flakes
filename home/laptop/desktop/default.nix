@@ -1,8 +1,7 @@
 { pkgs, config, ... }:
 {
   imports = [
-    ./gnome/dconf.nix
-    #@TODO
+    ./dconf.nix
     ./niri/default.nix
   ];
 
