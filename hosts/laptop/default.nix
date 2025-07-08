@@ -82,11 +82,17 @@
   environment.systemPackages = [
     pkgs.sbctl
     config.boot.kernelPackages.perf
+    pkgs.squashfsTools
+    pkgs.squashfuse
   ];
   programs.adb.enable = true;
   programs.fuse.userAllowOther = true;
   services.flatpak.enable = true;
-  security.rtkit.enable = true;
+  security = {
+    rtkit.enable = true;
+    sudo.enable = false;
+    sudo-rs.enable = true;
+  };
 
   systemd.services.nix-daemon = {
     environment = {

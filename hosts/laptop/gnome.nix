@@ -47,8 +47,8 @@
         loupe # image
         gnome-text-editor
         epiphany
-        #papers
-        evince
+        papers
+        #evince
         nautilus # file
         file-roller # archive
         gnome-tweaks

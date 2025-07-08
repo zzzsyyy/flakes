@@ -36,6 +36,7 @@ in
   boot.initrd.kernelModules = [ "amdgpu" ];
   boot.initrd.systemd.enable = true; # for perservation
   boot.kernelModules = [
+    "squashfs"
     "kvm-amd"
     "iwlwifi"
   ];

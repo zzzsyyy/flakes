@@ -44,6 +44,8 @@ let
     hyfetch
     yazi
 
+    uutils-coreutils-noprefix
+
     # wasm
     #wasmtime
     #twiggy
