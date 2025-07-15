@@ -3,7 +3,7 @@
 {
   programs.mpv = {
     enable = true;
-    scripts = with pkgs.mpvScripts; [ uosc ];
+    scripts = with pkgs.mpvScripts; [ uosc vr-reversal ];
     config = {
       profile = "gpu-hq";
       hwdec = "auto-safe";
@@ -11,7 +11,6 @@
       hwdec-codecs = "vaapi";
       blend-subtitles = "video";
       sub-auto = "fuzzy";
-      cscale-param2 = "spline36";
       interpolation = "yes";
     };
   };

@@ -5,7 +5,7 @@
   programs.helix = {
     enable = true;
     defaultEditor = true;
-    package = pkgs.helix_git;
+    package = pkgs.helix;
     settings = {
       theme = "everforest_dark";
       keys.normal = {

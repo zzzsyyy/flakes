@@ -8,7 +8,7 @@
   services = {
     # scx scheduler
     scx.enable = true;
-    scx.package = pkgs.scx_git.full;
+    # scx.package = pkgs.scx_git.full;
     scx.scheduler = "scx_lavd";
 
     dbus.implementation = "broker"; # lock dbus impl to dbus-broker
