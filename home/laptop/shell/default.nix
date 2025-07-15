@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 {
   imports = [
     ./fish.nix
@@ -27,6 +27,26 @@
       user = {
         name = config.programs.git.userName;
         email = config.programs.git.userEmail;
+      };
+      ui = {
+        show-cryptographic-signatures = true;
+        # paginate = "never";
+        pager = [
+          "delta"
+          "--diff-so-fancy"
+          "--side-by-side"
+        ];
+        diff.format = "git";
+      };
+      git = {
+        auto-local-bookmark = true;
+        sign-on-push = true;
+      };
+      signing = {
+        behavior = "own";
+        backend = "ssh";
+        allowed-signers = toString (pkgs.writeText "allowed_signers" '''');
+        key = "~/.ssh/id_ed25519.pub";
       };
     };
   };

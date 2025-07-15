@@ -48,7 +48,6 @@
         gnome-text-editor
         epiphany
         papers
-        #evince
         nautilus # file
         file-roller # archive
         gnome-tweaks

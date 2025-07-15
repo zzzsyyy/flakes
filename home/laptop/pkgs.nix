@@ -22,7 +22,6 @@ let
     rustup
     lua
     python3
-    nim
     zigpkgs.master
     go
     #julia
@@ -60,14 +59,12 @@ let
     asciinema
     iw
     b3sum
-    lrzip
     tokei
     hyperfine
     rsgain
     # my.odin
     q
     ouch
-    lf
     pdftk
     duf
     nvfetcher-test
@@ -77,6 +74,8 @@ let
     graphviz
     #zsh
     jq
+
+    my.login
   ];
 
   office = with pkgs; [
@@ -85,6 +84,7 @@ let
     #octave
     typst
     foliate
+    typora
     #texlive.combined.scheme-full
     asciidoc-full
     # ghex

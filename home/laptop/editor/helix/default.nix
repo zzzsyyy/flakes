@@ -1,9 +1,11 @@
-{
+
+{pkgs, ...}:{
   imports = [ ./langs.nix ];
 
   programs.helix = {
     enable = true;
     defaultEditor = true;
+    package = pkgs.helix_git;
     settings = {
       theme = "everforest_dark";
       keys.normal = {

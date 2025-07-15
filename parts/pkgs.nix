@@ -20,7 +20,9 @@
   perSystem =
     { pkgs, system, ... }:
     let
-      nur = import ./nur.nix { inherit pkgs; };
+      nur = import ./nur.nix { inherit pkgs lib; };
+      sources = pkgs.callPackage ../pkgs/_sources/generated.nix { };
+      allPkgs = lib.my.genPkgs pkgs sources ../pkgs (k: true);
       overlays = builtins.attrValues self.overlays;
     in
     {
@@ -30,10 +32,7 @@
         config.allowInsecure = true;
       };
       packages =
-        builtins.removeAttrs nur [
-          "overlays"
-          "modules"
-        ]
+        allPkgs
         // {
           mutter = pkgs.mutter;
           gnome-shell = pkgs.gnome-shell;
