@@ -3,7 +3,10 @@
 {
   programs.mpv = {
     enable = true;
-    scripts = with pkgs.mpvScripts; [ uosc vr-reversal ];
+    scripts = with pkgs.mpvScripts; [
+      uosc
+      vr-reversal
+    ];
     config = {
       profile = "gpu-hq";
       hwdec = "auto-safe";

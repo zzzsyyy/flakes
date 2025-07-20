@@ -63,7 +63,8 @@
       {
         imports = [
           inputs.pre-commit-hooks.flakeModule
-        ] ++ import ./parts;
+        ]
+        ++ import ./parts;
         systems = [ "x86_64-linux" ];
       };
 }

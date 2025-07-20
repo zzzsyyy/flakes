@@ -29,14 +29,16 @@
         email = config.programs.git.userEmail;
       };
       ui = {
+        default-command = [
+          "diff"
+          "--summary"
+        ];
         show-cryptographic-signatures = true;
         # paginate = "never";
         pager = [
           "delta"
-          "--diff-so-fancy"
-          "--side-by-side"
         ];
-        diff.format = "git";
+        diff-formatter = ":git";
       };
       git = {
         auto-local-bookmark = true;

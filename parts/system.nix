@@ -33,34 +33,34 @@ let
       ${hostName} = nixpkgs.lib.nixosSystem {
         inherit system;
 
-        modules =
-          [
-            {
-              home-manager = {
-                useGlobalPkgs = true;
-                useUserPackages = true;
-                sharedModules = attrValues self.hmModules;
-              };
-              nixpkgs = {
-                overlays = [
-                  (final: prev: {
-                    dae-unstable = daeuniverse.packages.${system}.dae-unstable;
-                    zen-browser = zen-browser.packages."${system}".twilight;
-                    nvfetcher-test = nvfetcher.packages.${system}.default;
-                    my = self.packages."${system}";
-                  })
-                ] ++ overlays;
-              };
-              networking.hostName = hostName;
-            }
+        modules = [
+          {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              sharedModules = attrValues self.hmModules;
+            };
+            nixpkgs = {
+              overlays = [
+                (final: prev: {
+                  dae-unstable = daeuniverse.packages.${system}.dae-unstable;
+                  zen-browser = zen-browser.packages."${system}".twilight;
+                  nvfetcher-test = nvfetcher.packages.${system}.default;
+                  my = self.packages."${system}";
+                })
+              ]
+              ++ overlays;
+            };
+            networking.hostName = hostName;
+          }
 
-            home-manager.nixosModules.home-manager
-            ../hosts/common
-            ../hosts/${hostName}
-            (import ../home username)
-          ]
-          ++ (attrValues self.nixosModules)
-          ++ modules;
+          home-manager.nixosModules.home-manager
+          ../hosts/common
+          ../hosts/${hostName}
+          (import ../home username)
+        ]
+        ++ (attrValues self.nixosModules)
+        ++ modules;
         specialArgs = {
           inherit inputs self;
         };

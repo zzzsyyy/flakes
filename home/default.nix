@@ -14,16 +14,15 @@ in
     isNormalUser = true;
     hashedPassword = "$6$3mI6lDngcB2nrJx5$IG1j2hHtg0xhvrcFSO99zW1b8Lil4rgWLjgppTe3ALA1ftfLmDnHdAeuhtI/Zc0AwvsNThQIWxtAu/gHN1gfD1";
     shell = pkgs.fish;
-    extraGroups =
-      [
-        "wheel"
-        "input"
-        "audio"
-        "video"
-      ]
-      ++ optional config.networking.networkmanager.enable "networkmanager"
-      ++ optional config.programs.adb.enable "adbusers"
-      ++ optional config.virtualisation.libvirtd.enable "libvirtd";
+    extraGroups = [
+      "wheel"
+      "input"
+      "audio"
+      "video"
+    ]
+    ++ optional config.networking.networkmanager.enable "networkmanager"
+    ++ optional config.programs.adb.enable "adbusers"
+    ++ optional config.virtualisation.libvirtd.enable "libvirtd";
   };
 
   home-manager.users."${username}" = {
