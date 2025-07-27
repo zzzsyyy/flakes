@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   nix = {
-    #channel.enable = false;
+    channel.enable = false;
     package = pkgs.lixPackageSets.latest.lix; # nixVersions.latest;
     settings = {
       experimental-features = [

@@ -7,6 +7,8 @@ let
     nix-tree
     nix-output-monitor
     nh
+    nil
+    nixd
   ];
 
   build-tools = with pkgs; [
@@ -22,14 +24,12 @@ let
     rustup
     lua
     python3
-    zigpkgs.master
     go
     #julia
     nodejs
-    nodePackages.pnpm
+    pnpm
 
     git
-    # hugo
     just
 
     #coq
@@ -95,6 +95,7 @@ let
     #feishu
     #mathematica
     #virtualbox
+    zed-editor
   ];
 
   others = with pkgs; [

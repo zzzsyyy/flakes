@@ -22,7 +22,7 @@ image:https://socialify.git.ci/zzzsyyy/flakes/image?custom_description=Mathias%2
 * [x] Chaotic link:https://www.nyx.chaotic.cx[Nyx]
 * [x] secure boot link:https://github.com/limine-bootloader/limine[limine] with `sbctl`
 * [ ] color shema link:https://stylix.danth.me[stylix]
-* [ ] dev environnments: slidev hugo python rust etc.
+* [x] dev environnments: slidev hugo python rust etc.
 * [x] overlays
 * [x] CI
 

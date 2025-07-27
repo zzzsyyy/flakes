@@ -54,3 +54,26 @@ rm:
 
 upkgs:
   just nvfetcher
+
+sync-envrc:
+  #!/usr/bin/env fish
+  cd templates
+  for dir in hugo python rust slidev typst zig
+    cp common.envrc $dir/.envrc
+  end
+  echo "✅ Synced .envrc to all templates"
+
+update-templates:
+    #!/usr/bin/env fish
+    cd templates
+    for dir in hugo rust slidev typst zig
+      if test -f $dir/flake.nix
+        echo "Updating $dir..."
+        cd $dir
+        nix flake update
+        cd ..
+      else
+        echo "Skipping $dir (no flake.nix found)"
+      end
+    end
+    echo "✅ Updated all templates"

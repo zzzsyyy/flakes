@@ -20,7 +20,7 @@
   perSystem =
     { pkgs, system, ... }:
     let
-      nur = import ./nur.nix { inherit pkgs lib; };
+      # nur = import ./nur.nix { inherit pkgs lib; };
       sources = pkgs.callPackage ../pkgs/_sources/generated.nix { };
       allPkgs = lib.my.genPkgs pkgs sources ../pkgs (k: true);
       overlays = builtins.attrValues self.overlays;
