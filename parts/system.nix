@@ -18,7 +18,6 @@ let
     neovim-nightly-overlay
     nur
     #stylix
-    zig
     ;
 
   inherit (nixpkgs.lib) attrValues;
@@ -86,7 +85,6 @@ in
         self.overlays.mutter
         niri.overlays.niri
         nur.overlays.default
-        zig.overlays.default
         neovim-nightly-overlay.overlays.default
       ];
     }

@@ -6,6 +6,7 @@
     scripts = with pkgs.mpvScripts; [
       uosc
       vr-reversal
+      mpris
     ];
     config = {
       profile = "gpu-hq";

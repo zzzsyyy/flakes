@@ -2,7 +2,6 @@
   perSystem =
     {
       config,
-      inputs',
       pkgs,
       self',
       ...
@@ -16,10 +15,7 @@
       };
       formatter = pkgs.nixfmt-rfc-style;
       pre-commit.settings.hooks = {
-        nil = {
-          enable = true;
-          package = inputs'.nil.packages.default;
-        };
+        nil.enable = true;
         actionlint.enable = true;
         nixfmt-rfc-style.enable = true;
       };
@@ -33,7 +29,7 @@
             ssh-to-pgp
           ];
           shellHook = ''
-            export PS1="\e[0;31m(Secret)\w\$ \e[m" 
+            export PS1="\e[0;31m(Secret)\w\$ \e[m"
           '';
         };
     };

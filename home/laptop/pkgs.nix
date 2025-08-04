@@ -9,6 +9,7 @@ let
     nh
     nil
     nixd
+    package-version-server
   ];
 
   build-tools = with pkgs; [
@@ -108,6 +109,7 @@ let
     localsend
     # handbrake
     netease-cloud-music-gtk
+    waylyrics
     # jellyfin-media-player
     # wireshark
     # gaphor
