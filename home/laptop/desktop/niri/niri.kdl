@@ -2,6 +2,7 @@ spawn-at-startup "waybar"
 spawn-at-startup "fcitx5" "-d" "--replace"
 spawn-at-startup "hyprpaper"
 spawn-at-startup "swayosd-server"
+spawn-at-startup "clipse -listen"
 
 prefer-no-csd
 
@@ -20,7 +21,7 @@ output "eDP-1" {
 
 output "HDMI-A-1" {
     variable-refresh-rate
-    position x=1536 y=0
+    position x=0 y=960
     focus-at-startup
 }
 
@@ -117,6 +118,7 @@ window-rule {
     match app-id=r#"firefox$"# title="^(Picture-in-Picture|Library)$"
     match app-id=r#"^nz\.co\.mega\.$"#
     match app-id=r#"^org\.gnome\.NautilusPreviewer$"#
+    match app-id=r#"clipse"#
     open-floating true
 }
 
@@ -128,14 +130,8 @@ binds {
     Mod+E { spawn "nautilus" "-w"; }
     Mod+R repeat=false { spawn "fuzzel"; }
     Mod+A repeat=false { toggle-overview; }
-    // Example volume keys mappings for PipeWire & WirePlumber.
-    // The allow-when-locked=true property makes them work even when the session is locked.
-    // XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
-    // XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"; }
-    // XF86AudioMute        allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
-    // XF86AudioMicMute     allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
-    // XF86MonBrightnessUp   allow-when-locked=true { spawn "brightnessctl" "set" "+5%"; }
-    // XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "set" "5%-"; }
+    Mod+V repeat=false { spawn "kitty" "--class" "clipse" "-e" "clipse"; }
+
     XF86AudioRaiseVolume { spawn "swayosd-client" "--output-volume" "raise"; }
     XF86AudioLowerVolume { spawn "swayosd-client" "--output-volume" "lower"; }
     XF86AudioMute { spawn "swayosd-client" "--output-volume" "mute-toggle"; }
@@ -183,10 +179,6 @@ binds {
     Mod+Shift+WheelScrollRight { move-column-right; }
     Mod+Shift+WheelScrollLeft  { move-column-left; }
 
-    // touchpads by default.
-    // Mod+TouchpadScrollDown { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.02+"; }
-    // Mod+TouchpadScrollUp   { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.02-"; }
-
     Mod+1 { focus-workspace 1; }
     Mod+2 { focus-workspace 2; }
     Mod+3 { focus-workspace 3; }
@@ -225,4 +217,3 @@ binds {
 
     Mod+Shift+P { power-off-monitors; }
 }
-

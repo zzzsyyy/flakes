@@ -9,7 +9,7 @@
       desktopManager.xterm.enable = false;
     };
     services.displayManager.gdm.enable = true;
-    services.desktopManager.gnome.enable = true;
+    services.desktopManager.gnome.enable = false;
     services.gnome = {
       core-apps.enable = false;
       gnome-online-accounts.enable = false;
@@ -46,18 +46,18 @@
         amberol # music
         loupe # image
         gnome-text-editor
-        epiphany
+        # epiphany
         papers
         nautilus # file
         file-roller # archive
         gnome-tweaks
-        refine
+        # refine
         gnome-disk-utility
         seahorse
-        gnome-calendar
-        dconf-editor
-
+        # gnome-calendar
+        # dconf-editor
         poop
+        comma
       ]
     );
   };

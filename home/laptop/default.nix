@@ -6,6 +6,7 @@
     ./editor
     ./shell
     ./others
+    ./firefox
     ../../hosts/laptop/rime/home.nix
   ];
 }

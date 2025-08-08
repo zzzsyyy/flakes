@@ -18,6 +18,9 @@ in
     swayidle
     swaylock-effects
     swayosd
+    wdisplays
+    clipse
+    bluetui
   ];
   xdg.enable = true;
   xdg.portal = with pkgs; {
@@ -36,10 +39,13 @@ in
   };
   programs.waybar = {
     enable = true;
-    style = builtins.readFile ./waybar/style.css;
-    settings = builtins.fromJSON (builtins.readFile ./waybar/config.jsonc);
+    #style = builtins.readFile ./waybar/style.css;
+    #settings = builtins.fromJSON (builtins.readFile ./waybar/config.jsonc);
   };
-
+  xdg.configFile."waybar/config".source =
+    config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/Documents/flakes/home/laptop/desktop/niri/waybar/config.jsonc";
+  xdg.configFile."waybar/style.css".source =
+    config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/Documents/flakes/home/laptop/desktop/niri/waybar/style.css";
   xdg.configFile."niri/config.kdl".source =
     config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/Documents/flakes/home/laptop/desktop/niri/niri.kdl";
   #xdg.configFile."niri/config.kdl".source = pkgs.replaceVars ./niri.kdl {

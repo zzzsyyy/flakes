@@ -4,11 +4,8 @@
     "position": "top",
     "height": 24,
     "spacing": 4,
-    "modules-left": [ "niri/window" ],
-    "modules-center": [
-      "clock",
-      "niri/workspaces"
-    ],
+    "modules-left": ["niri/workspaces", "niri/window"],
+    "modules-center": ["clock"],
     "modules-right": [
       "network",
       "bluetooth",
@@ -16,16 +13,15 @@
       "backlight",
       "cpu",
       "memory",
-      "niri/language",
       "battery",
-      "tray"
+      "tray",
     ],
     "backlight": {
       "format": "{icon}",
-      "format-icons": [ "", "", "", "", "", "", "", "", "" ],
+      "format-icons": ["", "", "", "", "", "", "", "", ""],
       "format-alt": "<small>{percent}%</small>",
       "tooltip-format": "{percent}%",
-      "reverse-scrolling": true
+      "reverse-scrolling": true,
     },
     "battery": {
       "bat": "BAT1",
@@ -33,18 +29,18 @@
       "format-alt": "{capacity}",
       "full-at": 96,
       "states": {
-        "critical": 10
+        "critical": 10,
       },
       "format-icons": {
-        "default": [ "󱃍", "󰁺", "󰁻", "󰁼", "󰁼", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹" ],
-        "charging": [ "󰢟", "󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅" ]
+        "default": ["󱃍", "󰁺", "󰁻", "󰁼", "󰁼", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+        "charging": ["󰢟", "󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"],
       },
       "interval": 60,
-      "tooltip-format": "{capacity}% {power}W\n{time}"
+      "tooltip-format": "{capacity}% {power}W\n{time}",
     },
     "clock": {
       "actions": {
-        "on-click-right": "mode"
+        "on-click-right": "mode",
       },
       "calendar": {
         "format": {
@@ -52,87 +48,129 @@
           "months": "<span color='#ffead3'><b>{}</b></span>",
           "today": "<span color='#ff6699'><b><u>{}</u></b></span>",
           "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
-          "weeks": "<span color='#99ffdd'><b>{:%W}</b></span>"
+          "weeks": "<span color='#99ffdd'><b>{:%W}</b></span>",
         },
         "mode-mon-col": 3,
-        "weeks-pos": "right"
+        "weeks-pos": "right",
       },
       "format": "{:%T}",
       "format-alt": "{:%A, %B %d, %Y (%R)}",
       "interval": 1,
       "timezone": "Asia/Shanghai",
-      "tooltip-format": "<tt><small>{calendar}</small></tt>"
+      "tooltip-format": "<tt><small>{calendar}</small></tt>",
     },
     "niri/workspaces": {
       "format": "{icon}",
       "format-icons": {
-        "active": "",
-        "default": ""
-      }
+        "active": "",
+        "default": "",
+      },
     },
     "niri/window": {
       "format": {},
       "rewrite": {
-        "": "<big></big> Desktop",
+        "": " Desktop",
         "(.+)": "$1",
-        "(.*) — Mozilla Firefox": "<big>󰈹</big> $1",
-        "(.*) — Firefox Nightly": "<big>󰈹</big> $1",
-        "(.*)Firefox Nightly": "<big>󰈹</big> Firefox",
-        "(.*)Mozilla Firefox": "<big>󰈹</big> Firefox",
-        "(.*) - VS Code": "<big>󰨞</big> $1",
-        "(.*) fish": "<big></big> $1"
+        "(.*) — Mozilla Firefox": "󰈹 $1",
+        "^(.*) — .+ — Zen Twilight": "󰈹 $1",
+        "(.*) — Firefox Nightly": "󰈹 $1",
+        "(.*) - VS Code": "󰨞 $1",
+        "(.*) fish": " $1",
       },
-      "max-length": 50
+      "max-length": 50,
     },
     "niri/language": {
       "format-en": "A",
-      "format-fr": "Æ"
+      "format-fr": "Æ",
     },
     "cpu": {
       "interval": 2,
-      "format": "<span font='6' rise='-12000'>{usage}</span>"
+      "format": "<span font='6' rise='-12000'>{usage}</span>",
     },
     "memory": {
       "interval": 2,
-      "format": "<span font='6' rise='+12000'>{percentage}</span>"
+      "format": "<span font='6' rise='+12000'>{percentage}</span>",
     },
     "bluetooth": {
       "format": "",
-      "format-connected": "󰂱 <small>{device_alias}</small>",
+      "format-connected": "󰂱",
       "format-off": "󰂲",
       "format-on": "",
-      "format-connected-battery": " {device_alias} {device_battery_percentage}%",
+      "on-click": "kitty --class bluetui -e bluetui",
+      "format-connected-battery": "󰂱 <span size='xx-small'>󰥉{device_battery_percentage}%</span>",
       "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
       "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
       "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-      "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
+      "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
     },
     "network": {
       "interval": 1,
       "format-alt": "<span size='xx-small'>{essid}\n{ipaddr}</span>",
-      "format-wifi": "<small>{bandwidthUpOctets} {bandwidthDownOctets}</small>",
+      "format-wifi": "<small>{bandwidthUpOctets} {bandwidthDownOctets}</small>",
+      "format-ethernet": "<small>{bandwidthUpOctets} {bandwidthDownOctets}</small>",
       "tooltip-format": "<small>{cidr}{gwaddr}{frequency}{bandwidthTotalOctets}</small>",
-      "format-disconnected": "<small> 󰅛 </small>"
+      "format-disconnected": "<small> 󰅛 </small>",
     },
     "pulseaudio": {
       "reverse-scrolling": 1,
       "format": "{icon} <small>{volume}%</small>",
-      "format-bluetooth": "<small>{volume}%</small> {icon}",
+      "format-bluetooth": "<small>{volume}%</small> {icon}<span size='xx-small' rise='-1200'></span>",
       "format-icons": {
-        "default": [
-          "󰕿",
-          "󰖀",
-          "󰕾"
-        ]
+        "default": ["󰕿", "󰖀", "󰕾"],
       },
       "format-muted": "󰝟",
-      "scroll-step": 1
+      "scroll-step": 1,
     },
     "tray": {
       "show-passive-items": true,
-      "icon-size": 20,
-      "spacing": 5
-    }
-  }
+      "icon-size": 18,
+      "spacing": 5,
+    },
+    "group/group-power": {
+      // "orientation": "herite",
+      "drawer": {
+        "transition-duration": 500,
+        "children-class": "not-power",
+        "transition-left-to-right": false,
+      },
+      "modules": [
+        "custom/power", // First element is the "group leader" and won't ever be hidden
+        "custom/quit",
+        "custom/lock",
+        "custom/reboot",
+      ],
+    },
+    "custom/quit": {
+      "format": "󰗼",
+      "tooltip": false,
+      "on-click": "hyprctl dispatch exit",
+    },
+    "custom/lock": {
+      "format": "󰍁",
+      "tooltip": false,
+      "on-click": "swaylock",
+    },
+    "custom/reboot": {
+      "format": "󰜉",
+      "tooltip": false,
+      "on-click": "reboot",
+    },
+    "custom/power": {
+      "format": "",
+      "tooltip": false,
+      "on-click": "shutdown now",
+    },
+    "keyboard-state": {
+      "numlock": true,
+      "capslock": true,
+      "format": {
+        "numlock": "N {icon}",
+        "capslock": "C {icon}",
+      },
+      "format-icons": {
+        "locked": "",
+        "unlocked": "",
+      },
+    },
+  },
 ]
-

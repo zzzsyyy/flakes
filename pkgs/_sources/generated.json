@@ -1,7 +1,7 @@
 {
     "firefox-gnome-theme": {
         "cargoLocks": null,
-        "date": "2025-07-22",
+        "date": "2025-08-04",
         "extract": null,
         "name": "firefox-gnome-theme",
         "passthru": null,
@@ -13,12 +13,12 @@
             "name": null,
             "owner": "rafaelmardojai",
             "repo": "firefox-gnome-theme",
-            "rev": "2615749a60ad731a2a2bbbe45d8b468bf1d8cdf8",
-            "sha256": "sha256-0q4HUdFy/dzOm0pD/TzcpkFAfA/JTaRq9oXy05yg0EE=",
+            "rev": "6f173d0873dd33c5653dee89a831af3e49db3e36",
+            "sha256": "sha256-9veVYpPCwKNjIK5gOigl5nEUN6tmrSHXUv4bVZkRuOE=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "2615749a60ad731a2a2bbbe45d8b468bf1d8cdf8"
+        "version": "6f173d0873dd33c5653dee89a831af3e49db3e36"
     },
     "iosevka-zt": {
         "cargoLocks": null,
@@ -94,7 +94,7 @@
     },
     "rime-ice": {
         "cargoLocks": null,
-        "date": "2025-07-24",
+        "date": "2025-08-16",
         "extract": null,
         "name": "rime-ice",
         "passthru": null,
@@ -106,11 +106,11 @@
             "name": null,
             "owner": "iDvel",
             "repo": "rime-ice",
-            "rev": "74fc9c59935ba834bb0df0aa28a0036234f8e9f1",
-            "sha256": "sha256-DN0YjnTifHG3/Dnfm1OW0VHN4fkqdAKK0vowN3jD1wg=",
+            "rev": "8544a7bee4f8b775e7794bf991d1db65049e4080",
+            "sha256": "sha256-D/ozd7E7sjjydONLWmvLZU+5U6PkIF54xRTmO7sGKB4=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "74fc9c59935ba834bb0df0aa28a0036234f8e9f1"
+        "version": "8544a7bee4f8b775e7794bf991d1db65049e4080"
     }
 }

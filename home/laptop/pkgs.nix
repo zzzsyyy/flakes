@@ -35,6 +35,9 @@ let
 
     #coq
     ghc
+    idris2
+
+    typescript
     #haskellPackages.cabal-install
     #jdk21
   ];
@@ -91,6 +94,8 @@ let
     # ghex
     # ida-free
     megasync
+    filen-cli
+    filen-desktop
     #handbrake
     #scilab-bin
     #feishu

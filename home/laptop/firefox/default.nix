@@ -9,20 +9,23 @@ in
 {
   programs.librewolf = {
     enable = false;
-    package = pkgs.wrapFirefox pkgs.librewolf-unwrapped {
-      wmClass = "LibreWolf";
-      libName = "librewolf";
-      extraPolicies = {
-        ExtensionSettings = import ./config/extensions.nix;
-        DisablePocket = true;
-        DisableTelemetry = true;
-        EnableTrackingProtection = {
-          Value = true;
-          Locked = true;
-          Cryptomining = true;
-          Fingerprinting = true;
-        };
+    enableGnomeExtensions = true;
+    languagePacks = [ "en-US zh-CN fr" ];
+    policies = {
+      ExtensionSettings = import ./config/extensions.nix;
+      DisablePocket = true;
+      DisableTelemetry = true;
+      EnableTrackingProtection = {
+        Value = true;
+        Locked = true;
+        Cryptomining = true;
+        Fingerprinting = true;
       };
+    };
+    package = pkgs.librewolf.override {
+      nativeMessagingHosts = [
+        pkgs.gnome-browser-connector
+      ];
     };
     #@TODO muilti profile
     profiles.default = {
