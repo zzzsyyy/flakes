@@ -58,7 +58,7 @@ let
     scrcpy
     bind
     ripgrep
-    ffmpeg_7-full
+    ffmpeg_8-full
     file
     asciinema
     iw
@@ -89,6 +89,7 @@ let
     typst
     foliate
     typora
+    # todesk
     #texlive.combined.scheme-full
     asciidoc-full
     # ghex
@@ -120,7 +121,7 @@ let
     # gaphor
     # gimp
     # minder
-    #tsukimi
+    tsukimi
     materialgram
     # nur.repos.xddxdd.wechat-uos-sandboxed
 

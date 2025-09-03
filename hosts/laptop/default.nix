@@ -1,6 +1,5 @@
 {
   pkgs,
-  config,
   ...
 }:
 
@@ -38,7 +37,8 @@
       efi.canTouchEfiVariables = true;
     };
     # kernelPackages = pkgs.linuxPackages_latest;
-    kernelPackages = pkgs.linuxPackages_cachyos;
+    # kernelPackages = pkgs.linuxPackages_cachyos; # -gcc;
+    kernelPackages = pkgs.linuxPackages_cachyos.cachyOverride { mArch = "ZEN4"; };
 
     kernelParams = [
       "quiet"
@@ -68,7 +68,7 @@
 
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.permittedInsecurePackages = [
-    "ventoy-gtk3-1.1.05"
+    "ventoy-gtk3-1.1.07"
   ];
 
   environment.pathsToLink = [ "/share/fish" ];
@@ -80,7 +80,7 @@
   programs.fish.enable = true;
   environment.systemPackages = [
     pkgs.sbctl
-    config.boot.kernelPackages.perf
+    pkgs.perf
     pkgs.squashfsTools
     pkgs.squashfuse
   ];
@@ -104,5 +104,5 @@
 
   documentation.nixos.enable = false;
 
-  system.stateVersion = "23.11";
+  system.stateVersion = "25.05";
 }

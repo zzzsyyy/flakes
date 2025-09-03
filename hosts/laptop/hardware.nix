@@ -85,8 +85,11 @@ in
     }
   ];
 
-  #boot.resumeDevice = "/dev/disk/by-partlabel/NixOS";
-  #boot.kernelParams = [ "mem_sleep_default=deep" "resume_offset=24927051" ];
+  boot.resumeDevice = "/dev/disk/by-partlabel/NixOS";
+  boot.kernelParams = [
+    "mem_sleep_default=deep"
+    "resume_offset=24927051"
+  ];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   services.xserver = {

@@ -21,6 +21,8 @@ in
     wdisplays
     clipse
     bluetui
+    swaynotificationcenter
+    better-control
   ];
   xdg.enable = true;
   xdg.portal = with pkgs; {

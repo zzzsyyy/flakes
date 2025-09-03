@@ -82,7 +82,7 @@ in
         nixos-hardware.nixosModules.common-gpu-amd
       ];
       overlays = [
-        self.overlays.mutter
+        self.overlays.default
         niri.overlays.niri
         nur.overlays.default
         neovim-nightly-overlay.overlays.default

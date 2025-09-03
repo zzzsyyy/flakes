@@ -2,7 +2,8 @@ spawn-at-startup "waybar"
 spawn-at-startup "fcitx5" "-d" "--replace"
 spawn-at-startup "hyprpaper"
 spawn-at-startup "swayosd-server"
-spawn-at-startup "clipse -listen"
+spawn-at-startup "clipse" "-listen"
+spawn-at-startup "swaync"
 
 prefer-no-csd
 
@@ -116,7 +117,7 @@ window-rule {
 
 window-rule {
     match app-id=r#"firefox$"# title="^(Picture-in-Picture|Library)$"
-    match app-id=r#"^nz\.co\.mega\.$"#
+    match app-id=r#"MEGAsync"#
     match app-id=r#"^org\.gnome\.NautilusPreviewer$"#
     match app-id=r#"clipse"#
     open-floating true
@@ -137,6 +138,7 @@ binds {
     XF86AudioMute { spawn "swayosd-client" "--output-volume" "mute-toggle"; }
     XF86MonBrightnessUp { spawn "swayosd-client" "--brightness" "raise"; }
     XF86MonBrightnessDown { spawn "swayosd-client" "--brightness" "lower"; }
+    XF86Assistant { spawn "kitty"; }
 
     Alt+F4 { close-window; }
     Mod+Q  { close-window; }

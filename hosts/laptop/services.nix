@@ -8,7 +8,6 @@
   services = {
     # scx scheduler
     scx.enable = true;
-    # scx.package = pkgs.scx_git.full;
     scx.scheduler = "scx_lavd";
 
     dbus.implementation = "broker"; # lock dbus impl to dbus-broker
@@ -21,6 +20,7 @@
       enable = true;
       settings.PermitRootLogin = lib.mkDefault "no";
     };
+    speechd.enable = false;
     printing.enable = true;
     fwupd.enable = true;
     power-profiles-daemon.enable = false;
@@ -55,6 +55,8 @@
     earlyoom = {
       enable = true;
     };
+    gvfs.enable = true;
+    udisks2.enable = true;
     # blueman.enable = true;
   };
 }
