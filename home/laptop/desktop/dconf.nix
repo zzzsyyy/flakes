@@ -20,7 +20,7 @@ let
   ];
 in
 {
-  home.packages = extensions;
+  #home.packages = extensions;
   dconf.settings = {
     "org/gnome/shell" = {
       disable-user-extensions = false;

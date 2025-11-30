@@ -90,7 +90,7 @@ let
     foliate
     typora
     # todesk
-    #texlive.combined.scheme-full
+    texlive.combined.scheme-full
     asciidoc-full
     # ghex
     # ida-free
@@ -109,7 +109,7 @@ let
     # fractal-next # matrix
     # tdesktop
     # microsoft-edge-dev
-    tor-browser-bundle-bin
+    tor-browser
     google-chrome
     zen-browser
     localsend
@@ -123,7 +123,8 @@ let
     # minder
     tsukimi
     materialgram
-    # nur.repos.xddxdd.wechat-uos-sandboxed
+    wechat
+    qq
 
     #ghostty
 

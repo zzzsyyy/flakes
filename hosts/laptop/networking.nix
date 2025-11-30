@@ -27,7 +27,7 @@
             "0.0.0.0/0"
             "::/0"
           ];
-          endpoint = "10.132.24.24:20243";
+          endpoint = "10.134.53.86:20243";
           persistentKeepalive = 25;
           publicKey = "eIbVZ6xaoA0gu7tuOV7IsC8UiE2pmhb1u62zD5Jh3mY=";
         }

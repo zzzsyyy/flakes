@@ -8,22 +8,22 @@
 {
   firefox-gnome-theme = {
     pname = "firefox-gnome-theme";
-    version = "b655eaf16d4cbec9c3472f62eee285d4b419a808";
+    version = "afd438034bf91089cfeb9e6b5cb987bdf5442d0f";
     src = fetchFromGitHub {
       owner = "rafaelmardojai";
       repo = "firefox-gnome-theme";
-      rev = "b655eaf16d4cbec9c3472f62eee285d4b419a808";
+      rev = "afd438034bf91089cfeb9e6b5cb987bdf5442d0f";
       fetchSubmodules = false;
-      sha256 = "sha256-UqYGTBgI5ypGh0Kf6zZjom/vABg7HQocB4gmxzl12uo=";
+      sha256 = "sha256-0E3TqvXAy81qeM/jZXWWOTZ14Hs1RT7o78UyZM+Jbr4=";
     };
-    date = "2025-08-24";
+    date = "2025-10-02";
   };
   iosevka-zt = {
     pname = "iosevka-zt";
-    version = "33.2.0";
+    version = "33.3.1";
     src = fetchurl {
-      url = "https://github.com/zzzsyyy/Iosevka/releases/download/v33.2.0/Iosevka-33.2.0.txz";
-      sha256 = "sha256-Mbaiz4Fz3zZibrjD0N1ce1mQENnj1ifFJUjbVXtlxk4=";
+      url = "https://github.com/zzzsyyy/Iosevka/releases/download/v33.3.1/Iosevka-33.3.1.txz";
+      sha256 = "sha256-1V1LboYyj5kmHWGep1oApbjxeoymbEL8tPwWGa5mJhs=";
     };
   };
   librime-lua = {
@@ -40,33 +40,33 @@
   };
   lxgw-wenkai-screen = {
     pname = "lxgw-wenkai-screen";
-    version = "v1.520";
+    version = "v1.521";
     src = fetchurl {
-      url = "https://github.com/lxgw/LxgwWenKai-Screen/releases/download/v1.520/LXGWWenKaiScreen.ttf";
-      sha256 = "sha256-AxTlH8AZBu66WNbjv45cAuFRrItUeElEvyorEkXKQe4=";
+      url = "https://github.com/lxgw/LxgwWenKai-Screen/releases/download/v1.521/LXGWWenKaiScreen.ttf";
+      sha256 = "sha256-7tqMMmIOmMHJHdGXrdD0glguDTJvx+vKYnPDda9OdBk=";
     };
   };
   plangothic = {
     pname = "plangothic";
-    version = "V2.9.5779";
+    version = "V2.9.5787";
     src = fetchFromGitHub {
       owner = "Fitzgerald-Porthmouth-Koenigsegg";
       repo = "Plangothic-Project";
-      rev = "V2.9.5779";
+      rev = "V2.9.5787";
       fetchSubmodules = false;
-      sha256 = "sha256-j2jA16ScXa2U7xKaI5Rrb/ywOzwY9zNg8aUG2jJWp1c=";
+      sha256 = "sha256-uVUg0ELH7qltv9COP6ePSKuVOMSjuSrteZA0ZwI30fc=";
     };
   };
   rime-ice = {
     pname = "rime-ice";
-    version = "b9befa0788e142e0841eb3f5bbb1ba60850ad5f1";
+    version = "4991dcbfffc1bc935b25af92e118eaf65f77b4e6";
     src = fetchFromGitHub {
       owner = "iDvel";
       repo = "rime-ice";
-      rev = "b9befa0788e142e0841eb3f5bbb1ba60850ad5f1";
+      rev = "4991dcbfffc1bc935b25af92e118eaf65f77b4e6";
       fetchSubmodules = false;
-      sha256 = "sha256-ma8Z6Ar4n2D//hsloZrOy7rnQT4mivvQckWAPz2p8GM=";
+      sha256 = "sha256-eWsHgcNHCFgkxKzEfwpala87M7wtNMa8T8U6tIKFisg=";
     };
-    date = "2025-08-29";
+    date = "2025-11-25";
   };
 }

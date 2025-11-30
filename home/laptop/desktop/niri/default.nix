@@ -3,26 +3,17 @@
   pkgs,
   ...
 }:
-let
-  idlehandler = pkgs.writeShellScriptBin "sway-idlehandler" ''
-    swayidle -w timeout 300 'swaylock --grace 70' before-sleep 'swaylock' timeout 360 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"'
-  '';
-in
 {
   home.packages = with pkgs; [
-    fuzzel
-    xsel
     hyprpaper
     wl-clipboard
-    idlehandler
-    swayidle
-    swaylock-effects
     swayosd
     wdisplays
-    clipse
     bluetui
     swaynotificationcenter
     better-control
+    nirius
+    vicinae
   ];
   xdg.enable = true;
   xdg.portal = with pkgs; {
@@ -44,6 +35,7 @@ in
     #style = builtins.readFile ./waybar/style.css;
     #settings = builtins.fromJSON (builtins.readFile ./waybar/config.jsonc);
   };
+
   xdg.configFile."waybar/config".source =
     config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/Documents/flakes/home/laptop/desktop/niri/waybar/config.jsonc";
   xdg.configFile."waybar/style.css".source =

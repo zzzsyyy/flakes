@@ -21,7 +21,6 @@
       settings.PermitRootLogin = lib.mkDefault "no";
     };
     speechd.enable = false;
-    printing.enable = true;
     fwupd.enable = true;
     power-profiles-daemon.enable = false;
     tlp = {
@@ -57,6 +56,15 @@
     };
     gvfs.enable = true;
     udisks2.enable = true;
+    printing = {
+      enable = true;
+      drivers = with pkgs; [
+        cups-filters
+        cups-browsed
+      ];
+      webInterface = true;
+    };
+
     # blueman.enable = true;
   };
 }

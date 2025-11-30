@@ -1,7 +1,7 @@
 {
     "firefox-gnome-theme": {
-        "cargoLocks": null,
-        "date": "2025-08-24",
+        "cargoLock": null,
+        "date": "2025-10-02",
         "extract": null,
         "name": "firefox-gnome-theme",
         "passthru": null,
@@ -13,15 +13,15 @@
             "name": null,
             "owner": "rafaelmardojai",
             "repo": "firefox-gnome-theme",
-            "rev": "b655eaf16d4cbec9c3472f62eee285d4b419a808",
-            "sha256": "sha256-UqYGTBgI5ypGh0Kf6zZjom/vABg7HQocB4gmxzl12uo=",
+            "rev": "afd438034bf91089cfeb9e6b5cb987bdf5442d0f",
+            "sha256": "sha256-0E3TqvXAy81qeM/jZXWWOTZ14Hs1RT7o78UyZM+Jbr4=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "b655eaf16d4cbec9c3472f62eee285d4b419a808"
+        "version": "afd438034bf91089cfeb9e6b5cb987bdf5442d0f"
     },
     "iosevka-zt": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": null,
         "extract": null,
         "name": "iosevka-zt",
@@ -29,14 +29,14 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-Mbaiz4Fz3zZibrjD0N1ce1mQENnj1ifFJUjbVXtlxk4=",
+            "sha256": "sha256-1V1LboYyj5kmHWGep1oApbjxeoymbEL8tPwWGa5mJhs=",
             "type": "url",
-            "url": "https://github.com/zzzsyyy/Iosevka/releases/download/v33.2.0/Iosevka-33.2.0.txz"
+            "url": "https://github.com/zzzsyyy/Iosevka/releases/download/v33.3.1/Iosevka-33.3.1.txz"
         },
-        "version": "33.2.0"
+        "version": "33.3.1"
     },
     "librime-lua": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": "2025-07-07",
         "extract": null,
         "name": "librime-lua",
@@ -57,7 +57,7 @@
         "version": "68f9c364a2d25a04c7d4794981d7c796b05ab627"
     },
     "lxgw-wenkai-screen": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": null,
         "extract": null,
         "name": "lxgw-wenkai-screen",
@@ -65,14 +65,14 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-AxTlH8AZBu66WNbjv45cAuFRrItUeElEvyorEkXKQe4=",
+            "sha256": "sha256-7tqMMmIOmMHJHdGXrdD0glguDTJvx+vKYnPDda9OdBk=",
             "type": "url",
-            "url": "https://github.com/lxgw/LxgwWenKai-Screen/releases/download/v1.520/LXGWWenKaiScreen.ttf"
+            "url": "https://github.com/lxgw/LxgwWenKai-Screen/releases/download/v1.521/LXGWWenKaiScreen.ttf"
         },
-        "version": "v1.520"
+        "version": "v1.521"
     },
     "plangothic": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": null,
         "extract": null,
         "name": "plangothic",
@@ -85,16 +85,16 @@
             "name": null,
             "owner": "Fitzgerald-Porthmouth-Koenigsegg",
             "repo": "Plangothic-Project",
-            "rev": "V2.9.5779",
-            "sha256": "sha256-j2jA16ScXa2U7xKaI5Rrb/ywOzwY9zNg8aUG2jJWp1c=",
+            "rev": "V2.9.5787",
+            "sha256": "sha256-uVUg0ELH7qltv9COP6ePSKuVOMSjuSrteZA0ZwI30fc=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "V2.9.5779"
+        "version": "V2.9.5787"
     },
     "rime-ice": {
-        "cargoLocks": null,
-        "date": "2025-08-29",
+        "cargoLock": null,
+        "date": "2025-11-25",
         "extract": null,
         "name": "rime-ice",
         "passthru": null,
@@ -106,11 +106,11 @@
             "name": null,
             "owner": "iDvel",
             "repo": "rime-ice",
-            "rev": "b9befa0788e142e0841eb3f5bbb1ba60850ad5f1",
-            "sha256": "sha256-ma8Z6Ar4n2D//hsloZrOy7rnQT4mivvQckWAPz2p8GM=",
+            "rev": "4991dcbfffc1bc935b25af92e118eaf65f77b4e6",
+            "sha256": "sha256-eWsHgcNHCFgkxKzEfwpala87M7wtNMa8T8U6tIKFisg=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "b9befa0788e142e0841eb3f5bbb1ba60850ad5f1"
+        "version": "4991dcbfffc1bc935b25af92e118eaf65f77b4e6"
     }
 }

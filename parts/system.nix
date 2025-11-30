@@ -13,6 +13,7 @@ let
     daeuniverse
     #ghostty
     # vaultix
+    vicinae
     zen-browser
     niri
     neovim-nightly-overlay
@@ -45,6 +46,7 @@ let
                   dae-unstable = daeuniverse.packages.${system}.dae-unstable;
                   zen-browser = zen-browser.packages."${system}".twilight;
                   nvfetcher-test = nvfetcher.packages.${system}.default;
+                  vicinae = vicinae.packages.${system}.default;
                   my = self.packages."${system}";
                 })
               ]

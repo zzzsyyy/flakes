@@ -13,7 +13,7 @@
     flake-parts.url = "github:hercules-ci/flake-parts";
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     daeuniverse.url = "github:daeuniverse/flake.nix";
-    infuse.url = "git+https://codeberg.org/amjoseph/infuse.nix.git";
+    infuse.url = "git+https://github.com/zzzsyyy/infuse.nix.git";
     infuse.flake = false;
 
     lanzaboote.url = "github:nix-community/lanzaboote";
@@ -31,6 +31,7 @@
     zen-browser.inputs.nixpkgs.follows = "nixpkgs";
 
     nur.url = "github:nix-community/NUR";
+    vicinae.url = "github:vicinaehq/vicinae";
     #stylix.url = "github:danth/stylix";
 
     pre-commit-hooks = {

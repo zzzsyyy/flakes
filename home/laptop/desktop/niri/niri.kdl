@@ -4,6 +4,8 @@ spawn-at-startup "hyprpaper"
 spawn-at-startup "swayosd-server"
 spawn-at-startup "clipse" "-listen"
 spawn-at-startup "swaync"
+spawn-at-startup "niriusd"
+spawn-sh-at-startup "vicinae server"
 
 prefer-no-csd
 
@@ -16,14 +18,14 @@ output "eDP-1" {
     mode "3072x1920@120.002"
     scale 2.0
     variable-refresh-rate
-    background-color "#003300"
     focus-at-startup
 }
 
 output "HDMI-A-1" {
     variable-refresh-rate
-    position x=0 y=960
-    focus-at-startup
+    position x=1536 y=0
+    mode "3840x2160@120.000"
+    scale 2.0
 }
 
 input {
@@ -52,6 +54,7 @@ layout {
     gaps 8
     center-focused-column "never"
     empty-workspace-above-first
+    background-color "transparent"
     preset-column-widths {
         proportion 0.33333
         proportion 0.5
@@ -75,7 +78,6 @@ layout {
         on
     }
     insert-hint {
-        // off
         color "#ffc87f80"
         gradient from="#ffbb6680" to="#ffc88080" angle=45 relative-to="workspace-view"
     }
@@ -85,12 +87,6 @@ layout {
         top 0
         bottom 0
     }
-}
-
-
-switch-events {
-    lid-close { spawn "notify-send" "The laptop lid is closed!"; }
-    lid-open { spawn "notify-send" "The laptop lid is open!"; }
 }
 
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
@@ -107,6 +103,17 @@ animations {
     }
 }
 
+layer-rule {
+    match namespace="^hyprpaper$"
+    place-within-backdrop true
+}
+
+overview {
+    workspace-shadow {
+        off
+    }
+}
+
 window-rule {
     default-column-width {}
     clip-to-geometry true
@@ -120,7 +127,23 @@ window-rule {
     match app-id=r#"MEGAsync"#
     match app-id=r#"^org\.gnome\.NautilusPreviewer$"#
     match app-id=r#"clipse"#
+    match app-id=r#"org.gnome.Loupe"#
     open-floating true
+}
+
+window-rule {
+    match app-id=r#"io.github.waylyrics.Waylyrics"#
+    open-floating true
+    focus-ring {
+        off
+    }
+     border {
+        off
+    }
+    shadow{
+        off
+    }
+    clip-to-geometry true
 }
 
 binds {
@@ -129,9 +152,10 @@ binds {
     Mod+Return repeat=false { spawn "kitty"; }
     Mod+K repeat=false hotkey-overlay-title="Quick Access Terminal" { spawn "kitten" "quick-access-terminal"; }
     Mod+E { spawn "nautilus" "-w"; }
-    Mod+R repeat=false { spawn "fuzzel"; }
+    Mod+R repeat=false { spawn "vicinae" "toggle"; }
     Mod+A repeat=false { toggle-overview; }
-    Mod+V repeat=false { spawn "kitty" "--class" "clipse" "-e" "clipse"; }
+    Mod+V repeat=false { spawn "vicinae" "vicinae://extensions/vicinae/clipboard/history"; }
+    Mod+P { spawn "nirius" "toggle-follow-mode"; }
 
     XF86AudioRaiseVolume { spawn "swayosd-client" "--output-volume" "raise"; }
     XF86AudioLowerVolume { spawn "swayosd-client" "--output-volume" "lower"; }
@@ -144,13 +168,15 @@ binds {
     Mod+Q  { close-window; }
 
     Mod+Tab { focus-column-right-or-first; }
-    Alt+Tab { focus-column-right-or-first; }
+    // Alt+Tab { focus-column-right-or-first; }
     Mod+Shift+Tab { focus-column-left-or-last; }
-    Alt+Shift+Tab { focus-column-left-or-last; }
+    // Alt+Shift+Tab { focus-column-left-or-last; }
 
     Mod+F {toggle-window-floating;}
     Mod+W { toggle-column-tabbed-display; }
-    Mod+L {spawn "swaylock" "--screenshots" "--clock" "--effect-blur" "10x7" "--fade-in" "0.2";}
+    Mod+L {spawn "gtklock" ; }
+    Mod+Escape { spawn "waybar" ; }
+    Mod+U { spawn "pkill" "waybar" ; }
 
     Mod+Left  { focus-column-left; }
     Mod+Right { focus-column-right; }
@@ -162,9 +188,6 @@ binds {
     Mod+End  { focus-column-last; }
     Mod+Shift+Home { move-column-to-first; }
     Mod+Shift+End  { move-column-to-last; }
-    Mod+Shift+C { spawn "sh" "-c" "xsel -ob | wl-copy"; }
-    Mod+Shift+V { spawn "sh" "-c" "wl-paste -n | xsel -ib"; }
-
 
     Mod+Down              { focus-workspace-down; }
     Mod+Up              { focus-workspace-up; }
@@ -218,4 +241,8 @@ binds {
     Mod+Shift+E { quit; }
 
     Mod+Shift+P { power-off-monitors; }
+}
+
+debug {
+    honor-xdg-activation-with-invalid-serial
 }

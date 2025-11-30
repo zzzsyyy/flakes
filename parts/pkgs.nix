@@ -31,9 +31,6 @@
         config.allowUnfree = true;
         config.allowInsecure = true;
       };
-      packages = allPkgs // {
-        mutter = pkgs.mutter;
-        gnome-shell = pkgs.gnome-shell;
-      };
+      packages = allPkgs // { };
     };
 }
