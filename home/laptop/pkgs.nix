@@ -26,16 +26,16 @@ let
     lua
     python3
     go
-    #julia
+    # julia
     nodejs
     pnpm
 
     git
     just
 
-    #coq
-    ghc
-    idris2
+    # coq
+    # ghc
+    # idris2
 
     typescript
     #haskellPackages.cabal-install
@@ -114,8 +114,8 @@ let
     zen-browser
     localsend
     # handbrake
-    netease-cloud-music-gtk
-    waylyrics
+    splayer
+    # waylyrics
     # jellyfin-media-player
     # wireshark
     # gaphor
@@ -124,6 +124,8 @@ let
     tsukimi
     materialgram
     wechat
+    antigravity
+    # kiro
     qq
 
     #ghostty

@@ -1,7 +1,9 @@
+{inputs, ...}:
+
 {
   flake = {
     hmModules = {
-      #@TODO
+      s = inputs.noctalia.homeModules.default;
     };
     nixosModules = {
       gnome-fix = import ../modules/nixos/gnome-fix.nix;

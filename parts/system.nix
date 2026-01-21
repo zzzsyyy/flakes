@@ -7,18 +7,16 @@ let
     nixpkgs
     preservation
     sops-nix
-    chaotic
+    nix-cachyos-kernel
     nixos-hardware
     nvfetcher
     daeuniverse
-    #ghostty
+    ucodenix
     # vaultix
-    vicinae
     zen-browser
     niri
     neovim-nightly-overlay
     nur
-    #stylix
     ;
 
   inherit (nixpkgs.lib) attrValues;
@@ -46,7 +44,6 @@ let
                   dae-unstable = daeuniverse.packages.${system}.dae-unstable;
                   zen-browser = zen-browser.packages."${system}".twilight;
                   nvfetcher-test = nvfetcher.packages.${system}.default;
-                  vicinae = vicinae.packages.${system}.default;
                   my = self.packages."${system}";
                 })
               ]
@@ -76,10 +73,9 @@ in
       modules = [
         preservation.nixosModules.default
         sops-nix.nixosModules.sops
-        chaotic.nixosModules.default
         daeuniverse.nixosModules.dae
         nur.modules.nixos.default
-        # stylix.nixosModules.stylix
+        ucodenix.nixosModules.default
         nixos-hardware.nixosModules.common-cpu-amd-pstate
         nixos-hardware.nixosModules.common-gpu-amd
       ];
@@ -88,6 +84,7 @@ in
         niri.overlays.niri
         nur.overlays.default
         neovim-nightly-overlay.overlays.default
+        nix-cachyos-kernel.overlays.pinned
       ];
     }
   );

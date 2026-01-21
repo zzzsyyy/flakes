@@ -18,8 +18,6 @@
     ./persist.nix
   ];
 
-  # stylix.enable = true;
-
   # userborn
   services.userborn.enable = true;
 
@@ -37,8 +35,7 @@
       efi.canTouchEfiVariables = true;
     };
     # kernelPackages = pkgs.linuxPackages_latest;
-    # kernelPackages = pkgs.linuxPackages_cachyos; # -gcc;
-    kernelPackages = pkgs.linuxPackages_cachyos.cachyOverride { mArch = "ZEN4"; };
+    kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest-lto-zen4;
 
     kernelParams = [
       "quiet"
@@ -68,7 +65,7 @@
 
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.permittedInsecurePackages = [
-    "ventoy-gtk3-1.1.07"
+    "ventoy-gtk3-1.1.10"
   ];
 
   environment.pathsToLink = [ "/share/fish" ];
@@ -84,7 +81,6 @@
     pkgs.squashfsTools
     pkgs.squashfuse
   ];
-  programs.adb.enable = true;
   programs.fuse.userAllowOther = true;
   services.flatpak.enable = true;
   security = {

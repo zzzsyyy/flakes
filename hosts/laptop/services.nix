@@ -10,6 +10,13 @@
     scx.enable = true;
     scx.scheduler = "scx_lavd";
 
+    ucodenix = {
+      enable = true;
+      cpuModelId = "00A70F52";
+    };
+
+    upower.enable = true;
+
     dbus.implementation = "broker"; # lock dbus impl to dbus-broker
     udev.extraRules = ''
       KERNEL=="hidraw*", SUBSYSTEM=="hidraw", MODE="0666", TAG+="uaccess", TAG+="udev-acl"

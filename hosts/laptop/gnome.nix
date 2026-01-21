@@ -83,6 +83,7 @@
         # dconf-editor
         poop
         comma
+        android-tools
       ]
     );
   };

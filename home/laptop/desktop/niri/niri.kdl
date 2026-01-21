@@ -1,11 +1,10 @@
-spawn-at-startup "waybar"
+spawn-at-startup "noctalia-shell"
 spawn-at-startup "fcitx5" "-d" "--replace"
-spawn-at-startup "hyprpaper"
-spawn-at-startup "swayosd-server"
+//spawn-at-startup "hyprpaper"
+// spawn-at-startup "swayosd-server"
 spawn-at-startup "clipse" "-listen"
-spawn-at-startup "swaync"
+//spawn-at-startup "swaync"
 spawn-at-startup "niriusd"
-spawn-sh-at-startup "vicinae server"
 
 prefer-no-csd
 
@@ -105,6 +104,8 @@ animations {
 
 layer-rule {
     match namespace="^hyprpaper$"
+    match namespace="^quickshell$"
+    match namespace="^noctalia-wallpaper"
     place-within-backdrop true
 }
 
@@ -152,25 +153,23 @@ binds {
     Mod+Return repeat=false { spawn "kitty"; }
     Mod+K repeat=false hotkey-overlay-title="Quick Access Terminal" { spawn "kitten" "quick-access-terminal"; }
     Mod+E { spawn "nautilus" "-w"; }
-    Mod+R repeat=false { spawn "vicinae" "toggle"; }
+    Mod+R repeat=false { spawn "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
     Mod+A repeat=false { toggle-overview; }
-    Mod+V repeat=false { spawn "vicinae" "vicinae://extensions/vicinae/clipboard/history"; }
+    Mod+V repeat=false { spawn "noctalia-shell" "ipc" "call" "launcher" "clipboard"; }
     Mod+P { spawn "nirius" "toggle-follow-mode"; }
 
-    XF86AudioRaiseVolume { spawn "swayosd-client" "--output-volume" "raise"; }
-    XF86AudioLowerVolume { spawn "swayosd-client" "--output-volume" "lower"; }
-    XF86AudioMute { spawn "swayosd-client" "--output-volume" "mute-toggle"; }
-    XF86MonBrightnessUp { spawn "swayosd-client" "--brightness" "raise"; }
-    XF86MonBrightnessDown { spawn "swayosd-client" "--brightness" "lower"; }
+    XF86AudioRaiseVolume { spawn "noctalia-shell" "ipc" "call" "volume" "increase"; }
+    XF86AudioLowerVolume { spawn "noctalia-shell" "ipc" "call" "volume" "decrease"; }
+    XF86AudioMute { spawn "noctalia-shell" "ipc" "call" "volume" "muteOutput"; }
+    XF86MonBrightnessUp { spawn "noctalia-shell" "ipc" "call" "brightness" "increase"; }
+    XF86MonBrightnessDown { spawn "noctalia-shell" "ipc" "call" "brightness" "decrease"; }
     XF86Assistant { spawn "kitty"; }
 
     Alt+F4 { close-window; }
     Mod+Q  { close-window; }
 
     Mod+Tab { focus-column-right-or-first; }
-    // Alt+Tab { focus-column-right-or-first; }
     Mod+Shift+Tab { focus-column-left-or-last; }
-    // Alt+Shift+Tab { focus-column-left-or-last; }
 
     Mod+F {toggle-window-floating;}
     Mod+W { toggle-column-tabbed-display; }
@@ -246,3 +245,5 @@ binds {
 debug {
     honor-xdg-activation-with-invalid-serial
 }
+
+include "./noctalia.kdl"

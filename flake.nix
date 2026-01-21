@@ -11,10 +11,12 @@
     sops-nix.url = "github:Mic92/sops-nix";
     preservation.url = "github:WilliButz/preservation";
     flake-parts.url = "github:hercules-ci/flake-parts";
-    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
+    nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
     daeuniverse.url = "github:daeuniverse/flake.nix";
     infuse.url = "git+https://github.com/zzzsyyy/infuse.nix.git";
     infuse.flake = false;
+    noctalia.url = "github:noctalia-dev/noctalia-shell";
+    noctalia.inputs.nixpkgs.follows = "nixpkgs";
 
     lanzaboote.url = "github:nix-community/lanzaboote";
     lanzaboote.inputs.nixpkgs.follows = "nixpkgs";
@@ -31,8 +33,7 @@
     zen-browser.inputs.nixpkgs.follows = "nixpkgs";
 
     nur.url = "github:nix-community/NUR";
-    vicinae.url = "github:vicinaehq/vicinae";
-    #stylix.url = "github:danth/stylix";
+    ucodenix.url = "github:e-tho/ucodenix";
 
     pre-commit-hooks = {
       url = "github:cachix/pre-commit-hooks.nix";

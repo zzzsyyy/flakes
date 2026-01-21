@@ -8,15 +8,15 @@
 {
   firefox-gnome-theme = {
     pname = "firefox-gnome-theme";
-    version = "afd438034bf91089cfeb9e6b5cb987bdf5442d0f";
+    version = "f7ffd917ac0d253dbd6a3bf3da06888f57c69f92";
     src = fetchFromGitHub {
       owner = "rafaelmardojai";
       repo = "firefox-gnome-theme";
-      rev = "afd438034bf91089cfeb9e6b5cb987bdf5442d0f";
+      rev = "f7ffd917ac0d253dbd6a3bf3da06888f57c69f92";
       fetchSubmodules = false;
-      sha256 = "sha256-0E3TqvXAy81qeM/jZXWWOTZ14Hs1RT7o78UyZM+Jbr4=";
+      sha256 = "sha256-1XPewtGMi+9wN9Ispoluxunw/RwozuTRVuuQOmxzt+A=";
     };
-    date = "2025-10-02";
+    date = "2025-12-04";
   };
   iosevka-zt = {
     pname = "iosevka-zt";
@@ -48,25 +48,25 @@
   };
   plangothic = {
     pname = "plangothic";
-    version = "V2.9.5787";
+    version = "V2.9.5792";
     src = fetchFromGitHub {
       owner = "Fitzgerald-Porthmouth-Koenigsegg";
       repo = "Plangothic-Project";
-      rev = "V2.9.5787";
+      rev = "V2.9.5792";
       fetchSubmodules = false;
-      sha256 = "sha256-uVUg0ELH7qltv9COP6ePSKuVOMSjuSrteZA0ZwI30fc=";
+      sha256 = "sha256-Ftm5ut34Tinqs3NKiGTNvZdm/wjjnPf+AHVinT/qb/o=";
     };
   };
   rime-ice = {
     pname = "rime-ice";
-    version = "4991dcbfffc1bc935b25af92e118eaf65f77b4e6";
+    version = "c02c83c9e91f3e081052441330df00667abc64a8";
     src = fetchFromGitHub {
       owner = "iDvel";
       repo = "rime-ice";
-      rev = "4991dcbfffc1bc935b25af92e118eaf65f77b4e6";
+      rev = "c02c83c9e91f3e081052441330df00667abc64a8";
       fetchSubmodules = false;
-      sha256 = "sha256-eWsHgcNHCFgkxKzEfwpala87M7wtNMa8T8U6tIKFisg=";
+      sha256 = "sha256-Qp1ALrmisXp2pr4Jz1ujvYYYP6c2rAPzsUeRAZQySoE=";
     };
-    date = "2025-11-25";
+    date = "2026-01-17";
   };
 }

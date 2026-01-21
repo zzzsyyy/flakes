@@ -21,7 +21,6 @@ in
       "video"
     ]
     ++ optional config.networking.networkmanager.enable "networkmanager"
-    ++ optional config.programs.adb.enable "adbusers"
     ++ optional config.virtualisation.libvirtd.enable "libvirtd"
     ++ optional config.security.tpm2.enable "tss";
   };
