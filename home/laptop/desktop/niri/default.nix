@@ -11,7 +11,6 @@
     nirius
     imagemagick
     gpu-screen-recorder
-    matugen
   ];
   xdg.enable = true;
   xdg.portal = with pkgs; {
@@ -35,6 +34,9 @@
   };
   programs.noctalia-shell = {
     enable = true;
+    package = pkgs.noctalia-shell.override {
+      calendarSupport = true;
+    };
   };
   xdg.configFile."waybar/config".source =
     config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/Documents/flakes/home/laptop/desktop/niri/waybar/config.jsonc";

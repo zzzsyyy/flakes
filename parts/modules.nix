@@ -1,12 +1,14 @@
-{inputs, ...}:
+{ lib, ... }:
 
+let
+  inherit (lib.my) importModules;
+in
 {
   flake = {
-    hmModules = {
-      s = inputs.noctalia.homeModules.default;
-    };
-    nixosModules = {
-      gnome-fix = import ../modules/nixos/gnome-fix.nix;
+    nixosModules = importModules ../modules/nixos;
+    homeModules = importModules ../modules/home;
+    vaultix = {
+      identity = "./secrets/key.txt";
     };
   };
 }

@@ -11,6 +11,21 @@
 
   infuse = (import inputs.infuse.outPath { inherit lib; }).v1.infuse;
 
+  # Auto-import all .nix files in a directory (excluding default.nix)
+  # excludes: list of filenames to exclude (e.g. ["external.nix"])
+  importModules =
+    dir:
+    let
+      files = if builtins.pathExists dir then builtins.readDir dir else { };
+      nixFiles = lib.filterAttrs (
+        name: type: type == "regular" && name != "default.nix" && lib.hasSuffix ".nix" name
+      ) files;
+    in
+    lib.mapAttrs' (name: _: {
+      name = lib.removeSuffix ".nix" name;
+      value = import (dir + "/${name}");
+    }) nixFiles;
+
   genPkgs =
     pkgs: sources: pkgPath: filterFn:
     let

@@ -1,8 +1,6 @@
 { config, pkgs, ... }:
 {
-  sops.secrets = {
-    "wg" = { };
-  };
+  vaultix.secrets.wg = { };
   networking = {
     useDHCP = false;
     firewall.enable = false;
@@ -32,7 +30,7 @@
           publicKey = "eIbVZ6xaoA0gu7tuOV7IsC8UiE2pmhb1u62zD5Jh3mY=";
         }
       ];
-      privateKeyFile = config.sops.secrets."wg".path;
+      privateKeyFile = config.vaultix.secrets.wg.path;
       #postUp = ''
       #  ip rule add fwmark 0x800/0x800 table 1145
       #  ip -6 rule add fwmark 0x800/0x800 table 1145

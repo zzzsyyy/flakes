@@ -47,7 +47,7 @@ in
       ];
       extraConfig = lib.strings.concatStrings [
         (builtins.readFile "${userJs}")
-        ''''
+        ""
       ];
     };
   };

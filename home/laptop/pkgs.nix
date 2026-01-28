@@ -2,7 +2,7 @@
 
 let
   nix-tools = with pkgs; [
-    nixfmt-rfc-style
+    nixfmt
     nix-index
     nix-tree
     nix-output-monitor
@@ -71,7 +71,7 @@ let
     ouch
     pdftk
     duf
-    nvfetcher-test
+    nvfetcher
     #steamguard-cli
     rclone
 

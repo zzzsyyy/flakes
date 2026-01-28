@@ -8,7 +8,6 @@
 
     home-manager.url = "github:nix-community/home-manager";
 
-    sops-nix.url = "github:Mic92/sops-nix";
     preservation.url = "github:WilliButz/preservation";
     flake-parts.url = "github:hercules-ci/flake-parts";
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
@@ -17,9 +16,7 @@
     infuse.flake = false;
     noctalia.url = "github:noctalia-dev/noctalia-shell";
     noctalia.inputs.nixpkgs.follows = "nixpkgs";
-
-    lanzaboote.url = "github:nix-community/lanzaboote";
-    lanzaboote.inputs.nixpkgs.follows = "nixpkgs";
+    vaultix.url = "github:milieuim/vaultix";
 
     nvfetcher.url = "github:berberman/nvfetcher";
     nvfetcher.inputs.nixpkgs.follows = "nixpkgs";
@@ -35,10 +32,8 @@
     nur.url = "github:nix-community/NUR";
     ucodenix.url = "github:e-tho/ucodenix";
 
-    pre-commit-hooks = {
-      url = "github:cachix/pre-commit-hooks.nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    pre-commit-hooks.url = "github:cachix/pre-commit-hooks.nix";
+    pre-commit-hooks.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
@@ -61,6 +56,7 @@
       {
         imports = [
           inputs.pre-commit-hooks.flakeModule
+          inputs.vaultix.flakeModules.default
         ]
         ++ import ./parts;
         systems = [ "x86_64-linux" ];

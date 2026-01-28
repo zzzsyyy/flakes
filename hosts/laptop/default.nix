@@ -13,7 +13,7 @@
     ./services.nix
     ./virt.nix
     ./networking.nix
-    ./sops.nix
+    ./vaultix.nix
     ./btrbk.nix
     ./persist.nix
   ];

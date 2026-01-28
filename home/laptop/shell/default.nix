@@ -47,7 +47,7 @@
       signing = {
         behavior = "own";
         backend = "ssh";
-        allowed-signers = toString (pkgs.writeText "allowed_signers" '''');
+        allowed-signers = toString (pkgs.writeText "allowed_signers" "");
         key = "~/.ssh/id_ed25519.pub";
       };
     };

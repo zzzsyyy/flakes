@@ -1,34 +1,23 @@
-{ self, inputs, ... }:
+{
+  self,
+  inputs,
+  withSystem,
+  ...
+}:
 let
-  username = "zzzsy";
-
-  inherit (inputs)
-    home-manager
-    nixpkgs
-    preservation
-    sops-nix
-    nix-cachyos-kernel
-    nixos-hardware
-    nvfetcher
-    daeuniverse
-    ucodenix
-    # vaultix
-    zen-browser
-    niri
-    neovim-nightly-overlay
-    nur
-    ;
-
-  inherit (nixpkgs.lib) attrValues;
   mkHost =
+    hostName:
     {
-      hostName,
-      system,
-      modules,
-      overlays ? [ nvfetcher.overlays.default ],
+      system ? "x86_64-linux",
+      modules ? [ ],
+      overlays ? builtins.attrValues self.overlays,
+      nixosModules ? builtins.attrValues self.nixosModules,
+      homeModules ? builtins.attrValues self.homeModules,
+      withHome ? true,
     }:
-    {
-      ${hostName} = nixpkgs.lib.nixosSystem {
+    withSystem system (
+      { ... }:
+      inputs.nixpkgs.lib.nixosSystem {
         inherit system;
 
         modules = [
@@ -36,56 +25,31 @@ let
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
-              sharedModules = attrValues self.hmModules;
+              sharedModules = homeModules;
+              extraSpecialArgs = { inherit inputs self; };
             };
-            nixpkgs = {
-              overlays = [
-                (final: prev: {
-                  dae-unstable = daeuniverse.packages.${system}.dae-unstable;
-                  zen-browser = zen-browser.packages."${system}".twilight;
-                  nvfetcher-test = nvfetcher.packages.${system}.default;
-                  my = self.packages."${system}";
-                })
-              ]
-              ++ overlays;
-            };
+            nixpkgs.overlays = overlays;
             networking.hostName = hostName;
           }
 
-          home-manager.nixosModules.home-manager
           ../hosts/common
           ../hosts/${hostName}
-          (import ../home username)
         ]
-        ++ (attrValues self.nixosModules)
+        ++ (if withHome then [ ../home ] else [ ])
+        ++ nixosModules
         ++ modules;
-        specialArgs = {
-          inherit inputs self;
-        };
-      };
-    };
+
+        specialArgs = { inherit inputs self; };
+      }
+    );
 in
 {
-  flake.nixosConfigurations = (
-    mkHost {
-      system = "x86_64-linux";
-      hostName = "laptop";
-      modules = [
-        preservation.nixosModules.default
-        sops-nix.nixosModules.sops
-        daeuniverse.nixosModules.dae
-        nur.modules.nixos.default
-        ucodenix.nixosModules.default
+  flake.nixosConfigurations = {
+    laptop = mkHost "laptop" {
+      modules = with inputs; [
         nixos-hardware.nixosModules.common-cpu-amd-pstate
         nixos-hardware.nixosModules.common-gpu-amd
       ];
-      overlays = [
-        self.overlays.default
-        niri.overlays.niri
-        nur.overlays.default
-        neovim-nightly-overlay.overlays.default
-        nix-cachyos-kernel.overlays.pinned
-      ];
-    }
-  );
+    };
+  };
 }

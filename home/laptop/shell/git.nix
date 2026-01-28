@@ -14,7 +14,7 @@
     settings = {
       gpg = {
         format = "ssh";
-        ssh.allowedSignersFile = toString (pkgs.writeText "allowed_signers" '''');
+        ssh.allowedSignersFile = toString (pkgs.writeText "allowed_signers" "");
       };
       merge.conflictStyle = "zdiff3";
       diff.algorithm = "histogram";

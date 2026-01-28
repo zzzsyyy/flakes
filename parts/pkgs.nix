@@ -5,6 +5,21 @@
   ...
 }:
 
+let
+  mkOverlay =
+    name:
+    let
+      path = ../overlays/${name};
+      overlay = import path;
+      args = builtins.functionArgs overlay;
+    in
+    if args ? infuse then
+      overlay { inherit (lib.my) infuse; }
+    else if args == { } then
+      overlay
+    else
+      overlay (lib.intersectAttrs args { inherit inputs self lib; });
+in
 {
   flake.overlays =
     ../overlays
@@ -13,7 +28,7 @@
     |> lib.filter (item: lib.strings.hasSuffix ".nix" item)
     |> map (name: {
       name = lib.strings.removeSuffix ".nix" name;
-      value = import ../overlays/${name} { inherit (lib.my) infuse; };
+      value = mkOverlay name;
     })
     |> builtins.listToAttrs;
 

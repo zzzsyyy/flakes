@@ -13,11 +13,11 @@
         '';
         packages = [ self'.formatter ];
       };
-      formatter = pkgs.nixfmt-rfc-style;
+      formatter = pkgs.nixfmt;
       pre-commit.settings.hooks = {
         nil.enable = true;
         actionlint.enable = true;
-        nixfmt-rfc-style.enable = true;
+        nixfmt.enable = true;
       };
       devShells.secret =
         with pkgs;

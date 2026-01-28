@@ -29,16 +29,7 @@
     };
     speechd.enable = false;
     fwupd.enable = true;
-    power-profiles-daemon.enable = false;
-    tlp = {
-      enable = true;
-      settings = {
-        CPU_SCALING_GOVERNOR_ON_AC = "performance";
-        CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
-        # START_CHARGE_THRESH_BAT0 = 85;
-        # STOP_CHARGE_THRESH_BAT0 = 90;
-      };
-    };
+    tuned.enable = true;
     pipewire = {
       enable = true;
       alsa.enable = true;
