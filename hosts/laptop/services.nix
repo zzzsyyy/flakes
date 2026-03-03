@@ -9,6 +9,7 @@
     # scx scheduler
     scx.enable = true;
     scx.scheduler = "scx_lavd";
+    scx.extraArgs = [ "--autopower" ];
 
     ucodenix = {
       enable = true;

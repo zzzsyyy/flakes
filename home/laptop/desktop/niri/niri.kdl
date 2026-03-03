@@ -174,8 +174,6 @@ binds {
     Mod+F {toggle-window-floating;}
     Mod+W { toggle-column-tabbed-display; }
     Mod+L {spawn "gtklock" ; }
-    Mod+Escape { spawn "waybar" ; }
-    Mod+U { spawn "pkill" "waybar" ; }
 
     Mod+Left  { focus-column-left; }
     Mod+Right { focus-column-right; }

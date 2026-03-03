@@ -20,7 +20,8 @@
     };
 
     shellAbbrs = {
-      gc1 = "git clone --depth=1 ";
+      gc1 = "git clone --depth=1";
+      rsy = "rsync -avz --partial --progress";
     };
     plugins = [
       {

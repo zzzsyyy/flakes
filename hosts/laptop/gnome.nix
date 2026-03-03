@@ -4,18 +4,20 @@
   imports = [ ];
   config = {
     services.xserver = {
-      enable = true;
+      enable = false;
       excludePackages = [ pkgs.xterm ];
-      desktopManager.xterm.enable = false;
     };
-    services.displayManager.gdm.enable = true;
-    services.desktopManager.gnome.enable = false;
+    services.displayManager.gdm = {
+      enable = true;
+      wayland = true;
+    };
+    services.displayManager.sessionPackages = [ pkgs.niri ];
     services.gnome = {
       core-apps.enable = false;
       gnome-online-accounts.enable = false;
-      gnome-browser-connector.enable = true;
       localsearch.enable = false;
       tinysparql.enable = false;
+      gnome-keyring.enable = true;
     };
     programs.kdeconnect = {
       enable = true;
@@ -46,13 +48,6 @@
         gtklock-powerbar-module
       ];
     };
-    environment.gnome.excludePackages = (
-      with pkgs;
-      [
-        gnome-tour
-        orca
-      ]
-    );
 
     xdg.terminal-exec = {
       enable = true;
@@ -75,7 +70,6 @@
         papers
         nautilus # file
         file-roller # archive
-        gnome-tweaks
         # refine
         gnome-disk-utility
         seahorse

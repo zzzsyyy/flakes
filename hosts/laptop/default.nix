@@ -45,6 +45,7 @@
       "pti=on"
       "loglevel=3"
       "udev.log_level=3"
+      "rcutree.enable_rcu_lazy=1"
     ];
     supportedFilesystems = [ "ntfs" ];
   };
@@ -66,6 +67,7 @@
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.permittedInsecurePackages = [
     "ventoy-gtk3-1.1.10"
+    "wechat-4.1.0.13"
   ];
 
   environment.pathsToLink = [ "/share/fish" ];
