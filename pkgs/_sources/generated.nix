@@ -8,22 +8,22 @@
 {
   firefox-gnome-theme = {
     pname = "firefox-gnome-theme";
-    version = "93011b4b88a93ffca3ad5d71b163ede327620d14";
+    version = "59464fcbe0ffbb15ef2114d4941c71b51005a585";
     src = fetchFromGitHub {
       owner = "rafaelmardojai";
       repo = "firefox-gnome-theme";
-      rev = "93011b4b88a93ffca3ad5d71b163ede327620d14";
+      rev = "59464fcbe0ffbb15ef2114d4941c71b51005a585";
       fetchSubmodules = false;
-      sha256 = "sha256-BT2dt/yaaXpYdwX9EzkG/MOnaB1MLbTzV2pU5vI20NU=";
+      sha256 = "sha256-QFY6Eu0kmaWl8W76bXs5K2BVtTh+Md+1rGba1WiTYxU=";
     };
-    date = "2026-02-15";
+    date = "2026-03-30";
   };
   iosevka-zt = {
     pname = "iosevka-zt";
-    version = "33.3.1";
+    version = "34.2.1";
     src = fetchurl {
-      url = "https://github.com/zzzsyyy/Iosevka/releases/download/v33.3.1/Iosevka-33.3.1.txz";
-      sha256 = "sha256-1V1LboYyj5kmHWGep1oApbjxeoymbEL8tPwWGa5mJhs=";
+      url = "https://github.com/zzzsyyy/Iosevka/releases/download/v34.2.1/Iosevka-34.2.1.txz";
+      sha256 = "sha256-MRkFUXcuME1vAWcJjS+uROqv96ioh3PCodWXZrW7nUY=";
     };
   };
   librime-lua = {
@@ -40,10 +40,10 @@
   };
   lxgw-wenkai-screen = {
     pname = "lxgw-wenkai-screen";
-    version = "v1.521";
+    version = "v1.522";
     src = fetchurl {
-      url = "https://github.com/lxgw/LxgwWenKai-Screen/releases/download/v1.521/LXGWWenKaiScreen.ttf";
-      sha256 = "sha256-7tqMMmIOmMHJHdGXrdD0glguDTJvx+vKYnPDda9OdBk=";
+      url = "https://github.com/lxgw/LxgwWenKai-Screen/releases/download/v1.522/LXGWWenKaiScreen.ttf";
+      sha256 = "sha256-zRpvo5xOpC/Y9OKJlFeJsOUQz3AWQ1ZA+Ik82tmyIPM=";
     };
   };
   plangothic = {
@@ -59,14 +59,14 @@
   };
   rime-ice = {
     pname = "rime-ice";
-    version = "7d9415cc2085a1a33ff25682c8a8fbf7ba2eac32";
+    version = "48789c26d9dd809329d57065baabc0053009f540";
     src = fetchFromGitHub {
       owner = "iDvel";
       repo = "rime-ice";
-      rev = "7d9415cc2085a1a33ff25682c8a8fbf7ba2eac32";
+      rev = "48789c26d9dd809329d57065baabc0053009f540";
       fetchSubmodules = false;
-      sha256 = "sha256-u4KYZaaXDayPHa+TuMKoYoVEmOJm1egonAje+NF65aM=";
+      sha256 = "sha256-JIctv6ShqlEe/tfk2afHvquVxuaqqU0Z+Ejd5naubag=";
     };
-    date = "2026-02-26";
+    date = "2026-03-31";
   };
 }
