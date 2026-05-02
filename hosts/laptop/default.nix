@@ -66,7 +66,7 @@
 
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.permittedInsecurePackages = [
-    "ventoy-gtk3-1.1.10"
+    "ventoy-gtk3-1.1.12"
     "wechat-4.1.0.13"
   ];
 
@@ -102,5 +102,5 @@
 
   documentation.nixos.enable = false;
 
-  system.stateVersion = "25.05";
+  system.stateVersion = "26.05";
 }

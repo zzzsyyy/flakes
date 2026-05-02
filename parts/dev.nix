@@ -3,7 +3,6 @@
     {
       config,
       pkgs,
-      self',
       ...
     }:
     {
@@ -11,14 +10,20 @@
         shellHook = ''
           ${config.pre-commit.installationScript}
         '';
-        packages = [ self'.formatter ];
+        packages = with pkgs; [
+          just
+          nix-output-monitor
+          dix
+          nixfmt
+          nixd
+        ];
       };
-      formatter = pkgs.nixfmt;
       pre-commit.settings.hooks = {
         nil.enable = true;
         actionlint.enable = true;
         nixfmt.enable = true;
       };
+
       devShells.secret =
         with pkgs;
         mkShell {

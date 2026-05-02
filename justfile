@@ -19,12 +19,20 @@ fmt:
     nixpkgs-fmt ./
 
 switch host="laptop":
-    nh os switch . --ask
-    # sudo nixos-rebuild switch --flake .#{{ host }} -L
+    #!/usr/bin/env bash
+    set -e
+    nix build --log-format internal-json -v -f default.nix nixosConfigurations.{{ host }}.config.system.build.toplevel |& nom --json
+    dix /run/current-system result
+    read -p "Apply and switch? (y/N): " -n 1 -r confirm
+    echo
 
-test host="laptop":
-    nh os test . --ask
-    # sudo nixos-rebuild test --flake .#{{ host }} -L
+    if [[ "$confirm" =~ ^[Yy]$ ]]; then
+        echo "🔄 Switching..."
+        sudo ./result/bin/switch-to-configuration switch
+        echo "✅ Successfully switched."
+    else
+        echo "❌ Canceled."
+    fi
 
 gc:
     sudo nix-collect-garbage --delete-older-than 5d

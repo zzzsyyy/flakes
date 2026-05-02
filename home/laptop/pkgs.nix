@@ -5,8 +5,6 @@ let
     nixfmt
     nix-index
     nix-tree
-    nix-output-monitor
-    nh
     nil
     nixd
     package-version-server
@@ -29,6 +27,7 @@ let
     # julia
     nodejs
     pnpm
+    bun
 
     git
     just
@@ -124,8 +123,8 @@ let
     tsukimi
     materialgram
     wechat
-    antigravity
-    # kiro
+    # antigravity
+
     qq
 
     #ghostty

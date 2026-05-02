@@ -11,7 +11,7 @@
       enable = true;
       wayland = true;
     };
-    services.displayManager.sessionPackages = [ pkgs.niri ];
+    services.displayManager.sessionPackages = [ pkgs.niri-unstable ];
     services.gnome = {
       core-apps.enable = false;
       gnome-online-accounts.enable = false;

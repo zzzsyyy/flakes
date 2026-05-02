@@ -11,12 +11,14 @@
         "cgroups"
         "pipe-operator"
       ];
+      extra-deprecated-features = [
+        "broken-string-escape"
+        "or-as-identifier"
+      ];
       auto-optimise-store = true;
       use-xdg-base-directories = true;
       auto-allocate-uids = true;
       use-cgroups = true;
-      # max-jobs = 1;
-      # cores = 2;
       substituters = [
         "https://attic.xuyh0120.win/lantian"
         "https://cache.garnix.io"

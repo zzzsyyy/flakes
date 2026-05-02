@@ -34,6 +34,10 @@
 
     pre-commit-hooks.url = "github:cachix/pre-commit-hooks.nix";
     pre-commit-hooks.inputs.nixpkgs.follows = "nixpkgs";
+
+    flake-compat.url = "https://git.lix.systems/lix-project/flake-compat/archive/main.tar.gz";
+    flake-compat.flake = false;
+
   };
 
   outputs =
@@ -54,6 +58,7 @@
         specialArgs.lib = lib;
       }
       {
+        debug = true;
         imports = [
           inputs.pre-commit-hooks.flakeModule
           inputs.vaultix.flakeModules.default
