@@ -1,7 +1,10 @@
-{ source, stdenvNoCC }:
+{
+  source,
+  stdenvNoCC,
+}:
 
 stdenvNoCC.mkDerivation {
-  inherit (source) pname version src;
+  inherit (source) pname src version;
 
   sourceRoot = ".";
 

@@ -1,11 +1,12 @@
-{ inputs, self }:
+{ inputs, lib }:
 final: prev:
 let
   system = final.stdenv.hostPlatform.system;
+  sources = final.callPackage ../pkgs/_sources/generated.nix { };
+  my = lib.my.importPackages final sources ../pkgs;
 in
 {
-  dae-unstable = inputs.daeuniverse.packages.${system}.dae-unstable;
   zen-browser = inputs.zen-browser.packages.${system}.twilight;
   noctalia-shell = inputs.noctalia.packages.${system}.default;
-  my = self.packages.${system};
+  inherit my;
 }

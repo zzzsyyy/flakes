@@ -28,7 +28,9 @@ switch host="laptop":
 
     if [[ "$confirm" =~ ^[Yy]$ ]]; then
         echo "🔄 Switching..."
+        sudo nix-env -p /nix/var/nix/profiles/system --set $(readlink result)
         sudo ./result/bin/switch-to-configuration switch
+        unlink result
         echo "✅ Successfully switched."
     else
         echo "❌ Canceled."

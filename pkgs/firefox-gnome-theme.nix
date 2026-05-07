@@ -1,12 +1,12 @@
 {
-  source,
   lib,
+  source,
   stdenvNoCC,
 }:
 
-stdenvNoCC.mkDerivation rec {
+stdenvNoCC.mkDerivation (finalAttrs: {
   inherit (source) pname src date;
-  version = "unstable-${date}";
+  version = "unstable-${finalAttrs.date}";
 
   dontConfigure = true;
   dontBuild = true;
@@ -22,4 +22,4 @@ stdenvNoCC.mkDerivation rec {
     homepage = "https://github.com/rafaelmardojai/firefox-gnome-theme";
     license = licenses.unlicense;
   };
-}
+})

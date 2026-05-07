@@ -12,10 +12,10 @@
       nerd-fonts.symbols-only
       maple-mono.truetype-autohint
       wqy_zenhei
-      my.lxgw-wenkai-screen
-      my.plangothic
-      my.my-fonts
-      my.iosevka-zt
+      my.fonts.lxgw-wenkai-screen
+      my.fonts.plangothic
+      my.fonts.my-fonts
+      my.fonts.iosevka-zt
     ];
 
     fontconfig = {

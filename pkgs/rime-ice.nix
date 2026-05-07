@@ -1,13 +1,13 @@
 {
-  source,
   lib,
+  source,
   stdenvNoCC,
   enableUnihan ? false,
 }:
 
-stdenvNoCC.mkDerivation rec {
+stdenvNoCC.mkDerivation (finalAttrs: {
   inherit (source) pname src date;
-  version = "unstable-${date}";
+  version = "unstable-${finalAttrs.date}";
 
   installPhase = ''
     mkdir -p $out/share/rime-data
@@ -28,4 +28,4 @@ stdenvNoCC.mkDerivation rec {
     homepage = "https://github.com/iDvel/rime-ice";
     license = licenses.gpl3Plus;
   };
-}
+})

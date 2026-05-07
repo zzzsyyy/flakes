@@ -26,18 +26,6 @@
       sha256 = "sha256-MRkFUXcuME1vAWcJjS+uROqv96ioh3PCodWXZrW7nUY=";
     };
   };
-  librime-lua = {
-    pname = "librime-lua";
-    version = "68f9c364a2d25a04c7d4794981d7c796b05ab627";
-    src = fetchFromGitHub {
-      owner = "hchunhui";
-      repo = "librime-lua";
-      rev = "68f9c364a2d25a04c7d4794981d7c796b05ab627";
-      fetchSubmodules = false;
-      sha256 = "sha256-m7/qXdIlMMHscDDcFmusNuOR0cuzPpDQdprqRci8qZw=";
-    };
-    date = "2025-07-07";
-  };
   lxgw-wenkai-screen = {
     pname = "lxgw-wenkai-screen";
     version = "v1.522";
@@ -59,14 +47,14 @@
   };
   rime-ice = {
     pname = "rime-ice";
-    version = "2bd2983c6c74ea49b3a013f150ade7f3b8a27515";
+    version = "5f130b4fbc9a228dea9c9ad25597d4bab284ee1d";
     src = fetchFromGitHub {
       owner = "iDvel";
       repo = "rime-ice";
-      rev = "2bd2983c6c74ea49b3a013f150ade7f3b8a27515";
+      rev = "5f130b4fbc9a228dea9c9ad25597d4bab284ee1d";
       fetchSubmodules = false;
-      sha256 = "sha256-VRMaa5WY7nqIFI6x3lA2PoEFwdUBPGGOl3k4ThSz4RE=";
+      sha256 = "sha256-eKHGJ8oioBncKntA8kuDuH6qXFfMHFwXJuUBlkCLn4w=";
     };
-    date = "2026-04-14";
+    date = "2026-05-06";
   };
 }

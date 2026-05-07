@@ -4,11 +4,14 @@
   networking = {
     useDHCP = false;
     firewall.enable = false;
+    wireless.iwd.enable = true;
+    usePredictableInterfaceNames = false;
     networkmanager.enable = true;
+    networkmanager.wifi.backend = "iwd";
   };
   services.dae = {
     enable = true;
-    package = pkgs.dae-unstable;
+    package = pkgs.my.dae;
     configFile = "/home/zzzsy/.config/dae/config.dae";
   };
   networking.wg-quick.interfaces = {

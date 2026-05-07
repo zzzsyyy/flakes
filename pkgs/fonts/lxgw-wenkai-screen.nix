@@ -1,13 +1,13 @@
 {
-  source,
   lib,
+  source,
   stdenvNoCC,
   useGB ? false,
 }:
 
 stdenvNoCC.mkDerivation {
   inherit (source) pname src;
-  version = lib.strings.removePrefix "v" source.version;
+  version = lib.removePrefix "v" source.version;
 
   sourceRoot = ".";
 

@@ -1,12 +1,12 @@
 {
-  source,
   lib,
+  source,
   stdenvNoCC,
 }:
 
 stdenvNoCC.mkDerivation {
   inherit (source) pname src;
-  version = lib.strings.removePrefix "V" source.version;
+  version = lib.removePrefix "V" source.version;
 
   installPhase = ''
     mkdir -p $out/share/fonts/truetype

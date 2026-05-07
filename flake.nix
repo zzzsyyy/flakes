@@ -11,7 +11,6 @@
     preservation.url = "github:WilliButz/preservation";
     flake-parts.url = "github:hercules-ci/flake-parts";
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
-    daeuniverse.url = "github:daeuniverse/flake.nix";
     infuse.url = "git+https://github.com/zzzsyyy/infuse.nix.git";
     infuse.flake = false;
     noctalia.url = "github:noctalia-dev/noctalia-shell";
@@ -23,13 +22,14 @@
 
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
 
+    llm-agents.url = "github:numtide/llm-agents.nix";
+
     niri.url = "github:sodiboo/niri-flake";
     niri.inputs.nixpkgs.follows = "nixpkgs";
 
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     zen-browser.inputs.nixpkgs.follows = "nixpkgs";
 
-    nur.url = "github:nix-community/NUR";
     ucodenix.url = "github:e-tho/ucodenix";
 
     pre-commit-hooks.url = "github:cachix/pre-commit-hooks.nix";
@@ -44,10 +44,10 @@
     inputs@{ self, flake-parts, ... }:
     let
       lib = inputs.nixpkgs.lib.extend (
-        self: super: {
+        final: prev: {
           my = import ./lib {
-            inherit inputs;
-            lib = self;
+            inherit inputs self;
+            lib = final;
           };
         }
       );

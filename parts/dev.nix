@@ -16,6 +16,7 @@
           dix
           nixfmt
           nixd
+          nix-update
         ];
       };
       pre-commit.settings.hooks = {

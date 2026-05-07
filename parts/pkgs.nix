@@ -5,39 +5,14 @@
   ...
 }:
 
-let
-  mkOverlay =
-    name:
-    let
-      path = ../overlays/${name};
-      overlay = import path;
-      args = builtins.functionArgs overlay;
-    in
-    if args ? infuse then
-      overlay { inherit (lib.my) infuse; }
-    else if args == { } then
-      overlay
-    else
-      overlay (lib.intersectAttrs args { inherit inputs self lib; });
-in
 {
-  flake.overlays =
-    ../overlays
-    |> builtins.readDir
-    |> builtins.attrNames
-    |> lib.filter (item: lib.strings.hasSuffix ".nix" item)
-    |> map (name: {
-      name = lib.strings.removeSuffix ".nix" name;
-      value = mkOverlay name;
-    })
-    |> builtins.listToAttrs;
+  flake.overlays = lib.my.importOverlays ../overlays;
 
   perSystem =
     { pkgs, system, ... }:
     let
-      # nur = import ./nur.nix { inherit pkgs lib; };
       sources = pkgs.callPackage ../pkgs/_sources/generated.nix { };
-      allPkgs = lib.my.genPkgs pkgs sources ../pkgs (k: true);
+      allPkgs = lib.my.importPackages pkgs sources ../pkgs;
       overlays = builtins.attrValues self.overlays;
     in
     {
@@ -46,6 +21,7 @@ in
         config.allowUnfree = true;
         config.allowInsecure = true;
       };
-      packages = allPkgs // { };
+      packages = lib.my.flattenPkgs "/" allPkgs // { };
+      legacyPackages = allPkgs;
     };
 }

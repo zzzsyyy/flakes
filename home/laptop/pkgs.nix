@@ -45,6 +45,7 @@ let
     bat
     hyfetch
     yazi
+    mosh
 
     uutils-coreutils-noprefix
 
@@ -124,9 +125,8 @@ let
     materialgram
     wechat
     # antigravity
-
+    llm-agents.codex
     qq
-
     #ghostty
 
     deluge-gtk
