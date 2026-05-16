@@ -14,7 +14,7 @@
           just
           nix-output-monitor
           dix
-          nixfmt
+          nixfmt-rs
           nixd
           nix-update
         ];
@@ -22,7 +22,8 @@
       pre-commit.settings.hooks = {
         nil.enable = true;
         actionlint.enable = true;
-        nixfmt.enable = true;
+        nixfmt-rfc-style.enable = true;
+        nixfmt-rfc-style.package = pkgs.nixfmt-rs;
       };
 
       devShells.secret =

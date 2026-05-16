@@ -1,7 +1,22 @@
 {
   pkgs,
+  inputs,
   ...
 }:
+
+let
+  kernel = pkgs.cachyosKernels.linux-cachyos-rc.override {
+    lto = "thin";
+    processorOpt = "zen4";
+    bbr3 = true; # TCP congestion control
+    acpiCall = true;
+  };
+  kernelPackagesWithLTOFix =
+    let
+      helpers = pkgs.callPackage "${inputs.nix-cachyos-kernel.outPath}/helpers.nix" { };
+    in
+    helpers.kernelModuleLLVMOverride (pkgs.linuxKernel.packagesFor kernel);
+in
 
 {
   imports = [
@@ -35,10 +50,14 @@
       efi.canTouchEfiVariables = true;
     };
     # kernelPackages = pkgs.linuxPackages_latest;
-    kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest-lto-zen4;
+    #kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest-lto-zen4;
+    kernelPackages = kernelPackagesWithLTOFix;
 
     kernelParams = [
+      "splash"
       "quiet"
+      "nowatchdog"
+      "audit=0"
       "amd_pstate=active"
       "amd_iommu=on"
       "iommu=pt"
@@ -47,7 +66,6 @@
       "udev.log_level=3"
       "rcutree.enable_rcu_lazy=1"
     ];
-    supportedFilesystems = [ "ntfs" ];
   };
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
@@ -82,6 +100,7 @@
     pkgs.perf
     pkgs.squashfsTools
     pkgs.squashfuse
+    pkgs.openvpn3
   ];
   programs.fuse.userAllowOther = true;
   services.flatpak.enable = true;
@@ -89,6 +108,7 @@
     rtkit.enable = true;
     sudo.enable = false;
     sudo-rs.enable = true;
+    sudo-rs.wheelNeedsPassword = false;
   };
 
   systemd.services.nix-daemon = {

@@ -1,22 +1,18 @@
 { pkgs, ... }:
 
 {
-  imports = [ ];
   config = {
     services.xserver = {
       enable = false;
       excludePackages = [ pkgs.xterm ];
     };
-    services.displayManager.gdm = {
-      enable = true;
-      wayland = true;
+    services.displayManager = {
+      defaultSession = "niri";
+      gdm.enable = false;
+      ly.enable = true;
+      ly.x11Support = false;
     };
-    services.displayManager.sessionPackages = [ pkgs.niri-unstable ];
     services.gnome = {
-      core-apps.enable = false;
-      gnome-online-accounts.enable = false;
-      localsearch.enable = false;
-      tinysparql.enable = false;
       gnome-keyring.enable = true;
     };
     programs.kdeconnect = {
@@ -57,8 +53,6 @@
     };
 
     programs.dconf.enable = true;
-    # fix nautilus extensions deu to `core-utilities.enable = false`
-    mods.gnome-fix.enable = true;
     environment.systemPackages = (
       with pkgs;
       [

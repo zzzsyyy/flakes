@@ -132,6 +132,28 @@ window-rule {
     open-floating true
 }
 
+/-window-rule {
+    match app-id=r#"dev\.zed\.Zed"#
+    block-out-from "screencast"
+    open-floating true
+    input-pass-through false
+    open-focused false
+    focusable false
+    shadow{
+        off
+    }
+    focus-ring {
+        off
+    }
+     border {
+        off
+    }
+    opacity 0.55
+}
+/-screenshot-notification{
+  off
+}
+
 window-rule {
     match app-id=r#"io.github.waylyrics.Waylyrics"#
     open-floating true

@@ -4,5 +4,6 @@
 {
   imports = [
     inputs.noctalia.homeModules.default
+    inputs.direnv-instant.homeModules.direnv-instant
   ];
 }

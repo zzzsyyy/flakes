@@ -11,12 +11,21 @@
     scx.scheduler = "scx_lavd";
     scx.extraArgs = [ "--autopower" ];
 
-    ucodenix = {
-      enable = true;
-      cpuModelId = "00A70F52";
-    };
-
     upower.enable = true;
+
+    fast-nix-gc = {
+      enable = true;
+      automatic = true;
+      dates = "weekly";
+      deleteOlderThan = "30d";
+      ensureFree = "150G";
+      keepRecent = "3d";
+    };
+    fast-nix-optimise = {
+      enable = true;
+      automatic = true;
+      dates = "weekly";
+    };
 
     dbus.implementation = "broker"; # lock dbus impl to dbus-broker
     udev.extraRules = ''
@@ -54,7 +63,24 @@
       enable = true;
     };
     gvfs.enable = true;
-    udisks2.enable = true;
+    udisks2 = {
+      enable = true;
+      mountOnMedia = true;
+      settings = {
+        "udisks2.conf" = {
+          defaults = {
+            encryption = "luks2";
+            ntfs_driver = "ntfs";
+          };
+          udisks2 = {
+            modules = [
+              "*"
+            ];
+            modules_load_preference = "ondemand";
+          };
+        };
+      };
+    };
     printing = {
       enable = true;
       drivers = with pkgs; [

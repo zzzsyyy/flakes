@@ -1,21 +1,14 @@
 {
   lib,
   clang,
-  fetchFromGitHub,
   buildGoLatestModule,
+  source,
 }:
 
 buildGoLatestModule (finalAttrs: {
-  pname = "dae";
-  version = "2.0.0rc1-unstable-2026-05-06";
+  inherit (source) pname date src;
 
-  src = fetchFromGitHub {
-    owner = "daeuniverse";
-    repo = "dae";
-    rev = "c7e02968f8baa425798b05dd4ab4142e3c20f568";
-    hash = "sha256-61yNOhRPSH5+Y4Y7G1hi3OHxkTBa4FpaA5JRUYIQETE=";
-    fetchSubmodules = true;
-  };
+  version = "unstable-${finalAttrs.date}";
 
   vendorHash = "sha256-Bf2OgF3+dOC2LiD/2Y+g+tfc07ZctdRH/BAUO23fX6k=";
 

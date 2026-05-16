@@ -91,12 +91,17 @@ let
     typora
     # todesk
     texlive.combined.scheme-full
-    asciidoc-full
+    #asciidoc-full
     # ghex
     # ida-free
     megasync
     filen-cli
     filen-desktop
+    feishu
+    xournalpp
+    remmina
+    freerdp
+    filezilla
     #handbrake
     #scilab-bin
     #feishu

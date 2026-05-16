@@ -8,6 +8,9 @@
     usePredictableInterfaceNames = false;
     networkmanager.enable = true;
     networkmanager.wifi.backend = "iwd";
+    networkmanager.plugins = with pkgs; [
+      networkmanager-openvpn
+    ];
   };
   services.dae = {
     enable = true;
@@ -48,4 +51,6 @@
     enable = true;
     joinNetworks = [ "0cccb752f79f6de5" ];
   };
+  programs.openvpn3.enable = true;
+  services.resolved.enable = true;
 }

@@ -15,7 +15,7 @@
         "broken-string-escape"
         "or-as-identifier"
       ];
-      auto-optimise-store = true;
+      # auto-optimise-store = true;
       use-xdg-base-directories = true;
       auto-allocate-uids = true;
       use-cgroups = true;
@@ -32,10 +32,10 @@
         "niks3.numtide.com-1:DTx8wZduET09hRmMtKdQDxNNthLQETkc/yaX7M4qK0g="
       ];
     };
-    gc = {
-      automatic = true;
-      options = "--delete-older-than 3d";
-      dates = "Sun 14:00";
-    };
+    # gc = {
+    #   automatic = true;
+    #   options = "--delete-older-than 3d";
+    #   dates = "Sun 14:00";
+    # };
   };
 }

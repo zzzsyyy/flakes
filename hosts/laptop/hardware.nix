@@ -1,7 +1,6 @@
 {
   lib,
   config,
-  modulesPath,
   pkgs,
   ...
 }:
@@ -25,8 +24,7 @@ let
 in
 
 {
-  imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
-
+  system.fsPackages = [ pkgs.ntfsprogs-plus ];
   boot.initrd.availableKernelModules = [
     "nvme"
     "xhci_pci"
@@ -43,7 +41,9 @@ in
     "squashfs"
     "kvm-amd"
     "iwlwifi"
+    "ntfs"
   ];
+  boot.blacklistedKernelModules = [ "ntfs3" ];
 
   # for obs virtual camera
   boot.extraModulePackages = with config.boot.kernelPackages; [
@@ -81,14 +81,14 @@ in
   swapDevices = [
     {
       device = "/swap/swapfile";
-      size = 24 * 1024;
+      size = 32 * 1024;
     }
   ];
 
-  boot.resumeDevice = "/dev/disk/by-partlabel/NixOS";
+  boot.resumeDevice = "/dev/disk/by-uuid/7143cc39-c607-486f-866d-a703efd5d956";
   boot.kernelParams = [
     "mem_sleep_default=deep"
-    "resume_offset=24927051"
+    "resume_offset=25452631" # sudo btrfs inspect-internal map-swapfile -r /swap/swapfile
   ];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
@@ -105,7 +105,7 @@ in
     enableRedistributableFirmware = true;
     cpu.amd.updateMicrocode = true;
   };
-  security.tpm2.enable = true;
-  security.tpm2.pkcs11.enable = true; # expose /run/current-system/sw/lib/libtpm2_pkcs11.so
-  security.tpm2.tctiEnvironment.enable = true; # TPM2TOOLS_TCTI and TPM2_PKCS11_TCTI env variables
+  #security.tpm2.enable = true;
+  #security.tpm2.pkcs11.enable = true; # expose /run/current-system/sw/lib/libtpm2_pkcs11.so
+  #security.tpm2.tctiEnvironment.enable = true; # TPM2TOOLS_TCTI and TPM2_PKCS11_TCTI env variables
 }

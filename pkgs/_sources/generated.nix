@@ -6,17 +6,29 @@
   dockerTools,
 }:
 {
+  dae = {
+    pname = "dae";
+    version = "c7e02968f8baa425798b05dd4ab4142e3c20f568";
+    src = fetchFromGitHub {
+      owner = "daeuniverse";
+      repo = "dae";
+      rev = "c7e02968f8baa425798b05dd4ab4142e3c20f568";
+      fetchSubmodules = true;
+      sha256 = "sha256-61yNOhRPSH5+Y4Y7G1hi3OHxkTBa4FpaA5JRUYIQETE=";
+    };
+    date = "2026-05-06";
+  };
   firefox-gnome-theme = {
     pname = "firefox-gnome-theme";
-    version = "0f8ba203d475587f477e7ae12661bd8459e225b7";
+    version = "7f81880cdb6278703221d26a25aefed9561c8904";
     src = fetchFromGitHub {
       owner = "rafaelmardojai";
       repo = "firefox-gnome-theme";
-      rev = "0f8ba203d475587f477e7ae12661bd8459e225b7";
+      rev = "7f81880cdb6278703221d26a25aefed9561c8904";
       fetchSubmodules = false;
-      sha256 = "sha256-r0gN2brVWA351zwMV0Flmlcd6SGMvYqFbvC3DfKFM8Y=";
+      sha256 = "sha256-ci4vHnWYfLEwImOmhHkLwuToebVi76O+7C0zCxUIzUw=";
     };
-    date = "2026-04-13";
+    date = "2026-05-08";
   };
   iosevka-zt = {
     pname = "iosevka-zt";

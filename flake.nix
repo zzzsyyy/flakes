@@ -10,12 +10,15 @@
 
     preservation.url = "github:WilliButz/preservation";
     flake-parts.url = "github:hercules-ci/flake-parts";
+
+    fast-nix-gc.url = "github:Mic92/fast-nix-gc";
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
     infuse.url = "git+https://github.com/zzzsyyy/infuse.nix.git";
     infuse.flake = false;
     noctalia.url = "github:noctalia-dev/noctalia-shell";
     noctalia.inputs.nixpkgs.follows = "nixpkgs";
     vaultix.url = "github:milieuim/vaultix";
+    direnv-instant.url = "github:Mic92/direnv-instant";
 
     nvfetcher.url = "github:berberman/nvfetcher";
     nvfetcher.inputs.nixpkgs.follows = "nixpkgs";
@@ -24,13 +27,8 @@
 
     llm-agents.url = "github:numtide/llm-agents.nix";
 
-    niri.url = "github:sodiboo/niri-flake";
-    niri.inputs.nixpkgs.follows = "nixpkgs";
-
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     zen-browser.inputs.nixpkgs.follows = "nixpkgs";
-
-    ucodenix.url = "github:e-tho/ucodenix";
 
     pre-commit-hooks.url = "github:cachix/pre-commit-hooks.nix";
     pre-commit-hooks.inputs.nixpkgs.follows = "nixpkgs";
@@ -46,7 +44,7 @@
       lib = inputs.nixpkgs.lib.extend (
         final: prev: {
           my = import ./lib {
-            inherit inputs self;
+            inherit inputs;
             lib = final;
           };
         }

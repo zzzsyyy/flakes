@@ -1,6 +1,9 @@
 { infuse }:
 final: prev:
 infuse prev {
+  # niri.__output.patches.__append = [
+  #   ../patches/2.patch
+  # ];
   xdg-desktop-portal-gtk.__input.gnome-desktop.__assign = null;
   xdg-desktop-portal-gtk.__input.gsettings-desktop-schemas.__assign = null;
   xdg-desktop-portal-gtk.__output.mesonFlags.__append = [ (prev.lib.mesonEnable "wallpaper" false) ];

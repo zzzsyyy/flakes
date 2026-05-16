@@ -6,6 +6,7 @@
     shellIntegration.enableFishIntegration = true;
     enableGitIntegration = true;
     settings = {
+      auto_reload_config = "-1";
       tab_bar_edge = "top";
       bold_font = "Iosevka ZT Semibold Extended";
       italic_font = "Iosevka ZT Italic Extended";

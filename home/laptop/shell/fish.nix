@@ -33,6 +33,15 @@
           hash = "sha256-7+Wdyg8Icp+6S7+PiW5DVRNnLBtzJ/OI3uIElkU3Yf0=";
         };
       }
+      # {
+      #   name = "fish-async-prompt";
+      #   src = pkgs.fetchFromGitHub {
+      #     owner = "acomagu";
+      #     repo = "fish-async-prompt";
+      #     rev = "b90e8a8c6d1634d8f04f1532b164b99530445159";
+      #     hash = "sha256-HWW9191RP//48HkAHOZ7kAAAPSBKZ+BW2FfCZB36Y+g=";
+      #   };
+      # }
     ];
   };
 }
