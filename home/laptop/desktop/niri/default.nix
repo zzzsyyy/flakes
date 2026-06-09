@@ -11,6 +11,7 @@
     nirius
     imagemagick
     gpu-screen-recorder
+    evtest
     # noctalia-shell
   ];
   # ++ [ inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default ];
@@ -29,11 +30,8 @@
     ];
     xdgOpenUsePortal = true;
   };
-  programs.noctalia-shell = {
+  programs.noctalia = {
     enable = true;
-    package = pkgs.noctalia-shell.override {
-      calendarSupport = true;
-    };
   };
   xdg.configFile."niri/config.kdl".source =
     config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/Documents/flakes/home/laptop/desktop/niri/niri.kdl";

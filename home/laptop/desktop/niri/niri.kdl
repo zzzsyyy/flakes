@@ -1,9 +1,6 @@
-spawn-at-startup "noctalia-shell"
+spawn-at-startup "noctalia"
 spawn-at-startup "fcitx5" "-d" "--replace"
-//spawn-at-startup "hyprpaper"
-// spawn-at-startup "swayosd-server"
 spawn-at-startup "clipse" "-listen"
-//spawn-at-startup "swaync"
 spawn-at-startup "niriusd"
 
 prefer-no-csd
@@ -175,16 +172,17 @@ binds {
     Mod+Return repeat=false { spawn "kitty"; }
     Mod+K repeat=false hotkey-overlay-title="Quick Access Terminal" { spawn "kitten" "quick-access-terminal"; }
     Mod+E { spawn "nautilus" "-w"; }
-    Mod+R repeat=false { spawn "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
+    Mod+R repeat=false { spawn "noctalia" "msg" "panel-toggle" "launcher"; }
     Mod+A repeat=false { toggle-overview; }
     Mod+V repeat=false { spawn "noctalia-shell" "ipc" "call" "launcher" "clipboard"; }
     Mod+P { spawn "nirius" "toggle-follow-mode"; }
 
-    XF86AudioRaiseVolume { spawn "noctalia-shell" "ipc" "call" "volume" "increase"; }
-    XF86AudioLowerVolume { spawn "noctalia-shell" "ipc" "call" "volume" "decrease"; }
-    XF86AudioMute { spawn "noctalia-shell" "ipc" "call" "volume" "muteOutput"; }
-    XF86MonBrightnessUp { spawn "noctalia-shell" "ipc" "call" "brightness" "increase"; }
-    XF86MonBrightnessDown { spawn "noctalia-shell" "ipc" "call" "brightness" "decrease"; }
+    XF86AudioRaiseVolume  allow-when-locked=true { spawn "noctalia" "msg" "volume-up"; }
+    XF86AudioLowerVolume  allow-when-locked=true { spawn "noctalia" "msg" "volume-down"; }
+    XF86AudioMute         allow-when-locked=true { spawn "noctalia" "msg" "volume-mute"; }
+    XF86AudioMicMute      allow-when-locked=true { spawn "noctalia" "msg" "mic-mute"; }
+    XF86MonBrightnessUp   allow-when-locked=true { spawn "noctalia" "msg" "brightness-up"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn "noctalia" "msg" "brightness-down"; }
     XF86Assistant { spawn "kitty"; }
 
     Alt+F4 { close-window; }
@@ -195,7 +193,7 @@ binds {
 
     Mod+F {toggle-window-floating;}
     Mod+W { toggle-column-tabbed-display; }
-    Mod+L {spawn "gtklock" ; }
+    Mod+L {spawn "noctalia" "msg" "screen-lock" ; }
 
     Mod+Left  { focus-column-left; }
     Mod+Right { focus-column-right; }
