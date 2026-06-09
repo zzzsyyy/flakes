@@ -12,7 +12,7 @@
     flake-parts.url = "github:hercules-ci/flake-parts";
 
     fast-nix-gc.url = "github:Mic92/fast-nix-gc";
-    nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
+    nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel";
     infuse.url = "git+https://github.com/zzzsyyy/infuse.nix.git";
     infuse.flake = false;
     noctalia.url = "github:noctalia-dev/noctalia-shell";

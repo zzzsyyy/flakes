@@ -3,6 +3,7 @@
   nix = {
     channel.enable = false;
     package = pkgs.lixPackageSets.latest.lix; # nixVersions.latest;
+    distributedBuilds = true;
     settings = {
       experimental-features = [
         "nix-command"
@@ -11,6 +12,10 @@
         "cgroups"
         "pipe-operator"
       ];
+      trusted-users = [
+        "root"
+        "@wheel"
+      ];
       extra-deprecated-features = [
         "broken-string-escape"
         "or-as-identifier"
@@ -18,6 +23,7 @@
       # auto-optimise-store = true;
       use-xdg-base-directories = true;
       auto-allocate-uids = true;
+      builders-use-substitutes = true;
       use-cgroups = true;
       substituters = [
         "https://attic.xuyh0120.win/lantian"

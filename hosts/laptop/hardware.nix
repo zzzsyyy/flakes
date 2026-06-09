@@ -92,9 +92,9 @@ in
   ];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  services.xserver = {
-    videoDrivers = [ "amdgpu" ];
-  };
+  # services.xserver = {
+  #   videoDrivers = [ "amdgpu" ];
+  # };
   services.pulseaudio.enable = false;
   hardware = {
     graphics.enable = true;
